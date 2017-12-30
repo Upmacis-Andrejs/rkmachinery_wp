@@ -1,3 +1,5 @@
+<?php /* Template Name: News Item */ ?>
+
 <?php get_header(); ?>
 
 	<main id="site-content">

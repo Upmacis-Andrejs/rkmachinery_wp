@@ -163,6 +163,24 @@ function wrap_editor_table_content($content) {
 }
 add_filter('the_content', 'wrap_editor_table_content');
 
+// Custom language switcher [https://wordpress.stackexchange.com/a/51148]
+function rkmachinery_display_lang_switcher() {
+  $languages = icl_get_languages();
+  $res = '';
+  if (!empty($languages)) {
+    $res .= '<div class="lang-switcher">';
+    foreach ($languages as $l){
+      $active = ($l['active']) ? ' active' : '';
+      $res .= '<a href="' . $l['url'] . '" class="p' . $active . '">';
+      $res .= $l['language_code'];
+      $res .= '</a>';
+    }
+    $res .= '</div>';
+  }
+  return $res;
+}
+add_filter('rkmachinery_lang_switcher', 'rkmachinery_display_lang_switcher');
+
 // Load RK Machinery scripts
 function rkmachinery_scripts()
 {

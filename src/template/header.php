@@ -69,24 +69,18 @@
 		<div class="wrapper" id="body-wrapper">
 
 			<!-- header -->
-			<header class="header z-99 clear">
+			<header class="z-99 clear" id="site-header">
                 <div class="container">
-                    <div class="row">
+                    <div class="row flex">
 
-        					<!-- logo -->
-        					<div class="logo">
-        						<a href="<?php echo home_url(); ?>">
-        							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-        						</a>
-        					</div>
-        					<!-- /logo -->
-
-        					<!-- nav -->
+    						<a id="main-site-logo" href="<?php echo home_url(); ?>">
+    							<img src="<?php the_field('site_logo', 'option'); ?>" alt="Site Logo">
+    						</a>
         					<nav class="nav">
         						<?php rkmachinery_nav(); ?>
         					</nav>
-        					<!-- /nav -->
-                            
+                            <?php echo apply_filters('rkmachinery_lang_switcher', ''); ?>
+
                     </div>
                 </div>
 			</header>
