@@ -1,0 +1,250 @@
+//FONTS
+@font-face {
+  font-family: 'SariWebProRegular';
+  src:  url('fonts/SariWebProRegular.eot');
+  src:  url('fonts/SariWebProRegular.eot?#iefix') format('embedded-opentype'),
+    url('fonts/SariWebProRegular.ttf') format('truetype'),
+    url('fonts/SariWebProRegular.woff') format('woff'),
+    url('fonts/SariWebProRegular.svg#SariWebProRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SariWebProRegularItalic';
+  src:  url('fonts/SariWebProRegularItalic.eot');
+  src:  url('fonts/SariWebProRegularItalic.eot?#iefix') format('embedded-opentype'),
+    url('fonts/SariWebProRegularItalic.ttf') format('truetype'),
+    url('fonts/SariWebProRegularItalic.woff') format('woff'),
+    url('fonts/SariWebProRegularItalic.svg#SariWebProRegularItalic') format('svg');  
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SariWebProRegularSC';
+  src:  url('fonts/SariWebProRegularSC.eot');
+  src:  url('fonts/SariWebProRegularSC.eot?#iefix') format('embedded-opentype'),
+    url('fonts/SariWebProRegularSC.ttf') format('truetype'),
+    url('fonts/SariWebProRegularSC.woff') format('woff'),
+    url('fonts/SariWebProRegularSC.svg#SariWebProRegularSC') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SariWebProBold';
+  src:  url('fonts/SariWebProBold.eot');
+  src:  url('fonts/SariWebProBold.eot?#iefix') format('embedded-opentype'),
+    url('fonts/SariWebProBold.ttf') format('truetype'),
+    url('fonts/SariWebProBold.woff') format('woff'),
+    url('fonts/SariWebProBold.svg#SariWebProBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SariWebProBoldItalic';
+  src:  url('fonts/SariWebProBoldItalic.eot');
+  src:  url('fonts/SariWebProBoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('fonts/SariWebProBoldItalic.ttf') format('truetype'),
+    url('fonts/SariWebProBoldItalic.woff') format('woff'),
+    url('fonts/SariWebProBoldItalic.svg#SariWebProBoldItalic') format('svg'); 
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SariWebProBoldSC';
+  src:  url('fonts/SariWebProBoldSC.eot');
+  src:  url('fonts/SariWebProBoldSC.eot?#iefix') format('embedded-opentype'),
+    url('fonts/SariWebProBoldSC.ttf') format('truetype'),
+    url('fonts/SariWebProBoldSC.woff') format('woff'),
+    url('fonts/SariWebProBoldSC.svg#SariWebProBoldSC') format('svg'); 
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SariWebProLightItalic';
+  src: url('fonts/SariWebProLightItalic.eot');
+  src: url('fonts/SariWebProLightItalic.eot?#iefix') format('embedded-opentype'),
+  url('fonts/SariWebProLightItalic.woff') format('woff'),
+  url('fonts/SariWebProLightItalic.ttf') format('truetype'),
+  url('fonts/SariWebProLightItalic.svg#SariWebProLightItalic') format('svg');   
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SariWebProLight';
+  src: url('fonts/SariWebProLight.eot');
+  src: url('fonts/SariWebProLight.eot?#iefix') format('embedded-opentype'),
+  url('fonts/SariWebProLight.woff') format('woff'),
+  url('fonts/SariWebProLight.ttf') format('truetype'),
+  url('fonts/SariWebProLight.svg#SariWebProLight') format('svg');   
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SariWebProMediumItalic';
+  src: url('fonts/SariWebProMediumItalic.eot');
+  src: url('fonts/SariWebProMediumItalic.eot?#iefix') format('embedded-opentype'),
+  url('fonts/SariWebProMediumItalic.woff') format('woff'),
+  url('fonts/SariWebProMediumItalic.ttf') format('truetype'),
+  url('fonts/SariWebProMediumItalic.svg#SariWebProMediumItalic') format('svg');   
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SariWebProMedium';
+  src: url('fonts/SariWebProMedium.eot');
+  src: url('fonts/SariWebProMedium.eot?#iefix') format('embedded-opentype'),
+  url('fonts/SariWebProMedium.woff') format('woff'),
+  url('fonts/SariWebProMedium.ttf') format('truetype'),
+  url('fonts/SariWebProMedium.svg#SariWebProMedium') format('svg');   
+  font-weight: normal;
+  font-style: normal;
+}
+
+.Sari-Light {
+  font-family: 'SariWebProLight', sans-serif;  
+  font-weight: 300;
+}
+.Sari-Light-Italic {
+  font-family: 'SariWebProLightItalic', sans-serif;    
+  font-weight: 300;
+}
+.Sari-Regular {
+  font-family: 'SariWebProRegular', sans-serif;
+  font-weight: 400;
+}
+.Sari-Regular-Italic {
+  font-family: 'SariWebProRegularItalic', sans-serif; 
+  font-weight: 400;
+}
+.Sari-Regular-Caps {
+  font-family: 'SariWebProRegularSC', sans-serif;
+  font-weight: 400;
+}
+.Sari-Medium {
+  font-family: 'SariWebProMedium', sans-serif;  
+  font-weight: 500;
+}
+.Sari-Medium-Italic {
+  font-family: 'SariWebProMediumItalic', sans-serif;  
+  font-weight: 500;
+}
+.Sari-Bold {
+  font-family: 'SariWebProBold', sans-serif;
+  font-weight: 700;
+}
+.Sari-Bold-Italic {
+  font-family: 'SariWebProBoldItalic', sans-serif;
+  font-weight: 700;
+}
+.Sari-Bold-Caps {
+  font-family: 'SariWebProBoldSC', sans-serif;
+  font-weight: 700;
+}
+
+p, .p, body {
+  @extend .Sari-Regular;
+  font-size: 20px;
+}
+h6, .h6 {
+  @extend .Sari-Regular;
+  font-size: 22px;
+  line-height: 45px;
+}
+h5, .h5 {
+  @extend .Sari-Regular;
+  font-size: 25px;
+  line-height: 1.28;
+}
+h4, .h4 {
+  @extend .Sari-Bold-Italic;
+  font-size: 30px;
+  letter-spacing: 0.03em;
+}
+h3, .h3 {
+  @extend .Sari-Regular;
+  font-size: 36px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+}
+h2, .h2 {
+  @extend .Sari-Light;
+  font-size: 50px;
+  line-height: 64px;
+}
+h1, .h1 {
+  @extend .Sari-Regular;
+  font-size: 70px;
+  line-height: 81px;
+}
+
+@media (max-width: 767px) {
+  h1, .h1 {  
+    font-size: calc(70px * 0.7);
+    line-height: calc(81px * 0.7);
+  }
+  h2, .h2 {  
+    font-size: calc(50px * 0.8);
+    line-height: calc(64px * 0.8);
+  }
+  h3, .h3 { font-size: calc(36px * 0.85); }
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?iurc1p');
+  src:  url('fonts/icomoon.eot?iurc1p#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?iurc1p') format('truetype'),
+    url('fonts/icomoon.woff?iurc1p') format('woff'),
+    url('fonts/icomoon.svg?iurc1p#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"],
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-triangle:before {
+  content: "\e900";
+  color: #fff;
+}
+.icon-facebook:before {
+  content: "\e901";
+  color: #fff;
+}
+.icon-linkedin:before {
+  content: "\e902";
+  color: #fff;
+}
+.icon-phone:before {
+  content: "\e903";
+  color: #fff;
+}
+.icon-place:before {
+  content: "\e904";
+  color: #fff;
+}
+.icon-xing:before {
+  content: "\e905";
+  color: #fff;
+}
+.icon-email:before {
+  content: "\e906";
+  color: #fff;
+}
+
+
+//END OF FONTS
