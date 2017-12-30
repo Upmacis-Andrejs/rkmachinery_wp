@@ -41,7 +41,7 @@ gulp.task('php', () => {
 
 // image settings
 const images = {
-  src         : dir.src + 'img/**/*',
+  src         : dir.src + 'images/**/*',
   build       : dir.build + 'img/'
 };
 
