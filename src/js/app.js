@@ -51,6 +51,18 @@ $(document).ready(function() {
 	    }
 	});
 
+	// Switch between galleries
+	$(".gallery-title-block").click(function() {
+		$(".gallery-title-block.active, .gallery-img-block.active").removeClass('active');
+		$(this).addClass('active');
+		var $this_id = $(this).attr('id');
+		var $this_id = $this_id.replace("gallery-title-block-", "");
+		var $this_gallery_id_pre = ".gallery-img-block-";
+		var $this_gallery_id = $this_gallery_id_pre.concat($this_id);
+		$($this_gallery_id).addClass('active');
+		$(this).addClass($this_gallery_id);
+		return false;
+	});
 
 	// Script for "back button"
 	$(".go-back").click(function(e) {
