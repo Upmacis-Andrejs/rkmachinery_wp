@@ -1,41 +1,154 @@
 <?php get_header(); ?>
 
 	<main id="site-content">
-		<!-- section -->
-		<section>
+		<section id="section-1">
+			<div class="full-width-img-video-wrapper mega-size shadow
+				<?php if( get_field('full_width_video') ): echo 'video';
+					elseif( get_field('full_width_image') ): echo 'image';
+					endif; ?>">
+				<?php if( get_field('text-fwiv') ): ?>
+				<div class="text z-6 container">
+					<div class="row editor-wrapper">
+						<?php the_field('text-fwiv'); ?>
+					</div>
+				</div>
+				<?php endif; ?>
+				<?php if( get_field('full_width_video') ): ?>
+					<video class="full-width-video fit-parent" autoplay>
+						<source src="<?php the_field('full_width_video'); ?>">
+					</video>
+				<?php elseif( get_field('full_width_image') ): ?>
+					<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('full_width_image'); ?>)"></div>
+				<?php endif; ?>
+			</div>
+		</section>
+
+		<section id="section-2">
 			<div class="container">
 				<div class="row">
+					<div class="page-block-wrapper flex-hor-c">
+						<!-- loop through page_id=24 data -->
+						<?php $the_query_24= new WP_Query('page_id=24');
+							while ($the_query_24->have_posts()) : $the_query_24->the_post(); ?>
+						<a class="page-block shadow text-decor-none 
+						<?php if( get_field('full_width_video') ): echo 'video';
+						elseif( get_field('full_width_image') ): echo 'image';
+						endif;
+						?>"
+						id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
+						href="<?php the_permalink(); ?>">
 
-					<h1><?php the_title(); ?></h1>
+							<h2 class="title z-6"><?php the_title(); ?></h2>
+							<?php if( get_field('full_width_video') ): ?>
+								<video class="full-width-video fit-parent" autoplay>
+									<source src="<?php the_field('full_width_video'); ?>">
+								</video>
+							<?php elseif( get_field('full_width_image') ): ?>
+								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('full_width_image'); ?>)"></div>
+							<?php endif; ?>							
+						
+						</a>
+						<?php endwhile; wp_reset_postdata(); ?>
+						<!-- /loop through page_id=24 data -->						
+						<!-- loop through page_id=29 data -->
+						<?php $the_query_29 = new WP_Query('page_id=29');
+							while ($the_query_29->have_posts()) : $the_query_29->the_post(); ?>
+						<a class="page-block shadow text-decor-none 
+						<?php if( get_field('full_width_video') ): echo 'video';
+						elseif( get_field('full_width_image') ): echo 'image';
+						endif;
+						?>"
+						id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
+						href="<?php the_permalink(); ?>">
 
-				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+							<h2 class="title z-6"><?php the_title(); ?></h2>
+							<?php if( get_field('full_width_video') ): ?>
+								<video class="full-width-video fit-parent" autoplay>
+									<source src="<?php the_field('full_width_video'); ?>">
+								</video>
+							<?php elseif( get_field('full_width_image') ): ?>
+								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('full_width_image'); ?>)"></div>
+							<?php endif; ?>							
+						
+						</a>
+						<?php endwhile; wp_reset_postdata(); ?>
+						<!-- /loop through page_id=29 data -->
+						<!-- loop through page_id=26 data -->
+						<?php $the_query_26 = new WP_Query('page_id=26');
+							while ($the_query_26->have_posts()) : $the_query_26->the_post(); ?>
+						<a class="page-block shadow text-decor-none 
+						<?php if( get_field('full_width_video') ): echo 'video';
+						elseif( get_field('full_width_image') ): echo 'image';
+						endif;
+						?>"
+						id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
+						href="<?php the_permalink(); ?>">
 
-					<!-- article -->
-					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-						<?php the_content(); ?>
-
-					</article>
-					<!-- /article -->
-
-				<?php endwhile; ?>
-
-				<?php else: ?>
-
-					<!-- article -->
-					<article>
-
-						<h2><?php _e( 'Sorry, nothing to display.', 'rkmachinery' ); ?></h2>
-
-					</article>
-					<!-- /article -->
-
-				<?php endif; ?>
-
+							<h2 class="title z-6"><?php the_title(); ?></h2>
+							<?php if( get_field('full_width_video') ): ?>
+								<video class="full-width-video fit-parent" autoplay>
+									<source src="<?php the_field('full_width_video'); ?>">
+								</video>
+							<?php elseif( get_field('full_width_image') ): ?>
+								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('full_width_image'); ?>)"></div>
+							<?php endif; ?>
+						
+						</a>
+						<?php endwhile; wp_reset_postdata(); ?>
+						<!-- /loop through page_id=26 data -->
+					</div>
 				</div>
 			</div>
 		</section>
-		<!-- /section -->
+
+		<section id="section-3">
+			<div class="container">
+				<div class="row">
+					<div class="who-we-are editor-wrapper">
+						<?php the_field('page_content'); ?>
+					</div>
+					<a class="btn btn-1" href="<?php echo get_permalink('31') ?>"><?php _e('More About Us', 'rkmachinery'); ?></a>
+				</div>
+			</div>
+		</section>
+
+		<section id="section-4">
+			<div class="container">
+				<div class="row">					
+					<?php $the_query_news = new WP_Query( array( 'post_type' => 'news_posts' ) );                  
+					if ( $the_query_news->have_posts() ) : ?>
+					<!-- loop through custom post type 'news' -->
+
+					<h2><?php echo get_the_title('33'); ?></h2>
+					<div class="news-block-wrapper flex-hor-c">
+				    <?php while ( $the_query_news->have_posts() ) : $the_query_news->the_post(); ?>   
+				        <a class="news-block shadow text-decor-none
+				        <?php if( get_field('thumbnail_video') ): echo 'video';
+						elseif( get_field('thumbnail_image') ): echo 'image';
+						endif; ?>"
+						href="<?php the_permalink(); ?>">
+							
+							<div class="title-and-date z-6">
+								<h5 class="title"><?php the_title(); ?></h5>
+								<h6 class="news-post-date"><?php echo get_the_date('F d, Y'); ?></h6>
+							</div>
+							<?php if( get_field('thumbnail_video') ): ?>
+								<video class="full-width-video fit-parent" autoplay>
+									<source src="<?php the_field('thumbnail_video'); ?>">
+								</video>
+							<?php elseif( get_field('thumbnail_image') ): ?>
+								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('thumbnail_image'); ?>)"></div>
+							<?php endif; ?>
+
+						</a>
+				    <?php endwhile; wp_reset_postdata(); ?>
+					</div>
+
+					<!-- /loop through custom post type 'news' -->
+					<?php endif; ?>
+				</div>
+			</div>
+		</section>
 	</main>
 
 <?php get_footer(); ?>

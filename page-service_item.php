@@ -4,7 +4,7 @@
 
 	<main id="site-content">
 		<section id="section-1">
-			<div class="full-width-img-video-wrapper shadow
+			<div class="full-width-img-video-wrapper
 				<?php if( get_field('full_width_video') ): echo 'video';
 					elseif( get_field('full_width_image') ): echo 'image';
 					endif; ?>">
@@ -21,8 +21,8 @@
 		<section id="section-2">
 			<div class="container">
 				<div class="row">
-					<div class="slider-and-content-wrapper flex-hor-c">
-						<div class="slider-wrapper">
+					<div class="slider-and-content-wrapper flex-vert-c">
+						<div class="slider">
 							<?php 
 
 							$images = get_field('image_gallery');
@@ -30,7 +30,7 @@
 							if( $images ): ?>
 							    <ul class="bxslider">
 							        <?php foreach( $images as $image ): ?>
-							            <li class="bxslider-item section-bg" style="background-image: url(<?php echo $image['url']; ?>)";></li>
+							            <li class="section-bg" style="background-image: url(<?php echo $image['url']; ?>)";></li>
 							        <?php endforeach; ?>
 							    </ul>
 							<?php endif; ?>

@@ -196,7 +196,10 @@ function rkmachinery_scripts()
         wp_register_script('jquery', get_template_directory_uri() . '/bower_components/jquery/jquery.min.js', array(), '3.2.1', true); // jQuery
         wp_enqueue_script('jquery'); // Enqueue it!
 
-        wp_register_script('rkmachinery_scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0', true); // Custom scripts
+        wp_register_script('bx_slider', get_template_directory_uri() . '/bower_components/bxslider-4/jquery.bxslider.min.js', array('jquery'), '4.2.12', true); // BX Slider Plugin
+        wp_enqueue_script('bx_slider'); // Enqueue it!
+
+        wp_register_script('rkmachinery_scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.2', true); // Custom scripts
         wp_enqueue_script('rkmachinery_scripts'); // Enqueue it!
     }
 }
@@ -215,6 +218,9 @@ function rkmachinery_styles()
 {
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.min.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
+
+    wp_register_style('bx_slider', get_template_directory_uri() . '/bower_components/bxslider-4/jquery.bxslider.min.css', array(), '4.2.12', 'all'); // BX Slider Plugin
+    wp_enqueue_style('bx_slider'); // Enqueue it!
 
     wp_register_style('rkmachinery', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('rkmachinery'); // Enqueue it!
@@ -281,9 +287,9 @@ if (function_exists('register_sidebar'))
 {
     // Define Sidebar Widget Area 1
     register_sidebar(array(
-        'name' => __('Widget Area 1', 'rkmachinery'),
-        'description' => __('Description for this widget-area...', 'rkmachinery'),
-        'id' => 'widget-area-1',
+        'name' => __('Contact Form Widget', 'rkmachinery'),
+        'description' => __('Contains contact form, which opens, when icon is clicked', 'rkmachinery'),
+        'id' => 'contact-form-widget-area',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',
@@ -416,7 +422,7 @@ add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove 
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
 add_filter('excerpt_more', 'rkmachinery_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+//add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'rkmachinery_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images

@@ -1,8 +1,28 @@
 #site-footer { 
 	height: 72px;
 	background-image: linear-gradient( 27deg, rgb(0,18,32), rgb(18,99,133) );
-	.copyright {
-		color: #fff;
-		letter-spacing: 0.03em;
-	}
+}
+.contact-form-wrapper {
+	position: absolute;
+	top: -67px;
+	right: 22px;
+	transform: translateY(-100%);
+	width: 300px;
+}
+.contact-form-btn {
+	position: absolute;
+	top: -20px;		
+	right: 20px;
+	transform: translateY(-100%);
+	width: 40px;
+	height: 40px;	
+	background: #B6B4B5;
+}
+.contact-form-close {
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	width: 10px;
+	height: 10px;
+	background: #B6B4B5;
 }

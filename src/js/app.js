@@ -1,10 +1,10 @@
 $(document).ready(function() {
 	'use strict';
 
-	//trigger window resize when DOM has been loaded
+	// Trigger window resize when DOM has been loaded
 	$(window).trigger('resize');
 
-	//toggle mobile menu
+	// Toggle mobile menu
 	$("#nav-icon").click(function(event) {
         var html_top = Math.abs(parseInt($('html').css('top'), 10));
 		if ( $(this).hasClass('open') ) {
@@ -27,21 +27,56 @@ $(document).ready(function() {
 		$("#site-header").removeClass('open');
 		$("#site-header .nav").addClass('hidden');
 	});
-			
-    //script for deprecated browser notification
-    $(document).ready(function() {
-        $('#close_announcement').click(function(e) {
-            e.preventDefault();
-            $('#update_browser_container').addClass('hidden');
-        });
+	
+	// Toggl contact form
+	$(".contact-form-btn").click(function() {
+		$(".contact-form-wrapper").toggleClass('hidden');
+	});
+
+	$(".contact-form-close").click(function() {
+		$(".contact-form-wrapper").addClass('hidden');
+	});
+
+
+	$(document).mouseup(function (e){
+	    var container_1 = $(".contact-form-wrapper");
+	    var container_2 = $(".contact-form-btn");
+
+	    if (!container_1.is(e.target) // if the target of the click isn't the container...
+	        && container_1.has(e.target).length === 0 // ... nor a descendant of the container
+	        && !container_2.is(e.target) // and if the target of the click isn't the container...
+	        && container_2.has(e.target).length === 0) // ... nor a descendant of the container
+	    {
+			container_1.addClass('hidden');		        
+	    }
+	});
+
+
+	// Script for "back button"
+	$(".go-back").click(function(e) {
+		e.preventDefault();
+	    window.history.back();
+	});
+
+    // Script for deprecated browser notification
+    $('#close_announcement').click(function(e) {
+        e.preventDefault();
+        $('#update_browser_container').addClass('hidden');
     });
 
-	//replace all .svg to .png, in case the browser does not support the format
+	// Replace all .svg to .png, in case the browser does not support the format
 	if(!Modernizr.svg) {
 	    $('img[src*="svg"]').attr('src', function() {
 	        return $(this).attr('src').replace('.svg', '.png');
 	    });
 	}
+
+	// Initialize BX Slider
+	$(document).ready(function(){
+	  $('.bxslider').bxSlider({
+	  		pager: false
+	  });
+	});
 
 });
 

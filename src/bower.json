@@ -14,5 +14,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bxslider-4": "stevenwanderski/bxslider-4#^4.2.12"
+  }
 }
