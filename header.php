@@ -73,8 +73,9 @@
                 <div class="container">
                     <div class="row flex">
 
+                            <a class="visuallyhidden" id="template-dir-uri-img" href="<?php echo get_template_directory_uri(); ?>/img/"></a>
     						<a id="main-site-logo" href="<?php echo home_url(); ?>">
-    							<img src="<?php the_field('site_logo', 'option'); ?>" alt="Site Logo">
+    							<img src="<?php the_field('site_logo', 'option'); ?>" alt="Site Logo" title="Site Logo">
     						</a>
         					<nav class="nav">
         						<?php rkmachinery_nav(); ?>

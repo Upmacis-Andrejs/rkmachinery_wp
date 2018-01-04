@@ -53,7 +53,7 @@
 									<li class="company-address-wrapper">
 										<a class="company-address" href="https://www.google.com/maps/dir/?api=1&destination=
 										<?php echo $address_formatted; ?>"
-										target="_blank">
+										target="_blank" rel="nofollow">
 											<span><?php echo $address_1; ?></span>
 											<span><?php echo $address_2; ?></span>
 										</a>

@@ -149,6 +149,34 @@ if( function_exists('acf_add_options_page') ) {
     ));   
 }
 
+// Automatically set the image Title and Alt-Text upon upload
+function set_img_meta_upon_upload( $post_ID ) {
+    // Check if uploaded file is an image, else do nothing
+    if ( wp_attachment_is_image( $post_ID ) ) {
+        $img_title = get_post( $post_ID )->post_title;
+        // Sanitize the title:  remove hyphens, underscores & extra spaces:
+        $img_title = preg_replace( '%\s*[-_\s]+\s*%', ' ',  $img_title );
+        // Sanitize the title:  capitalize first letter of every word (other letters lower case):
+        $img_title = ucwords( strtolower( $img_title ) );
+        // Create an array with the image meta (Title) to be updated
+        $img_meta = array(
+            'ID'        	=> $post_ID,        	 // Specify the image (ID) to be updated
+            'post_title'    => $img_title,      // Set image Title to sanitized title
+        );
+        // Set the image Alt-Text
+        update_post_meta( $post_ID, '_wp_attachment_image_alt', $img_title );
+        // Set the image meta (e.g. Title, Excerpt, Content)
+        wp_update_post( $img_meta );
+    } 
+}
+add_action( 'add_attachment', 'set_img_meta_upon_upload' );
+
+// Register Google Maps API
+function my_acf_init() {   
+    acf_update_setting('google_api_key', 'AIzaSyDXtzsptnsBUt60yjh3NTikCbVnPIiL2ws');
+}
+add_action('acf/init', 'my_acf_init');
+
 // Wrap the content typed in WP visual editor in extra <div>
 function wrap_editor_content($content) {
   return '<div class="editor-wrapper">'.$content.'</div>';
@@ -382,6 +410,19 @@ function rkmachinery_gravatar ($avatar_defaults)
     $avatar_defaults[$myavatar] = "Custom Gravatar";
     return $avatar_defaults;
 }
+
+// Rewrite Custom Post Type URL
+/*function update_cpt() {
+    global $wp_post_types;
+ 
+    if ( post_type_exists( 'news_posts' ) ) {
+         $wp_post_types['news_posts']->rewrite = array( 'slug' => 'news');
+    }
+    if ( post_type_exists( 'locations_posts' ) ) {
+         $wp_post_types['locations_posts']->rewrite = array( 'slug' => '');
+    }    
+}
+add_action( 'init', 'update_cpt', 99 );*/
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes

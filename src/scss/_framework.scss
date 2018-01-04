@@ -306,6 +306,10 @@ input[type="submit"]:hover {
   max-height: 100%;
   height: 100%;
 }
+.max-h-100 {
+  max-height: 100%;
+  height: auto;
+}
 .h-auto { height: auto; }
 
 .fit-parent {
@@ -375,6 +379,7 @@ input[type="submit"]:hover {
   align-items: center;
   flex-direction: column;    
 }
+.flex-grow { flex-grow: 1; }
 .inline-hor-c { text-align: center; }
 .inline-vert-c { vertical-align: middle; }
 .inline-vert-b { vertical-align: bottom; }

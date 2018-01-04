@@ -124,6 +124,59 @@
 	margin: 15px;
 }
 
+// Who We Are Block
+.who-we-are-wrapper { width: 525px; }
+
+// Advanced Google Maps
+.advanced-google-maps-wrapper {
+	width: calc(100% - 525px + 110px);
+	margin-left: -110px;
+	.gradient {
+		position: absolute;
+		z-index: 6;
+	}
+	.gradient-top {
+		top: 0;
+		right: 0;
+		left: 0;
+		width: 100%;
+		height: 75px;
+		background: scrim-gradient(
+		    to bottom,
+		    #fff,
+		    transparent
+	  	);
+	}
+	.gradient-bottom {
+		right: 0;
+		bottom: 0;
+		left: 0;			
+		width: 100%;
+		height: 75px;
+		background: scrim-gradient(
+		    to top,
+		    #fff,
+		    transparent
+	  	);			
+	}
+	.gradient-left {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 295px;
+		background: scrim-gradient(
+		    to right,
+		    #fff,
+		    transparent
+	  	);			
+	}	
+	.acf-map {
+		height: 834px;
+		img, .img {
+			max-height: none!important;
+		}
+	}
+}
 
 // Contacts Map Wrapper
 .contacts-map-wrapper {

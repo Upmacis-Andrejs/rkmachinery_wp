@@ -104,10 +104,30 @@
 		<section id="section-3">
 			<div class="container">
 				<div class="row">
-					<div class="who-we-are editor-wrapper">
-						<?php the_field('page_content'); ?>
+					<div class="who-we-are-wrapper float-left z-9">
+						<div class="who-we-are editor-wrapper">
+							<?php the_field('page_content'); ?>
+						</div>
+						<a class="btn btn-1" href="<?php echo get_permalink('31') ?>"><?php _e('More About Us', 'rkmachinery'); ?></a>
 					</div>
-					<a class="btn btn-1" href="<?php echo get_permalink('31') ?>"><?php _e('More About Us', 'rkmachinery'); ?></a>
+					<div class="advanced-google-maps-wrapper float-right">
+						<?php $the_query_locations = new WP_Query( array( 'post_type' => 'locations_posts' ) );                  
+						if ( $the_query_locations->have_posts() ) : ?>
+						<!-- loop through custom post type 'locations' -->
+
+						<div class="gradient gradient-top"></div>
+						<div class="gradient gradient-bottom"></div>
+						<div class="gradient gradient-left"></div>
+						<div class="acf-map">
+					    <?php while ( $the_query_locations->have_posts() ) : $the_query_locations->the_post();
+					    	$location = get_field('location_address');?>
+					    	<div class="marker" href="<?php the_permalink(); ?>" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"><div class="hidden"></div></div>
+					    <?php endwhile; wp_reset_postdata(); ?>
+						</div>
+
+						<!-- /loop through custom post type 'locations' -->
+					<?php endif; ?>
+					</div>
 				</div>
 			</div>
 		</section>

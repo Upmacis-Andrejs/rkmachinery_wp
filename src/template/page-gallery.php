@@ -18,14 +18,13 @@
 			<div class="container">
 				<div class="row">
 
-					<?php if ( have_rows('gallery_flexible-content') ) : ?>
+					<?php if ( have_rows('gallery_repeater-content') ) : ?>
 						<div class="gallery-title-block-wrapper">
 						<?php
 						// loop through the rows of data
 						$customFieldGroupNumber = 0;
-					    while ( have_rows('gallery_flexible-content') ) : the_row(); $customFieldGroupNumber++; ?>
+					    while ( have_rows('gallery_repeater-content') ) : the_row(); $customFieldGroupNumber++; ?>
 
-					        <?php if( get_row_layout() == 'gallery_block' ): ?>
 					        <a class="gallery-title-block flex-hor-c
 							<?php
 								if ($customFieldGroupNumber == 1) : echo 'active';
@@ -34,7 +33,6 @@
 							id="<?php echo 'gallery-title-block-' . $customFieldGroupNumber . ' '; ?>"
 							href="#">
 							    <h5 class="title"><?php the_sub_field('gallery_title'); ?></h5>
-							<?php endif; ?>
 							</a>
 						<?php endwhile; ?>
 						</div>
@@ -43,9 +41,8 @@
 						<?php
 						// loop through the rows of data
 						$customFieldGroupNumber = 0;
-					    while ( have_rows('gallery_flexible-content') ) : the_row(); $customFieldGroupNumber++; ?>
+					    while ( have_rows('gallery_repeater-content') ) : the_row(); $customFieldGroupNumber++; ?>
 
-					        <?php if( get_row_layout() == 'gallery_block' ): ?>
 					        <div class="gallery-img-block flex-hor-c
 							<?php
 								if ($customFieldGroupNumber == 1) : echo 'active';
@@ -62,7 +59,7 @@
 								    <?php endforeach; ?>
 								<?php endif; ?>
 							</div>
-							<?php endif; ?>
+
 						<?php endwhile; ?>
 						</div>
 					<?php endif; ?>

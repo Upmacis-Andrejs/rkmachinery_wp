@@ -70,6 +70,7 @@ var css = {
       basePath: dir.build,
       baseUrl: '/wp-content/themes/rkmachinery/'
     }),
+    require('postcss-easing-gradients'),
     require('autoprefixer')({
             browsers: [
             '> 1%',

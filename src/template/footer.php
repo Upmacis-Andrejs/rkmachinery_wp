@@ -17,6 +17,6 @@
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
-
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXtzsptnsBUt60yjh3NTikCbVnPIiL2ws"></script>
 	</body>
 </html>
