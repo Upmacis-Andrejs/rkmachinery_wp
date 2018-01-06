@@ -109,15 +109,15 @@
 .gallery-title-block-wrapper { z-index: 999; }
 
 // Gallery Image Block
+//.gallery-img-block-container { display: none; }
+.gallery-img-block-container.active { display: block; }
 .gallery-img-block {
-	display: none;
 	width: calc(100% + 15px * 2);
 	margin-top: 30px;
 	margin-bottom: 30px;
 	margin-right: -15px;
 	margin-left: -15px;
 }
-.gallery-img-block.active { display: flex; }
 .gallery-img-block-item {
 	width: calc((100% / 4) - 15px * 2);
 	height: 200px;

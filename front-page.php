@@ -135,7 +135,10 @@
 		<section id="section-4">
 			<div class="container">
 				<div class="row">					
-					<?php $the_query_news = new WP_Query( array( 'post_type' => 'news_posts' ) );                  
+					<?php $the_query_news = new WP_Query( array(
+						'post_type'	=> 'news_posts',
+						'posts_per_page'	=> '3',
+					) );                  
 					if ( $the_query_news->have_posts() ) : ?>
 					<!-- loop through custom post type 'news' -->
 
@@ -163,6 +166,7 @@
 						</a>
 				    <?php endwhile; wp_reset_postdata(); ?>
 					</div>
+					<a class="btn btn-1" href="<?php echo get_permalink('33') ?>"><?php _e('View All News', 'rkmachinery'); ?></a>
 
 					<!-- /loop through custom post type 'news' -->
 					<?php endif; ?>

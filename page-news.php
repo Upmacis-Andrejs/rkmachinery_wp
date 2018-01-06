@@ -16,13 +16,19 @@
 		<section id="section-2">
 			<div class="container">
 				<div class="row">	
-					<?php $the_query_news = new WP_Query( array( 'post_type' => 'news_posts' ) );
+					<?php
+						$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+						$the_query_news = new WP_Query( array(
+							'post_type'			=> 'news_posts',
+							'posts_per_page'	=> '9',
+							'paged'				=> $paged,
+						) );
 					if ( $the_query_news->have_posts() ) : ?>
 					<!-- loop through custom post type 'news' -->
 
-					<div class="news-block-wrapper flex-hor-c">
+					<div class="news-block-wrapper posts flex-hor-c">
 				    <?php while ( $the_query_news->have_posts() ) : $the_query_news->the_post(); ?>   
-				        <a class="news-block shadow text-decor-none
+				        <a class="news-block shadow text-decor-none post 
 				        <?php if( get_field('thumbnail_video') ): echo 'video';
 						elseif( get_field('thumbnail_image') ): echo 'image';
 						endif; ?>"
@@ -41,11 +47,14 @@
 							<?php endif; ?>
 
 						</a>
-				    <?php endwhile; wp_reset_postdata(); ?>
+				    <?php endwhile; ?>
 					</div>
+				    <?php if ( $the_query_news->max_num_pages > 1 ) : ?>
+				    	<div class="load-more"><?php $load_more_text = next_posts_link( __('Load More', 'rkmachinery'), $the_query_news->max_num_pages); ?></div>
+					<?php endif ?>
 
 				<!-- /loop through custom post type 'news' -->
-				<?php endif; ?>
+				<?php wp_reset_postdata(); endif; ?>
 				</div>					
 			</div>
 		</section>

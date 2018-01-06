@@ -53,22 +53,56 @@ $(document).ready(function() {
 
 	// Switch between galleries
 	$(".gallery-title-block").click(function() {
-		$(".gallery-title-block.active, .gallery-img-block.active").removeClass('active');
+		$(".gallery-title-block.active, .gallery-img-block-container.active").removeClass('active');
 		$(this).addClass('active');
 		var $this_id = $(this).attr('id');
 		var $this_id = $this_id.replace("gallery-title-block-", "");
-		var $this_gallery_id_pre = ".gallery-img-block-";
-		var $this_gallery_id = $this_gallery_id_pre.concat($this_id);
-		$($this_gallery_id).addClass('active');
-		$(this).addClass($this_gallery_id);
+		var $this_gallery_class_pre = ".gallery-img-block-container-";
+		var $this_gallery_class = $this_gallery_class_pre.concat($this_id);
+		$($this_gallery_class).addClass('active');
 		return false;
 	});
 
-	// Script for "back button"
+	// Script for "back" button
 	$(".go-back").click(function(e) {
 		e.preventDefault();
 	    window.history.back();
 	});
+
+	// Script for "load more" button
+/*	$(document).on('click', '.load-more a', function(e) {
+          e.preventDefault();
+          var $link = $(this).attr('href');
+          $('.load-more').html('<span class="loader">Loading...</span>');
+          jQuery.get($link, function(data) {
+              var $post = $(".posts .post ", data);
+              $(".posts").append($post);
+          });
+          $('.load-more').load($link+' .load-more a');
+      }); */
+	/*	$(document).on('click', '.load-more a', function(e) {
+      e.preventDefault();
+      var $link = $(this).attr('href');
+      var $load_more = $(this).parents('.load-more');
+
+      $load_more.html('<span class="loader">Loading...</span>');
+
+      var $load_more_id = $load_more.attr('id');
+      var $this_id = $load_more_id.replace("load-more-", "");
+      var $this_posts_class_pre = ".posts-";
+      var $this_posts_class = $this_posts_class_pre.concat($this_id);
+      var $this_posts_post = $this_posts_class.concat(' .post ');
+      alert($this_posts_class);
+      alert($this_posts_post);
+      var $post = $($this_posts_post, data);
+
+      jQuery.get($link, function(data) {    
+          $($this_posts_class).append($post);
+      });
+      
+      $load_more.load($link+' .load-more a');
+  }); */
+
 
     // Script for deprecated browser notification
     $('#close_announcement').click(function(e) {
@@ -232,6 +266,13 @@ $(document).ready(function() {
 		{
 			// fit to bounds
 			map.fitBounds( bounds );
+
+		    var listener = google.maps.event.addListener(map, "idle", function() { 
+			  var current_zoom = map.getZoom();			
+			  var zoom_out = current_zoom - 1;
+			  map.setZoom( zoom_out );
+			  google.maps.event.removeListener(listener); 
+			});
 		}
 
 	}
