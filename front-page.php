@@ -111,8 +111,8 @@
 						<a class="btn btn-1" href="<?php echo get_permalink('31') ?>"><?php _e('More About Us', 'rkmachinery'); ?></a>
 					</div>
 					<div class="advanced-google-maps-wrapper float-right">
-						<?php $the_query_locations = new WP_Query( array( 'post_type' => 'locations_posts' ) );                  
-						if ( $the_query_locations->have_posts() ) : ?>
+					<?php $the_query_locations = new WP_Query( array( 'post_type' => 'locations_posts' ) );                  
+					if ( $the_query_locations->have_posts() ) : ?>
 						<!-- loop through custom post type 'locations' -->
 
 						<div class="gradient gradient-top"></div>

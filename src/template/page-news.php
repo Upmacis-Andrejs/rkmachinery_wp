@@ -50,7 +50,7 @@
 				    <?php endwhile; ?>
 					</div>
 				    <?php if ( $the_query_news->max_num_pages > 1 ) : ?>
-				    	<div class="load-more"><?php $load_more_text = next_posts_link( __('Load More', 'rkmachinery'), $the_query_news->max_num_pages); ?></div>
+				    	<div class="load-more"><?php next_posts_link( __('Load More', 'rkmachinery'), $the_query_news->max_num_pages); ?></div>
 					<?php endif ?>
 
 				<!-- /loop through custom post type 'news' -->
