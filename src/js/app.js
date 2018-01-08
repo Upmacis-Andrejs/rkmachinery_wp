@@ -301,12 +301,25 @@ $(document).ready(function() {
 	// /Google Maps API script
 
 
-	// Initialize BX Slider
-	$(document).ready(function(){
-	  $('.bxslider').bxSlider({
-	  		pager: false
-	  });
+	// Initialize Lightslider
+	$(".lightslider").lightSlider({
+		item	: 1,
+		pager	: false
 	});
+
+	// Initialize Lightslider With Thumbnail Pagination
+	$(".lightslider-thumbs").lightSlider({
+		item	: 1,
+		gallery : true,
+		thumbItem: 3
+	});
+
+	// Initialize lightbox plugin
+	$('a[data-rel^=lightcase]').lightcase({
+		labels			: {
+			'sequenceInfo.of': '/'
+		}
+	});	
 
 });
 

@@ -6,5 +6,13 @@
 	right: 0;
 	left: 0;
 	width: 100%;
+	.nav ul,
+	.nav ul ul {
+		list-style-type: none;
+	}
 	.lang-switcher { margin-left: auto; }
+}
+
+.header-relative #site-header {
+	position: relative;
 }

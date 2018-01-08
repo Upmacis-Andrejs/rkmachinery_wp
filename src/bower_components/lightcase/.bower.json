@@ -1,0 +1,49 @@
+{
+  "name": "lightcase",
+  "description": "The smart and flexible Lightbox Plugin.",
+  "keywords": [
+    "jquery-plugin",
+    "lightbox",
+    "modal",
+    "window",
+    "popup"
+  ],
+  "version": "2.4.2",
+  "dependencies": {
+    "jquery": ">=1.5.0"
+  },
+  "authors": [
+    "Cornel Boppart <cornel@bopp-art.com> (http://cornel.bopp-art.com)"
+  ],
+  "license": "GPL-2.0+",
+  "main": "src/js/lightcase.js",
+  "homepage": "http://cornel.bopp-art.com/lightcase/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cbopp-art/lightcase.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cbopp-art/lightcase/issues",
+    "email": "cornel@bopp-art.com"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "2.4.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.4.2",
+    "commit": "b97ac061f70490ee6a32dc7beee1ffc04c5d2bbc"
+  },
+  "_source": "https://github.com/cbopp-art/lightcase.git",
+  "_target": "^2.4.2",
+  "_originalSource": "cbopp-art/lightcase",
+  "_direct": true
+}

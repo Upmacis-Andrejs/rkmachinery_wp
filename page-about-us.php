@@ -4,16 +4,13 @@
 
 	<main id="site-content">
 		<section id="section-1">
-			<div class="full-width-img-video-wrapper shadow
-				<?php if( get_field('full_width_video') ): echo 'video';
-					elseif( get_field('full_width_image') ): echo 'image';
-					endif; ?>">
+			<div class="full-width-img-video-wrapper shadow">
 				<?php if( get_field('text-fwiv') ): ?>
-				<div class="text z-6 container">
-					<div class="row editor-wrapper">
-						<?php the_field('text-fwiv'); ?>
+					<div class="text z-6 container">
+						<div class="row editor-wrapper">
+							<?php the_field('text-fwiv'); ?>
+						</div>
 					</div>
-				</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
 					<video class="full-width-video fit-parent" autoplay>
@@ -27,6 +24,7 @@
 
 		<section id="section-2">
 			<div class="container">
+				<?php get_template_part('breadcrumbs'); ?>
 				<div class="row">
 					<h1 class="title"><?php the_title(); ?></h1>
 					<div class="page-content editor-wrapper">

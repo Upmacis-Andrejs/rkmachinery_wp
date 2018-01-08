@@ -66,7 +66,12 @@
     <![endif]-->
 
 		<!-- wrapper -->
-		<div class="wrapper" id="body-wrapper">
+		<div class="wrapper 
+            <?php if( get_field('full_width_video') ): echo ' video';
+                elseif( get_field('full_width_image') ): echo ' image';
+                else: echo 'header-relative';
+                endif; ?>"
+            id="body-wrapper">
 
 			<!-- header -->
 			<header class="z-99 clear" id="site-header">
@@ -75,7 +80,11 @@
 
                             <a class="visuallyhidden" id="template-dir-uri-img" href="<?php echo get_template_directory_uri(); ?>/img/"></a>
     						<a id="main-site-logo" href="<?php echo home_url(); ?>">
-    							<img src="<?php the_field('site_logo', 'option'); ?>" alt="Site Logo">
+    							<img src="<?php
+                                    if( get_field('full_width_video') || get_field('full_width_image') ): the_field('site_logo_with_bg', 'option');
+                                    else: the_field('site_logo_wo_bg', 'option');
+                                    endif; ?>"
+                                alt="Site Logo">
     						</a>
         					<nav class="nav">
         						<?php rkmachinery_nav(); ?>

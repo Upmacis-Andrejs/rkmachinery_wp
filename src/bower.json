@@ -16,6 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "bxslider-4": "stevenwanderski/bxslider-4#^4.2.12"
+    "bxslider-4": "stevenwanderski/bxslider-4#^4.2.12",
+    "lightcase": "cbopp-art/lightcase#^2.4.2",
+    "lightslider": "sachinchoolur/lightslider#^1.1.6"
   }
 }

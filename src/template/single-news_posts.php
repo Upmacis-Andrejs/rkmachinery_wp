@@ -6,6 +6,7 @@
 	<!-- section -->
 	<section id="section-1">
 		<div class="container">
+			<?php get_template_part('breadcrumbs'); ?>				
 			<div class="row">
 				<div class="slider-and-content-wrapper flex-hor-c">
 					<div class="slider-wrapper">
@@ -14,9 +15,9 @@
 						$images = get_field('image_gallery');
 
 						if( $images ): ?>
-						    <ul class="bxslider">
+						    <ul class="lightslider">
 						        <?php foreach( $images as $image ): ?>
-						            <li class="bxslider-item section-bg" style="background-image: url(<?php echo $image['url']; ?>)";></li>
+						            <li class="lightslider-item section-bg" style="background-image: url(<?php echo $image['url']; ?>)";></li>
 						        <?php endforeach; ?>
 						    </ul>
 						<?php endif; ?>

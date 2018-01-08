@@ -224,8 +224,8 @@ function rkmachinery_scripts()
         wp_register_script('jquery', get_template_directory_uri() . '/bower_components/jquery/jquery.min.js', array(), '3.2.1', true); // jQuery
         wp_enqueue_script('jquery'); // Enqueue it!
 
-        wp_register_script('bx_slider', get_template_directory_uri() . '/bower_components/bxslider-4/jquery.bxslider.min.js', array('jquery'), '4.2.12', true); // BX Slider Plugin
-        wp_enqueue_script('bx_slider'); // Enqueue it!
+        wp_register_script('lightslider', get_template_directory_uri() . '/bower_components/lightslider/js/lightslider.js', array('jquery'), '1.1.6', true); // Lightslider Plugin
+        wp_enqueue_script('lightslider'); // Enqueue it!
 
         wp_register_script('rkmachinery_scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.2', true); // Custom scripts
         wp_enqueue_script('rkmachinery_scripts'); // Enqueue it!
@@ -235,9 +235,9 @@ function rkmachinery_scripts()
 // Load RK Machinery conditional scripts
 function rkmachinery_conditional_scripts()
 {
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('scriptname'); // Enqueue it!
+    if (is_singular('gallery_posts')) {
+        wp_register_script('lightcase', get_template_directory_uri() . '/bower_components/lightcase/lightcase.js', array('jquery'), '2.4.2', true); // Lightcase Lightbox Plugin
+        wp_enqueue_script('lightcase'); // Enqueue it!        
     }
 }
 
@@ -247,8 +247,11 @@ function rkmachinery_styles()
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.min.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
-    wp_register_style('bx_slider', get_template_directory_uri() . '/bower_components/bxslider-4/jquery.bxslider.min.css', array(), '4.2.12', 'all'); // BX Slider Plugin
-    wp_enqueue_style('bx_slider'); // Enqueue it!
+    wp_register_style('lightslider', get_template_directory_uri() . '/bower_components/lightslider/css/lightslider.css', array(), '1.1.6', 'all'); // Lightslider Plugin
+    wp_enqueue_style('lightslider'); // Enqueue it!    
+
+    wp_register_style('lightcase', get_template_directory_uri() . '/bower_components/lightcase/lightcase.css', array(), '2.4.2', 'all'); // Lightcase Lightbox Plugin
+    wp_enqueue_style('lightcase'); // Enqueue it!    
 
     wp_register_style('rkmachinery', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('rkmachinery'); // Enqueue it!
@@ -423,6 +426,11 @@ function rkmachinery_gravatar ($avatar_defaults)
     }    
 }
 add_action( 'init', 'update_cpt', 99 );*/
+
+function rkmachinery_rewrite() {
+    add_rewrite_rule('news/(?!news_posts)([^/]+)/?$', 'index.php?news_posts=$matches[1]', 'top');
+}
+add_action('init', 'rkmachinery_rewrite');
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes

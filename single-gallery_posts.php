@@ -5,6 +5,7 @@
 	<main id="site-content">
 		<section id="section-1">
 			<div class="container">
+				<?php get_template_part('breadcrumbs'); ?>
 				<div class="row">
 					<!-- loop through page_id=26 data -->
 					<?php $the_query_26 = new WP_Query( array(
@@ -33,20 +34,18 @@
 							'order'		=> 'ASC'
 						) );
 						$this_page_title = get_the_title(); ?>
-						<h2><?php echo $this_page_title ?></h2>
 					<?php if ( $the_query_gallery->have_posts() ) : $count_1 = 0; ?>
 
 					    <?php while ( $the_query_gallery->have_posts() ) : $the_query_gallery->the_post(); $count_1++; ?>
 					        <a class="gallery-title-block flex-hor-c
 							<?php
-								if ( $this_page_title = get_the_title() ) : echo ' active';
+								if ( $this_page_title == get_the_title() ) : echo ' active';
 								endif;
 							?>"
 							id="<?php echo 'gallery-title-block-' . $count_1; ?>"
 							href="<?php the_permalink(); ?>"
 							style="z-index: 9;">
 							    <h5 class="title"><?php the_title(); ?></h5>
-							    <p><?php echo $this_page_title ?></p>
 							</a>
 					    <?php endwhile; wp_reset_postdata(); ?>
 
@@ -82,7 +81,7 @@
 
 							if( !empty($images) ): ?>
 								<?php foreach( $images as $image ): ?>
-							    <div class="gallery-img-block-item section-bg post" style="background-image: url(<?php echo $image['url']; ?>)"></div>
+							    <a class="gallery-img-block-item section-bg post" href="<?php echo $image['url']; ?>" style="background-image: url(<?php echo $image['url']; ?>)" data-rel="lightcase:gallerySection" title="<?php echo $image['description']; ?>"></a>
 							    <?php endforeach; ?>
 							<?php endif; ?>
 

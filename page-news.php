@@ -5,6 +5,7 @@
 	<main id="site-content">
 		<section id="section-1">
 			<div class="container">
+				<?php get_template_part('breadcrumbs'); ?>
 				<div class="row">
 					<h1 class="title"><?php the_title(); ?></h1>
 					<div class="page-content editor-wrapper">
