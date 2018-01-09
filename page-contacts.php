@@ -13,7 +13,7 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video fit-parent" autoplay>
+					<video class="full-width-video fit-parent" autoplay loop>
 						<source src="<?php the_field('full_width_video'); ?>">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>

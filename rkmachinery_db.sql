@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jan 09, 2018 at 04:51 PM
+-- Generation Time: Jan 09, 2018 at 06:22 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -5264,7 +5264,7 @@ CREATE TABLE IF NOT EXISTS `qw_8k6_icl_translations` (
   UNIQUE KEY `el_type_id` (`element_type`,`element_id`),
   KEY `trid` (`trid`),
   KEY `id_type_language` (`element_id`,`element_type`,`language_code`)
-) ENGINE=MyISAM AUTO_INCREMENT=136 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=146 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `qw_8k6_icl_translations`
@@ -5399,7 +5399,17 @@ INSERT INTO `qw_8k6_icl_translations` (`translation_id`, `element_type`, `elemen
 (130, 'post_gallery_posts', 249, 113, 'en', NULL),
 (131, 'post_nav_menu_item', 250, 114, 'en', NULL),
 (134, 'post_attachment', 254, 116, 'en', NULL),
-(135, 'post_attachment', 255, 116, 'lv', 'en');
+(135, 'post_attachment', 255, 116, 'lv', 'en'),
+(136, 'post_attachment', 292, 117, 'en', NULL),
+(137, 'post_attachment', 293, 117, 'lv', 'en'),
+(138, 'post_attachment', 295, 118, 'en', NULL),
+(139, 'post_attachment', 296, 118, 'lv', 'en'),
+(140, 'post_attachment', 298, 119, 'en', NULL),
+(141, 'post_attachment', 299, 119, 'lv', 'en'),
+(142, 'post_attachment', 302, 120, 'en', NULL),
+(143, 'post_attachment', 303, 120, 'lv', 'en'),
+(144, 'post_attachment', 305, 121, 'en', NULL),
+(145, 'post_attachment', 306, 121, 'lv', 'en');
 
 -- --------------------------------------------------------
 
@@ -5439,7 +5449,7 @@ CREATE TABLE IF NOT EXISTS `qw_8k6_icl_translation_status` (
   `_prevstate` longtext COLLATE utf8mb4_unicode_520_ci,
   PRIMARY KEY (`rid`),
   UNIQUE KEY `translation_id` (`translation_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `qw_8k6_icl_translation_status`
@@ -5469,7 +5479,12 @@ INSERT INTO `qw_8k6_icl_translation_status` (`rid`, `translation_id`, `status`, 
 (21, 98, 9, 0, 0, '', '', 0, '', '2018-01-04 09:58:07', 0, NULL),
 (22, 100, 9, 0, 0, '', '', 0, '', '2018-01-04 12:51:55', 0, NULL),
 (23, 133, 9, 0, 0, '', '', 0, '', '2018-01-08 19:16:45', 0, NULL),
-(24, 135, 9, 0, 0, '', '', 0, '', '2018-01-08 19:17:01', 0, NULL);
+(24, 135, 9, 0, 0, '', '', 0, '', '2018-01-08 19:17:01', 0, NULL),
+(25, 137, 9, 0, 0, '', '', 0, '', '2018-01-09 17:13:18', 0, NULL),
+(26, 139, 9, 0, 0, '', '', 0, '', '2018-01-09 17:21:04', 0, NULL),
+(27, 141, 9, 0, 0, '', '', 0, '', '2018-01-09 17:25:10', 0, NULL),
+(28, 143, 9, 0, 0, '', '', 0, '', '2018-01-09 17:27:43', 0, NULL),
+(29, 145, 9, 0, 0, '', '', 0, '', '2018-01-09 17:28:50', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -5510,7 +5525,7 @@ CREATE TABLE IF NOT EXISTS `qw_8k6_options` (
   `autoload` varchar(20) COLLATE utf8mb4_unicode_520_ci NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`),
   UNIQUE KEY `option_name` (`option_name`)
-) ENGINE=MyISAM AUTO_INCREMENT=25646 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=26322 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `qw_8k6_options`
@@ -5820,7 +5835,7 @@ CREATE TABLE IF NOT EXISTS `qw_8k6_postmeta` (
   PRIMARY KEY (`meta_id`),
   KEY `post_id` (`post_id`),
   KEY `meta_key` (`meta_key`(191))
-) ENGINE=MyISAM AUTO_INCREMENT=2267 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2404 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `qw_8k6_postmeta`
@@ -5891,13 +5906,13 @@ INSERT INTO `qw_8k6_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) V
 (74, 35, '_wpml_media_duplicate', '1'),
 (75, 35, '_wpml_media_featured', '1'),
 (76, 37, '_edit_last', '1'),
-(77, 37, '_edit_lock', '1515515433:1'),
+(77, 37, '_edit_lock', '1515518271:1'),
 (78, 37, '_wp_page_template', 'page-service.php'),
 (79, 37, '_yoast_wpseo_content_score', '30'),
 (80, 37, '_wpml_media_duplicate', '1'),
 (81, 37, '_wpml_media_featured', '1'),
 (82, 39, '_edit_last', '1'),
-(83, 39, '_edit_lock', '1515515395:1'),
+(83, 39, '_edit_lock', '1515518524:1'),
 (84, 39, '_wp_page_template', 'page-service.php'),
 (85, 39, '_yoast_wpseo_content_score', '30'),
 (86, 39, '_wpml_media_duplicate', '1'),
@@ -6125,7 +6140,7 @@ INSERT INTO `qw_8k6_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) V
 (308, 71, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (309, 71, '_menu_item_xfn', ''),
 (310, 71, '_menu_item_url', ''),
-(407, 85, '_wp_page_template', 'single-service.php'),
+(407, 85, '_wp_page_template', 'page-service-item.php'),
 (312, 72, '_menu_item_type', 'post_type'),
 (313, 72, '_menu_item_menu_item_parent', '0'),
 (314, 72, '_menu_item_object_id', '33'),
@@ -6134,7 +6149,7 @@ INSERT INTO `qw_8k6_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) V
 (317, 72, '_menu_item_classes', 'a:1:{i:0;s:0:\"\";}'),
 (318, 72, '_menu_item_xfn', ''),
 (319, 72, '_menu_item_url', ''),
-(406, 85, '_edit_lock', '1514893892:1'),
+(406, 85, '_edit_lock', '1515518878:1'),
 (321, 73, '_menu_item_type', 'post_type'),
 (322, 73, '_menu_item_menu_item_parent', '0'),
 (323, 73, '_menu_item_object_id', '31'),
@@ -6308,14 +6323,14 @@ INSERT INTO `qw_8k6_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) V
 (513, 113, '_wpml_media_duplicate', '1'),
 (514, 113, '_wpml_media_featured', '1'),
 (515, 115, '_edit_last', '1'),
-(516, 115, '_edit_lock', '1514893787:1'),
-(517, 115, '_wp_page_template', 'single-service.php'),
+(516, 115, '_edit_lock', '1515518894:1'),
+(517, 115, '_wp_page_template', 'page-service-item.php'),
 (518, 115, '_yoast_wpseo_content_score', '30'),
 (519, 115, '_wpml_media_duplicate', '1'),
 (520, 115, '_wpml_media_featured', '1'),
 (521, 117, '_edit_last', '1'),
-(522, 117, '_edit_lock', '1514900121:1'),
-(523, 117, '_wp_page_template', 'single-service.php'),
+(522, 117, '_edit_lock', '1515518912:1'),
+(523, 117, '_wp_page_template', 'page-service-item.php'),
 (524, 117, '_yoast_wpseo_content_score', '30'),
 (525, 117, '_wpml_media_duplicate', '1'),
 (526, 117, '_wpml_media_featured', '1'),
@@ -6323,7 +6338,7 @@ INSERT INTO `qw_8k6_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) V
 (554, 122, '_wp_attachment_image_alt', 'manufacturing'),
 (555, 39, 'full_width_image', '122'),
 (556, 39, '_full_width_image', 'field_5a47d09aab232'),
-(557, 39, 'full_width_video', ''),
+(557, 39, 'full_width_video', '295'),
 (558, 39, '_full_width_video', 'field_5a47d0c8ab233'),
 (559, 124, 'full_width_image', '122'),
 (560, 124, '_full_width_image', 'field_5a47d09aab232'),
@@ -7401,7 +7416,7 @@ INSERT INTO `qw_8k6_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) V
 (1799, 259, '_text-fwiv', 'field_5a4b8b6907366'),
 (1800, 37, 'full_width_image', ''),
 (1801, 37, '_full_width_image', 'field_5a47d09aab232'),
-(1802, 37, 'full_width_video', ''),
+(1802, 37, 'full_width_video', '292'),
 (1803, 37, '_full_width_video', 'field_5a47d0c8ab233'),
 (1804, 37, 'text-fwiv', ''),
 (1805, 37, '_text-fwiv', 'field_5a4b8b6907366'),
@@ -7777,7 +7792,145 @@ INSERT INTO `qw_8k6_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) V
 (2263, 291, 'page_content', 'RK Metāls group has received the following INSPECTA certificates allowing to mark production with CE mark:\r\n• 1325-CPR-1676 according to the standard requirements of EN 1090-2+A1:2011 for the performance class EXC4 for ferrous steel structures.\r\n• 1325-CPR-3067 according to the standard requirements of EN 1090-3:2008 for the performance class EXC4 for aluminium structures.\r\nAccording to the requirements of standards a quality control department operates within the company.\r\nQuality control system\r\nSystem is being maintained and integrated in the entire production cycle from design to delivery of structures. It is linked with the production process, keeping us constantly informed on the status of each currently produced structure, as well as the performed quality and compliance with the requirements set.\r\nROMER Absolute Arm 3D\r\nThis coordinate measurement device ensures quick inspections of geometry for the automotive industry products. All the measurements are being certified accordingly.'),
 (2264, 291, '_page_content', 'field_5a4b9460514ba'),
 (2265, 291, 'image_gallery', 'a:6:{i:0;s:3:\"159\";i:1;s:3:\"161\";i:2;s:3:\"163\";i:3;s:3:\"165\";i:4;s:3:\"167\";i:5;s:3:\"169\";}'),
-(2266, 291, '_image_gallery', 'field_5a4b9c3e394e1');
+(2266, 291, '_image_gallery', 'field_5a4b9c3e394e1'),
+(2267, 292, '_wp_attached_file', '2018/01/Engineering-SHORT.mp4'),
+(2268, 293, '_wp_attachment_metadata', 'a:10:{s:8:\"filesize\";i:4706115;s:9:\"mime_type\";s:9:\"video/mp4\";s:6:\"length\";i:3;s:16:\"length_formatted\";s:4:\"0:03\";s:5:\"width\";i:1920;s:6:\"height\";i:1080;s:10:\"fileformat\";s:3:\"mp4\";s:10:\"dataformat\";s:9:\"quicktime\";s:5:\"audio\";a:7:{s:10:\"dataformat\";s:3:\"mp4\";s:5:\"codec\";s:19:\"ISO/IEC 14496-3 AAC\";s:11:\"sample_rate\";d:48000;s:8:\"channels\";i:2;s:15:\"bits_per_sample\";i:16;s:8:\"lossless\";b:0;s:11:\"channelmode\";s:6:\"stereo\";}s:17:\"created_timestamp\";i:1513708767;}'),
+(2269, 292, '_wp_attachment_metadata', 'a:10:{s:8:\"filesize\";i:4706115;s:9:\"mime_type\";s:9:\"video/mp4\";s:6:\"length\";i:3;s:16:\"length_formatted\";s:4:\"0:03\";s:5:\"width\";i:1920;s:6:\"height\";i:1080;s:10:\"fileformat\";s:3:\"mp4\";s:10:\"dataformat\";s:9:\"quicktime\";s:5:\"audio\";a:7:{s:10:\"dataformat\";s:3:\"mp4\";s:5:\"codec\";s:19:\"ISO/IEC 14496-3 AAC\";s:11:\"sample_rate\";d:48000;s:8:\"channels\";i:2;s:15:\"bits_per_sample\";i:16;s:8:\"lossless\";b:0;s:11:\"channelmode\";s:6:\"stereo\";}s:17:\"created_timestamp\";i:1513708767;}'),
+(2270, 293, 'wpml_media_processed', '1'),
+(2271, 293, '_wp_attached_file', '2018/01/Engineering-SHORT.mp4'),
+(2272, 294, 'full_width_image', ''),
+(2273, 294, '_full_width_image', 'field_5a47d09aab232'),
+(2274, 294, 'full_width_video', '292'),
+(2275, 294, '_full_width_video', 'field_5a47d0c8ab233'),
+(2276, 294, 'text-fwiv', ''),
+(2277, 294, '_text-fwiv', 'field_5a4b8b6907366'),
+(2278, 294, 'page_content', ''),
+(2279, 294, '_page_content', 'field_5a4b9460514ba'),
+(2280, 295, '_wp_attached_file', '2018/01/Manufacturing-LONG.mp4'),
+(2281, 296, '_wp_attachment_metadata', 'a:10:{s:8:\"filesize\";i:26904079;s:9:\"mime_type\";s:9:\"video/mp4\";s:6:\"length\";i:10;s:16:\"length_formatted\";s:4:\"0:10\";s:5:\"width\";i:1920;s:6:\"height\";i:816;s:10:\"fileformat\";s:3:\"mp4\";s:10:\"dataformat\";s:9:\"quicktime\";s:5:\"audio\";a:7:{s:10:\"dataformat\";s:3:\"mp4\";s:5:\"codec\";s:19:\"ISO/IEC 14496-3 AAC\";s:11:\"sample_rate\";d:48000;s:8:\"channels\";i:2;s:15:\"bits_per_sample\";i:16;s:8:\"lossless\";b:0;s:11:\"channelmode\";s:6:\"stereo\";}s:17:\"created_timestamp\";i:1513340007;}'),
+(2282, 295, '_wp_attachment_metadata', 'a:10:{s:8:\"filesize\";i:26904079;s:9:\"mime_type\";s:9:\"video/mp4\";s:6:\"length\";i:10;s:16:\"length_formatted\";s:4:\"0:10\";s:5:\"width\";i:1920;s:6:\"height\";i:816;s:10:\"fileformat\";s:3:\"mp4\";s:10:\"dataformat\";s:9:\"quicktime\";s:5:\"audio\";a:7:{s:10:\"dataformat\";s:3:\"mp4\";s:5:\"codec\";s:19:\"ISO/IEC 14496-3 AAC\";s:11:\"sample_rate\";d:48000;s:8:\"channels\";i:2;s:15:\"bits_per_sample\";i:16;s:8:\"lossless\";b:0;s:11:\"channelmode\";s:6:\"stereo\";}s:17:\"created_timestamp\";i:1513340007;}'),
+(2283, 296, 'wpml_media_processed', '1'),
+(2284, 296, '_wp_attached_file', '2018/01/Manufacturing-LONG.mp4'),
+(2285, 297, 'full_width_image', '122'),
+(2286, 297, '_full_width_image', 'field_5a47d09aab232'),
+(2287, 297, 'full_width_video', '295'),
+(2288, 297, '_full_width_video', 'field_5a47d0c8ab233'),
+(2289, 297, 'text-fwiv', '<h2>Design works are being offered both in Latvia and abroad. Design bureau uses in its work a new, recognized and compatible software for calculation and modelling.</h2>'),
+(2290, 297, '_text-fwiv', 'field_5a4b8b6907366'),
+(2291, 297, 'page_content', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea.\r\nDuis autem vel eum iriure dolor in hendrerit in:\r\n• vulputate velit esse molestie consequat,\r\n• vel illum dolore eu feugiat nulla\r\n• facilisis at vero eros et\r\nCapacity:\r\nMaximum work area: 3000 x 1500 mm\r\nMaximum thickness of mild steel: 25 mm\r\nMaximum thickness of stainless steel: 20 mm\r\nMaximum thickness of aluminum: 12 mm'),
+(2292, 297, '_page_content', 'field_5a4b9460514ba'),
+(2293, 298, '_wp_attached_file', '2018/01/Voortman-LONG.mp4'),
+(2294, 299, '_wp_attachment_metadata', 'a:10:{s:8:\"filesize\";i:26969268;s:9:\"mime_type\";s:9:\"video/mp4\";s:6:\"length\";i:10;s:16:\"length_formatted\";s:4:\"0:10\";s:5:\"width\";i:3440;s:6:\"height\";i:1462;s:10:\"fileformat\";s:3:\"mp4\";s:10:\"dataformat\";s:9:\"quicktime\";s:5:\"audio\";a:7:{s:10:\"dataformat\";s:3:\"mp4\";s:5:\"codec\";s:19:\"ISO/IEC 14496-3 AAC\";s:11:\"sample_rate\";d:48000;s:8:\"channels\";i:2;s:15:\"bits_per_sample\";i:16;s:8:\"lossless\";b:0;s:11:\"channelmode\";s:6:\"stereo\";}s:17:\"created_timestamp\";i:1513274532;}'),
+(2295, 298, '_wp_attachment_metadata', 'a:10:{s:8:\"filesize\";i:26969268;s:9:\"mime_type\";s:9:\"video/mp4\";s:6:\"length\";i:10;s:16:\"length_formatted\";s:4:\"0:10\";s:5:\"width\";i:3440;s:6:\"height\";i:1462;s:10:\"fileformat\";s:3:\"mp4\";s:10:\"dataformat\";s:9:\"quicktime\";s:5:\"audio\";a:7:{s:10:\"dataformat\";s:3:\"mp4\";s:5:\"codec\";s:19:\"ISO/IEC 14496-3 AAC\";s:11:\"sample_rate\";d:48000;s:8:\"channels\";i:2;s:15:\"bits_per_sample\";i:16;s:8:\"lossless\";b:0;s:11:\"channelmode\";s:6:\"stereo\";}s:17:\"created_timestamp\";i:1513274532;}'),
+(2296, 299, 'wpml_media_processed', '1'),
+(2297, 299, '_wp_attached_file', '2018/01/Voortman-LONG.mp4'),
+(2298, 85, 'full_width_image', ''),
+(2299, 85, '_full_width_image', 'field_5a47d09aab232'),
+(2300, 85, 'full_width_video', '298'),
+(2301, 85, '_full_width_video', 'field_5a47d0c8ab233'),
+(2302, 85, 'text-fwiv', '<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue.</h2>'),
+(2303, 85, '_text-fwiv', 'field_5a4b8b6907366'),
+(2304, 85, 'page_content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue. Nulla tempor egestas magna, non varius leo dictum vel. Suspendisse eleifend est sit amet quam commodo viverra. Vivamus lobortis dui lectus, quis laoreet arcu ultrices at. Morbi non nibh vel metus tristique consequat. Suspendisse potenti. Aenean ullamcorper tincidunt lectus non commodo. Praesent lobortis, nisl quis porta tempor, ligula nulla euismod orci, sed varius augue justo in lorem. Pellentesque tempor convallis est, non viverra nibh. Sed rutrum felis id sapien rhoncus interdum nec vitae ipsum. Donec in porttitor odio. Morbi laoreet hendrerit ipsum eget egestas. Suspendisse potenti.'),
+(2305, 85, '_page_content', 'field_5a4b9460514ba'),
+(2306, 85, 'image_gallery', 'a:2:{i:0;s:3:\"151\";i:1;s:2:\"94\";}'),
+(2307, 85, '_image_gallery', 'field_5a4b9c3e394e1'),
+(2308, 85, 'content_width_video', '298'),
+(2309, 85, '_content_width_video', 'field_5a4b9691beccf'),
+(2310, 300, 'full_width_image', ''),
+(2311, 300, '_full_width_image', 'field_5a47d09aab232'),
+(2312, 300, 'full_width_video', '298'),
+(2313, 300, '_full_width_video', 'field_5a47d0c8ab233'),
+(2314, 300, 'text-fwiv', '<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue.</h2>'),
+(2315, 300, '_text-fwiv', 'field_5a4b8b6907366'),
+(2316, 300, 'page_content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue. Nulla tempor egestas magna, non varius leo dictum vel. Suspendisse eleifend est sit amet quam commodo viverra. Vivamus lobortis dui lectus, quis laoreet arcu ultrices at. Morbi non nibh vel metus tristique consequat. Suspendisse potenti. Aenean ullamcorper tincidunt lectus non commodo. Praesent lobortis, nisl quis porta tempor, ligula nulla euismod orci, sed varius augue justo in lorem. Pellentesque tempor convallis est, non viverra nibh. Sed rutrum felis id sapien rhoncus interdum nec vitae ipsum. Donec in porttitor odio. Morbi laoreet hendrerit ipsum eget egestas. Suspendisse potenti.'),
+(2317, 300, '_page_content', 'field_5a4b9460514ba'),
+(2318, 300, 'image_gallery', 'a:2:{i:0;s:3:\"151\";i:1;s:2:\"94\";}'),
+(2319, 300, '_image_gallery', 'field_5a4b9c3e394e1'),
+(2320, 300, 'content_width_video', ''),
+(2321, 300, '_content_width_video', 'field_5a4b9691beccf'),
+(2322, 115, 'full_width_image', ''),
+(2323, 115, '_full_width_image', 'field_5a47d09aab232'),
+(2324, 115, 'full_width_video', '302'),
+(2325, 115, '_full_width_video', 'field_5a47d0c8ab233'),
+(2326, 115, 'text-fwiv', '<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue.</h2>'),
+(2327, 115, '_text-fwiv', 'field_5a4b8b6907366');
+INSERT INTO `qw_8k6_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUES
+(2328, 115, 'page_content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue. Nulla tempor egestas magna, non varius leo dictum vel. Suspendisse eleifend est sit amet quam commodo viverra. Vivamus lobortis dui lectus, quis laoreet arcu ultrices at. Morbi non nibh vel metus tristique consequat. Suspendisse potenti. Aenean ullamcorper tincidunt lectus non commodo. Praesent lobortis, nisl quis porta tempor, ligula nulla euismod orci, sed varius augue justo in lorem. Pellentesque tempor convallis est, non viverra nibh. Sed rutrum felis id sapien rhoncus interdum nec vitae ipsum. Donec in porttitor odio. Morbi laoreet hendrerit ipsum eget egestas. Suspendisse potenti.\r\n\r\nQuisque luctus id neque vel tincidunt. Praesent ultricies massa augue, condimentum lacinia sapien ultrices quis. Quisque a enim eu ex feugiat convallis. Vestibulum tellus nulla, pharetra non volutpat sit amet, accumsan sit amet ex. Pellentesque ornare nulla eu lectus vestibulum, ac feugiat massa vulputate. Cras lorem nisi, scelerisque eget enim viverra, bibendum gravida ipsum. Etiam eget pharetra risus, sed blandit lorem. Morbi ornare tortor quis nisl aliquet, eget pretium ex facilisis. Maecenas a lectus egestas massa aliquam pulvinar. Aenean rutrum fermentum ultricies. Sed condimentum nunc id lectus accumsan rutrum. Vestibulum tempor quam enim, ac viverra ipsum finibus in. In dapibus enim sit amet ex scelerisque, id pulvinar ante finibus. Ut nec ex eu quam convallis ullamcorper non ac neque.\r\n\r\nInteger gravida, ante et scelerisque fringilla, risus lectus ultrices justo, fermentum ornare metus nulla vitae neque. Praesent finibus urna eget elit tempor, sit amet porttitor odio commodo. Aenean bibendum molestie est, vitae scelerisque neque efficitur nec. Etiam facilisis lobortis magna, ut sagittis enim porta vel. Fusce fringilla felis magna, eu tincidunt ipsum bibendum et. Aenean tincidunt rutrum imperdiet. Donec eget magna efficitur, iaculis eros id, mollis nunc. Nulla accumsan vehicula lectus, at maximus mauris accumsan vitae. Curabitur placerat pretium accumsan. Maecenas aliquet varius arcu, in scelerisque eros venenatis eget. Duis non feugiat eros, nec luctus metus. Sed metus felis, luctus vel massa id, ornare facilisis est. Phasellus a eros nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rutrum justo massa, a posuere nisl tincidunt eu. Quisque euismod purus ut aliquam maximus.'),
+(2329, 115, '_page_content', 'field_5a4b9460514ba'),
+(2330, 115, 'image_gallery', 'a:2:{i:0;s:3:\"171\";i:1;s:3:\"155\";}'),
+(2331, 115, '_image_gallery', 'field_5a4b9c3e394e1'),
+(2332, 115, 'content_width_video', '302'),
+(2333, 115, '_content_width_video', 'field_5a4b9691beccf'),
+(2334, 301, 'full_width_image', ''),
+(2335, 301, '_full_width_image', 'field_5a47d09aab232'),
+(2336, 301, 'full_width_video', ''),
+(2337, 301, '_full_width_video', 'field_5a47d0c8ab233'),
+(2338, 301, 'text-fwiv', '<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue.</h2>'),
+(2339, 301, '_text-fwiv', 'field_5a4b8b6907366'),
+(2340, 301, 'page_content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue. Nulla tempor egestas magna, non varius leo dictum vel. Suspendisse eleifend est sit amet quam commodo viverra. Vivamus lobortis dui lectus, quis laoreet arcu ultrices at. Morbi non nibh vel metus tristique consequat. Suspendisse potenti. Aenean ullamcorper tincidunt lectus non commodo. Praesent lobortis, nisl quis porta tempor, ligula nulla euismod orci, sed varius augue justo in lorem. Pellentesque tempor convallis est, non viverra nibh. Sed rutrum felis id sapien rhoncus interdum nec vitae ipsum. Donec in porttitor odio. Morbi laoreet hendrerit ipsum eget egestas. Suspendisse potenti.\r\n\r\nQuisque luctus id neque vel tincidunt. Praesent ultricies massa augue, condimentum lacinia sapien ultrices quis. Quisque a enim eu ex feugiat convallis. Vestibulum tellus nulla, pharetra non volutpat sit amet, accumsan sit amet ex. Pellentesque ornare nulla eu lectus vestibulum, ac feugiat massa vulputate. Cras lorem nisi, scelerisque eget enim viverra, bibendum gravida ipsum. Etiam eget pharetra risus, sed blandit lorem. Morbi ornare tortor quis nisl aliquet, eget pretium ex facilisis. Maecenas a lectus egestas massa aliquam pulvinar. Aenean rutrum fermentum ultricies. Sed condimentum nunc id lectus accumsan rutrum. Vestibulum tempor quam enim, ac viverra ipsum finibus in. In dapibus enim sit amet ex scelerisque, id pulvinar ante finibus. Ut nec ex eu quam convallis ullamcorper non ac neque.\r\n\r\nInteger gravida, ante et scelerisque fringilla, risus lectus ultrices justo, fermentum ornare metus nulla vitae neque. Praesent finibus urna eget elit tempor, sit amet porttitor odio commodo. Aenean bibendum molestie est, vitae scelerisque neque efficitur nec. Etiam facilisis lobortis magna, ut sagittis enim porta vel. Fusce fringilla felis magna, eu tincidunt ipsum bibendum et. Aenean tincidunt rutrum imperdiet. Donec eget magna efficitur, iaculis eros id, mollis nunc. Nulla accumsan vehicula lectus, at maximus mauris accumsan vitae. Curabitur placerat pretium accumsan. Maecenas aliquet varius arcu, in scelerisque eros venenatis eget. Duis non feugiat eros, nec luctus metus. Sed metus felis, luctus vel massa id, ornare facilisis est. Phasellus a eros nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rutrum justo massa, a posuere nisl tincidunt eu. Quisque euismod purus ut aliquam maximus.'),
+(2341, 301, '_page_content', 'field_5a4b9460514ba'),
+(2342, 301, 'image_gallery', 'a:2:{i:0;s:3:\"171\";i:1;s:3:\"155\";}'),
+(2343, 301, '_image_gallery', 'field_5a4b9c3e394e1'),
+(2344, 301, 'content_width_video', ''),
+(2345, 301, '_content_width_video', 'field_5a4b9691beccf'),
+(2346, 302, '_wp_attached_file', '2018/01/Bending-LONG.mp4'),
+(2347, 303, '_wp_attachment_metadata', 'a:10:{s:8:\"filesize\";i:26988801;s:9:\"mime_type\";s:9:\"video/mp4\";s:6:\"length\";i:10;s:16:\"length_formatted\";s:4:\"0:10\";s:5:\"width\";i:1920;s:6:\"height\";i:816;s:10:\"fileformat\";s:3:\"mp4\";s:10:\"dataformat\";s:9:\"quicktime\";s:5:\"audio\";a:7:{s:10:\"dataformat\";s:3:\"mp4\";s:5:\"codec\";s:19:\"ISO/IEC 14496-3 AAC\";s:11:\"sample_rate\";d:48000;s:8:\"channels\";i:2;s:15:\"bits_per_sample\";i:16;s:8:\"lossless\";b:0;s:11:\"channelmode\";s:6:\"stereo\";}s:17:\"created_timestamp\";i:1513276520;}'),
+(2348, 302, '_wp_attachment_metadata', 'a:10:{s:8:\"filesize\";i:26988801;s:9:\"mime_type\";s:9:\"video/mp4\";s:6:\"length\";i:10;s:16:\"length_formatted\";s:4:\"0:10\";s:5:\"width\";i:1920;s:6:\"height\";i:816;s:10:\"fileformat\";s:3:\"mp4\";s:10:\"dataformat\";s:9:\"quicktime\";s:5:\"audio\";a:7:{s:10:\"dataformat\";s:3:\"mp4\";s:5:\"codec\";s:19:\"ISO/IEC 14496-3 AAC\";s:11:\"sample_rate\";d:48000;s:8:\"channels\";i:2;s:15:\"bits_per_sample\";i:16;s:8:\"lossless\";b:0;s:11:\"channelmode\";s:6:\"stereo\";}s:17:\"created_timestamp\";i:1513276520;}'),
+(2349, 303, 'wpml_media_processed', '1'),
+(2350, 303, '_wp_attached_file', '2018/01/Bending-LONG.mp4'),
+(2351, 304, 'full_width_image', ''),
+(2352, 304, '_full_width_image', 'field_5a47d09aab232'),
+(2353, 304, 'full_width_video', '302'),
+(2354, 304, '_full_width_video', 'field_5a47d0c8ab233'),
+(2355, 304, 'text-fwiv', '<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue.</h2>'),
+(2356, 304, '_text-fwiv', 'field_5a4b8b6907366'),
+(2357, 304, 'page_content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue. Nulla tempor egestas magna, non varius leo dictum vel. Suspendisse eleifend est sit amet quam commodo viverra. Vivamus lobortis dui lectus, quis laoreet arcu ultrices at. Morbi non nibh vel metus tristique consequat. Suspendisse potenti. Aenean ullamcorper tincidunt lectus non commodo. Praesent lobortis, nisl quis porta tempor, ligula nulla euismod orci, sed varius augue justo in lorem. Pellentesque tempor convallis est, non viverra nibh. Sed rutrum felis id sapien rhoncus interdum nec vitae ipsum. Donec in porttitor odio. Morbi laoreet hendrerit ipsum eget egestas. Suspendisse potenti.\r\n\r\nQuisque luctus id neque vel tincidunt. Praesent ultricies massa augue, condimentum lacinia sapien ultrices quis. Quisque a enim eu ex feugiat convallis. Vestibulum tellus nulla, pharetra non volutpat sit amet, accumsan sit amet ex. Pellentesque ornare nulla eu lectus vestibulum, ac feugiat massa vulputate. Cras lorem nisi, scelerisque eget enim viverra, bibendum gravida ipsum. Etiam eget pharetra risus, sed blandit lorem. Morbi ornare tortor quis nisl aliquet, eget pretium ex facilisis. Maecenas a lectus egestas massa aliquam pulvinar. Aenean rutrum fermentum ultricies. Sed condimentum nunc id lectus accumsan rutrum. Vestibulum tempor quam enim, ac viverra ipsum finibus in. In dapibus enim sit amet ex scelerisque, id pulvinar ante finibus. Ut nec ex eu quam convallis ullamcorper non ac neque.\r\n\r\nInteger gravida, ante et scelerisque fringilla, risus lectus ultrices justo, fermentum ornare metus nulla vitae neque. Praesent finibus urna eget elit tempor, sit amet porttitor odio commodo. Aenean bibendum molestie est, vitae scelerisque neque efficitur nec. Etiam facilisis lobortis magna, ut sagittis enim porta vel. Fusce fringilla felis magna, eu tincidunt ipsum bibendum et. Aenean tincidunt rutrum imperdiet. Donec eget magna efficitur, iaculis eros id, mollis nunc. Nulla accumsan vehicula lectus, at maximus mauris accumsan vitae. Curabitur placerat pretium accumsan. Maecenas aliquet varius arcu, in scelerisque eros venenatis eget. Duis non feugiat eros, nec luctus metus. Sed metus felis, luctus vel massa id, ornare facilisis est. Phasellus a eros nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rutrum justo massa, a posuere nisl tincidunt eu. Quisque euismod purus ut aliquam maximus.'),
+(2358, 304, '_page_content', 'field_5a4b9460514ba'),
+(2359, 304, 'image_gallery', 'a:2:{i:0;s:3:\"171\";i:1;s:3:\"155\";}'),
+(2360, 304, '_image_gallery', 'field_5a4b9c3e394e1'),
+(2361, 304, 'content_width_video', '302'),
+(2362, 304, '_content_width_video', 'field_5a4b9691beccf'),
+(2363, 305, '_wp_attached_file', '2018/01/Rolling-LONG.mp4'),
+(2364, 306, '_wp_attachment_metadata', 'a:10:{s:8:\"filesize\";i:27410776;s:9:\"mime_type\";s:9:\"video/mp4\";s:6:\"length\";i:10;s:16:\"length_formatted\";s:4:\"0:10\";s:5:\"width\";i:3440;s:6:\"height\";i:1462;s:10:\"fileformat\";s:3:\"mp4\";s:10:\"dataformat\";s:9:\"quicktime\";s:5:\"audio\";a:7:{s:10:\"dataformat\";s:3:\"mp4\";s:5:\"codec\";s:19:\"ISO/IEC 14496-3 AAC\";s:11:\"sample_rate\";d:48000;s:8:\"channels\";i:2;s:15:\"bits_per_sample\";i:16;s:8:\"lossless\";b:0;s:11:\"channelmode\";s:6:\"stereo\";}s:17:\"created_timestamp\";i:1513703583;}'),
+(2365, 305, '_wp_attachment_metadata', 'a:10:{s:8:\"filesize\";i:27410776;s:9:\"mime_type\";s:9:\"video/mp4\";s:6:\"length\";i:10;s:16:\"length_formatted\";s:4:\"0:10\";s:5:\"width\";i:3440;s:6:\"height\";i:1462;s:10:\"fileformat\";s:3:\"mp4\";s:10:\"dataformat\";s:9:\"quicktime\";s:5:\"audio\";a:7:{s:10:\"dataformat\";s:3:\"mp4\";s:5:\"codec\";s:19:\"ISO/IEC 14496-3 AAC\";s:11:\"sample_rate\";d:48000;s:8:\"channels\";i:2;s:15:\"bits_per_sample\";i:16;s:8:\"lossless\";b:0;s:11:\"channelmode\";s:6:\"stereo\";}s:17:\"created_timestamp\";i:1513703583;}'),
+(2366, 306, 'wpml_media_processed', '1'),
+(2367, 306, '_wp_attached_file', '2018/01/Rolling-LONG.mp4'),
+(2368, 117, 'full_width_image', ''),
+(2369, 117, '_full_width_image', 'field_5a47d09aab232'),
+(2370, 117, 'full_width_video', '305'),
+(2371, 117, '_full_width_video', 'field_5a47d0c8ab233'),
+(2372, 117, 'text-fwiv', '<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue. Nulla tempor egestas magna, non varius leo dictum vel.</h2>'),
+(2373, 117, '_text-fwiv', 'field_5a4b8b6907366'),
+(2374, 117, 'page_content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue. Nulla tempor egestas magna, non varius leo dictum vel. Suspendisse eleifend est sit amet quam commodo viverra. Vivamus lobortis dui lectus, quis laoreet arcu ultrices at. Morbi non nibh vel metus tristique consequat. Suspendisse potenti. Aenean ullamcorper tincidunt lectus non commodo. Praesent lobortis, nisl quis porta tempor, ligula nulla euismod orci, sed varius augue justo in lorem. Pellentesque tempor convallis est, non viverra nibh. Sed rutrum felis id sapien rhoncus interdum nec vitae ipsum. Donec in porttitor odio. Morbi laoreet hendrerit ipsum eget egestas. Suspendisse potenti.'),
+(2375, 117, '_page_content', 'field_5a4b9460514ba'),
+(2376, 117, 'image_gallery', 'a:2:{i:0;s:3:\"194\";i:1;s:3:\"145\";}'),
+(2377, 117, '_image_gallery', 'field_5a4b9c3e394e1'),
+(2378, 117, 'content_width_video', '305'),
+(2379, 117, '_content_width_video', 'field_5a4b9691beccf'),
+(2380, 307, 'full_width_image', ''),
+(2381, 307, '_full_width_image', 'field_5a47d09aab232'),
+(2382, 307, 'full_width_video', '305'),
+(2383, 307, '_full_width_video', 'field_5a47d0c8ab233'),
+(2384, 307, 'text-fwiv', '<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue. Nulla tempor egestas magna, non varius leo dictum vel.</h2>'),
+(2385, 307, '_text-fwiv', 'field_5a4b8b6907366'),
+(2386, 307, 'page_content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue. Nulla tempor egestas magna, non varius leo dictum vel. Suspendisse eleifend est sit amet quam commodo viverra. Vivamus lobortis dui lectus, quis laoreet arcu ultrices at. Morbi non nibh vel metus tristique consequat. Suspendisse potenti. Aenean ullamcorper tincidunt lectus non commodo. Praesent lobortis, nisl quis porta tempor, ligula nulla euismod orci, sed varius augue justo in lorem. Pellentesque tempor convallis est, non viverra nibh. Sed rutrum felis id sapien rhoncus interdum nec vitae ipsum. Donec in porttitor odio. Morbi laoreet hendrerit ipsum eget egestas. Suspendisse potenti.'),
+(2387, 307, '_page_content', 'field_5a4b9460514ba'),
+(2388, 307, 'image_gallery', 'a:2:{i:0;s:3:\"194\";i:1;s:3:\"145\";}'),
+(2389, 307, '_image_gallery', 'field_5a4b9c3e394e1'),
+(2390, 307, 'content_width_video', '305'),
+(2391, 307, '_content_width_video', 'field_5a4b9691beccf'),
+(2392, 308, 'full_width_image', ''),
+(2393, 308, '_full_width_image', 'field_5a47d09aab232'),
+(2394, 308, 'full_width_video', '298'),
+(2395, 308, '_full_width_video', 'field_5a47d0c8ab233'),
+(2396, 308, 'text-fwiv', '<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue.</h2>'),
+(2397, 308, '_text-fwiv', 'field_5a4b8b6907366'),
+(2398, 308, 'page_content', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan vitae sapien et mollis. Duis ac libero molestie, pretium velit at, tincidunt augue. Nulla tempor egestas magna, non varius leo dictum vel. Suspendisse eleifend est sit amet quam commodo viverra. Vivamus lobortis dui lectus, quis laoreet arcu ultrices at. Morbi non nibh vel metus tristique consequat. Suspendisse potenti. Aenean ullamcorper tincidunt lectus non commodo. Praesent lobortis, nisl quis porta tempor, ligula nulla euismod orci, sed varius augue justo in lorem. Pellentesque tempor convallis est, non viverra nibh. Sed rutrum felis id sapien rhoncus interdum nec vitae ipsum. Donec in porttitor odio. Morbi laoreet hendrerit ipsum eget egestas. Suspendisse potenti.'),
+(2399, 308, '_page_content', 'field_5a4b9460514ba'),
+(2400, 308, 'image_gallery', 'a:2:{i:0;s:3:\"151\";i:1;s:2:\"94\";}'),
+(2401, 308, '_image_gallery', 'field_5a4b9c3e394e1'),
+(2402, 308, 'content_width_video', '298'),
+(2403, 308, '_content_width_video', 'field_5a4b9691beccf');
 
 -- --------------------------------------------------------
 
@@ -7815,7 +7968,7 @@ CREATE TABLE IF NOT EXISTS `qw_8k6_posts` (
   KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
   KEY `post_parent` (`post_parent`),
   KEY `post_author` (`post_author`)
-) ENGINE=MyISAM AUTO_INCREMENT=292 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=310 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `qw_8k6_posts`
@@ -7853,9 +8006,9 @@ INSERT INTO `qw_8k6_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `
 (34, 1, '2017-12-30 17:01:48', '2017-12-30 17:01:48', '', 'News', '', 'inherit', 'closed', 'closed', '', '33-revision-v1', '', '', '2017-12-30 17:01:48', '2017-12-30 17:01:48', '', 33, 'http://rkmachinery/2017/12/30/33-revision-v1/', 0, 'revision', '', 0),
 (35, 1, '2017-12-30 17:02:05', '2017-12-30 17:02:05', '', 'Contacts', '', 'publish', 'closed', 'closed', '', 'contacts', '', '', '2018-01-09 16:34:51', '2018-01-09 16:34:51', '', 0, 'http://rkmachinery/?page_id=35', 0, 'page', '', 0),
 (36, 1, '2017-12-30 17:02:05', '2017-12-30 17:02:05', '', 'Contacts', '', 'inherit', 'closed', 'closed', '', '35-revision-v1', '', '', '2017-12-30 17:02:05', '2017-12-30 17:02:05', '', 35, 'http://rkmachinery/2017/12/30/35-revision-v1/', 0, 'revision', '', 0),
-(37, 1, '2017-12-30 17:02:53', '2017-12-30 17:02:53', '', 'Engineering', '', 'publish', 'closed', 'closed', '', 'engineering', '', '', '2018-01-09 16:32:47', '2018-01-09 16:32:47', '', 24, 'http://rkmachinery/?page_id=37', 1, 'page', '', 0),
+(37, 1, '2017-12-30 17:02:53', '2017-12-30 17:02:53', '', 'Engineering', '', 'publish', 'closed', 'closed', '', 'engineering', '', '', '2018-01-09 17:13:37', '2018-01-09 17:13:37', '', 24, 'http://rkmachinery/?page_id=37', 1, 'page', '', 0),
 (38, 1, '2017-12-30 17:02:53', '2017-12-30 17:02:53', '', 'Engineering', '', 'inherit', 'closed', 'closed', '', '37-revision-v1', '', '', '2017-12-30 17:02:53', '2017-12-30 17:02:53', '', 37, 'http://rkmachinery/2017/12/30/37-revision-v1/', 0, 'revision', '', 0),
-(39, 1, '2017-12-30 17:03:29', '2017-12-30 17:03:29', '', 'Manufacturing', '', 'publish', 'closed', 'closed', '', 'manufacturing', '', '', '2018-01-09 16:31:58', '2018-01-09 16:31:58', '', 24, 'http://rkmachinery/?page_id=39', 2, 'page', '', 0),
+(39, 1, '2017-12-30 17:03:29', '2017-12-30 17:03:29', '', 'Manufacturing', '', 'publish', 'closed', 'closed', '', 'manufacturing', '', '', '2018-01-09 17:21:11', '2018-01-09 17:21:11', '', 24, 'http://rkmachinery/?page_id=39', 2, 'page', '', 0),
 (40, 1, '2017-12-30 17:03:29', '2017-12-30 17:03:29', '', 'Manufacturing', '', 'inherit', 'closed', 'closed', '', '39-revision-v1', '', '', '2017-12-30 17:03:29', '2017-12-30 17:03:29', '', 39, 'http://rkmachinery/2017/12/30/39-revision-v1/', 0, 'revision', '', 0),
 (41, 1, '2017-12-30 17:03:52', '2017-12-30 17:03:52', '', 'Assembling', '', 'publish', 'closed', 'closed', '', 'assembling', '', '', '2018-01-02 11:47:43', '2018-01-02 11:47:43', '', 24, 'http://rkmachinery/?page_id=41', 3, 'page', '', 0),
 (42, 1, '2017-12-30 17:03:52', '2017-12-30 17:03:52', '', 'Assembling', '', 'inherit', 'closed', 'closed', '', '41-revision-v1', '', '', '2017-12-30 17:03:52', '2017-12-30 17:03:52', '', 41, 'http://rkmachinery/2017/12/30/41-revision-v1/', 0, 'revision', '', 0),
@@ -7899,7 +8052,7 @@ INSERT INTO `qw_8k6_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `
 (81, 1, '2017-12-30 17:30:08', '2017-12-30 17:30:08', '', 'Laser', 'This Is Custom Excerpt. Different From Content', 'publish', 'closed', 'closed', '', 'laser', '', '', '2018-01-09 16:29:58', '2018-01-09 16:29:58', '', 39, 'http://rkmachinery/?page_id=81', 1, 'page', '', 0),
 (83, 1, '2017-12-30 17:30:32', '2017-12-30 17:30:32', '', 'Plasma', '', 'publish', 'closed', 'closed', '', 'plasma', '', '', '2018-01-09 16:31:12', '2018-01-09 16:31:12', '', 39, 'http://rkmachinery/?page_id=83', 2, 'page', '', 0),
 (84, 1, '2017-12-30 17:30:32', '2017-12-30 17:30:32', '', 'Plasma', '', 'inherit', 'closed', 'closed', '', '83-revision-v1', '', '', '2017-12-30 17:30:32', '2017-12-30 17:30:32', '', 83, 'http://rkmachinery/2017/12/30/83-revision-v1/', 0, 'revision', '', 0),
-(85, 1, '2017-12-30 17:30:57', '2017-12-30 17:30:57', '', 'Voortman', '', 'publish', 'closed', 'closed', '', 'voortman', '', '', '2018-01-02 11:51:31', '2018-01-02 11:51:31', '', 39, 'http://rkmachinery/?page_id=85', 3, 'page', '', 0),
+(85, 1, '2017-12-30 17:30:57', '2017-12-30 17:30:57', '', 'Voortman', '', 'publish', 'closed', 'closed', '', 'voortman', '', '', '2018-01-09 17:30:15', '2018-01-09 17:30:15', '', 39, 'http://rkmachinery/?page_id=85', 3, 'page', '', 0),
 (86, 1, '2017-12-30 17:30:57', '2017-12-30 17:30:57', '', 'Voortman', '', 'inherit', 'closed', 'closed', '', '85-revision-v1', '', '', '2017-12-30 17:30:57', '2017-12-30 17:30:57', '', 85, 'http://rkmachinery/2017/12/30/85-revision-v1/', 0, 'revision', '', 0),
 (87, 1, '2017-12-30 17:31:44', '2017-12-30 17:31:44', ' ', '', '', 'publish', 'closed', 'closed', '', '87', '', '', '2018-01-08 15:52:44', '2018-01-08 15:52:44', '', 39, 'http://rkmachinery/?p=87', 6, 'nav_menu_item', '', 0),
 (88, 1, '2017-12-30 17:31:44', '2017-12-30 17:31:44', ' ', '', '', 'publish', 'closed', 'closed', '', '88', '', '', '2018-01-08 15:52:44', '2018-01-08 15:52:44', '', 39, 'http://rkmachinery/?p=88', 5, 'nav_menu_item', '', 0),
@@ -7908,7 +8061,7 @@ INSERT INTO `qw_8k6_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `
 (91, 1, '2017-12-30 17:50:45', '2017-12-30 17:50:45', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:9:\"thumbnail\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Full Width Image', 'full_width_image', 'publish', 'closed', 'closed', '', 'field_5a47d09aab232', '', '', '2018-01-02 13:45:50', '2018-01-02 13:45:50', '', 90, 'http://rkmachinery/?post_type=acf-field&#038;p=91', 0, 'acf-field', '', 0),
 (92, 1, '2017-12-30 17:50:45', '2017-12-30 17:50:45', 'a:10:{s:4:\"type\";s:4:\"file\";s:12:\"instructions\";s:62:\"If both image and video is added, only video will be displayed\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:7:\"library\";s:3:\"all\";s:8:\"min_size\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Full Width Video', 'full_width_video', 'publish', 'closed', 'closed', '', 'field_5a47d0c8ab233', '', '', '2018-01-02 13:45:50', '2018-01-02 13:45:50', '', 90, 'http://rkmachinery/?post_type=acf-field&#038;p=92', 1, 'acf-field', '', 0),
 (121, 1, '2018-01-02 13:53:06', '2018-01-02 13:53:06', '', 'Service', '', 'inherit', 'closed', 'closed', '', '24-revision-v1', '', '', '2018-01-02 13:53:06', '2018-01-02 13:53:06', '', 24, 'http://rkmachinery/2018/01/02/24-revision-v1/', 0, 'revision', '', 0),
-(94, 1, '2018-01-02 10:02:03', '2018-01-02 10:02:03', 'Description', 'services', '', 'inherit', 'open', 'closed', '', 'services', '', '', '2018-01-09 16:30:49', '2018-01-09 16:30:49', '', 24, 'http://rkmachinery/wp-content/uploads/2018/01/services.jpg', 0, 'attachment', 'image/jpeg', 0),
+(94, 1, '2018-01-02 10:02:03', '2018-01-02 10:02:03', 'Description', 'services', '', 'inherit', 'open', 'closed', '', 'services', '', '', '2018-01-09 17:25:59', '2018-01-09 17:25:59', '', 24, 'http://rkmachinery/wp-content/uploads/2018/01/services.jpg', 0, 'attachment', 'image/jpeg', 0),
 (95, 1, '2018-01-02 10:02:03', '2018-01-02 10:02:03', '', 'services', '', 'inherit', 'open', 'closed', '', 'services-2', '', '', '2018-01-02 10:02:03', '2018-01-02 10:02:03', '', 0, 'http://rkmachinery/wp-content/uploads/2018/01/services.jpg', 0, 'attachment', 'image/jpeg', 0),
 (96, 1, '2018-01-02 10:03:09', '2018-01-02 10:03:09', '', 'Service', '', 'inherit', 'closed', 'closed', '', '24-revision-v1', '', '', '2018-01-02 10:03:09', '2018-01-02 10:03:09', '', 24, 'http://rkmachinery/2018/01/02/24-revision-v1/', 0, 'revision', '', 0),
 (97, 1, '2018-01-02 11:33:10', '2018-01-02 11:33:10', '', 'Commissioning', '', 'publish', 'closed', 'closed', '', 'commissioning', '', '', '2018-01-02 11:48:03', '2018-01-02 11:48:03', '', 24, 'http://rkmachinery/?page_id=97', 4, 'page', '', 0),
@@ -7931,9 +8084,9 @@ INSERT INTO `qw_8k6_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `
 (109, 1, '2018-01-02 11:48:43', '2018-01-02 11:48:43', '', 'Project Management', '', 'publish', 'closed', 'closed', '', 'project-management', '', '', '2018-01-02 11:48:43', '2018-01-02 11:48:43', '', 24, 'http://rkmachinery/?page_id=109', 5, 'page', '', 0),
 (110, 1, '2018-01-02 11:48:43', '2018-01-02 11:48:43', '', 'Project Management', '', 'inherit', 'closed', 'closed', '', '109-revision-v1', '', '', '2018-01-02 11:48:43', '2018-01-02 11:48:43', '', 109, 'http://rkmachinery/2018/01/02/109-revision-v1/', 0, 'revision', '', 0),
 (114, 1, '2018-01-02 11:49:43', '2018-01-02 11:49:43', '', 'Prototyping', '', 'inherit', 'closed', 'closed', '', '113-revision-v1', '', '', '2018-01-02 11:49:43', '2018-01-02 11:49:43', '', 113, 'http://rkmachinery/2018/01/02/113-revision-v1/', 0, 'revision', '', 0),
-(115, 1, '2018-01-02 11:52:04', '2018-01-02 11:52:04', '', 'Bending', '', 'publish', 'closed', 'closed', '', 'bending', '', '', '2018-01-02 11:52:04', '2018-01-02 11:52:04', '', 39, 'http://rkmachinery/?page_id=115', 4, 'page', '', 0),
+(115, 1, '2018-01-02 11:52:04', '2018-01-02 11:52:04', '', 'Bending', '', 'publish', 'closed', 'closed', '', 'bending', '', '', '2018-01-09 17:28:14', '2018-01-09 17:28:14', '', 39, 'http://rkmachinery/?page_id=115', 4, 'page', '', 0),
 (116, 1, '2018-01-02 11:52:04', '2018-01-02 11:52:04', '', 'Bending', '', 'inherit', 'closed', 'closed', '', '115-revision-v1', '', '', '2018-01-02 11:52:04', '2018-01-02 11:52:04', '', 115, 'http://rkmachinery/2018/01/02/115-revision-v1/', 0, 'revision', '', 0),
-(117, 1, '2018-01-02 11:52:39', '2018-01-02 11:52:39', '', 'Rolling', '', 'publish', 'closed', 'closed', '', 'rolling', '', '', '2018-01-02 12:00:49', '2018-01-02 12:00:49', '', 39, 'http://rkmachinery/?page_id=117', 5, 'page', '', 0),
+(117, 1, '2018-01-02 11:52:39', '2018-01-02 11:52:39', '', 'Rolling', '', 'publish', 'closed', 'closed', '', 'rolling', '', '', '2018-01-09 17:29:41', '2018-01-09 17:29:41', '', 39, 'http://rkmachinery/?page_id=117', 5, 'page', '', 0),
 (118, 1, '2018-01-02 11:52:39', '2018-01-02 11:52:39', '', 'Rolling', '', 'inherit', 'closed', 'closed', '', '117-revision-v1', '', '', '2018-01-02 11:52:39', '2018-01-02 11:52:39', '', 117, 'http://rkmachinery/2018/01/02/117-revision-v1/', 0, 'revision', '', 0),
 (120, 1, '2018-01-02 13:42:24', '2018-01-02 13:42:24', 'a:10:{s:4:\"type\";s:7:\"wysiwyg\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:4:\"tabs\";s:3:\"all\";s:7:\"toolbar\";s:4:\"full\";s:12:\"media_upload\";i:1;s:5:\"delay\";i:0;}', '', 'text-fwiv', 'publish', 'closed', 'closed', '', 'field_5a4b8b6907366', '', '', '2018-01-09 09:51:17', '2018-01-09 09:51:17', '', 119, 'http://rkmachinery/?post_type=acf-field&#038;p=120', 0, 'acf-field', '', 0),
 (122, 1, '2018-01-02 13:57:38', '2018-01-02 13:57:38', '', 'manufacturing', '', 'inherit', 'open', 'closed', '', 'manufacturing', '', '', '2018-01-07 16:11:36', '2018-01-07 16:11:36', '', 39, 'http://rkmachinery/wp-content/uploads/2018/01/manufacturing.jpg', 0, 'attachment', 'image/jpeg', 0),
@@ -7956,7 +8109,7 @@ INSERT INTO `qw_8k6_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `
 (140, 1, '2018-01-02 16:27:53', '2018-01-02 16:27:53', '', 'Home', '', 'inherit', 'closed', 'closed', '', '19-revision-v1', '', '', '2018-01-02 16:27:53', '2018-01-02 16:27:53', '', 19, 'http://rkmachinery/2018/01/02/19-revision-v1/', 0, 'revision', '', 0),
 (141, 1, '2018-01-03 08:32:32', '2018-01-03 08:32:32', '', 'News', '', 'inherit', 'closed', 'closed', '', '33-revision-v1', '', '', '2018-01-03 08:32:32', '2018-01-03 08:32:32', '', 33, 'http://rkmachinery/2018/01/03/33-revision-v1/', 0, 'revision', '', 0),
 (142, 1, '2018-01-03 08:50:37', '2018-01-03 08:50:37', 'a:7:{s:8:\"location\";a:2:{i:0;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:10:\"news_posts\";}}i:1;a:1:{i:0;a:3:{s:5:\"param\";s:9:\"post_type\";s:8:\"operator\";s:2:\"==\";s:5:\"value\";s:15:\"locations_posts\";}}}s:8:\"position\";s:6:\"normal\";s:5:\"style\";s:7:\"default\";s:15:\"label_placement\";s:3:\"top\";s:21:\"instruction_placement\";s:5:\"label\";s:14:\"hide_on_screen\";a:2:{i:0;s:11:\"the_content\";i:1;s:14:\"featured_image\";}s:11:\"description\";s:0:\"\";}', 'Thumbnail Image/Video', 'thumbnail-image-video', 'publish', 'closed', 'closed', '', 'group_5a4c995db536f', '', '', '2018-01-09 16:41:56', '2018-01-09 16:41:56', '', 0, 'http://rkmachinery/?post_type=acf-field-group&#038;p=142', 6, 'acf-field-group', '', 0),
-(145, 1, '2018-01-03 08:57:31', '2018-01-03 08:57:31', '', 'news-1', '', 'inherit', 'open', 'closed', '', 'news-1', '', '', '2018-01-07 16:10:52', '2018-01-07 16:10:52', '', 47, 'http://rkmachinery/wp-content/uploads/2017/12/news-1.jpg', 0, 'attachment', 'image/jpeg', 0),
+(145, 1, '2018-01-03 08:57:31', '2018-01-03 08:57:31', '', 'news-1', '', 'inherit', 'open', 'closed', '', 'news-1', '', '', '2018-01-09 17:29:37', '2018-01-09 17:29:37', '', 47, 'http://rkmachinery/wp-content/uploads/2017/12/news-1.jpg', 0, 'attachment', 'image/jpeg', 0),
 (146, 1, '2018-01-03 08:57:31', '2018-01-03 08:57:31', '', 'news-1', '', 'inherit', 'open', 'closed', '', 'news-1-2', '', '', '2018-01-03 08:57:31', '2018-01-03 08:57:31', '', 47, 'http://rkmachinery/wp-content/uploads/2017/12/news-1.jpg', 0, 'attachment', 'image/jpeg', 0),
 (143, 1, '2018-01-03 08:50:37', '2018-01-03 08:50:37', 'a:15:{s:4:\"type\";s:5:\"image\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:12:\"preview_size\";s:9:\"thumbnail\";s:7:\"library\";s:3:\"all\";s:9:\"min_width\";s:0:\"\";s:10:\"min_height\";s:0:\"\";s:8:\"min_size\";s:0:\"\";s:9:\"max_width\";s:0:\"\";s:10:\"max_height\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Thumbnail Image', 'thumbnail_image', 'publish', 'closed', 'closed', '', 'field_5a4c995dc0a2b', '', '', '2018-01-03 08:53:07', '2018-01-03 08:53:07', '', 142, 'http://rkmachinery/?post_type=acf-field&#038;p=143', 0, 'acf-field', '', 0),
 (144, 1, '2018-01-03 08:50:37', '2018-01-03 08:50:37', 'a:10:{s:4:\"type\";s:4:\"file\";s:12:\"instructions\";s:62:\"If both image and video is added, only video will be displayed\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"return_format\";s:3:\"url\";s:7:\"library\";s:3:\"all\";s:8:\"min_size\";s:0:\"\";s:8:\"max_size\";s:0:\"\";s:10:\"mime_types\";s:0:\"\";}', 'Thumbnail Video', 'thumbnail_video', 'publish', 'closed', 'closed', '', 'field_5a4c995dc0dfb', '', '', '2018-01-03 08:53:07', '2018-01-03 08:53:07', '', 142, 'http://rkmachinery/?post_type=acf-field&#038;p=144', 1, 'acf-field', '', 0),
@@ -7964,12 +8117,12 @@ INSERT INTO `qw_8k6_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `
 (148, 1, '2018-01-03 08:58:15', '2018-01-03 08:58:15', '', 'news-2', '', 'inherit', 'open', 'closed', '', 'news-2-2', '', '', '2018-01-03 08:58:15', '2018-01-03 08:58:15', '', 48, 'http://rkmachinery/wp-content/uploads/2017/12/news-2.jpg', 0, 'attachment', 'image/jpeg', 0),
 (149, 1, '2018-01-03 08:58:47', '2018-01-03 08:58:47', '', 'news-3', '', 'inherit', 'open', 'closed', '', 'news-3', '', '', '2018-01-07 16:13:07', '2018-01-07 16:13:07', '', 49, 'http://rkmachinery/wp-content/uploads/2017/12/news-3.jpg', 0, 'attachment', 'image/jpeg', 0),
 (150, 1, '2018-01-03 08:58:47', '2018-01-03 08:58:47', '', 'news-3', '', 'inherit', 'open', 'closed', '', 'news-3-2', '', '', '2018-01-03 08:58:47', '2018-01-03 08:58:47', '', 49, 'http://rkmachinery/wp-content/uploads/2017/12/news-3.jpg', 0, 'attachment', 'image/jpeg', 0),
-(151, 1, '2018-01-03 09:40:46', '2018-01-03 09:40:46', '', 'about-us', '', 'inherit', 'open', 'closed', '', 'about-us', '', '', '2018-01-07 16:11:15', '2018-01-07 16:11:15', '', 31, 'http://rkmachinery/wp-content/uploads/2018/01/about-us.jpg', 0, 'attachment', 'image/jpeg', 0),
+(151, 1, '2018-01-03 09:40:46', '2018-01-03 09:40:46', '', 'about-us', '', 'inherit', 'open', 'closed', '', 'about-us', '', '', '2018-01-09 17:25:53', '2018-01-09 17:25:53', '', 31, 'http://rkmachinery/wp-content/uploads/2018/01/about-us.jpg', 0, 'attachment', 'image/jpeg', 0),
 (152, 1, '2018-01-03 09:40:46', '2018-01-03 09:40:46', '', 'about-us', '', 'inherit', 'open', 'closed', '', 'about-us-2', '', '', '2018-01-03 09:40:46', '2018-01-03 09:40:46', '', 0, 'http://rkmachinery/wp-content/uploads/2018/01/about-us.jpg', 0, 'attachment', 'image/jpeg', 0),
 (153, 1, '2018-01-03 09:41:40', '2018-01-03 09:41:40', '', 'About Us', '', 'inherit', 'closed', 'closed', '', '31-revision-v1', '', '', '2018-01-03 09:41:40', '2018-01-03 09:41:40', '', 31, 'http://rkmachinery/2018/01/03/31-revision-v1/', 0, 'revision', '', 0);
 INSERT INTO `qw_8k6_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
 (154, 1, '2018-01-03 10:54:58', '2018-01-03 10:54:58', '', 'Contacts', '', 'inherit', 'closed', 'closed', '', '35-revision-v1', '', '', '2018-01-03 10:54:58', '2018-01-03 10:54:58', '', 35, 'http://rkmachinery/2018/01/03/35-revision-v1/', 0, 'revision', '', 0),
-(155, 1, '2018-01-03 10:55:53', '2018-01-03 10:55:53', '', 'contacts', '', 'inherit', 'open', 'closed', '', 'contacts', '', '', '2018-01-07 16:10:45', '2018-01-07 16:10:45', '', 35, 'http://rkmachinery/wp-content/uploads/2018/01/contacts.jpg', 0, 'attachment', 'image/jpeg', 0),
+(155, 1, '2018-01-03 10:55:53', '2018-01-03 10:55:53', '', 'contacts', '', 'inherit', 'open', 'closed', '', 'contacts', '', '', '2018-01-09 17:27:07', '2018-01-09 17:27:07', '', 35, 'http://rkmachinery/wp-content/uploads/2018/01/contacts.jpg', 0, 'attachment', 'image/jpeg', 0),
 (156, 1, '2018-01-03 10:55:53', '2018-01-03 10:55:53', '', 'contacts', '', 'inherit', 'open', 'closed', '', 'contacts-2', '', '', '2018-01-03 10:55:53', '2018-01-03 10:55:53', '', 0, 'http://rkmachinery/wp-content/uploads/2018/01/contacts.jpg', 0, 'attachment', 'image/jpeg', 0),
 (157, 1, '2018-01-03 10:56:10', '2018-01-03 10:56:10', '', 'Contacts', '', 'inherit', 'closed', 'closed', '', '35-revision-v1', '', '', '2018-01-03 10:56:10', '2018-01-03 10:56:10', '', 35, 'http://rkmachinery/2018/01/03/35-revision-v1/', 0, 'revision', '', 0),
 (158, 1, '2018-01-03 11:39:45', '2018-01-03 11:39:45', 'a:10:{s:4:\"type\";s:4:\"text\";s:12:\"instructions\";s:0:\"\";s:8:\"required\";i:0;s:17:\"conditional_logic\";i:0;s:7:\"wrapper\";a:3:{s:5:\"width\";s:0:\"\";s:5:\"class\";s:0:\"\";s:2:\"id\";s:0:\"\";}s:13:\"default_value\";s:0:\"\";s:11:\"placeholder\";s:0:\"\";s:7:\"prepend\";s:0:\"\";s:6:\"append\";s:0:\"\";s:9:\"maxlength\";s:0:\"\";}', 'Compnay Address 2', 'company_address_2', 'publish', 'closed', 'closed', '', 'field_5a4cc0f5d01ce', '', '', '2018-01-08 19:16:12', '2018-01-08 19:16:12', '', 10, 'http://rkmachinery/?post_type=acf-field&#038;p=158', 4, 'acf-field', '', 0),
@@ -7985,7 +8138,7 @@ INSERT INTO `qw_8k6_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `
 (168, 1, '2018-01-03 13:37:48', '2018-01-03 13:37:48', '', 'certificate-5', '', 'inherit', 'open', 'closed', '', 'certificate-5-2', '', '', '2018-01-03 13:37:48', '2018-01-03 13:37:48', '', 0, 'http://rkmachinery/wp-content/uploads/2018/01/certificate-5.jpg', 0, 'attachment', 'image/jpeg', 0),
 (169, 1, '2018-01-03 13:38:07', '2018-01-03 13:38:07', '', 'certificate-6', '', 'inherit', 'open', 'closed', '', 'certificate-6', '', '', '2018-01-03 13:38:19', '2018-01-03 13:38:19', '', 29, 'http://rkmachinery/wp-content/uploads/2018/01/certificate-6.jpg', 0, 'attachment', 'image/jpeg', 0),
 (170, 1, '2018-01-03 13:38:07', '2018-01-03 13:38:07', '', 'certificate-6', '', 'inherit', 'open', 'closed', '', 'certificate-6-2', '', '', '2018-01-03 13:38:07', '2018-01-03 13:38:07', '', 0, 'http://rkmachinery/wp-content/uploads/2018/01/certificate-6.jpg', 0, 'attachment', 'image/jpeg', 0),
-(171, 1, '2018-01-03 13:39:21', '2018-01-03 13:39:21', '', 'quality', '', 'inherit', 'open', 'closed', '', 'quality', '', '', '2018-01-07 16:31:54', '2018-01-07 16:31:54', '', 29, 'http://rkmachinery/wp-content/uploads/2018/01/quality.jpg', 0, 'attachment', 'image/jpeg', 0),
+(171, 1, '2018-01-03 13:39:21', '2018-01-03 13:39:21', '', 'quality', '', 'inherit', 'open', 'closed', '', 'quality', '', '', '2018-01-09 17:26:59', '2018-01-09 17:26:59', '', 29, 'http://rkmachinery/wp-content/uploads/2018/01/quality.jpg', 0, 'attachment', 'image/jpeg', 0),
 (172, 1, '2018-01-03 13:39:21', '2018-01-03 13:39:21', '', 'quality', '', 'inherit', 'open', 'closed', '', 'quality-2', '', '', '2018-01-03 13:39:21', '2018-01-03 13:39:21', '', 0, 'http://rkmachinery/wp-content/uploads/2018/01/quality.jpg', 0, 'attachment', 'image/jpeg', 0),
 (173, 1, '2018-01-03 13:39:33', '2018-01-03 13:39:33', '', 'Quality', '', 'inherit', 'closed', 'closed', '', '29-revision-v1', '', '', '2018-01-03 13:39:33', '2018-01-03 13:39:33', '', 29, 'http://rkmachinery/2018/01/03/29-revision-v1/', 0, 'revision', '', 0),
 (174, 1, '2018-01-03 13:51:04', '2018-01-03 13:51:04', '', 'Gallery', '', 'inherit', 'closed', 'closed', '', '26-revision-v1', '', '', '2018-01-03 13:51:04', '2018-01-03 13:51:04', '', 26, 'http://rkmachinery/2018/01/03/26-revision-v1/', 0, 'revision', '', 0),
@@ -8000,11 +8153,17 @@ INSERT INTO `qw_8k6_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `
 (188, 1, '2018-01-04 12:42:28', '2018-01-04 12:42:28', '', 'Gallery', '', 'inherit', 'closed', 'closed', '', '26-revision-v1', '', '', '2018-01-04 12:42:28', '2018-01-04 12:42:28', '', 26, 'http://rkmachinery/2018/01/04/26-revision-v1/', 0, 'revision', '', 0),
 (272, 1, '2018-01-09 16:01:02', '2018-01-09 16:01:02', '', 'Laser', '', 'inherit', 'closed', 'closed', '', '81-revision-v1', '', '', '2018-01-09 16:01:02', '2018-01-09 16:01:02', '', 81, 'http://rkmachinery/81-revision-v1/', 0, 'revision', '', 0),
 (286, 1, '2018-01-09 16:31:58', '2018-01-09 16:31:58', '', 'Manufacturing', '', 'inherit', 'closed', 'closed', '', '39-revision-v1', '', '', '2018-01-09 16:31:58', '2018-01-09 16:31:58', '', 39, 'http://rkmachinery/39-revision-v1/', 0, 'revision', '', 0),
+(295, 1, '2018-01-09 17:21:04', '2018-01-09 17:21:04', '', 'Manufacturing LONG', '', 'inherit', 'open', 'closed', '', 'manufacturing-long', '', '', '2018-01-09 17:21:04', '2018-01-09 17:21:04', '', 39, 'http://rkmachinery/wp-content/uploads/2018/01/Manufacturing-LONG.mp4', 0, 'attachment', 'video/mp4', 0),
 (266, 1, '2018-01-09 14:41:20', '2018-01-09 14:41:20', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nisl non magna venenatis, sed congue augue pretium. Curabitur malesuada at tellus consectetur lobortis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam condimentum metus semper, ornare velit sit amet, viverra enim. Sed varius varius mauris, ut pellentesque lorem dictum interdum. Nullam eu consectetur quam. Vestibulum vel neque tristique, ullamcorper risus ac, molestie lorem. Aenean eleifend dui quis leo auctor blandit sit amet in mauris. Nam vehicula ligula at est bibendum tempor. Praesent eu nibh sagittis metus vestibulum viverra ut a tellus. Quisque a risus ultricies nulla finibus tincidunt vel semper mauris. Sed efficitur imperdiet quam eget mattis. Ut fermentum justo vehicula dolor bibendum, at mollis purus laoreet. Etiam dictum cursus enim id blandit. Sed euismod nisi ut sem congue fermentum.\r\n\r\nSed metus ipsum, mattis sit amet est id, condimentum efficitur mauris. Donec imperdiet est non eros tempor, vitae blandit ligula ornare. Proin posuere in erat ac dapibus. Donec semper ex ut felis faucibus, non eleifend felis maximus. Duis pellentesque maximus lacus, sed laoreet nunc tincidunt eget. Ut id urna leo. Ut viverra erat id porta rutrum. Ut gravida lacinia viverra. Suspendisse a porttitor ligula, ac rutrum ante.', 'Manufacturing', '', 'inherit', 'closed', 'closed', '', '39-revision-v1', '', '', '2018-01-09 14:41:20', '2018-01-09 14:41:20', '', 39, 'http://rkmachinery/39-revision-v1/', 0, 'revision', '', 0),
+(296, 1, '2018-01-09 17:21:04', '2018-01-09 17:21:04', '', 'Manufacturing LONG', '', 'inherit', 'open', 'closed', '', 'manufacturing-long-2', '', '', '2018-01-09 17:21:04', '2018-01-09 17:21:04', '', 0, 'http://rkmachinery/wp-content/uploads/2018/01/Manufacturing-LONG.mp4', 0, 'attachment', 'video/mp4', 0),
+(297, 1, '2018-01-09 17:21:11', '2018-01-09 17:21:11', '', 'Manufacturing', '', 'inherit', 'closed', 'closed', '', '39-revision-v1', '', '', '2018-01-09 17:21:11', '2018-01-09 17:21:11', '', 39, 'http://rkmachinery/39-revision-v1/', 0, 'revision', '', 0),
+(298, 1, '2018-01-09 17:25:10', '2018-01-09 17:25:10', '', 'Voortman LONG', '', 'inherit', 'open', 'closed', '', 'voortman-long', '', '', '2018-01-09 17:25:10', '2018-01-09 17:25:10', '', 85, 'http://rkmachinery/wp-content/uploads/2018/01/Voortman-LONG.mp4', 0, 'attachment', 'video/mp4', 0),
 (194, 1, '2018-01-04 12:51:55', '2018-01-04 12:51:55', 'Description', 'Object 1', '', 'inherit', 'open', 'closed', '', 'object_1', '', '', '2018-01-09 16:31:02', '2018-01-09 16:31:02', '', 8, 'http://rkmachinery/wp-content/uploads/2018/01/object_1.jpg', 0, 'attachment', 'image/jpeg', 0),
 (195, 1, '2018-01-04 12:51:55', '2018-01-04 12:51:55', '', 'object_1', '', 'inherit', 'open', 'closed', '', 'object_1-2', '', '', '2018-01-04 12:51:55', '2018-01-04 12:51:55', '', 19, 'http://rkmachinery/wp-content/uploads/2018/01/object_1.jpg', 0, 'attachment', 'image/jpeg', 0),
 (196, 1, '2018-01-04 12:53:17', '2018-01-04 12:53:17', '', 'Home', '', 'inherit', 'closed', 'closed', '', '8-revision-v1', '', '', '2018-01-04 12:53:17', '2018-01-04 12:53:17', '', 8, 'http://rkmachinery/2018/01/04/8-revision-v1/', 0, 'revision', '', 0),
 (197, 1, '2018-01-04 12:53:18', '2018-01-04 12:53:18', '', 'Home', '', 'inherit', 'closed', 'closed', '', '19-revision-v1', '', '', '2018-01-04 12:53:18', '2018-01-04 12:53:18', '', 19, 'http://rkmachinery/2018/01/04/19-revision-v1/', 0, 'revision', '', 0),
+(299, 1, '2018-01-09 17:25:10', '2018-01-09 17:25:10', '', 'Voortman LONG', '', 'inherit', 'open', 'closed', '', 'voortman-long-2', '', '', '2018-01-09 17:25:10', '2018-01-09 17:25:10', '', 0, 'http://rkmachinery/wp-content/uploads/2018/01/Voortman-LONG.mp4', 0, 'attachment', 'video/mp4', 0),
+(300, 1, '2018-01-09 17:26:03', '2018-01-09 17:26:03', '', 'Voortman', '', 'inherit', 'closed', 'closed', '', '85-revision-v1', '', '', '2018-01-09 17:26:03', '2018-01-09 17:26:03', '', 85, 'http://rkmachinery/85-revision-v1/', 0, 'revision', '', 0),
 (201, 1, '2018-01-04 13:08:30', '2018-01-04 13:08:30', '', 'Home', '', 'inherit', 'closed', 'closed', '', '8-revision-v1', '', '', '2018-01-04 13:08:30', '2018-01-04 13:08:30', '', 8, 'http://rkmachinery/2018/01/04/8-revision-v1/', 0, 'revision', '', 0),
 (202, 1, '2018-01-04 13:08:30', '2018-01-04 13:08:30', '', 'Home', '', 'inherit', 'closed', 'closed', '', '19-revision-v1', '', '', '2018-01-04 13:08:30', '2018-01-04 13:08:30', '', 19, 'http://rkmachinery/2018/01/04/19-revision-v1/', 0, 'revision', '', 0),
 (203, 1, '2018-01-04 13:36:51', '2018-01-04 13:36:51', '', 'Home', '', 'inherit', 'closed', 'closed', '', '8-revision-v1', '', '', '2018-01-04 13:36:51', '2018-01-04 13:36:51', '', 8, 'http://rkmachinery/2018/01/04/8-revision-v1/', 0, 'revision', '', 0),
@@ -8016,6 +8175,9 @@ INSERT INTO `qw_8k6_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `
 (289, 1, '2018-01-09 16:35:54', '2018-01-09 16:35:54', '', 'Home', '', 'inherit', 'closed', 'closed', '', '8-revision-v1', '', '', '2018-01-09 16:35:54', '2018-01-09 16:35:54', '', 8, 'http://rkmachinery/8-revision-v1/', 0, 'revision', '', 0),
 (290, 1, '2018-01-09 16:35:54', '2018-01-09 16:35:54', '', 'Home', '', 'inherit', 'closed', 'closed', '', '19-revision-v1', '', '', '2018-01-09 16:35:54', '2018-01-09 16:35:54', '', 19, 'http://rkmachinery/19-revision-v1/', 0, 'revision', '', 0),
 (291, 1, '2018-01-09 16:37:10', '2018-01-09 16:37:10', '', 'Quality', '', 'inherit', 'closed', 'closed', '', '29-revision-v1', '', '', '2018-01-09 16:37:10', '2018-01-09 16:37:10', '', 29, 'http://rkmachinery/29-revision-v1/', 0, 'revision', '', 0),
+(292, 1, '2018-01-09 17:13:18', '2018-01-09 17:13:18', '', 'Engineering SHORT', '', 'inherit', 'open', 'closed', '', 'engineering-short', '', '', '2018-01-09 17:13:18', '2018-01-09 17:13:18', '', 37, 'http://rkmachinery/wp-content/uploads/2018/01/Engineering-SHORT.mp4', 0, 'attachment', 'video/mp4', 0),
+(293, 1, '2018-01-09 17:13:18', '2018-01-09 17:13:18', '', 'Engineering SHORT', '', 'inherit', 'open', 'closed', '', 'engineering-short-2', '', '', '2018-01-09 17:13:18', '2018-01-09 17:13:18', '', 0, 'http://rkmachinery/wp-content/uploads/2018/01/Engineering-SHORT.mp4', 0, 'attachment', 'video/mp4', 0),
+(294, 1, '2018-01-09 17:13:37', '2018-01-09 17:13:37', '', 'Engineering', '', 'inherit', 'closed', 'closed', '', '37-revision-v1', '', '', '2018-01-09 17:13:37', '2018-01-09 17:13:37', '', 37, 'http://rkmachinery/37-revision-v1/', 0, 'revision', '', 0),
 (211, 1, '2018-01-04 13:58:09', '2018-01-04 13:58:09', '', 'Home', '', 'inherit', 'closed', 'closed', '', '8-revision-v1', '', '', '2018-01-04 13:58:09', '2018-01-04 13:58:09', '', 8, 'http://rkmachinery/2018/01/04/8-revision-v1/', 0, 'revision', '', 0),
 (212, 1, '2018-01-04 13:58:10', '2018-01-04 13:58:10', '', 'Home', '', 'inherit', 'closed', 'closed', '', '19-revision-v1', '', '', '2018-01-04 13:58:10', '2018-01-04 13:58:10', '', 19, 'http://rkmachinery/2018/01/04/19-revision-v1/', 0, 'revision', '', 0),
 (213, 1, '2018-01-04 14:18:48', '2018-01-04 14:18:48', '', 'Location Name 1', '', 'publish', 'closed', 'closed', '', 'location-name-1', '', '', '2018-01-04 14:35:40', '2018-01-04 14:35:40', '', 0, 'http://rkmachinery/?post_type=locations_posts&#038;p=213', 0, 'locations_posts', '', 0),
@@ -8067,7 +8229,16 @@ INSERT INTO `qw_8k6_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `
 (282, 1, '2018-01-09 16:23:03', '2018-01-09 16:23:03', 'riaetbuyfwneiruywnriuwynercwiqynrciwyurencwieurncmwemuiermcwe8ouro rpqwoeur qwur chwqpe9qr jcqwiurh cqiucr dw', 'Laser', '', 'inherit', 'closed', 'closed', '', '81-revision-v1', '', '', '2018-01-09 16:23:03', '2018-01-09 16:23:03', '', 81, 'http://rkmachinery/81-revision-v1/', 0, 'revision', '', 0),
 (262, 1, '2018-01-09 12:30:35', '2018-01-09 12:30:35', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vehicula nisl non magna venenatis, sed congue augue pretium. Curabitur malesuada at tellus consectetur lobortis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam condimentum metus semper, ornare velit sit amet, viverra enim. Sed varius varius mauris, ut pellentesque lorem dictum interdum. Nullam eu consectetur quam. Vestibulum vel neque tristique, ullamcorper risus ac, molestie lorem. Aenean eleifend dui quis leo auctor blandit sit amet in mauris. Nam vehicula ligula at est bibendum tempor. Praesent eu nibh sagittis metus vestibulum viverra ut a tellus. Quisque a risus ultricies nulla finibus tincidunt vel semper mauris. Sed efficitur imperdiet quam eget mattis. Ut fermentum justo vehicula dolor bibendum, at mollis purus laoreet. Etiam dictum cursus enim id blandit. Sed euismod nisi ut sem congue fermentum.\r\n\r\nSed metus ipsum, mattis sit amet est id, condimentum efficitur mauris. Donec imperdiet est non eros tempor, vitae blandit ligula ornare. Proin posuere in erat ac dapibus. Donec semper ex ut felis faucibus, non eleifend felis maximus. Duis pellentesque maximus lacus, sed laoreet nunc tincidunt eget. Ut id urna leo. Ut viverra erat id porta rutrum. Ut gravida lacinia viverra. Suspendisse a porttitor ligula, ac rutrum ante.', 'Engineering', '', 'inherit', 'closed', 'closed', '', '37-revision-v1', '', '', '2018-01-09 12:30:35', '2018-01-09 12:30:35', '', 37, 'http://rkmachinery/37-revision-v1/', 0, 'revision', '', 0),
 (284, 1, '2018-01-09 16:29:58', '2018-01-09 16:29:58', '', 'Laser', 'This Is Custom Excerpt. Different From Content', 'inherit', 'closed', 'closed', '', '81-revision-v1', '', '', '2018-01-09 16:29:58', '2018-01-09 16:29:58', '', 81, 'http://rkmachinery/81-revision-v1/', 0, 'revision', '', 0),
-(285, 1, '2018-01-09 16:31:12', '2018-01-09 16:31:12', '', 'Plasma', '', 'inherit', 'closed', 'closed', '', '83-revision-v1', '', '', '2018-01-09 16:31:12', '2018-01-09 16:31:12', '', 83, 'http://rkmachinery/83-revision-v1/', 0, 'revision', '', 0);
+(285, 1, '2018-01-09 16:31:12', '2018-01-09 16:31:12', '', 'Plasma', '', 'inherit', 'closed', 'closed', '', '83-revision-v1', '', '', '2018-01-09 16:31:12', '2018-01-09 16:31:12', '', 83, 'http://rkmachinery/83-revision-v1/', 0, 'revision', '', 0),
+(301, 1, '2018-01-09 17:27:11', '2018-01-09 17:27:11', '', 'Bending', '', 'inherit', 'closed', 'closed', '', '115-revision-v1', '', '', '2018-01-09 17:27:11', '2018-01-09 17:27:11', '', 115, 'http://rkmachinery/115-revision-v1/', 0, 'revision', '', 0),
+(302, 1, '2018-01-09 17:27:43', '2018-01-09 17:27:43', '', 'Bending LONG', '', 'inherit', 'open', 'closed', '', 'bending-long', '', '', '2018-01-09 17:27:43', '2018-01-09 17:27:43', '', 115, 'http://rkmachinery/wp-content/uploads/2018/01/Bending-LONG.mp4', 0, 'attachment', 'video/mp4', 0),
+(303, 1, '2018-01-09 17:27:43', '2018-01-09 17:27:43', '', 'Bending LONG', '', 'inherit', 'open', 'closed', '', 'bending-long-2', '', '', '2018-01-09 17:27:43', '2018-01-09 17:27:43', '', 0, 'http://rkmachinery/wp-content/uploads/2018/01/Bending-LONG.mp4', 0, 'attachment', 'video/mp4', 0),
+(304, 1, '2018-01-09 17:28:14', '2018-01-09 17:28:14', '', 'Bending', '', 'inherit', 'closed', 'closed', '', '115-revision-v1', '', '', '2018-01-09 17:28:14', '2018-01-09 17:28:14', '', 115, 'http://rkmachinery/115-revision-v1/', 0, 'revision', '', 0),
+(305, 1, '2018-01-09 17:28:50', '2018-01-09 17:28:50', '', 'Rolling LONG', '', 'inherit', 'open', 'closed', '', 'rolling-long', '', '', '2018-01-09 17:28:50', '2018-01-09 17:28:50', '', 117, 'http://rkmachinery/wp-content/uploads/2018/01/Rolling-LONG.mp4', 0, 'attachment', 'video/mp4', 0),
+(306, 1, '2018-01-09 17:28:50', '2018-01-09 17:28:50', '', 'Rolling LONG', '', 'inherit', 'open', 'closed', '', 'rolling-long-2', '', '', '2018-01-09 17:28:50', '2018-01-09 17:28:50', '', 0, 'http://rkmachinery/wp-content/uploads/2018/01/Rolling-LONG.mp4', 0, 'attachment', 'video/mp4', 0),
+(307, 1, '2018-01-09 17:29:41', '2018-01-09 17:29:41', '', 'Rolling', '', 'inherit', 'closed', 'closed', '', '117-revision-v1', '', '', '2018-01-09 17:29:41', '2018-01-09 17:29:41', '', 117, 'http://rkmachinery/117-revision-v1/', 0, 'revision', '', 0),
+(308, 1, '2018-01-09 17:30:15', '2018-01-09 17:30:15', '', 'Voortman', '', 'inherit', 'closed', 'closed', '', '85-revision-v1', '', '', '2018-01-09 17:30:15', '2018-01-09 17:30:15', '', 85, 'http://rkmachinery/85-revision-v1/', 0, 'revision', '', 0),
+(309, 1, '2018-01-09 17:30:47', '2018-01-09 17:30:47', '', 'Rolling', '', 'inherit', 'closed', 'closed', '', '117-autosave-v1', '', '', '2018-01-09 17:30:47', '2018-01-09 17:30:47', '', 117, 'http://rkmachinery/117-autosave-v1/', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
@@ -8242,7 +8413,7 @@ INSERT INTO `qw_8k6_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) 
 (21, 1, 'icl_admin_language', 'en'),
 (22, 1, 'icl_admin_language_migrated_to_wp47', '1'),
 (23, 1, 'qw_8k6_user-settings', 'libraryContent=browse&editor=tinymce'),
-(24, 1, 'qw_8k6_user-settings-time', '1515264205'),
+(24, 1, 'qw_8k6_user-settings-time', '1515518978'),
 (25, 1, 'managenav-menuscolumnshidden', 'a:5:{i:0;s:11:\"link-target\";i:1;s:11:\"css-classes\";i:2;s:3:\"xfn\";i:3;s:11:\"description\";i:4;s:15:\"title-attribute\";}'),
 (26, 1, 'metaboxhidden_nav-menus', 'a:3:{i:0;s:24:\"add-post-type-news_posts\";i:1;s:33:\"add-post-type-manufacturing_posts\";i:2;s:12:\"add-post_tag\";}'),
 (27, 1, 'qw_8k6_nav_menu_recently_edited', '3'),

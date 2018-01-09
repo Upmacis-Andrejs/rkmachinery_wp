@@ -13,7 +13,7 @@
 				</div>
 				<?php endif; ?>				
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video fit-parent" autoplay>
+					<video class="full-width-video fit-parent" autoplay loop>
 						<source src="<?php the_field('full_width_video'); ?>">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
@@ -55,10 +55,11 @@
 
 		<section id="section-3">
 			<div class="container">
-				<div class="row">
-					<video class="content-width-video w-100">
+				<div class="row video-wrapper">
+					<video class="content-width-video video-play w-100 z-9">
 						<source src="<?php the_field('content_width_video'); ?>">
-					</video>					
+					</video>
+					<button class="btn-play z-66"></button>
 				</div>
 			</div>
 		</section>

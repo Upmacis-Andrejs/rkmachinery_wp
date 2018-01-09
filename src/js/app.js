@@ -102,6 +102,21 @@ $(document).ready(function() {
       $load_more.load($link+' .load-more a');
   }); */
 
+	// Play Video by clicking button
+	$(".btn-play").click(function() {
+		var $this_video = $(this).parent().find('.video-play').get(0);
+		if ( $this_video.paused ) {
+			$this_video.play();
+			$(this).addClass('hidden');
+		}
+	});
+	$(".video-play").click(function() {
+		var $this_video = $(this).get(0);
+		if ( !$this_video.paused ) {
+			$this_video.pause();
+			$(this).parent().find('.btn-play').removeClass('hidden');
+		}
+	});
 
     // Script for deprecated browser notification
     $('#close_announcement').click(function(e) {
@@ -324,7 +339,7 @@ $(document).ready(function() {
 		labels			: {
 			'sequenceInfo.of': '/'
 		}
-	});	
+	});
 
 });
 

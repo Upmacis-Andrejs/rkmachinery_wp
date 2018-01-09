@@ -229,7 +229,7 @@ function rkmachinery_scripts()
         wp_register_script('lightslider', get_template_directory_uri() . '/bower_components/lightslider/js/lightslider.js', array('jquery'), '1.1.6', true); // Lightslider Plugin
         wp_enqueue_script('lightslider'); // Enqueue it!
 
-        wp_register_script('rkmachinery_scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.2', true); // Custom scripts
+        wp_register_script('rkmachinery_scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.3', true); // Custom scripts
         wp_enqueue_script('rkmachinery_scripts'); // Enqueue it!
     }
 }
@@ -465,6 +465,7 @@ add_action( 'init', 'update_cpt', 99 );*/
     add_rewrite_rule('news/(?!news_posts)([^/]+)/?$', 'index.php?news_posts=$matches[1]', 'top');
 }
 add_action('init', 'rkmachinery_rewrite');*/
+
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes

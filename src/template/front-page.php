@@ -11,7 +11,7 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video fit-parent" autoplay>
+					<video class="full-width-video fit-parent" autoplay loop>
 						<source src="<?php the_field('full_width_video'); ?>">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
@@ -37,7 +37,7 @@
 
 							<h2 class="title z-6"><?php the_title(); ?></h2>
 							<?php if( get_field('full_width_video') ): ?>
-								<video class="full-width-video fit-parent" autoplay>
+								<video class="full-width-video fit-parent" autoplay loop>
 									<source src="<?php the_field('full_width_video'); ?>">
 								</video>
 							<?php elseif( get_field('full_width_image') ): ?>
@@ -60,7 +60,7 @@
 
 							<h2 class="title z-6"><?php the_title(); ?></h2>
 							<?php if( get_field('full_width_video') ): ?>
-								<video class="full-width-video fit-parent" autoplay>
+								<video class="full-width-video fit-parent" autoplay loop>
 									<source src="<?php the_field('full_width_video'); ?>">
 								</video>
 							<?php elseif( get_field('full_width_image') ): ?>
@@ -83,7 +83,7 @@
 
 							<h2 class="title z-6"><?php the_title(); ?></h2>
 							<?php if( get_field('full_width_video') ): ?>
-								<video class="full-width-video fit-parent" autoplay>
+								<video class="full-width-video fit-parent" autoplay loop>
 									<source src="<?php the_field('full_width_video'); ?>">
 								</video>
 							<?php elseif( get_field('full_width_image') ): ?>
@@ -153,7 +153,7 @@
 								<h6 class="news-post-date"><?php echo get_the_date('F d, Y'); ?></h6>
 							</div>
 							<?php if( get_field('thumbnail_video') ): ?>
-								<video class="full-width-video fit-parent" autoplay>
+								<video class="full-width-video fit-parent" autoplay loop>
 									<source src="<?php the_field('thumbnail_video'); ?>">
 								</video>
 							<?php elseif( get_field('thumbnail_image') ): ?>

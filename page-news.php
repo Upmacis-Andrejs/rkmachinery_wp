@@ -40,7 +40,7 @@
 								<h6 class="news-post-date"><?php echo get_the_date('F d, Y'); ?></h6>
 							</div>
 							<?php if( get_field('thumbnail_video') ): ?>
-								<video class="full-width-video fit-parent" autoplay>
+								<video class="full-width-video fit-parent" autoplay loop>
 									<source src="<?php the_field('thumbnail_video'); ?>">
 								</video>
 							<?php elseif( get_field('thumbnail_image') ): ?>
