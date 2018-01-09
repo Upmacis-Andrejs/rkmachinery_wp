@@ -32,6 +32,8 @@ if (function_exists('add_theme_support'))
     //add_image_size('small', 120, '', true); // Small Thumbnail
     //add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 
+    // Add Excerpts to Pages
+    add_post_type_support( 'page', 'excerpt' );
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
 	'default-color' => 'FFF',
@@ -351,16 +353,16 @@ function rkmachinery_wp_pagination()
     ));
 }
 
-// Custom Excerpts
-function rkmachinery_wp_index($length) // Create 20 Word Callback for Index page Excerpts, call using rkmachinery_wp_excerpt('rkmachinery_wp_index');
+// Custom Excerpt Length
+function rkmachinery_wp_20($length) // Create 20 Word Callback, call using rkmachinery_wp_excerpt('rkmachinery_wp_20');
 {
     return 20;
 }
 
-// Create 40 Word Callback for Custom Post Excerpts, call using rkmachinery_wp_excerpt('rkmachinery_wp_custom_post');
-function rkmachinery_wp_custom_post($length)
+// Custom Excerpt "Read More" Text
+function rkmachinery_no_read_more($read_more_text) // Set no "read more" text
 {
-    return 40;
+    return '';
 }
 
 // Create the Custom Excerpts callback
@@ -376,16 +378,48 @@ function rkmachinery_wp_excerpt($length_callback = '', $more_callback = '')
     $output = get_the_excerpt();
     $output = apply_filters('wptexturize', $output);
     $output = apply_filters('convert_chars', $output);
-    $output = '<p>' . $output . '</p>';
+   // $output = '<p>' . $output . '</p>';
     echo $output;
 }
 
-// Custom View Article link to Post
-function rkmachinery_view_article($more)
-{
+// Limit custom excerpt by characters
+add_filter('wp_trim_excerpt', function($text){    
+   $max_length = 85;
+
+   if(mb_strlen($text, 'UTF-8') > $max_length){
+     $split_pos = mb_strpos(wordwrap($text, $max_length), "\n", 0, 'UTF-8');
+     $text = mb_substr($text, 0, $split_pos, 'UTF-8');
+   }
+
+   return $text;
+});
+
+// Create excerpt for ACF
+function custom_field_excerpt() {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'rkmachinery') . '</a>';
+    $text = get_field('page_content');
+    if ( '' != $text ) {
+        $text = strip_shortcodes( $text );
+        $text = apply_filters('the_content', $text);
+        $text = str_replace(']]>', ']]>', $text);
+        $excerpt_length = 20; // 20 words
+        $excerpt_more = '';
+        $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+    }
+    return apply_filters('the_excerpt', $text);
 }
+
+// Limit ACF excerpt by characters
+add_filter('wp_trim_words', function($text){    
+   $max_length = 85;
+
+   if(mb_strlen($text, 'UTF-8') > $max_length){
+     $split_pos = mb_strpos(wordwrap($text, $max_length), "\n", 0, 'UTF-8');
+     $text = mb_substr($text, 0, $split_pos, 'UTF-8');
+   }
+
+   return $text;
+});
 
 // Remove Admin bar
 function remove_admin_bar()
@@ -427,10 +461,10 @@ function rkmachinery_gravatar ($avatar_defaults)
 }
 add_action( 'init', 'update_cpt', 99 );*/
 
-function rkmachinery_rewrite() {
+/*function rkmachinery_rewrite() {
     add_rewrite_rule('news/(?!news_posts)([^/]+)/?$', 'index.php?news_posts=$matches[1]', 'top');
 }
-add_action('init', 'rkmachinery_rewrite');
+add_action('init', 'rkmachinery_rewrite');*/
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
@@ -470,7 +504,6 @@ add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <di
 add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
-add_filter('excerpt_more', 'rkmachinery_view_article'); // Add 'View Article' button instead of [...] for Excerpts
 //add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'rkmachinery_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails

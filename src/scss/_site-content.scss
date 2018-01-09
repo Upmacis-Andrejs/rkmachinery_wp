@@ -64,10 +64,16 @@
 		bottom: 0;
 		left: 0;
 	}
-	.page-children-list { opacity: 0; }
+	.page-children-list,
+	.page-excerpt-wrapper {
+		opacity: 0;
+	}
 }
 .service-block:hover {
-	.page-children-list { opacity: 1; }
+	.page-children-list,
+	.page-excerpt-wrapper {
+		opacity: 1;
+	}
 }
 
 // News Block
@@ -147,8 +153,12 @@
 
 // Advanced Google Maps
 .advanced-google-maps-wrapper {
-	width: calc(100% - 525px + 110px);
-	margin-left: -110px;
+	//width: calc(100% - 525px + 110px);
+	//margin-left: -110px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
 	.gradient {
 		position: absolute;
 		z-index: 6;
@@ -181,12 +191,23 @@
 		top: 0;
 		bottom: 0;
 		left: 0;
-		width: 295px;
+		width: 40%;
+		background: #fff;
+	}
+	.gradient-left:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		transform: translateX(100%);
+		width: 200px;
 		background: scrim-gradient(
 		    to right,
 		    #fff,
 		    transparent
-	  	);			
+	  	);
+	  	z-index: 9;			
 	}	
 	.acf-map {
 		height: 834px;
@@ -194,6 +215,12 @@
 			max-height: none!important;
 		}
 	}
+}
+.home #section-3 { min-height: 834px; }
+.about-us .advanced-google-maps-wrapper {
+	position: relative;
+	.gradient-left { display: none; }
+	.gradient-bottom { display: none; }
 }
 
 // Contacts Map Wrapper

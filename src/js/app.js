@@ -143,6 +143,8 @@ $(document).ready(function() {
 			center		: new google.maps.LatLng(0, 0),
 			mapTypeId	: google.maps.MapTypeId.ROADMAP,
 			disableDefaultUI: true,
+			// gestureHandling: 'greedy',
+			gestureHandling: 'none',
 			styles		: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#ffffff"},{"visibility":"on"}]}]
 		};
 		
@@ -268,10 +270,13 @@ $(document).ready(function() {
 
 		    var listener = google.maps.event.addListener(map, "idle", function() { 
 			  var current_zoom = map.getZoom();			
-			  var zoom_out = current_zoom - 1;
+			  var zoom_out = current_zoom - 2;
 			  map.setZoom( zoom_out );
 			  google.maps.event.removeListener(listener); 
 			});
+
+			// change the center of map
+			map.panBy(-800,0);
 		}
 
 	}

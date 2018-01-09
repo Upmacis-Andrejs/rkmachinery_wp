@@ -31,8 +31,8 @@
 				    		<iframe
 				    		  class="fit-parent"
 							  style="border:0"
-							  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXtzsptnsBUt60yjh3NTikCbVnPIiL2ws
-							  &q=<?php $address_1 = get_field('company_address_1', 'option');
+							  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAvogWzTWNhsTkw3M0xOSmvgrK94wcgUFc&q=
+							  <?php $address_1 = get_field('company_address_1', 'option');
 									$address_1_formatted = strtolower(str_replace(' ', '+', $address_1));
 									$address_2 = get_field('company_address_2', 'option');
 									$address_2_formatted = strtolower(str_replace(' ', '+', $address_2));
