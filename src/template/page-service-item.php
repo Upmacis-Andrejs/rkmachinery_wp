@@ -4,7 +4,7 @@
 
 	<main id="site-content">
 		<section id="section-1">
-			<div class="full-width-img-video-wrapper shadow">
+			<div class="full-width-img-video-wrapper shadow jquery-background-video-wrapper">
 				<?php if( get_field('text-fwiv') ): ?>
 				<div class="text z-6 container">
 					<div class="row editor-wrapper">
@@ -13,7 +13,7 @@
 				</div>
 				<?php endif; ?>				
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video fit-parent" autoplay loop>
+					<video class="full-width-video jquery-background-video" autoplay loop muted>
 						<source src="<?php the_field('full_width_video'); ?>">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
@@ -53,16 +53,18 @@
 			</div>
 		</section>
 
+		<?php if( get_field('content_width_video') ) : ?> 
 		<section id="section-3">
 			<div class="container">
-				<div class="row video-wrapper">
-					<video class="content-width-video video-play w-100 z-9">
+				<div class="row cw-video-wrapper jquery-background-video-wrapper">
+					<video class="content-width-video video-play jquery-background-video no-autoplay w-100 z-9" preload="metadata">
 						<source src="<?php the_field('content_width_video'); ?>">
 					</video>
 					<button class="btn-play z-66"></button>
 				</div>
 			</div>
 		</section>
+		<?php endif; ?>
 	</main>
 
 <?php get_footer(); ?>

@@ -9,7 +9,7 @@
 	        <div class="location-img-block w-50 max-h-100">
 
 				<?php if( get_field('thumbnail_video') ): ?>
-					<video class="fit-parent" autoplay loop>
+					<video class="fit-parent" autoplay loop muted>
 						<source src="<?php the_field('thumbnail_video'); ?>">
 					</video>
 				<?php elseif( get_field('thumbnail_image') ): ?>

@@ -118,6 +118,20 @@ $(document).ready(function() {
 		}
 	});
 
+	// Fit Video To Parent Div
+	$('.jquery-background-video').bgVideo({
+		//fullScreen: false, // Sets the video to be fixed to the full window - your <video> and it's container should be direct descendents of the <body> tag
+		//fadeIn: 500, // Milliseconds to fade video in/out (0 for no fade)
+		pauseAfter: 0, // Seconds to play before pausing (0 for forever)
+		//fadeOnPause: false, // For all (including manual) pauses
+		fadeOnEnd: false, // When we've reached the pauseAfter time
+		showPausePlay: false, // Show pause/play button
+		//pausePlayXPos: 'right', // left|right|center
+		//pausePlayYPos: 'top', // top|bottom|center
+		//pausePlayXOffset: '15px', // pixels or percent from side - ignored if positioned center
+		//pausePlayYOffset: '15px' // pixels or percent from top/bottom - ignored if positioned center		
+	});
+
     // Script for deprecated browser notification
     $('#close_announcement').click(function(e) {
         e.preventDefault();
@@ -325,13 +339,6 @@ $(document).ready(function() {
 	$(".lightslider").lightSlider({
 		item	: 1,
 		pager	: false
-	});
-
-	// Initialize Lightslider With Thumbnail Pagination
-	$(".lightslider-thumbs").lightSlider({
-		item	: 1,
-		gallery : true,
-		thumbItem: 3
 	});
 
 	// Initialize lightbox plugin

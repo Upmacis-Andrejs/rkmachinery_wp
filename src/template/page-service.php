@@ -4,7 +4,7 @@
 
 	<main id="site-content">
 		<section id="section-1">
-			<div class="full-width-img-video-wrapper shadow">
+			<div class="full-width-img-video-wrapper shadow jquery-background-video-wrapper">
 				<?php if( get_field('text-fwiv') ): ?>
 				<div class="text z-6 container">
 					<div class="row editor-wrapper">
@@ -13,7 +13,7 @@
 				</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video fit-parent" autoplay loop>
+					<video class="full-width-video jquery-background-video" autoplay loop muted>
 						<source src="<?php the_field('full_width_video'); ?>">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
@@ -45,9 +45,9 @@
 					<!-- loop through children pages of this post -->						
 					<div class="service-block-wrapper flex-hor-c">	 
 						<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						<a class="service-block shadow text-decor-none 
-						<?php if( get_field('full_width_video') ): echo 'video';
-						elseif( get_field('full_width_image') ): echo 'image';
+						<a class="service-block shadow text-decor-none jquery-background-video-wrapper
+						<?php if( get_field('full_width_video') ): echo ' video';
+						elseif( get_field('full_width_image') ): echo ' image';
 						endif;
 						?>"
 						id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
@@ -55,7 +55,7 @@
 
 								<h2 class="title z-6"><?php the_title(); ?></h2>
 								<?php if( get_field('full_width_video') ): ?>
-									<video class="full-width-video fit-parent" autoplay loop>
+									<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
 										<source src="<?php the_field('full_width_video'); ?>">
 									</video>
 								<?php elseif( get_field('full_width_image') ): ?>

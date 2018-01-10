@@ -229,6 +229,12 @@ function rkmachinery_scripts()
         wp_register_script('lightslider', get_template_directory_uri() . '/bower_components/lightslider/js/lightslider.js', array('jquery'), '1.1.6', true); // Lightslider Plugin
         wp_enqueue_script('lightslider'); // Enqueue it!
 
+        wp_register_script('lightcase', get_template_directory_uri() . '/bower_components/lightcase/lightcase.js', array('jquery'), '2.4.2', true); // Lightcase Lightbox Plugin
+        wp_enqueue_script('lightcase'); // Enqueue it!                
+
+        wp_register_script('jquery-bg-video', get_template_directory_uri() . '/bower_components/jquery-background-video/jquery.background-video.js', array('jquery'), '2.1.4', true); // jQuery Background Video
+        wp_enqueue_script('jquery-bg-video'); // Enqueue it!
+
         wp_register_script('rkmachinery_scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.3', true); // Custom scripts
         wp_enqueue_script('rkmachinery_scripts'); // Enqueue it!
     }
@@ -238,8 +244,8 @@ function rkmachinery_scripts()
 function rkmachinery_conditional_scripts()
 {
     if (is_singular('gallery_posts')) {
-        wp_register_script('lightcase', get_template_directory_uri() . '/bower_components/lightcase/lightcase.js', array('jquery'), '2.4.2', true); // Lightcase Lightbox Plugin
-        wp_enqueue_script('lightcase'); // Enqueue it!        
+       // wp_register_script('lightcase', get_template_directory_uri() . '/bower_components/lightcase/lightcase.js', array('jquery'), '2.4.2', true); // Lightcase Lightbox Plugin
+       // wp_enqueue_script('lightcase'); // Enqueue it!        
     }
 }
 
@@ -253,7 +259,10 @@ function rkmachinery_styles()
     wp_enqueue_style('lightslider'); // Enqueue it!    
 
     wp_register_style('lightcase', get_template_directory_uri() . '/bower_components/lightcase/lightcase.css', array(), '2.4.2', 'all'); // Lightcase Lightbox Plugin
-    wp_enqueue_style('lightcase'); // Enqueue it!    
+    wp_enqueue_style('lightcase'); // Enqueue it!
+
+    wp_register_style('jquery-bg-video', get_template_directory_uri() . '/bower_components/jquery-background-video/jquery.background-video.css', array(), '2.1.4', 'all'); // jQuery Background Video Plugin
+    wp_enqueue_style('jquery-bg-video'); // Enqueue it!
 
     wp_register_style('rkmachinery', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('rkmachinery'); // Enqueue it!
