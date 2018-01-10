@@ -60,6 +60,7 @@ if (function_exists('add_theme_support'))
     load_theme_textdomain('rkmachinery', get_template_directory() . '/languages');
 }
 
+
 /*------------------------------------*\
 	Functions
 \*------------------------------------*/
@@ -429,6 +430,24 @@ add_filter('wp_trim_words', function($text){
 
    return $text;
 });
+
+// Define the wpseo_replacements callback (generate excerpt from custom field)
+function filter_wpseo_replacements( $replacements ) {
+    if( isset( $replacements['%%cf_page_content%%'] ) ){
+        if ( !empty(get_the_excerpt()) ) {
+           $replacements['%%cf_page_content%%'] = rkmachinery_wp_excerpt('', 'rkmachinery_no_read_more');
+        } else {
+            $replacements['%%cf_page_content%%'] = custom_field_excerpt();
+        }
+
+        //$replacements['%%cf_page_content%%'] = custom_field_excerpt();
+
+    }
+    return $replacements;
+};
+// Add filter
+add_filter( 'wpseo_replacements', 'filter_wpseo_replacements', 10, 1 );
+
 
 // Remove Admin bar
 function remove_admin_bar()

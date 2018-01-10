@@ -1,5 +1,5 @@
 			<!-- footer -->
-			<footer class="footer" id="site-footer">
+			<footer class="footer z-99" id="site-footer">
 				<button class="btn contact-form-btn"></button>
 				<div class="contact-form-wrapper hidden">
 					<button class="contact-form-close z-6"></button>
