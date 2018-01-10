@@ -194,7 +194,7 @@ function wrap_editor_table_content($content) {
 add_filter('the_content', 'wrap_editor_table_content');
 
 // Custom language switcher [https://wordpress.stackexchange.com/a/51148]
-function rkmachinery_display_lang_switcher() {
+/*function rkmachinery_display_lang_switcher() {
   $languages = icl_get_languages();
   $res = '';
   if (!empty($languages)) {
@@ -209,7 +209,7 @@ function rkmachinery_display_lang_switcher() {
   }
   return $res;
 }
-add_filter('rkmachinery_lang_switcher', 'rkmachinery_display_lang_switcher');
+add_filter('rkmachinery_lang_switcher', 'rkmachinery_display_lang_switcher');*/
 
 // Load RK Machinery scripts
 function rkmachinery_scripts()
@@ -470,10 +470,16 @@ function rkmachinery_gravatar ($avatar_defaults)
 }
 add_action( 'init', 'update_cpt', 99 );*/
 
-/*function rkmachinery_rewrite() {
-    add_rewrite_rule('news/(?!news_posts)([^/]+)/?$', 'index.php?news_posts=$matches[1]', 'top');
+//function rkmachinery_rewrite() {
+    //add_rewrite_rule('news/(?!news_posts)([^/]+)/?$', 'index.php?news_posts=$matches[1]', 'top');
+
+//}
+//add_action('init', 'rkmachinery_rewrite');
+
+function custom_rewrite_basic() { 
+  add_rewrite_rule('leaf/24/?$', 'index.php?page_id=24', 'top');
 }
-add_action('init', 'rkmachinery_rewrite');*/
+add_action('init', 'custom_rewrite_basic');
 
 
 /*------------------------------------*\
