@@ -110,12 +110,26 @@ $(document).ready(function() {
 			$(this).addClass('hidden');
 		}
 	});
+
 	$(".video-play").click(function() {
 		var $this_video = $(this).get(0);
 		if ( !$this_video.paused ) {
 			$this_video.pause();
 			$(this).parent().find('.btn-play').removeClass('hidden');
 		}
+	});
+
+	// Script for Facebook Share button
+	$(document).on('click', '.shareBtn', function() {
+		var $btn = $(this);
+
+		FB.ui({
+		method: 'share',
+		display: 'popup',
+		href: $btn.attr('data-url'),
+		}, function(response){});
+
+		return false;
 	});
 
 	// Fit Video To Parent Div

@@ -1,6 +1,24 @@
 <?php /* Template Name: News Item */ ?>
 
 <?php get_header(); ?>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1649364985101663',
+      xfbml      : true,
+      version    : 'v2.11'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 	<main id="site-content">
 	<!-- section -->
@@ -37,17 +55,7 @@
 								<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 							</div>
 							<div class="fb-share">
-								<!-- Load Facebook SDK for JavaScript -->
-								<div id="fb-root"></div>
-								<script>(function(d, s, id) {
-								  var js, fjs = d.getElementsByTagName(s)[0];
-								  if (d.getElementById(id)) return;
-								  js = d.createElement(s); js.id = id;
-								  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
-								  fjs.parentNode.insertBefore(js, fjs);
-								}(document, 'script', 'facebook-jssdk'));</script>
-								  <!-- Your share button code -->
-								<div class="fb-share-button" data-href="http://rkmachinery/?news_posts=upb-engineers-receive-awards-construction-industry-grand-awards-4" data-layout="box_count" data-size="large" data-mobile-iframe="false"></div>
+								<a class="btn btn-1 shareBtn" href="#" data-url="<?php the_permalink(); ?>"><?php _e('Share', 'rkmachinery'); ?></a>
 							</div>
 							<?php endwhile; endif; ?>
 						</div>
@@ -59,5 +67,4 @@
 	</section>
 	<!-- /section -->
 	</main>
-
 <?php get_footer(); ?>
