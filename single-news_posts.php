@@ -51,7 +51,7 @@
 						<div class="share-buttons">
 							<?php if( have_posts() ): while( have_posts() ): the_post(); ?>
 							<div class="tweet">
-								<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="true" target="_blank">Tweet</a>
+								<a class="btn btn-1 twitter-share-btn" href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_the_permalink()); ?>&text=<?php echo urlencode(get_the_title()); ?>" data-show-count="true" target="_blank"><?php _e('Tweet', 'rkmachinery'); ?></a>
 								<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 							</div>
 							<div class="fb-share">

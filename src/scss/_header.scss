@@ -10,6 +10,27 @@
 	.nav ul ul {
 		list-style-type: none;
 	}
+	.header-menu { 
+		@extend .flex-vert-c;
+		height: 80px;
+		.sub-menu { display: none; }
+		.menu-item-has-children:hover > .sub-menu {
+			display: block;
+		}
+		li { padding: 0 25px; }
+		li > .sub-menu {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transform: translateY(100%);
+		}
+		li li > .sub-menu {
+			position: absolute;
+			top: -5px;
+			right: 0;
+			transform: translateX(100%);
+		}
+	}
 	.lang-switcher { margin-left: auto; }
 }
 
