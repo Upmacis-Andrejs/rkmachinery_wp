@@ -195,7 +195,7 @@ function wrap_editor_table_content($content) {
 add_filter('the_content', 'wrap_editor_table_content');
 
 // Custom language switcher [https://wordpress.stackexchange.com/a/51148]
-/*function rkmachinery_display_lang_switcher() {
+function rkmachinery_display_lang_switcher() {
   $languages = icl_get_languages();
   $res = '';
   if (!empty($languages)) {
@@ -210,7 +210,7 @@ add_filter('the_content', 'wrap_editor_table_content');
   }
   return $res;
 }
-add_filter('rkmachinery_lang_switcher', 'rkmachinery_display_lang_switcher');*/
+add_filter('rkmachinery_lang_switcher', 'rkmachinery_display_lang_switcher');
 
 // Load RK Machinery scripts
 function rkmachinery_scripts()
@@ -475,31 +475,6 @@ function rkmachinery_gravatar ($avatar_defaults)
     $avatar_defaults[$myavatar] = "Custom Gravatar";
     return $avatar_defaults;
 }
-
-// Rewrite Custom Post Type URL
-/*function update_cpt() {
-    global $wp_post_types;
- 
-    if ( post_type_exists( 'news_posts' ) ) {
-         $wp_post_types['news_posts']->rewrite = array( 'slug' => 'news');
-    }
-    if ( post_type_exists( 'locations_posts' ) ) {
-         $wp_post_types['locations_posts']->rewrite = array( 'slug' => '');
-    }    
-}
-add_action( 'init', 'update_cpt', 99 );*/
-
-//function rkmachinery_rewrite() {
-    //add_rewrite_rule('news/(?!news_posts)([^/]+)/?$', 'index.php?news_posts=$matches[1]', 'top');
-
-//}
-//add_action('init', 'rkmachinery_rewrite');
-
-function custom_rewrite_basic() { 
-  add_rewrite_rule('leaf/24/?$', 'index.php?page_id=24', 'top');
-}
-add_action('init', 'custom_rewrite_basic');
-
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
