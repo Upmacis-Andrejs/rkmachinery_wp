@@ -74,9 +74,9 @@
             id="body-wrapper">
 
 			<!-- header -->
-			<header class="z-99 clear" id="site-header">
+			<header class="z-666 clear flex-vert-c" id="site-header">
                 <div class="container">
-                    <div class="row flex">
+                    <div class="row flex-vert-c">
 
                             <a class="visuallyhidden" id="template-dir-uri-img" href="<?php echo get_template_directory_uri(); ?>/img/"></a>
     						<a id="main-site-logo" href="<?php echo home_url(); ?>">
@@ -86,11 +86,18 @@
                                     endif; ?>"
                                 alt="Site Logo">
     						</a>
-        					<nav class="nav">
-        						<?php rkmachinery_nav(); ?>
-        					</nav>
-                            <?php echo apply_filters('rkmachinery_lang_switcher', ''); ?>
-
+                            <div id="mobile-menu-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="wrapper-for-mobile-menu flex-vert-c">
+            					<nav class="nav">
+            						<?php rkmachinery_nav(); ?>
+            					</nav>
+                                <?php echo apply_filters('rkmachinery_lang_switcher', ''); ?>
+                            </div>
                     </div>
                 </div>
 			</header>

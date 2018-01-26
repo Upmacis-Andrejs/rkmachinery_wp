@@ -1,39 +1,288 @@
 
 // Site Header
 #site-header {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	right: 0;
 	left: 0;
 	width: 100%;
+	background-color: #fff;
+	#main-site-logo,
+	#main-site-logo img {
+		max-height: 80px;
+		transition: 0.1s ease-in-out, max-height 0.25s ease-in-out;		
+	}
+	#main-site-logo { margin-right: 52px; }
+	.wrapper-for-mobile-menu { flex-grow: 1; }
+	#mobile-menu-icon {
+		display: none;
+		margin-left: auto;
+		width: 27px;
+		height: 21px;
+		position: relative;
+		span {
+		  display: block;
+		  position: absolute;
+		  height: 3px;
+		  width: 100%;
+		  @extend .bg-default;
+		  opacity: 1;
+		  left: 0;
+		  transform: rotate(0deg);
+		  transition: .2s ease-in-out;
+		  border-radius: 1.5px;
+		}
+		span:nth-of-type(1) { top: 0px; }
+		span:nth-of-type(2),
+		span:nth-of-type(3) {
+			top: 9px;
+		}
+		span:nth-of-type(4) { top: 18px; }
+	}
+	#mobile-menu-icon.open {
+		span:nth-of-type(1),
+		span:nth-of-type(4) {
+		  opacity: 0;
+		}
+		span:nth-of-type(1) { transform: translate(0px,9px) scale(0.1); }
+		span:nth-of-type(4) { transform: translate(0px,-9px) scale(0.1); }
+		span:nth-of-type(2) { transform: rotate(45deg); }
+		span:nth-of-type(3) { transform: rotate(-45deg); }
+	}
+
 	.nav ul,
 	.nav ul ul {
 		list-style-type: none;
 	}
 	.header-menu { 
 		@extend .flex-vert-c;
-		height: 80px;
+		margin-right: 50px;
+		margin-left: 50px;
 		.sub-menu { display: none; }
-		.menu-item-has-children:hover > .sub-menu {
-			display: block;
+		li .menu-item-has-children > a:hover + .sub-menu,
+		li li .sub-menu:hover {
+			display: block!important;
 		}
-		li { padding: 0 25px; }
+		li {
+			a {
+				@extend .flex-vert-c;
+				height: 136px;
+				padding: 0 30px;
+				transition: 0.1s ease-in-out, height 0.25s ease-in-out;
+				@extend .h3;
+				@extend .default;
+				@extend .text-decor-none;
+			}
+			a:after {
+				content: '';
+				position: absolute;
+				display: block;
+				top: 0;
+				left: 0;
+				height: 6px;
+				width: 0;
+				@extend .bg-default;
+				transition: width 0.4s ease-in-out;	
+			}
+			a:hover:after,
+			a:active:after {
+				width: 100%;
+			}
+			.menu-item-has-children-ghost {
+				@extend .visuallyhidden;
+				@extend .z-99;
+			}
+		}
+		li:first-of-type a { padding-left: 18px; }
+		li.menu-item-has-children {
+			&:hover,
+			&:active,
+			&:hover a,
+			&:active a,
+			a:hover,
+			a:active {
+				color: #fff;
+				@extend .bg-default;
+			}
+			a:after { content: none!important; }
+			a:before {
+				content: '';
+				@extend .block-vert-c;
+				right: 16px;
+				left: auto;
+				width: 7.5px;
+				height: 4px;
+				font-size: 4px;
+				line-height: 1; 
+				@extend .bg-default;
+			}
+			&:hover a:before,
+			&:active a:before, 
+			a:hover:before,
+			a:active:before {
+				background-color: #fff;
+			}
+		}
+		// First and Second level sub-menu
 		li > .sub-menu {
 			position: absolute;
+			top: auto;
+			right: auto;
 			bottom: 0;
 			left: 0;
 			transform: translateY(100%);
+			padding: 10px 3px 8px 3px;
+			@extend .bg-default;
+			li a {
+				width: 232px;
+				height: 36px;
+				padding-right: 25px;
+				padding-left: 15px;
+				color: #fff;
+				&:hover {
+					@extend .default;
+					@extend .bg-accent;
+				}
+				&:before { content: none; }
+			}
+			li.menu-item-has-children {
+				a:before {
+					content: '';
+					@extend .block-vert-c;
+					right: 10px;
+					left: auto;
+					width: 4px;
+					height: 7.5px;
+					font-size: 7.5px;
+					line-height: 1;
+					background-color: #fff;
+				}
+				a:hover:before,
+				a:active:before {
+					@extend .bg-default;
+				}
+			}
 		}
+		// Second level sub-menu
 		li li > .sub-menu {
 			position: absolute;
-			top: -5px;
+			top: -10px;
 			right: 0;
+			bottom: auto;
+			left: auto;
+			width:  calc(232px + 3px + 3px);
 			transform: translateX(100%);
+			li { width: 232px; }
+			li a:before { content: none!important; }
 		}
 	}
-	.lang-switcher { margin-left: auto; }
+	.lang-switcher {
+		margin-right: -10px;
+		margin-left: auto;
+		a {
+			padding: 10px;
+			@extend .h3;
+			@extend .additional-2;
+			@extend .text-decor-none;
+		}
+		a.active,
+		a:hover,
+		a:active {
+			@extend .default;
+		}
+	}
 }
 
-.header-relative #site-header {
-	position: relative;
+// Site Header style when scrollTop position of the document is not 0
+#site-header.not--top {
+	box-shadow: 0 8px 6px -6px rgba(35,31,32,0.4);
+	#main-site-logo,
+	#main-site-logo img {
+		max-height: 53px;
+	}
+	.header-menu li a { height: 90px; }
+}
+
+@media (max-width: 1199px) {
+	#site-header > .container > .row { height: 90px; }
+	#site-header {
+		.wrapper-for-mobile-menu {
+			position: absolute;
+			display: none;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			bottom: 0;
+			left: 50%;
+			transform: translate(-50%,100%);
+			width: 100vw;
+			padding-top: 8px;
+			padding-bottom: 4px;
+			background-color: #231f20;
+		}
+		.nav {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.header-menu {
+			flex-wrap: wrap;
+			width: 696px;
+			margin-right: 0;
+			margin-left: 0;
+			li:nth-of-type(n) {
+				width: 100%;
+				a {
+					height: 50px;
+					padding-left: 10px;
+					color: #fff;
+					border-bottom: 1px solid #787C82;
+				}
+				.menu-item-has-children-ghost {
+					pointer-events: initial!important;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+				}
+			}
+			li.menu-item-has-children {
+				a:before { background-color: #fff; }
+				&:hover a:before,
+				&:active a:before, 
+				a:hover:before,
+				a:active:before {
+					background-color: #231f20;
+				}
+			}
+			// First and Second level sub-menu
+			li > .sub-menu {
+				position: relative;
+				transform: none;
+				padding: 10px 3px 8px 3px;
+			}
+			// Second level sub-menu
+			li li > .sub-menu {
+				position: relative;
+				top: 0px;
+				transform: none;
+			}
+		}
+		.lang-switcher {
+			margin-right: 0;
+			margin-left: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 696px;
+			a.active,
+			a:hover,
+			a:active {
+				color: #f6c55b;
+			}
+		}
+		#mobile-menu-icon { display: block; }
+		#main-site-logo,
+		#main-site-logo img {
+			max-height: 53px;
+		}
+	}
 }

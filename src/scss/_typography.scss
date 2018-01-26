@@ -1,192 +1,80 @@
 //FONTS
 @font-face {
-  font-family: 'SariWebProRegular';
-  src:  url('fonts/SariWebProRegular.eot');
-  src:  url('fonts/SariWebProRegular.eot?#iefix') format('embedded-opentype'),
-    url('fonts/SariWebProRegular.ttf') format('truetype'),
-    url('fonts/SariWebProRegular.woff') format('woff'),
-    url('fonts/SariWebProRegular.svg#SariWebProRegular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Calibri';
+    src: url('fonts/Calibri-Light.eot');
+    src: url('fonts/Calibri-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Calibri-Light.woff') format('woff'),
+        url('fonts/Calibri-Light.ttf') format('truetype'),
+        url('fonts/Calibri-Light.svg#Calibri-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
 }
 @font-face {
-  font-family: 'SariWebProRegularItalic';
-  src:  url('fonts/SariWebProRegularItalic.eot');
-  src:  url('fonts/SariWebProRegularItalic.eot?#iefix') format('embedded-opentype'),
-    url('fonts/SariWebProRegularItalic.ttf') format('truetype'),
-    url('fonts/SariWebProRegularItalic.woff') format('woff'),
-    url('fonts/SariWebProRegularItalic.svg#SariWebProRegularItalic') format('svg');  
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SariWebProRegularSC';
-  src:  url('fonts/SariWebProRegularSC.eot');
-  src:  url('fonts/SariWebProRegularSC.eot?#iefix') format('embedded-opentype'),
-    url('fonts/SariWebProRegularSC.ttf') format('truetype'),
-    url('fonts/SariWebProRegularSC.woff') format('woff'),
-    url('fonts/SariWebProRegularSC.svg#SariWebProRegularSC') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SariWebProBold';
-  src:  url('fonts/SariWebProBold.eot');
-  src:  url('fonts/SariWebProBold.eot?#iefix') format('embedded-opentype'),
-    url('fonts/SariWebProBold.ttf') format('truetype'),
-    url('fonts/SariWebProBold.woff') format('woff'),
-    url('fonts/SariWebProBold.svg#SariWebProBold') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SariWebProBoldItalic';
-  src:  url('fonts/SariWebProBoldItalic.eot');
-  src:  url('fonts/SariWebProBoldItalic.eot?#iefix') format('embedded-opentype'),
-    url('fonts/SariWebProBoldItalic.ttf') format('truetype'),
-    url('fonts/SariWebProBoldItalic.woff') format('woff'),
-    url('fonts/SariWebProBoldItalic.svg#SariWebProBoldItalic') format('svg'); 
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SariWebProBoldSC';
-  src:  url('fonts/SariWebProBoldSC.eot');
-  src:  url('fonts/SariWebProBoldSC.eot?#iefix') format('embedded-opentype'),
-    url('fonts/SariWebProBoldSC.ttf') format('truetype'),
-    url('fonts/SariWebProBoldSC.woff') format('woff'),
-    url('fonts/SariWebProBoldSC.svg#SariWebProBoldSC') format('svg'); 
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SariWebProLightItalic';
-  src: url('fonts/SariWebProLightItalic.eot');
-  src: url('fonts/SariWebProLightItalic.eot?#iefix') format('embedded-opentype'),
-  url('fonts/SariWebProLightItalic.woff') format('woff'),
-  url('fonts/SariWebProLightItalic.ttf') format('truetype'),
-  url('fonts/SariWebProLightItalic.svg#SariWebProLightItalic') format('svg');   
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SariWebProLight';
-  src: url('fonts/SariWebProLight.eot');
-  src: url('fonts/SariWebProLight.eot?#iefix') format('embedded-opentype'),
-  url('fonts/SariWebProLight.woff') format('woff'),
-  url('fonts/SariWebProLight.ttf') format('truetype'),
-  url('fonts/SariWebProLight.svg#SariWebProLight') format('svg');   
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SariWebProMediumItalic';
-  src: url('fonts/SariWebProMediumItalic.eot');
-  src: url('fonts/SariWebProMediumItalic.eot?#iefix') format('embedded-opentype'),
-  url('fonts/SariWebProMediumItalic.woff') format('woff'),
-  url('fonts/SariWebProMediumItalic.ttf') format('truetype'),
-  url('fonts/SariWebProMediumItalic.svg#SariWebProMediumItalic') format('svg');   
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'SariWebProMedium';
-  src: url('fonts/SariWebProMedium.eot');
-  src: url('fonts/SariWebProMedium.eot?#iefix') format('embedded-opentype'),
-  url('fonts/SariWebProMedium.woff') format('woff'),
-  url('fonts/SariWebProMedium.ttf') format('truetype'),
-  url('fonts/SariWebProMedium.svg#SariWebProMedium') format('svg');   
-  font-weight: normal;
-  font-style: normal;
-}
-
-.Sari-Light {
-  font-family: 'SariWebProLight', sans-serif;  
-  font-weight: 300;
-}
-.Sari-Light-Italic {
-  font-family: 'SariWebProLightItalic', sans-serif;    
-  font-weight: 300;
-}
-.Sari-Regular {
-  font-family: 'SariWebProRegular', sans-serif;
-  font-weight: 400;
-}
-.Sari-Regular-Italic {
-  font-family: 'SariWebProRegularItalic', sans-serif; 
-  font-weight: 400;
-}
-.Sari-Regular-Caps {
-  font-family: 'SariWebProRegularSC', sans-serif;
-  font-weight: 400;
-}
-.Sari-Medium {
-  font-family: 'SariWebProMedium', sans-serif;  
-  font-weight: 500;
-}
-.Sari-Medium-Italic {
-  font-family: 'SariWebProMediumItalic', sans-serif;  
-  font-weight: 500;
-}
-.Sari-Bold {
-  font-family: 'SariWebProBold', sans-serif;
-  font-weight: 700;
-}
-.Sari-Bold-Italic {
-  font-family: 'SariWebProBoldItalic', sans-serif;
-  font-weight: 700;
-}
-.Sari-Bold-Caps {
-  font-family: 'SariWebProBoldSC', sans-serif;
-  font-weight: 700;
+    font-family: 'Calibri';
+    src: url('fonts/Calibri.eot');
+    src: url('fonts/Calibri.eot?#iefix') format('embedded-opentype'),
+        url('fonts/Calibri.woff') format('woff'),
+        url('fonts/Calibri.ttf') format('truetype'),
+        url('fonts/Calibri.svg#Calibri') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 p, .p, body {
-  @extend .Sari-Regular;
-  font-size: 20px;
+  font-family: 'Calibri', 'Source Sans Pro', serif, sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.38;
 }
 h6, .h6 {
-  @extend .Sari-Regular;
-  font-size: 22px;
-  line-height: 45px;
+  //
 }
 h5, .h5 {
-  @extend .Sari-Regular;
-  font-size: 25px;
-  line-height: 1.28;
+  font-family: 'Calibri', 'Source Sans Pro', serif, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 2.07;
 }
 h4, .h4 {
-  @extend .Sari-Bold-Italic;
-  font-size: 30px;
-  letter-spacing: 0.03em;
+  font-family: 'Calibri', 'Source Sans Pro', serif, sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #fff;
 }
 h3, .h3 {
-  @extend .Sari-Regular;
-  font-size: 36px;
-  line-height: 1.25;
-  letter-spacing: 0.03em;
+  font-family: 'Calibri', 'Source Sans Pro', serif, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: #fff;
 }
 h2, .h2 {
-  @extend .Sari-Light;
-  font-size: 50px;
-  line-height: 64px;
+  font-family: 'Calibri', 'Source Sans Pro', serif, sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.2;
 }
 h1, .h1 {
-  @extend .Sari-Regular;
-  font-size: 70px;
-  line-height: 81px;
+  font-family: 'Calibri', 'Source Sans Pro', serif, sans-serif;
+  font-size: 41px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+@media (max-width: 1199px) {
+  h4, .h4 { font-size: 28px; }
+  h2, .h2 { font-size: 23px; }
+  h1, .h1 { font-size: 36px; }
 }
 
 @media (max-width: 767px) {
-  h1, .h1 {  
-    font-size: calc(70px * 0.7);
-    line-height: calc(81px * 0.7);
-  }
-  h2, .h2 {  
-    font-size: calc(50px * 0.8);
-    line-height: calc(64px * 0.8);
-  }
-  h3, .h3 { font-size: calc(36px * 0.85); }
+  p, .p, body { font-size: 18px; }
+  h4, .h4 { font-size: 26px; }
+  h2, .h2 { font-size: 21px; }
+  h1, .h1 { font-size: 30px; }
 }
 
 @font-face {
