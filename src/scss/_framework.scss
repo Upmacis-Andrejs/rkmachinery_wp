@@ -155,12 +155,15 @@ a *:visited {
   cursor: pointer!important;
 }
 a { @extend .default; }
+a:visited,
+a:visited {
+  @extend .additional-2;
+}
 a:hover,
 a:active,
 a:focus {
   @extend .accent-2;
 }
-a:visited { @extend .additional-2; }
 a:focus,
 a:visited {
   outline: none;
@@ -270,6 +273,7 @@ input[type="submit"]:hover {
   min-width: 223px;
   padding-right: 10px;
   padding-left: 10px;
+  @extend .margin-top-big;
   @extend .h3;
   color: #fff;
   @extend .bg-default;
@@ -307,17 +311,17 @@ a:visited { @extend .additional-2; }
 }
 
 // COLORS
-.accent { color: #f6c55b; }
-.accent-2 { color: #e2231a; }
 .default { color: #231f20; }
 .additional { color: #787c82; }
 .additional-2 { color: #c2c0c2; }
+.accent { color: #f6c55b; }
+.accent-2 { color: #e2231a; }
 
-.bg-accent { background-color: #f6c55b; }
-.bg-accent-2 { background-color: #e2231a; }
 .bg-default { background-color: #231f20; }
 .bg-additional { background-color: #787c82; }
 .bg-additional-2 { background-color: #c2c0c2; }
+.bg-accent { background-color: #f6c55b; }
+.bg-accent-2 { background-color: #e2231a; }
 
 // BACKGROUNDS
 .icon-bg {
@@ -459,6 +463,14 @@ a:visited { @extend .additional-2; }
 .inline-vert-c { vertical-align: middle; }
 .inline-vert-b { vertical-align: bottom; }
 .inline-vert-t { vertical-align: top; }
+.block-fit-parent {
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 .block-hor-c {
   position: absolute;
   display: block;

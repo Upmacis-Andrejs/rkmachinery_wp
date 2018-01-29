@@ -202,7 +202,7 @@
 }
 
 // Site Header style when scrollTop position of the document is not 0
-#site-header.not--top {
+.not--top #site-header {
 	box-shadow: 0 8px 6px -6px rgba(35,31,32,0.4);
 	#main-site-logo,
 	#main-site-logo img {
@@ -210,10 +210,13 @@
 	}
 	.header-menu li a { height: 90px; }
 }
+#site-content { transition: padding-top 0.25s ease-in-out; }
+.not--top #site-content { padding-top: 90px; }
 
 @media (max-width: 1199px) {
 	#site-header > .container > .row { height: 90px; }
 	#site-header {
+		box-shadow: 0 8px 6px -6px rgba(35,31,32,0.4);
 		.wrapper-for-mobile-menu {
 			position: absolute;
 			display: none;
