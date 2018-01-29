@@ -74,7 +74,7 @@
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 .btn:focus, .btn:hover {
   text-decoration: none;
@@ -154,6 +154,13 @@ a *:focus,
 a *:visited {
   cursor: pointer!important;
 }
+a { @extend .default; }
+a:hover,
+a:active,
+a:focus {
+  @extend .accent-2;
+}
+a:visited { @extend .additional-2; }
 a:focus,
 a:visited {
   outline: none;
@@ -382,13 +389,23 @@ a:visited { @extend .additional-2; }
   }
 }
 
-//PADDINGS AND MARGINS
+// PADDINGS AND MARGINS
+.padding-top-big { padding-top: 50px; }
+.padding-bottom-big { padding-bottom: 50px; }
+.padding-top-small { padding-top: 30px; }
+.padding-bottom-small { padding-bottom: 30px; }
+
 .margin-top-big { margin-top: 50px; }
 .margin-bottom-big { margin-bottom: 50px; }
 .margin-top-small { margin-top: 30px; }
 .margin-bottom-small { margin-bottom: 30px; }
 
 @media (max-width: 1199px) {
+  .padding-top-big { padding-top: 40px; }
+  .padding-bottom-big { padding-bottom: 40px; }
+  .padding-top-small { padding-top: 20px; }
+  .padding-bottom-small { padding-bottom: 20px; }
+
   .margin-top-big { margin-top: 40px; }
   .margin-bottom-big { margin-bottom: 40px; }
   .margin-top-small { margin-top: 20px; }
@@ -396,6 +413,11 @@ a:visited { @extend .additional-2; }
 }
 
 @media (max-width: 767px) {
+  .padding-top-big { padding-top: 25px; }
+  .padding-bottom-big { padding-bottom: 25px; }
+  .padding-top-small { padding-top: 15px; }
+  .padding-bottom-small { padding-bottom: 15px; }
+
   .margin-top-big { margin-top: 25px; }
   .margin-bottom-big { margin-bottom: 25px; }
   .margin-top-small { margin-top: 15px; }
@@ -490,10 +512,11 @@ a:visited { @extend .additional-2; }
 .flex {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
 }
 .flex-important { display: flex!important; }
 .block { display: block; }
+.block-important { display: block!important; }
 .inline-block { display: inline-block; }
 .inline { display: inline; }
 .fixed { position: fixed; }

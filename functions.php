@@ -202,7 +202,7 @@ function rkmachinery_display_lang_switcher() {
     $res .= '<div class="lang-switcher">';
     foreach ($languages as $l){
       $active = ($l['active']) ? ' active' : '';
-      $res .= '<a href="' . $l['url'] . '" class="p' . $active . '">';
+      $res .= '<a href="' . $l['url'] . '" class="' . $active . '">';
       $res .= $l['language_code'];
       $res .= '</a>';
     }
@@ -514,7 +514,7 @@ add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <di
 add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove invalid rel attribute
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
-//add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'rkmachinery_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images

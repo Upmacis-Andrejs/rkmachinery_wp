@@ -74,23 +74,32 @@
             id="body-wrapper">
 
 			<!-- header -->
-			<header class="z-99 clear" id="site-header">
+			<header class="z-666 clear flex-vert-c" id="site-header">
                 <div class="container">
-                    <div class="row flex">
+                    <div class="row flex-vert-c">
 
                             <a class="visuallyhidden" id="template-dir-uri-img" href="<?php echo get_template_directory_uri(); ?>/img/"></a>
     						<a id="main-site-logo" href="<?php echo home_url(); ?>">
-    							<img src="<?php
-                                    if( get_field('full_width_video') || get_field('full_width_image') ): the_field('site_logo_with_bg', 'option');
-                                    else: the_field('site_logo_wo_bg', 'option');
-                                    endif; ?>"
-                                alt="Site Logo">
+    							<img src="<?php the_field('site_logo_header', 'option'); ?>" alt="Site Logo">
     						</a>
-        					<nav class="nav">
-        						<?php rkmachinery_nav(); ?>
-        					</nav>
-                            <?php echo apply_filters('rkmachinery_lang_switcher', ''); ?>
-
+                            <a id="mobile-menu-icon" href="#">
+                                <div class="inner">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <div class="wrapper-for-mobile-menu">
+                                <div class="inner flex-vert-c">
+                					<nav class="nav">
+                						<?php rkmachinery_nav(); ?>
+                					</nav>
+                                    <div class="lang-switcher-wrapper">
+                                        <?php echo apply_filters('rkmachinery_lang_switcher', ''); ?>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                 </div>
 			</header>
