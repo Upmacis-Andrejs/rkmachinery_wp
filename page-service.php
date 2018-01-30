@@ -25,12 +25,19 @@
 		<section id="section-2">
 			<div class="container">
 				<?php get_template_part('breadcrumbs'); ?>
+			</div>
+		</section>
+
+		<section id="section-3" class="service-section">
+			<div class="container">
+
 				<div class="row">
 					<h1 class="title"><?php the_title(); ?></h1>
 					<div class="page-content editor-wrapper">
 						<?php the_field('page_content'); ?>
 					</div>
-				</div>	
+				</div>
+
 				<div class="row">
 					<?php global $post;
 						$the_query = new WP_Query( array(
@@ -79,7 +86,7 @@
 									<li><?php the_title(); ?></li>
 									<?php endwhile; ?>
 									<?php if ( $post_children_query->found_posts > 4 ): ?>
-									<li>...<?php _e('more', 'rkmachinery'); ?></li>
+									<li class="more">...<?php _e('more', 'rkmachinery'); ?></li>
 									<?php endif; ?>
 								</ul>	
 								<!-- /loop through children of child page of this post -->									
@@ -94,7 +101,7 @@
 												endif;
 											?>
 										</li>
-										<li>...<?php _e('more', 'rkmachinery'); ?></li>
+										<li class="more">...<?php _e('more', 'rkmachinery'); ?></li>
 									</ul>
 									<?php endif; ?>
 									<!-- /if page child does not have children, display excerpt -->									
