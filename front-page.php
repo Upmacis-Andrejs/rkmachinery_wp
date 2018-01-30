@@ -144,30 +144,33 @@
 
 						<h1 class="title"><?php echo get_the_title('33'); ?></h1>
 						<div class="news-block-wrapper flex-hor-c">
-					    <?php while ( $the_query_news->have_posts() ) : $the_query_news->the_post(); ?>   
-					        <a class="news-block shadow text-decor-none jquery-background-video-wrapper
-					        <?php if( get_field('thumbnail_video') ): echo ' video';
-							elseif( get_field('thumbnail_image') ): echo ' image';
-							endif; ?>"
-							href="<?php the_permalink(); ?>">
-								
-								<div class="title-and-date z-6">
-									<h3 class="title"><?php the_title(); ?></h3>
-									<h5 class="news-post-date"><?php echo get_the_date('F d, Y'); ?></h5>
-									<div class="shape-right-cut">
-										<div class="shape-right"></div>
-										<div class="shape-upper"></div>
-									</div>
+					    <?php while ( $the_query_news->have_posts() ) : $the_query_news->the_post(); ?>
+					    	<div class="news-block-outer">
+					    		<div class="news-block-inner">
+							        <a class="news-block shadow text-decor-none jquery-background-video-wrapper
+							        <?php if( get_field('thumbnail_video') ): echo ' video';
+									elseif( get_field('thumbnail_image') ): echo ' image';
+									endif; ?>"
+									href="<?php the_permalink(); ?>">
+										
+										<div class="title-and-date z-6">
+											<h3 class="title"><?php the_title(); ?></h3>
+											<h5 class="news-post-date"><?php echo get_the_date('F d, Y'); ?></h5>
+											<div class="shape-right-cut">
+												<div class="shape-right"></div>
+												<div class="shape-upper"></div>
+											</div>
+										</div>
+										<?php if( get_field('thumbnail_video') ): ?>
+											<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
+												<source src="<?php the_field('thumbnail_video'); ?>">
+											</video>
+										<?php elseif( get_field('thumbnail_image') ): ?>
+											<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('thumbnail_image'); ?>)"></div>
+										<?php endif; ?>
+									</a>
 								</div>
-								<?php if( get_field('thumbnail_video') ): ?>
-									<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
-										<source src="<?php the_field('thumbnail_video'); ?>">
-									</video>
-								<?php elseif( get_field('thumbnail_image') ): ?>
-									<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('thumbnail_image'); ?>)"></div>
-								<?php endif; ?>
-
-							</a>
+							</div>
 					    <?php endwhile; wp_reset_postdata(); ?>
 						</div>
 						<a class="btn btn-1" href="<?php echo get_permalink('33') ?>"><?php _e('View All News', 'rkmachinery'); ?></a>

@@ -363,6 +363,13 @@ function rkmachinery_wp_pagination()
     ));
 }
 
+
+function posts_link_attributes() {
+    return 'class="btn btn-1"';
+}
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
 // Custom Excerpt Length
 function rkmachinery_wp_20($length) // Create 20 Word Callback, call using rkmachinery_wp_excerpt('rkmachinery_wp_20');
 {

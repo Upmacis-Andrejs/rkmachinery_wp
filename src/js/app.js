@@ -158,7 +158,7 @@ $(document).ready(function() {
 	$(document).on('click', '.load-more a', function(e) {
           e.preventDefault();
           var $link = $(this).attr('href');
-          $('.load-more').html('<span class="loader">Loading...</span>');
+          $('.load-more').html('<button class="btn btn-1 loader">Loading...</span>');
           jQuery.get($link, function(data) {
               var $post = $(".posts .post ", data);
               $(".posts").append($post);

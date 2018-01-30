@@ -6,9 +6,11 @@
 		<section id="section-1">
 			<div class="full-width-img-video-wrapper shadow jquery-background-video-wrapper">
 				<?php if( get_field('text-fwiv') ): ?>
-					<div class="text z-6 container">
-						<div class="row editor-wrapper">
-							<?php the_field('text-fwiv'); ?>
+					<div class="z-6 container">
+						<div class="row text">
+							<div class="editor-wrapper">
+								<?php the_field('text-fwiv'); ?>
+							</div>
 						</div>
 					</div>
 				<?php endif; ?>
@@ -25,6 +27,11 @@
 		<section id="section-2">
 			<div class="container">
 				<?php get_template_part('breadcrumbs'); ?>
+			</div>
+		</section>
+
+		<section id="section-3">
+			<div class="container">
 				<div class="row">
 					<div class="slider-and-content-wrapper flex-hor-c">
 						<div class="slider-and-gallery-wrapper">
@@ -48,14 +55,16 @@
 
 								if( $images_gallery ): ?>
 						        <?php foreach( $images_gallery as $gallery_image ): ?>
-								    <a class="gallery-img-block-item section-bg" href="<?php echo $gallery_image['url']; ?>" style="background-image: url(<?php echo $gallery_image['url']; ?>)" data-rel="lightcase:qualitySection" title="<?php echo $gallery_image['description']; ?>"></a>
+						        	<div class="gallery-img-block-item-wrapper">
+									    <a class="gallery-img-block-item icon-bg" href="<?php echo $gallery_image['url']; ?>" style="background-image: url(<?php echo $gallery_image['url']; ?>)" data-rel="lightcase:qualitySection" title="<?php echo $gallery_image['description']; ?>"></a>
+									 </div>
 						        <?php endforeach; ?>
 						    	<?php endif; ?>
 							</div>
 						</div>
 						<div class="title-and-content">
-							<div class="title">
-								<h2><?php the_title(); ?></h2>
+							<div class="title-block bg-default table">
+								<h1 class="title td"><?php the_title(); ?></h1>
 							</div>
 							<div class="page-content editor-wrapper"> 
 								<?php the_field('page_content'); ?>
