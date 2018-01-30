@@ -9,7 +9,7 @@
 			</div>
 		</section>
 
-		<section id="section-2" class="news-section">
+		<section id="section-2" class="news-section full-section">
 			<div class="container">
 				<div class="row">
 					<h1 class="title"><?php the_title(); ?></h1>

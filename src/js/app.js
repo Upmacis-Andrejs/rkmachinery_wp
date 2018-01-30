@@ -212,7 +212,7 @@ $(document).ready(function() {
 	});
 
 	// Script for Facebook Share button
-	$(document).on('click', '.shareBtn', function() {
+	$(document).on('click', '.fb-share-btn', function() {
 		var $btn = $(this);
 
 		FB.ui({
