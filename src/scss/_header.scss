@@ -226,8 +226,8 @@
 // Breadcrumbs
 .breadcrumbs-wrapper {
 	height: 50px;
-	margin-right: -15px;
-	margin-left: -19px;
+	margin-right: -14px;
+	margin-left: -18px;
 	@extend .h5;
 	@extend .additional;
 	a:hover,
@@ -238,8 +238,8 @@
 	}
 	h5,
 	.h5 {
-		margin-right: 15px;
-		padding-left: 19px;
+		margin-right: 14px;
+		padding-left: 18px;
 	}
 	h5:before,
 	.h5:before {
@@ -371,6 +371,7 @@
 			max-height: 53px;
 		}
 	}
+	.breadcrumbs-wrapper { display: none; }
 }
 
 @media (max-width: 767px) {

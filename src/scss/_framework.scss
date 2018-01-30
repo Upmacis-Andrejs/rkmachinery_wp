@@ -565,6 +565,42 @@ img,
     width: 100%
 }
 
+// TABLES
+.table,
+table { display: table; }
+.thead,
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+}
+.tfoot,
+tfoot {
+  display: table-footer-group;
+  vertical-align: middle;  
+}
+.tfoot-inner {
+  position: absolute;
+  left: 0;
+  top: 0;  
+}
+.tbody,
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+}
+.tr,
+tr {
+  display: table-row;
+  vertical-align: inherit;  
+}
+.th,
+.td,
+th,
+td {
+  display: table-cell;
+  vertical-align: inherit;
+}
+
 // DEPRECATED BROWSER NOTIFICATION
 #update_browser_fake_body {
     position: fixed;

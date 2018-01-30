@@ -190,19 +190,24 @@ $(document).ready(function() {
   }); */
 
 	// Play Video by clicking button
-	$(".btn-play").click(function() {
+	/*$(".btn-play").click(function() {
 		var $this_video = $(this).parent().find('.video-play').get(0);
 		if ( $this_video.paused ) {
 			$this_video.play();
 			$(this).addClass('hidden');
 		}
-	});
+	});*/
 
 	$(".video-play").click(function() {
+		var $this = $(this);
 		var $this_video = $(this).get(0);
+		var $this_button = $this.parent().find('.btn-play');
 		if ( !$this_video.paused ) {
 			$this_video.pause();
-			$(this).parent().find('.btn-play').removeClass('hidden');
+			$this_button.removeClass('hidden');
+		} else {
+			$this_video.play();
+			$this_button.addClass('hidden');
 		}
 	});
 

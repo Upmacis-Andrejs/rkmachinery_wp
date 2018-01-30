@@ -6,9 +6,11 @@
 		<section id="section-1">
 			<div class="full-width-img-video-wrapper shadow jquery-background-video-wrapper">
 				<?php if( get_field('text-fwiv') ): ?>
-				<div class="text z-6 container">
-					<div class="row editor-wrapper">
-						<?php the_field('text-fwiv'); ?>
+				<div class="z-6 container">
+					<div class="row text">
+						<div class="editor-wrapper">
+							<?php the_field('text-fwiv'); ?>
+						</div>
 					</div>
 				</div>
 				<?php endif; ?>
