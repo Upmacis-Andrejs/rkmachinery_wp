@@ -239,10 +239,10 @@ $(document).ready(function() {
 	var $document = $(document);
 	var $body = $("body");
 	function add_not_top() {
-		$body.addClass("not--top");
+	//	$body.addClass("not--top");
 	}
 	function remove_not_top() {
-		$body.removeClass("not--top");
+	//	$body.removeClass("not--top");
 	}
 	var $timeout_add_not_top
 	var $timeout_remove_not_top

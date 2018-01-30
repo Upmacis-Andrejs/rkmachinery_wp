@@ -4,9 +4,11 @@
 		<section id="section-1">
 			<div class="full-width-img-video-wrapper mega-size shadow jquery-background-video-wrapper">
 				<?php if( get_field('text-fwiv') ): ?>
-					<div class="text z-6 container">
-						<div class="row editor-wrapper">
-							<?php the_field('text-fwiv'); ?>
+					<div class="z-6 container">
+						<div class="row text">
+							<div class="editor-wrapper">
+								<?php the_field('text-fwiv'); ?>
+							</div>
 						</div>
 					</div>
 				<?php endif; ?>
@@ -23,7 +25,7 @@
 		<section id="section-2">
 			<div class="container">
 				<div class="row">
-					<div class="page-block-wrapper flex-hor-c">
+					<div class="page-block-wrapper flex-hor-c z-6">
 						<!-- loop through page_id=24 data -->
 						<?php $the_query_24= new WP_Query('page_id=24');
 							while ($the_query_24->have_posts()) : $the_query_24->the_post(); ?>
@@ -35,7 +37,7 @@
 						id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
 						href="<?php the_permalink(); ?>">
 
-							<h2 class="title z-6"><?php the_title(); ?></h2>
+							<h4 class="title z-6"><?php the_title(); ?></h4>
 							<?php if( get_field('full_width_video') ): ?>
 								<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
 									<source src="<?php the_field('full_width_video'); ?>">
@@ -58,7 +60,7 @@
 						id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
 						href="<?php the_permalink(); ?>">
 
-							<h2 class="title z-6"><?php the_title(); ?></h2>
+							<h4 class="title z-6"><?php the_title(); ?></h4>
 							<?php if( get_field('full_width_video') ): ?>
 								<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
 									<source src="<?php the_field('full_width_video'); ?>">
@@ -81,7 +83,7 @@
 						id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
 						href="<?php the_permalink(); ?>">
 
-							<h2 class="title z-6"><?php the_title(); ?></h2>
+							<h4 class="title z-6"><?php the_title(); ?></h4>
 							<?php if( get_field('full_width_video') ): ?>
 								<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
 									<source src="<?php the_field('full_width_video'); ?>">
@@ -102,6 +104,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="who-we-are-wrapper float-left z-9">
+						<h1 class="title"><?php _e('Who we are', 'rkmachinery'); ?></h1>
 						<div class="who-we-are editor-wrapper">
 							<?php the_field('page_content'); ?>
 						</div>
@@ -129,44 +132,48 @@
 			</div>
 		</section>
 
-		<section class="z-6" id="section-4">
+		<section class="news-section z-6" id="section-4">
 			<div class="container">
-				<div class="row">					
-					<?php $the_query_news = new WP_Query( array(
-						'post_type'	=> 'news_posts',
-						'posts_per_page'	=> '3',
-					) );                  
-					if ( $the_query_news->have_posts() ) : ?>
-					<!-- loop through custom post type 'news' -->
+				<div class="row flex">			
+						<?php $the_query_news = new WP_Query( array(
+							'post_type'	=> 'news_posts',
+							'posts_per_page'	=> '3',
+						) );                  
+						if ( $the_query_news->have_posts() ) : ?>
+						<!-- loop through custom post type 'news' -->
 
-					<h2><?php echo get_the_title('33'); ?></h2>
-					<div class="news-block-wrapper flex-hor-c">
-				    <?php while ( $the_query_news->have_posts() ) : $the_query_news->the_post(); ?>   
-				        <a class="news-block shadow text-decor-none jquery-background-video-wrapper
-				        <?php if( get_field('thumbnail_video') ): echo ' video';
-						elseif( get_field('thumbnail_image') ): echo ' image';
-						endif; ?>"
-						href="<?php the_permalink(); ?>">
-							
-							<div class="title-and-date z-6">
-								<h5 class="title"><?php the_title(); ?></h5>
-								<h6 class="news-post-date"><?php echo get_the_date('F d, Y'); ?></h6>
-							</div>
-							<?php if( get_field('thumbnail_video') ): ?>
-								<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
-									<source src="<?php the_field('thumbnail_video'); ?>">
-								</video>
-							<?php elseif( get_field('thumbnail_image') ): ?>
-								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('thumbnail_image'); ?>)"></div>
-							<?php endif; ?>
+						<h1 class="title"><?php echo get_the_title('33'); ?></h1>
+						<div class="news-block-wrapper flex-hor-c">
+					    <?php while ( $the_query_news->have_posts() ) : $the_query_news->the_post(); ?>   
+					        <a class="news-block shadow text-decor-none jquery-background-video-wrapper
+					        <?php if( get_field('thumbnail_video') ): echo ' video';
+							elseif( get_field('thumbnail_image') ): echo ' image';
+							endif; ?>"
+							href="<?php the_permalink(); ?>">
+								
+								<div class="title-and-date z-6">
+									<h3 class="title"><?php the_title(); ?></h3>
+									<h5 class="news-post-date"><?php echo get_the_date('F d, Y'); ?></h5>
+									<div class="shape-right-cut">
+										<div class="shape-right"></div>
+										<div class="shape-upper"></div>
+									</div>
+								</div>
+								<?php if( get_field('thumbnail_video') ): ?>
+									<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
+										<source src="<?php the_field('thumbnail_video'); ?>">
+									</video>
+								<?php elseif( get_field('thumbnail_image') ): ?>
+									<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('thumbnail_image'); ?>)"></div>
+								<?php endif; ?>
 
-						</a>
-				    <?php endwhile; wp_reset_postdata(); ?>
-					</div>
-					<a class="btn btn-1" href="<?php echo get_permalink('33') ?>"><?php _e('View All News', 'rkmachinery'); ?></a>
+							</a>
+					    <?php endwhile; wp_reset_postdata(); ?>
+						</div>
+						<a class="btn btn-1" href="<?php echo get_permalink('33') ?>"><?php _e('View All News', 'rkmachinery'); ?></a>
 
-					<!-- /loop through custom post type 'news' -->
-					<?php endif; ?>
+						<!-- /loop through custom post type 'news' -->
+						<?php endif; ?>
 				</div>
 			</div>
 		</section>

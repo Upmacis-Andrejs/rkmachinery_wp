@@ -25,7 +25,7 @@
 		<section id="section-2">
 			<div class="container">
 				<div class="row">
-					<div class="page-block-wrapper flex-hor-c">
+					<div class="page-block-wrapper flex-hor-c z-6">
 						<!-- loop through page_id=24 data -->
 						<?php $the_query_24= new WP_Query('page_id=24');
 							while ($the_query_24->have_posts()) : $the_query_24->the_post(); ?>
@@ -154,6 +154,10 @@
 								<div class="title-and-date z-6">
 									<h3 class="title"><?php the_title(); ?></h3>
 									<h5 class="news-post-date"><?php echo get_the_date('F d, Y'); ?></h5>
+									<div class="shape-right-cut">
+										<div class="shape-right"></div>
+										<div class="shape-upper"></div>
+									</div>
 								</div>
 								<?php if( get_field('thumbnail_video') ): ?>
 									<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">

@@ -12,7 +12,7 @@
 		max-height: 80px;
 		transition: 0.1s ease-in-out, max-height 0.25s ease-in-out;		
 	}
-	#main-site-logo { margin-right: 52px; }
+	#main-site-logo { margin-right: 45px; }
 	.wrapper-for-mobile-menu { flex-grow: 1; }
 	#mobile-menu-icon {
 		display: none;
@@ -71,7 +71,7 @@
 			a {
 				@extend .flex-vert-c;
 				height: 136px;
-				padding: 0 30px;
+				padding: 0 29px;
 				transition: 0.1s ease-in-out, height 0.25s ease-in-out;
 				@extend .h3;
 				@extend .default;
