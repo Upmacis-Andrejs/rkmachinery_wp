@@ -27,6 +27,11 @@
 			text-transform: none;
 			@extend .accent;
 		}
+		.follow-btn-styled + div {
+		    position: absolute!important;
+		    right: -999999px;
+		    opacity: 0!important;
+		}
 		.social {
 			padding-left: 28px;
 			opacity: 0.7;

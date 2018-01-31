@@ -19,11 +19,11 @@
 						'posts_per_page'	=> '1'
 					));
 				?>
-				<?php if ( $last_query->have_posts() ) : while ( $last_query->have_posts() ) : $last_query->the_post(); ?>
+				<?php while ( $last_query->have_posts() ) : $last_query->the_post(); ?>
 
 					<a href="<?php the_permalink(); ?>"></a>
 
-				<?php endwhile; wp_reset_postdata(); endif; ?>
+				<?php endwhile; wp_reset_postdata(); ?>
 			<?php endif; ?>
 		</div>
 

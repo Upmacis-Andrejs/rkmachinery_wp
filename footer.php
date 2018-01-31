@@ -53,16 +53,18 @@
 									<h3 class="title"><?php _e('Follow Us', 'rkmachinery') ?></h3>
 									<ul class="list-style-none">
 										<li>
-											<a class="social facebook text-decor-none h5" href="#" target="_blank"><?php _e('Facebook', 'rkmachinery'); ?></a>
+											<a class="social follow-btn-styled facebook text-decor-none h5" href="#" target="_blank"><?php _e('Facebook', 'rkmachinery'); ?></a>
 										</li>
 										<li>
-											<a class="social youtube text-decor-none h5" href="#" target="_blank"><?php _e('Youtube', 'rkmachinery'); ?></a>
+											<a class="social follow-btn-styled youtube text-decor-none h5" href="#" target="_blank"><?php _e('Youtube', 'rkmachinery'); ?></a>
+											<div class="g-ytsubscribe" data-channel="GoogleDevelopers" data-layout="default" data-count="default"></div>
+											<script src="https://apis.google.com/js/platform.js"></script>
 										</li>
 										<li>
-											<a class="social linkedin text-decor-none h5" href="#" target="_blank"><?php _e('Linkedin', 'rkmachinery'); ?></a>
+											<a class="social follow-btn-styled linkedin text-decor-none h5" href="#" target="_blank"><?php _e('Linkedin', 'rkmachinery'); ?></a>
 										</li>
 										<li>
-											<a class="social linkedin text-decor-none h5" href="#" target="_blank"><?php _e('Instagram', 'rkmachinery'); ?></a>
+											<a class="social follow-btn-styled linkedin text-decor-none h5" href="#" target="_blank"><?php _e('Instagram', 'rkmachinery'); ?></a>
 										</li>
 									</ul>
 								</div>

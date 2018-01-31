@@ -227,6 +227,12 @@ $(document).ready(function() {
 		return false;
 	});
 
+	//Follow social links
+	$(".follow-btn-styled").click(function() {
+		$(this).next().find('*').trigger('click');
+		return false;
+	});
+
 	// Fit Video To Parent Div
 	$('.jquery-background-video').bgVideo({
 		//fullScreen: false, // Sets the video to be fixed to the full window - your <video> and it's container should be direct descendents of the <body> tag

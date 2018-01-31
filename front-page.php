@@ -73,24 +73,31 @@
 						<?php endwhile; wp_reset_postdata(); ?>
 						<!-- /loop through page_id=29 data -->
 						<!-- loop through page_id=26 data -->
+						<?php
+							// Loop Through Gallery Post Type and Return First URI						
+							$the_query_gallery = new WP_Query( array( 
+									'post_type' => 'gallery_posts',
+									'orderby'	=> 'date',
+									'order'		=> 'ASC',
+									'posts_per_page'	=> '1',
+								) );
+						?>
+						<?php while ( $the_query_gallery->have_posts() ) : $the_query_gallery->the_post(); ?>
+
+							<?php $first_gallery_permalink = get_the_permalink(); ?>
+						
+						<?php
+							// End of -> Loop Through Gallery Post Type and Return First URI						
+						endwhile; wp_reset_postdata(); ?>
+
+
 						<?php $the_query_26 = new WP_Query('page_id=26');
 							while ($the_query_26->have_posts()) : $the_query_26->the_post(); ?>
-						<a class="page-block shadow text-decor-none jquery-background-video-wrapper
-						<?php if( get_field('full_width_video') ): echo ' video';
-						elseif( get_field('full_width_image') ): echo ' image';
-						endif;
-						?>"
-						id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
-						href="<?php the_permalink(); ?>">
+						<a class="page-block shadow text-decor-none" id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
+						href="<?php echo $first_gallery_permalink ?>">
 
 							<h4 class="title z-6"><?php the_title(); ?></h4>
-							<?php if( get_field('full_width_video') ): ?>
-								<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
-									<source src="<?php the_field('full_width_video'); ?>">
-								</video>
-							<?php elseif( get_field('full_width_image') ): ?>
-								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('full_width_image'); ?>)"></div>
-							<?php endif; ?>
+							<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('thumbnail_image'); ?>)"></div>
 						
 						</a>
 						<?php endwhile; wp_reset_postdata(); ?>

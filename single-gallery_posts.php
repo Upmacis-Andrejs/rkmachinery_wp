@@ -50,7 +50,7 @@
 								id="<?php echo 'gallery-title-block-' . $count_1; ?>"
 								href="<?php the_permalink(); ?>"
 								style="z-index: 9;">
-								    <h3 class="title default"><?php the_title(); ?></h3>
+								    <h3 class="title default" data-hover="<?php the_title(); ?>"><?php the_title(); ?></h3>
 								</a>
 						    <?php endwhile; wp_reset_postdata(); ?>
 						</div>
