@@ -100,7 +100,7 @@
 			</div>
 		</section>
 
-		<section id="section-3">
+		<section id="section-3" class="who-we-are-map-section">
 			<div class="container">
 				<div class="row">
 					<div class="who-we-are-wrapper float-left z-9">

@@ -247,10 +247,10 @@ $(document).ready(function() {
 	var $document = $(document);
 	var $body = $("body");
 	function add_not_top() {
-	//	$body.addClass("not--top");
+		$body.addClass("not--top");
 	}
 	function remove_not_top() {
-	//	$body.removeClass("not--top");
+		$body.removeClass("not--top");
 	}
 	var $timeout_add_not_top
 	var $timeout_remove_not_top
@@ -290,6 +290,7 @@ $(document).ready(function() {
 	        return $(this).attr('src').replace('.svg', '.png');
 	    });
 	}
+
 
 	// Google Maps API script
 /* -------------------------------------------------------------------------------------- */
@@ -494,6 +495,95 @@ $(document).ready(function() {
 	}
 
 	/*
+	*  center_map
+	*
+	*  This function will center the map, showing all markers attached to this map
+	*
+	*  @type	function
+	*  @date	8/11/2013
+	*  @since	4.3.0
+	*
+	*  @param	map (Google Map object)
+	*  @return	n/a
+	*/
+
+	function center_map( map ) {
+
+		// vars
+		var bounds = new google.maps.LatLngBounds();
+
+		// loop through all markers and create bounds
+		$.each( map.markers, function( i, marker ){
+
+			var latlng = new google.maps.LatLng( marker.position.lat(), marker.position.lng() );
+
+			bounds.extend( latlng );
+
+		});
+
+		if ( $(window).width() > $tablet_width ) {
+
+			// only 1 marker?
+			if( map.markers.length == 1 ) {
+				// set center of map
+			    map.setCenter( bounds.getCenter() );
+			    map.setZoom( 16 );
+			} else {
+				// fit to bounds
+				map.fitBounds( bounds );
+
+			    var listener = google.maps.event.addListener(map, "idle", function() { 
+				  var current_zoom = map.getZoom();			
+				  var zoom_out = current_zoom - 2;
+				  map.setZoom( zoom_out );
+				  google.maps.event.removeListener(listener); 
+				});
+
+				// change the center of map
+				map.panBy(-800,0);
+			}
+
+		} else if ( $(window).width() <= $tablet_width && $(window).width() > $mobile_width ) {
+
+			// only 1 marker?
+			if( map.markers.length == 1 ) {
+				// set center of map
+			    map.setCenter( bounds.getCenter() );
+			    map.setZoom( 16 );
+			} else {
+				// fit to bounds
+				map.fitBounds( bounds );
+
+			    var listener = google.maps.event.addListener(map, "idle", function() { 
+				  var current_zoom = map.getZoom();			
+				  var zoom_out = current_zoom - 1;
+				  map.setZoom( zoom_out );
+				  google.maps.event.removeListener(listener); 
+				});
+			}
+
+		} else if ( $(window).width() <= $mobile_width ) {
+
+			// only 1 marker?
+			if( map.markers.length == 1 ) {
+				// set center of map
+			    map.setCenter( bounds.getCenter() );
+			    map.setZoom( 16 );
+			} else {
+				// fit to bounds
+				map.fitBounds( bounds );
+
+			    var listener = google.maps.event.addListener(map, "idle", function() { 
+				  var current_zoom = map.getZoom();			
+				  var zoom_out = current_zoom;
+				  map.setZoom( zoom_out );
+				  google.maps.event.removeListener(listener); 
+				});
+			}
+		}
+	}
+
+	/*
 	*  add_marker
 	*
 	*  This function will add a marker to the selected Google Map
@@ -549,58 +639,6 @@ $(document).ready(function() {
 	}
 
 	/*
-	*  center_map
-	*
-	*  This function will center the map, showing all markers attached to this map
-	*
-	*  @type	function
-	*  @date	8/11/2013
-	*  @since	4.3.0
-	*
-	*  @param	map (Google Map object)
-	*  @return	n/a
-	*/
-
-	function center_map( map ) {
-
-		// vars
-		var bounds = new google.maps.LatLngBounds();
-
-		// loop through all markers and create bounds
-		$.each( map.markers, function( i, marker ){
-
-			var latlng = new google.maps.LatLng( marker.position.lat(), marker.position.lng() );
-
-			bounds.extend( latlng );
-
-		});
-
-		// only 1 marker?
-		if( map.markers.length == 1 )
-		{
-			// set center of map
-		    map.setCenter( bounds.getCenter() );
-		    map.setZoom( 16 );
-		}
-		else
-		{
-			// fit to bounds
-			map.fitBounds( bounds );
-
-		    var listener = google.maps.event.addListener(map, "idle", function() { 
-			  var current_zoom = map.getZoom();			
-			  var zoom_out = current_zoom - 2;
-			  map.setZoom( zoom_out );
-			  google.maps.event.removeListener(listener); 
-			});
-
-			// change the center of map
-			map.panBy(-800,0);
-		}
-
-	}
-
-	/*
 	*  document ready
 	*
 	*  This function will render each map when the document is ready (page has loaded)
@@ -621,6 +659,90 @@ $(document).ready(function() {
 		map = new_map( $(this) );
 
 	});
+
+	google.maps.event.addDomListener(window, 'resize', function() {
+
+		// vars
+		var bounds = new google.maps.LatLngBounds();
+
+		// loop through all markers and create bounds
+		$.each( map.markers, function( i, marker ){
+
+			var latlng = new google.maps.LatLng( marker.position.lat(), marker.position.lng() );
+
+			bounds.extend( latlng );
+
+		});
+
+		if ( $(window).width() > $tablet_width ) {
+
+			// only 1 marker?
+			if( map.markers.length == 1 ) {
+				// set center of map
+			    map.setCenter( bounds.getCenter() );
+			    map.setZoom( 16 );
+			} else {
+				// fit to bounds
+				map.fitBounds( bounds );
+
+			    var listener = google.maps.event.addListener(map, "idle", function() { 
+				  var current_zoom = map.getZoom();			
+				  var zoom_out = current_zoom - 2;
+				  map.setZoom( zoom_out );
+				  google.maps.event.removeListener(listener); 
+				});
+
+				// change the center of map
+				map.panBy(-800,0);
+			}
+
+		} else if ( $(window).width() <= $tablet_width && $(window).width() > $mobile_width ) {
+
+			// only 1 marker?
+			if( map.markers.length == 1 ) {
+				// set center of map
+			    map.setCenter( bounds.getCenter() );
+			    map.setZoom( 16 );
+			} else {
+				// fit to bounds
+				map.fitBounds( bounds );
+
+			    var listener = google.maps.event.addListener(map, "idle", function() { 
+				  var current_zoom = map.getZoom();			
+				  var zoom_out = current_zoom - 1;
+				  map.setZoom( zoom_out );
+				  google.maps.event.removeListener(listener); 
+				});
+
+				// change the center of map
+				map.panBy(0,0);
+			}
+
+		} else if ( $(window).width() <= $mobile_width ) {
+
+			// only 1 marker?
+			if( map.markers.length == 1 ) {
+				// set center of map
+			    map.setCenter( bounds.getCenter() );
+			    map.setZoom( 16 );
+			} else {
+				// fit to bounds
+				map.fitBounds( bounds );
+
+			    var listener = google.maps.event.addListener(map, "idle", function() { 
+				  var current_zoom = map.getZoom();			
+				  var zoom_out = current_zoom;
+				  map.setZoom( zoom_out );
+				  google.maps.event.removeListener(listener); 
+				});
+
+				// change the center of map
+				map.panBy(0,0);
+			}
+		}
+
+	});
+
 /* -------------------------------------------------------------------------------------- */
 	// /Google Maps API script
 
@@ -648,6 +770,7 @@ window.onload = function() {
 
 $(window).resize(function() {
 
+	// Mobile Menu For Tablet and Mobile Script
 	var $window_width = $(window).width();
 	var	$wrapper_for_mobile_menu = $("#site-header .wrapper-for-mobile-menu");
 
@@ -669,5 +792,7 @@ $(window).resize(function() {
 		$("#mobile-menu-icon").removeClass("open");
 		alert('lielaks');
 	}
+
+
 
 });

@@ -6,9 +6,11 @@
 		<section id="section-1">
 			<div class="full-width-img-video-wrapper shadow jquery-background-video-wrapper">
 				<?php if( get_field('text-fwiv') ): ?>
-					<div class="text z-6 container">
-						<div class="row editor-wrapper">
-							<?php the_field('text-fwiv'); ?>
+					<div class="z-6 container">
+						<div class="row text">
+							<div class="editor-wrapper">
+								<?php the_field('text-fwiv'); ?>
+							</div>
 						</div>
 					</div>
 				<?php endif; ?>
@@ -25,6 +27,11 @@
 		<section id="section-2">
 			<div class="container">
 				<?php get_template_part('breadcrumbs'); ?>
+			</div>
+		</section>
+
+		<section id="section-3" class="full-section about-us-section">
+			<div class="container">
 				<div class="row">
 					<h1 class="title"><?php the_title(); ?></h1>
 					<div class="page-content editor-wrapper">
@@ -32,9 +39,6 @@
 					</div>
 				</div>
 			</div>
-		</section>
-
-		<section id="section-3">
 			<div class="advanced-google-maps-wrapper w-100">
 			<?php $the_query_locations = new WP_Query( array( 'post_type' => 'locations_posts' ) );                  
 			if ( $the_query_locations->have_posts() ) : ?>
