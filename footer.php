@@ -1,9 +1,11 @@
 			<!-- footer -->
 			<footer class="footer z-99" id="site-footer">
 				<button class="btn contact-form-btn"></button>
-				<div class="contact-form-wrapper hidden">
-					<button class="contact-form-close z-6"></button>
-					<?php dynamic_sidebar('contact-form-widget-area'); ?>
+				<div class="contact-form-outer hidden">
+					<div class="contact-form-wrapper">
+						<button class="contact-form-close z-6"></button>
+						<?php dynamic_sidebar('contact-form-widget-area'); ?>
+					</div>
 				</div>
 				<div class="container">
 					<div class="row" id="footer-row-1">
@@ -68,7 +70,7 @@
 						</div>
 					</div>
 					<div class="row flex-vert-c" id="footer-row-2">
-					    <a class="footer-logo-2nd text-decor-none flex-vert-c" href="<?php the_field('footer_logo_2nd_link', 'option'); ?>">
+					    <a class="footer-logo-2nd text-decor-none flex-vert-c" href="<?php the_field('footer_logo_2nd_link', 'option'); ?>" target="_blank" rel="nofollow">
 							<?php
 								$footer_logo_2nd_imageArray = get_field('footer_logo_2nd', 'option');
 								$footer_logo_2nd_imageAlt = esc_attr($footer_logo_2nd_imageArray['alt']);
@@ -81,7 +83,7 @@
 
 							<div class="footer-company-list flex">
 							<?php while ( have_rows('footer_company_list', 'option') ) : the_row(); ?>
-								<a class="footer-company-block text-decor-none" href="<?php the_sub_field('footer_company_link', 'option'); ?>">
+								<a class="footer-company-block text-decor-none" href="<?php the_sub_field('footer_company_link', 'option'); ?>" target="_blank" rel="nofollow">
 								<?php
 									if ( get_sub_field('footer_company_img', 'option') ):
 										$footer_company_logo_imageArray = get_sub_field('footer_company_img', 'option');

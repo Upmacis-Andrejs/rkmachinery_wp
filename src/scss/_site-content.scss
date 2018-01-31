@@ -410,6 +410,28 @@
 			width: 100%;
 			padding-top: calc(125% - 2px);
 		}
+		.gallery-img-block-item:before,
+		.gallery-img-block-item:after {
+			transition: background-color 0.25s ease-in-out;
+		}
+		.gallery-img-block-item:before {
+			content: '';
+			@extend .block-fit-parent;
+		}
+		.gallery-img-block-item:after {
+			content: '';
+			@extend .block-c;
+			width: 30px;
+			height: 30px;
+		}
+		.gallery-img-block-item:hover:before,
+		.gallery-img-block-item:active:before {
+			background-color: rgba(35,31,32,0.5);
+		}
+		.gallery-img-block-item:hover:after,
+		.gallery-img-block-item:active:after {
+			@extend .bg-accent;
+		}
 	}
 }
 
@@ -475,6 +497,55 @@
 			.title { margin-bottom: 10px; }
 		}
 	}
+}
+
+// Contacts Simple Google Maps
+.contacts-map-wrapper {
+	width: 606px;
+	height: 403px;
+	margin-right: 60px;
+}
+
+// Main Contacts Block
+.main-contacts {
+	.company-name,
+	.main-contacts-list {
+		margin-bottom: 15px;
+		li { @extend .p; }
+		&.company-contacts-list a { text-decoration: underline!important; }
+	}
+	.main-contacts-list:last-of-type { margin-bottom: 0; }
+}
+
+@media (max-width: 1199px) {
+	.main-contacts {
+		.company-name,
+		.main-contacts-list {
+			margin-bottom: 10px;
+		}	
+	}
+}
+
+// Map and Content Wrapper
+@media (max-width: 1199px) {
+	.map-and-content-wrapper {
+		.contacts-map-wrapper { order: 2; }
+		.title-and-content { order: 1; }
+	}
+}
+
+@media (max-width: 1199px) {
+	.contacts-map-wrapper {
+		width: 100%!important;
+		height: auto;
+		padding-top: 66.5%;
+		margin-top: 30px;
+		margin-right: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.contacts-map-wrapper { margin-top: 20px; }
 }
 
 // Image Slider Block
@@ -784,12 +855,6 @@
 	}
 }
 
-// Contacts Map Wrapper
-.contacts-map-wrapper {
-	width: 606px;
-	height: 403px;
-}
-
 // Title and Content Blocks
 .title-and-content,
 .page-title-block,
@@ -912,6 +977,11 @@
 
 @media (max-width: 767px) {
 	.cw-video-wrapper { margin-top: 25px; }
+}
+
+//Widget Block
+.widget-block {
+	@extend .default;
 }
 
 // 404 Error

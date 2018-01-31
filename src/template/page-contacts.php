@@ -6,9 +6,11 @@
 		<section id="section-1">
 			<div class="full-width-img-video-wrapper shadow jquery-background-video-wrapper">
 				<?php if( get_field('text-fwiv') ): ?>
-					<div class="text z-6 container">
-						<div class="row editor-wrapper">
-							<?php the_field('text-fwiv'); ?>
+					<div class="z-6 container">
+						<div class="row text">
+							<div class="editor-wrapper">
+								<?php the_field('text-fwiv'); ?>
+							</div>
 						</div>
 					</div>
 				<?php endif; ?>
@@ -25,11 +27,16 @@
 		<section id="section-2">
 			<div class="container">
 				<?php get_template_part('breadcrumbs'); ?>
+			</div>
+		</section>
+
+		<section id="section-3">
+			<div class="container">
 				<div class="row">
 					<div class="map-and-content-wrapper flex-hor-c">
 						<div class="contacts-map-wrapper">
 				    		<iframe
-				    		  class="fit-parent"
+				    		  class="block-fit-parent fit-parent"
 							  style="border:0"
 							  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAvogWzTWNhsTkw3M0xOSmvgrK94wcgUFc&q=
 							  <?php $address_1 = get_field('company_address_1', 'option');
@@ -42,22 +49,23 @@
 							</iframe>
 						</div>
 						<div class="title-and-content">
-							<div class="title">
-								<h2><?php the_title(); ?></h2>
+							<div class="title-block bg-default table">
+								<h1 class="title td"><?php the_title(); ?></h1>
 							</div>
 							<div class="main-contacts">
 								<h6 class="company-name"><?php the_field('company_name', 'option'); ?></h6>
-								<ul class="main-contacts-list list-style-none">
-									<li class="company-address-wrapper">
-										<a class="company-address text-decor-none" href="https://www.google.com/maps/dir/?api=1&destination=
-										<?php echo $address_formatted; ?>"
-										target="_blank" rel="nofollow">
-											<span><?php echo $address_1; ?></span>
-											<span><?php echo $address_2; ?></span>
+								<ul class="main-contacts-list company-address-list list-style-none">
+									<li class="company-address-1"><?php echo $address_1; ?></li>
+									<li class="company-address-2"><?php echo $address_2; ?></li>
+									<li class="get-directions-wrapper">
+										<a class="get-directions" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $address_formatted ?>" target="_blank" rel="nofollow">
+											<?php _e('Get directions', 'rkmachinery') ?>
 										</a>
 									</li>
+								</ul>
+								<ul class="main-contacts-list company-contacts-list list-style-none">
 									<li class="company-phone-wrapper">
-										<span><?php _e('Phone number', 'rkmachinery'); ?>:</span>
+										<span><?php _e('Phone', 'rkmachinery'); ?>:</span>
 										<a class="company-phone text-decor-none" href="tel:<?php $phone = get_field('company_phone', 'option'); echo str_replace(' ', '', $phone); ?>"><?php echo $phone; ?></a>
 									</li>
 									<li class="company-fax-wrapper">

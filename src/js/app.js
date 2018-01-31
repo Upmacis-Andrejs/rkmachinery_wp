@@ -116,11 +116,13 @@ $(document).ready(function() {
 
 	// Toggl contact form
 	$(".contact-form-btn").click(function() {
-		$(".contact-form-wrapper").toggleClass('hidden');
+		$(".contact-form-outer").toggleClass('hidden');
+		$("body").toggleClass("contact-form-open");
 	});
 
 	$(".contact-form-close").click(function() {
-		$(".contact-form-wrapper").addClass('hidden');
+		$(".contact-form-outer").addClass('hidden');
+		$("body").toggleClass("contact-form-open");
 	});
 
 	$(document).mouseup(function (e){
@@ -132,7 +134,8 @@ $(document).ready(function() {
 	        && !container_2.is(e.target) // and if the target of the click isn't the container...
 	        && container_2.has(e.target).length === 0) // ... nor a descendant of the container
 	    {
-			container_1.addClass('hidden');		        
+			$(".contact-form-outer").addClass('hidden');	
+			$("body").removeClass("contact-form-open");        
 	    }
 	});
 
@@ -274,7 +277,6 @@ $(document).ready(function() {
 		}
 
 	});
-
 
     // Script for deprecated browser notification
     $('#close_announcement').click(function(e) {
