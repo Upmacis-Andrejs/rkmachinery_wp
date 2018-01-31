@@ -177,7 +177,10 @@ textarea:active {
 }
 // input[type="checkbox"] { display: none; }
 sup { font-size: 65%; }
-section { max-width: 100%; }
+section {
+  width: 100%;
+  max-width: 100%;
+}
 
 // END OF RESETS
 /* ---------------------------------------------------------------------------------------------------------------------------- */

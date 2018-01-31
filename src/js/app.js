@@ -748,9 +748,21 @@ $(document).ready(function() {
 
 
 	// Initialize Lightslider
-	$(".lightslider").lightSlider({
-		item	: 1,
-		pager	: false
+	$(".lightslider").each(function() {
+		var $this = $(this);
+		if ( $this.hasClass("with-pager") ) {
+			$this.lightSlider({
+				item			: 1,
+				auto			: true,
+				loop			: true,
+				pauseOnHover	: true
+			});
+		} else {
+			$this.lightSlider({
+				item	: 1,
+				pager	: false
+			});			
+		}
 	});
 
 	// Initialize lightbox plugin
