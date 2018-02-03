@@ -48,16 +48,19 @@
 								    </ul>
 								<?php endif; ?>
 							</div>
-							<div class="gallery-img-block flex-hor-c">
+							<div class="gallery-img-block photoswipe-wrapper flex-hor-c">
 								<?php 
 								
 								$images_gallery = get_field('gallery');
 
 								if( $images_gallery ): ?>
 						        <?php foreach( $images_gallery as $gallery_image ): ?>
-						        	<div class="gallery-img-block-item-wrapper">
-									    <a class="gallery-img-block-item icon-bg" href="<?php echo $gallery_image['url']; ?>" style="background-image: url(<?php echo $gallery_image['url']; ?>)" data-rel="lightcase:qualitySection" title="<?php echo $gallery_image['description']; ?>"></a>
-									 </div>
+						        	<figure class="gallery-img-block-item-wrapper">
+									    <a class="gallery-img-block-item" href="<?php echo $gallery_image['url']; ?>" data-size="<?php echo $gallery_image['width']; ?>x<?php echo $gallery_image['height']; ?>">
+											<img class="block-c" src="<?php echo $gallery_image['sizes']['quality']; ?>" alt="<?php echo $gallery_image['alt']; ?>" >
+									    </a>
+										<figcaption class="visuallyhidden"><?php echo $gallery_image['description']; ?></figcaption>	
+									 </figure>
 						        <?php endforeach; ?>
 						    	<?php endif; ?>
 							</div>
@@ -75,5 +78,44 @@
 			</div>
 		</section>
 	</main>
+
+	<!-- PhotoSwipe. -->
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	    <div class="pswp__bg"></div>
+	    <div class="pswp__scroll-wrap">
+	        <div class="pswp__container">
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	            <div class="pswp__item"></div>
+	        </div>
+	        <div class="pswp__ui pswp__ui--hidden">
+	            <div class="pswp__top-bar">
+	                <div class="pswp__counter"></div>
+	                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+	                <button class="pswp__button pswp__button--share" title="Share"></button>
+	                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+	                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+	                <div class="pswp__preloader">
+	                    <div class="pswp__preloader__icn">
+	                      <div class="pswp__preloader__cut">
+	                        <div class="pswp__preloader__donut"></div>
+	                      </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+	                <div class="pswp__share-tooltip"></div> 
+	            </div>
+	            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+	            </button>
+	            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+	            </button>
+	            <div class="pswp__caption">
+	            	<div class="container pswp__caption__center"></div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<!-- /PhotoSwipe. -->
 
 <?php get_footer(); ?>

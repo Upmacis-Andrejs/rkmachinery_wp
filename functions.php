@@ -30,7 +30,9 @@ if (function_exists('add_theme_support'))
     //add_image_size('large', 700, '', true); // Large Thumbnail
     //add_image_size('medium', 250, '', true); // Medium Thumbnail
     //add_image_size('small', 120, '', true); // Small Thumbnail
-    //add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+    add_image_size('gallery', 696, 459.4, true); // Custom Thumbnail Size call using the_post_thumbnail('gallery');
+    add_image_size('quality', 345, 429.25, true); // Custom Thumbnail Size call using the_post_thumbnail('quality');
+
 
     // Add Excerpts to Pages
     add_post_type_support( 'page', 'excerpt' );
@@ -64,6 +66,15 @@ if (function_exists('add_theme_support'))
 /*------------------------------------*\
 	Functions
 \*------------------------------------*/
+
+// Remove unused thumbnail sizes
+function remove_plugin_image_sizes() {
+    remove_image_size('small');
+    remove_image_size('medium');
+    remove_image_size('medium_large');
+    remove_image_size('large');
+}
+add_action('init', 'remove_plugin_image_sizes');
 
 // Disable emoji's
 function disable_emojis() {
@@ -199,7 +210,7 @@ function rkmachinery_display_lang_switcher() {
   $languages = icl_get_languages();
   $res = '';
   if (!empty($languages)) {
-    $res .= '<div class="lang-switcher">';
+    $res .= '<div class="lang-switcher switch-active">';
     foreach ($languages as $l){
       $active = ($l['active']) ? ' active' : '';
       $res .= '<a href="' . $l['url'] . '" class="' . $active . '">';
@@ -230,8 +241,11 @@ function rkmachinery_scripts()
         wp_register_script('lightslider', get_template_directory_uri() . '/bower_components/lightslider/js/lightslider.js', array('jquery'), '1.1.6', true); // Lightslider Plugin
         wp_enqueue_script('lightslider'); // Enqueue it!
 
-        wp_register_script('lightcase', get_template_directory_uri() . '/bower_components/lightcase/lightcase.js', array('jquery'), '2.4.2', true); // Lightcase Lightbox Plugin
-        wp_enqueue_script('lightcase'); // Enqueue it!                
+        wp_register_script('photoswipe', get_template_directory_uri() . '/bower_components/photoswipe/photoswipe.min.js', array(), '4.0.6', true); // Photoswipe JS Gallery Plugin
+        wp_enqueue_script('photoswipe'); // Enqueue it!                
+
+        wp_register_script('photoswipe-ui', get_template_directory_uri() . '/bower_components/photoswipe/photoswipe-ui-default.min.js', array(), '4.0.6', true); // Photoswipe JS Gallery Plugin default UI JavaScript
+        wp_enqueue_script('photoswipe-ui'); // Enqueue it!                
 
         wp_register_script('jquery-bg-video', get_template_directory_uri() . '/bower_components/jquery-background-video/jquery.background-video.js', array('jquery'), '2.1.4', true); // jQuery Background Video
         wp_enqueue_script('jquery-bg-video'); // Enqueue it!
@@ -259,8 +273,8 @@ function rkmachinery_styles()
     wp_register_style('lightslider', get_template_directory_uri() . '/bower_components/lightslider/css/lightslider.css', array(), '1.1.6', 'all'); // Lightslider Plugin
     wp_enqueue_style('lightslider'); // Enqueue it!    
 
-    wp_register_style('lightcase', get_template_directory_uri() . '/bower_components/lightcase/lightcase.css', array(), '2.4.2', 'all'); // Lightcase Lightbox Plugin
-    wp_enqueue_style('lightcase'); // Enqueue it!
+    wp_register_style('photoswipe', get_template_directory_uri() . '/bower_components/photoswipe/photoswipe.css', array(), '4.0.6', 'all'); // Photoswipe JS Gallery Plugin
+    wp_enqueue_style('photoswipe'); // Enqueue it!
 
     wp_register_style('jquery-bg-video', get_template_directory_uri() . '/bower_components/jquery-background-video/jquery.background-video.css', array(), '2.1.4', 'all'); // jQuery Background Video Plugin
     wp_enqueue_style('jquery-bg-video'); // Enqueue it!
@@ -365,7 +379,7 @@ function rkmachinery_wp_pagination()
 
 
 function posts_link_attributes() {
-    return 'class="btn btn-1"';
+    return 'class="btn btn-1 load-more-link"';
 }
 add_filter('next_posts_link_attributes', 'posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes');

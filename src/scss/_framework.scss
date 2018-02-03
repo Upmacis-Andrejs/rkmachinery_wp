@@ -444,6 +444,7 @@ a:visited { @extend .additional-2; }
 .z-66 { z-index: 66; }
 .z-9 { z-index: 9; }
 .z-6 { z-index: 6; }
+.z--1 { z-index: -1; }
 
 // POSITIONING
 // (do not use flexbox with min-height. IE does not support that)
