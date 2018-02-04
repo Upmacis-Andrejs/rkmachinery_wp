@@ -746,6 +746,15 @@ body .lightcase-icon-close {
 }
 
 .pswp__button--close:before { @extend .default; }
+body .lightcase-icon-close:before { @extend .accent; }
+
+.pswp__button--close:hover:before,
+.pswp__button--close:active:before,
+body .lightcase-icon-close:hover:before,
+body .lightcase-icon-close:active:before {
+	@extend .accent-2;
+}
+
 body .lightcase-icon-close {
 	position: fixed;
 	top: 0;
@@ -754,7 +763,6 @@ body .lightcase-icon-close {
 	left: auto;
 	margin: 0;
 }
-body .lightcase-icon-close:before { @extend .accent; }
 
 @media (max-width: 767px) {
 	.pswp__button--close,
@@ -1086,11 +1094,17 @@ body .lightcase-icon-close:before { @extend .accent; }
 		left: auto;
 		width: 23px;
 		height: 23px;
-		@extend .bg-default;
+		&:before {
+			@extend .block-c;
+			@extend .icon:before;
+			@extend .icon-close:before;
+			@extend .default;
+			font-size: 23px;
+		}
 	}
 	#close-location:hover,
 	#close-location:active {
-		@extend .bg-accent-2;
+		&:before { @extend .accent-2; }
 	}
 	#next-post {
 		@extend .block-vert-c;
@@ -1110,7 +1124,9 @@ body .lightcase-icon-close:before { @extend .accent; }
 				@extend .bg-default;
 			}
 			&:after {
-				content: '';
+				//content: '';
+				@extend .icon:before;
+				@extend .icon-slide-arrow-right:before;
 				@extend .block-vert-c;
 				left: calc(50% + 10px * 0.5);
 				transform: translate(-50%,-50%);
@@ -1119,7 +1135,7 @@ body .lightcase-icon-close:before { @extend .accent; }
 				height: 18px;
 				font-size: 18px;
 				line-height: 1;
-				background-color: #fff;
+				color: #fff;
 				opacity: 0.7;
 			}
 		}
