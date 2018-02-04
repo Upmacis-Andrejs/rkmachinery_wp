@@ -234,12 +234,6 @@ $(document).ready(function() {
 		return false;
 	});
 
-	//Follow social links
-	$(".follow-btn-styled").click(function() {
-		$(this).next().find('*').trigger('click');
-		return false;
-	});
-
 	// Fit Video To Parent Div
 	$('.jquery-background-video').bgVideo({
 		//fullScreen: false, // Sets the video to be fixed to the full window - your <video> and it's container should be direct descendents of the <body> tag
@@ -1013,6 +1007,17 @@ $(window).resize(function() {
 	var $mobile_width = 767;
 	var $window_width = $(window).width();
 
+	// Pause Background Video on Tablet and Mobile Devices
+	$(".video-play-only-on-desktop").each(function() {
+		var $this = $(this);
+		var $this_video = $this.get(0);
+		if ( $window_width <= $tablet_width ) {
+			$this_video.pause();
+		} else {
+			$this_video.play();
+		}
+	});
+
 	// Mobile Menu For Tablet and Mobile Script
 	var	$wrapper_for_mobile_menu = $("#site-header .wrapper-for-mobile-menu");
 
@@ -1039,28 +1044,17 @@ $(window).resize(function() {
 		var $fwivw_contents = $fwivw.find(".container");
 		$fwivw.css("padding-top", '');
 		var $fwivw_padding_top = $fwivw.css("padding-top");
-		var $fwivw_padding_top = $fwivw_padding_top.replace("px", "");
+		var $fwivw_padding_top = $fwivw_padding_top.replace("px", '');
 
 		if ( $fwivw.height() < $fwivw_contents.outerHeight() ) {
 			$fwivw.css("padding-top", $fwivw_padding_top / 2);
 		} else {
 			$fwivw.css("padding-top", '');
 		}
-	};
+	}
 
 	if( $(".full-width-img-video-wrapper").length ) {
 		return reduce_padding();
 	}
-
-	// Pause Background Video on Tablet and Mobile Devices
-	$(".full-width-img-video-wrapper .full-width-video").each(function() {
-		var $this = $(this);
-		var $this_video = $this.get(0);
-		if ( $window_width <= $tablet_width ) {
-			$this_video.pause();
-		} else {
-			$this_video.play();
-		}
-	});
 
 });

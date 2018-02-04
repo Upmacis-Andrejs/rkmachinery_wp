@@ -121,7 +121,9 @@
 			}
 			a:after { content: none!important; }
 			a:before {
-				content: '';
+				//content: '';
+				@extend .icon:before;
+				@extend .icon-arrow-down:before;
 				@extend .block-vert-c;
 				right: 16px;
 				left: auto;
@@ -129,13 +131,13 @@
 				height: 4px;
 				font-size: 4px;
 				line-height: 1; 
-				@extend .bg-default;
+				@extend .default;
 			}
 			&:hover a:before,
 			&:active a:before, 
 			a:hover:before,
 			a:active:before {
-				background-color: #fff;
+				color: #fff;
 			}
 		}
 		// First and Second level sub-menu
@@ -162,7 +164,9 @@
 			}
 			li.menu-item-has-children {
 				a:before {
-					content: '';
+					//content: '';
+					@extend .icon:before;
+					@extend .icon-arrow-right:before;
 					@extend .block-vert-c;
 					right: 10px;
 					left: auto;
@@ -170,11 +174,11 @@
 					height: 7.5px;
 					font-size: 7.5px;
 					line-height: 1;
-					background-color: #fff;
+					color: #fff;
 				}
 				a:hover:before,
 				a:active:before {
-					@extend .bg-default;
+					@extend .default;
 				}
 			}
 		}
@@ -220,8 +224,6 @@
 	}
 	.header-menu li a { height: 90px; }
 }
-#site-content { transition: padding-top 0.25s ease-in-out; }
-.not--top #site-content { padding-top: 90px; }
 
 // Breadcrumbs
 .breadcrumbs-wrapper {
@@ -243,7 +245,9 @@
 	}
 	h5:before,
 	.h5:before {
-		content: '';
+		//content: '';
+		@extend .icon:before;
+		@extend .icon-bc-arrow:before;
 		@extend .block-vert-c;
 		left: 0;
 		right: auto;
@@ -251,7 +255,7 @@
 		height: 6px;
 		font-size: 6px;
 		line-height: 1;
-		@extend .bg-additional;		
+		@extend .additional;		
 	}
 	a.h5:first-of-type {text-decoration: underline; }
 	a.h5:first-of-type:before { content: none; }

@@ -84,18 +84,39 @@ h1, .h1 {
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?iurc1p');
-  src:  url('fonts/icomoon.eot?iurc1p#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?iurc1p') format('truetype'),
-    url('fonts/icomoon.woff?iurc1p') format('woff'),
-    url('fonts/icomoon.svg?iurc1p#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?n5jgm5');
+  src:  url('fonts/icomoon.eot?n5jgm5#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?n5jgm5') format('truetype'),
+    url('fonts/icomoon.woff?n5jgm5') format('woff'),
+    url('fonts/icomoon.svg?n5jgm5#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-[class^="icon-"],
-[class*=" icon-"],
-.icon {
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?32hikc');
+  src:  url('fonts/icomoon.eot?32hikc#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?32hikc') format('truetype'),
+    url('fonts/icomoon.woff?32hikc') format('woff'),
+    url('fonts/icomoon.svg?32hikc#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?mml4lz');
+  src:  url('fonts/icomoon.eot?mml4lz#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?mml4lz') format('truetype'),
+    url('fonts/icomoon.woff?mml4lz') format('woff'),
+    url('fonts/icomoon.svg?mml4lz#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.icon:before,
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -110,34 +131,80 @@ h1, .h1 {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-triangle:before {
-  content: "\e900";
-  color: #fff;
+.icon-popup-play:before {
+  content: "\e912";
+  color: #f6c55b;
 }
-.icon-facebook:before {
+.icon-directions:before {
+  content: "\e911";
+  color: #e2231a;
+}
+.icon-arrow-down:before {
+  content: "\e900";
+}
+.icon-arrow-right:before {
   content: "\e901";
   color: #fff;
 }
-.icon-linkedin:before {
+.icon-bc-arrow:before {
   content: "\e902";
-  color: #fff;
+  color: #787c82;
 }
-.icon-phone:before {
+.icon-center:before {
   content: "\e903";
-  color: #fff;
+  color: #f8c853;
 }
-.icon-place:before {
+.icon-cf-close:before {
   content: "\e904";
-  color: #fff;
 }
-.icon-xing:before {
+.icon-cf-open:before {
   content: "\e905";
   color: #fff;
 }
-.icon-email:before {
+.icon-close:before {
   content: "\e906";
+}
+.icon-error:before {
+  content: "\e907";
+  color: #db1915;
+}
+.icon-fb:before {
+  content: "\e908";
+  color: #c2c0c2;
+}
+.icon-instagram:before {
+  content: "\e909";
+  color: #c2c0c2;
+}
+.icon-linkedin:before {
+  content: "\e90a";
+  color: #c2c0c2;
+}
+.icon-play:before {
+  content: "\e90b";
   color: #fff;
 }
+.icon-slide-arrow-left:before {
+  content: "\e90c";
+  color: #fff;
+}
+.icon-slide-arrow-right:before {
+  content: "\e90d";
+  color: #fff;
+}
+.icon-success:before {
+  content: "\e90e";
+  color: #26ab67;
+}
+.icon-tweet-share:before {
+  content: "\e90f";
+  color: #fff;
+}
+.icon-youtube:before {
+  content: "\e910";
+  color: #c2c0c2;
+}
+
 
 
 //END OF FONTS

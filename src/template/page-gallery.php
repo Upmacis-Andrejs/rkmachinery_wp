@@ -60,7 +60,7 @@
 							$gallery = get_sub_field('gallery_block');
 							$images = array();
 
-							$items_per_page = 4;
+							$items_per_page = 16;
 							$total_items = count($gallery);
 							$total_pages = ceil($total_items / $items_per_page);
 

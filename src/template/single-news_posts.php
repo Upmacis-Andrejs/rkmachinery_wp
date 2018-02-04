@@ -57,12 +57,12 @@
 						</div>
 						<div class="share-buttons flex">
 							<?php if( have_posts() ): while( have_posts() ): the_post(); ?>
+								<div class="fb-share">
+									<a class="social-btn fb-share-btn" href="#" data-url="<?php the_permalink(); ?>"><?php _e('Share', 'rkmachinery'); ?></a>
+								</div>
 								<div class="tweet">
 									<a class="social-btn twitter-share-btn" href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_the_permalink()); ?>&text=<?php echo urlencode(get_the_title()); ?>" data-show-count="true" target="_blank"><?php _e('Tweet', 'rkmachinery'); ?></a>
 									<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-								</div>
-								<div class="fb-share">
-									<a class="social-btn fb-share-btn" href="#" data-url="<?php the_permalink(); ?>"><?php _e('Share', 'rkmachinery'); ?></a>
 								</div>
 							<?php endwhile; endif; ?>
 						</div>

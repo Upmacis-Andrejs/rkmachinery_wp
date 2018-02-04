@@ -4,18 +4,23 @@
 
 	<main id="site-content">
 		<section id="section-1">
-			<div class="full-width-img-video-wrapper shadow jquery-background-video-wrapper">
+			<div class="full-width-img-video-wrapper mega-size shadow jquery-background-video-wrapper">
 				<?php if( get_field('text-fwiv') ): ?>
-				<div class="z-6 container">
-					<div class="row text">
-						<div class="editor-wrapper">
-							<?php the_field('text-fwiv'); ?>
+					<div class="z-6 container">
+						<div class="row text">
+							<div class="on-top-content-wrapper">
+								<div class="editor-wrapper">
+									<?php the_field('text-fwiv'); ?>
+								</div>
+								<?php if( get_field('full_width_video') ): ?>
+									<a href="<?php the_field('full_width_video'); ?>" class="h3 open-popup-video-btn desktop-hide all-caps text-decor-none" data-rel="lightcase">Play video</a>
+								<?php endif ?>
+							</div>
 						</div>
 					</div>
-				</div>
-				<?php endif; ?>				
+				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video" autoplay loop muted>
+					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted>
 						<source src="<?php the_field('full_width_video'); ?>">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>

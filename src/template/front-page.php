@@ -11,14 +11,14 @@
 									<?php the_field('text-fwiv'); ?>
 								</div>
 								<?php if( get_field('full_width_video') ): ?>
-									<a href="<?php the_field('full_width_video'); ?>" class="open-popup-video-btn desktop-hide all-caps text-decor-none" data-rel="lightcase">Play video</a>
+									<a href="<?php the_field('full_width_video'); ?>" class="h3 open-popup-video-btn desktop-hide all-caps text-decor-none" data-rel="lightcase">Play video</a>
 								<?php endif ?>
 							</div>
 						</div>
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video" autoplay loop muted>
+					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted>
 						<source src="<?php the_field('full_width_video'); ?>">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>

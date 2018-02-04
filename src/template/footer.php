@@ -1,12 +1,14 @@
 			<!-- footer -->
 			<footer class="footer z-99" id="site-footer">
-				<button class="btn contact-form-btn"></button>
-				<div class="contact-form-outer hidden">
-					<div class="contact-form-wrapper">
-						<button class="contact-form-close z-6"></button>
-						<?php dynamic_sidebar('contact-form-widget-area'); ?>
+				<?php if ( !is_404() ): ?>
+					<button class="btn contact-form-btn"></button>
+					<div class="contact-form-outer hidden">
+						<div class="contact-form-wrapper">
+							<button class="contact-form-close z-6"></button>
+							<?php dynamic_sidebar('contact-form-widget-area'); ?>
+						</div>
 					</div>
-				</div>
+				<?php endif; ?>
 				<div class="container">
 					<div class="row" id="footer-row-1">
 						<div class="flex upper-footer-block-wrapper">
@@ -57,14 +59,12 @@
 										</li>
 										<li>
 											<a class="social follow-btn-styled youtube text-decor-none h5" href="#" target="_blank"><?php _e('Youtube', 'rkmachinery'); ?></a>
-											<div class="g-ytsubscribe" data-channel="GoogleDevelopers" data-layout="default" data-count="default"></div>
-											<script src="https://apis.google.com/js/platform.js"></script>
 										</li>
 										<li>
 											<a class="social follow-btn-styled linkedin text-decor-none h5" href="#" target="_blank"><?php _e('Linkedin', 'rkmachinery'); ?></a>
 										</li>
 										<li>
-											<a class="social follow-btn-styled linkedin text-decor-none h5" href="#" target="_blank"><?php _e('Instagram', 'rkmachinery'); ?></a>
+											<a class="social follow-btn-styled instagram text-decor-none h5" href="#" target="_blank"><?php _e('Instagram', 'rkmachinery'); ?></a>
 										</li>
 									</ul>
 								</div>
@@ -125,7 +125,7 @@
 						</h5>
 						<a class="h5 developer flex-vert-c text-decor-none" href="https://sem.lv/" target="_blank">
 							<span class="developer-text nbsp-after"><?php _e('Developed by:', 'rkmachinery'); ?></span>
-							<img class="developer-logo" src="<?php echo get_template_directory_uri(); ?>/img/sem-logo.png"></img>
+							<img class="developer-logo" src="<?php echo get_template_directory_uri(); ?>/img/sem-logo.svg" style="width: 61px; height: 24px;"></img>
 						</a>
 					</div>
 				</div>
