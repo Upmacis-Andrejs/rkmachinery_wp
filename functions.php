@@ -253,7 +253,7 @@ function rkmachinery_scripts()
         wp_register_script('jquery-bg-video', get_template_directory_uri() . '/bower_components/jquery-background-video/jquery.background-video.js', array('jquery'), '2.1.4', true); // jQuery Background Video
         wp_enqueue_script('jquery-bg-video'); // Enqueue it!
 
-        wp_register_script('rkmachinery_scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.3', true); // Custom scripts
+        wp_register_script('rkmachinery_scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.4', true); // Custom scripts
         wp_enqueue_script('rkmachinery_scripts'); // Enqueue it!
     }
 }
@@ -275,9 +275,6 @@ function rkmachinery_styles()
 
     wp_register_style('lightslider', get_template_directory_uri() . '/bower_components/lightslider/css/lightslider.css', array(), '1.1.6', 'all'); // Lightslider Plugin
     wp_enqueue_style('lightslider'); // Enqueue it!
-
-  //  wp_register_style('lightcase', get_template_directory_uri() . '/bower_components/lightcase/lightcase.css', array(), '2.4.2', 'all'); // Lightcase Lightbox Plugin
-  //  wp_enqueue_style('lightcase'); // Enqueue it!  
 
     wp_register_style('photoswipe', get_template_directory_uri() . '/bower_components/photoswipe/photoswipe.css', array(), '4.0.6', 'all'); // Photoswipe JS Gallery Plugin
     wp_enqueue_style('photoswipe'); // Enqueue it!

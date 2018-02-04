@@ -196,15 +196,7 @@ $(document).ready(function() {
       $load_more.load($link+' .load-more a');
   }); */
 
-	// Play Video by clicking button
-	/*$(".btn-play").click(function() {
-		var $this_video = $(this).parent().find('.video-play').get(0);
-		if ( $this_video.paused ) {
-			$this_video.play();
-			$(this).addClass('hidden');
-		}
-	});*/
-
+	// Play Video by clicking button or on video
 	$(".video-play").click(function() {
 		var $this = $(this);
 		var $this_video = $this.get(0);
@@ -311,7 +303,6 @@ $(document).ready(function() {
 	        return $(this).attr('src').replace('.svg', '.png');
 	    });
 	}
-
 
 	// Google Maps API script
 /* -------------------------------------------------------------------------------------- */
@@ -767,7 +758,6 @@ $(document).ready(function() {
 /* -------------------------------------------------------------------------------------- */
 	// /Google Maps API script
 
-
 	// Initialize Lightslider
 	$(".lightslider").each(function() {
 		var $this = $(this);
@@ -827,17 +817,12 @@ $(document).ready(function() {
 		            size = linkEl.getAttribute('data-size').split('x');
 
 		            // create slide object
-		            if( linkEl.getAttribute('data-type') == 'video') {
-		            	item = {
-		            		html: linkEl.getAttribute('data-video')
-		            	};
-		            } else {
-		            	item = {
-			                src: linkEl.getAttribute('href'),
-			                w: parseInt(size[0], 10),
-			                h: parseInt(size[1], 10)
-		            	};
-		            }
+		            item = {
+		                src: linkEl.getAttribute('href'),
+		                w: parseInt(size[0], 10),
+		                h: parseInt(size[1], 10)
+		            };
+
 
 
 		            if(figureEl.children.length > 1) {
@@ -1049,21 +1034,26 @@ $(window).resize(function() {
 	}
 
 	// Reduce padding for .full-width-img-video-wrapper if text is not fitting in the div
-	var $fwivw = $(".full-width-img-video-wrapper");
-	var $fwivw_contents = $fwivw.find(".container");
-	$fwivw.css("padding-top", '');
-	var $fwivw_padding_top = $fwivw.css("padding-top");
-	var $fwivw_padding_top = $fwivw_padding_top.replace("px", "");
-	var $fwivw_padding_top_reduced = $fwivw_padding_top / 2;
-
-	if ( $fwivw.height() < $fwivw_contents.outerHeight() ) {
-		$fwivw.css("padding-top", $fwivw_padding_top_reduced);
-	} else {
+	function reduce_padding() {
+		var $fwivw = $(".full-width-img-video-wrapper");
+		var $fwivw_contents = $fwivw.find(".container");
 		$fwivw.css("padding-top", '');
+		var $fwivw_padding_top = $fwivw.css("padding-top");
+		var $fwivw_padding_top = $fwivw_padding_top.replace("px", "");
+
+		if ( $fwivw.height() < $fwivw_contents.outerHeight() ) {
+			$fwivw.css("padding-top", $fwivw_padding_top / 2);
+		} else {
+			$fwivw.css("padding-top", '');
+		}
+	};
+
+	if( $(".full-width-img-video-wrapper").length ) {
+		return reduce_padding();
 	}
 
 	// Pause Background Video on Tablet and Mobile Devices
-	$(".full-width-video").each(function() {
+	$(".full-width-img-video-wrapper .full-width-video").each(function() {
 		var $this = $(this);
 		var $this_video = $this.get(0);
 		if ( $window_width <= $tablet_width ) {
@@ -1072,16 +1062,5 @@ $(window).resize(function() {
 			$this_video.play();
 		}
 	});
-
-	// Disable Background Video Autoplat for Tablet and Mobile Devices
-	/*if ( $window_width <= $tablet_width ) {
-		$(".full-width-video").removeAttr('autoplay loop muted');
-	} else {
-		$(".full-width-video").attr({
-										autoplay: '',
-										loop: '',
-										muted: ''
-									});
-	}*/
 
 });

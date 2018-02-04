@@ -25,6 +25,7 @@
 				<div class="row">
 					<!-- Loop Through Gallery Titles -->
 					<?php if ( have_rows('gallery_block_wrapper') ) : $count_1 = 0; ?>
+
 						<div class="gallery-title-block-wrapper flex switch-active z-6 margin-bottom-small">
 						    <?php while ( have_rows('gallery_block_wrapper') ) : the_row(); $count_1++; ?>
 						        <a class="gallery-title-block flex-c-column text-decor-none
@@ -46,6 +47,7 @@
 					<!-- Loop Through Gallery Image Blocks -->
 					<?php if ( have_rows('gallery_block_wrapper') ) : $count_2 = 0; ?>
 					<?php while ( have_rows('gallery_block_wrapper') ) : the_row(); $count_2++; ?>
+					
 					<div class="gallery-page-img-block-wrapper
 						<?php
 							if ( $count_2 == 1 ) : echo ' active';
@@ -99,6 +101,7 @@
 						</div>
 						<?php endif; ?>
 					</div>
+					
 					<?php endwhile; endif; ?>
 					<!-- /Loop Through Gallery Images -->
 				</div>
