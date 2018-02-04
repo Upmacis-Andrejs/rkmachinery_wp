@@ -6,8 +6,13 @@
 				<?php if( get_field('text-fwiv') ): ?>
 					<div class="z-6 container">
 						<div class="row text">
-							<div class="editor-wrapper">
-								<?php the_field('text-fwiv'); ?>
+							<div class="on-top-content-wrapper">
+								<div class="editor-wrapper">
+									<?php the_field('text-fwiv'); ?>
+								</div>
+								<?php if( get_field('full_width_video') ): ?>
+									<a href="<?php the_field('full_width_video'); ?>" class="open-popup-video-btn desktop-hide all-caps text-decor-none" data-rel="lightcase">Play video</a>
+								<?php endif ?>
 							</div>
 						</div>
 					</div>

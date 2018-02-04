@@ -22,7 +22,7 @@
 		bottom: 0;
 		left: 0;
 	}
-	.editor-wrapper {
+	.on-top-content-wrapper {
 		width: 635px;
 		margin-left: 110px;
 	}
@@ -43,7 +43,7 @@
 		height: 700px;
 		padding-top: 190px;
 		padding-bottom: 190px;
-		.editor-wrapper {
+		.on-top-content-wrapper {
 			width: 100%;
 			margin-left: 0;
 		}
@@ -693,6 +693,45 @@
 	opacity: 1;
 }
 
+// Close Button For Gallery and Video Popup
+.pswp__button--close,
+body .lightcase-icon-close {
+	width: calc(18px * 2 + 23px);
+	height: calc(18px * 2 + 23px);
+	&:before {
+		content: '';
+		@extend .block-c;
+		width: 23px;
+		height: 23px;
+		line-height: 23px;
+		font-size: 23px;		
+	}
+}
+
+.pswp__button--close:before { @extend .bg-default; }
+body .lightcase-icon-close {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: auto;
+	left: auto;
+	margin: 0;
+}
+body .lightcase-icon-close:before { @extend .bg-accent; }
+
+@media (max-width: 767px) {
+	.pswp__button--close,
+	body .lightcase-icon-close {
+		width: calc(15px * 2 + 18px);
+		height: calc(15px * 2 + 18px);
+		&:before {
+			width: 18px;
+			height: 18px;
+			line-height: 18px;
+			font-size: 18px;
+		}
+	}
+}
 
 @media (max-width: 1199px) {
 	.slider-wrapper {

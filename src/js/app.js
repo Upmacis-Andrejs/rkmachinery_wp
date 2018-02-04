@@ -1,8 +1,6 @@
 $(document).ready(function() {
 	'use strict';
 
-	$("body").addClass('content-loaded');
-
 	// Trigger window resize when DOM has been loaded
 	$(window).trigger('resize');
 	
@@ -788,6 +786,18 @@ $(document).ready(function() {
 		}
 	});
 
+	// Initialize Lightcase Lightbox
+	$('a[data-rel^=lightcase]').lightcase({
+		overlayOpacity: 1,
+		video: {
+			'width': '100vw',
+			'height': '70vh',
+			'controls': false,
+			'loop': true
+		},
+		disableShrink: true
+	});
+
 	// PhotoSwipe JavaScript Gallery
 
 		var initPhotoSwipeFromDOM = function(gallerySelector) {
@@ -817,12 +827,17 @@ $(document).ready(function() {
 		            size = linkEl.getAttribute('data-size').split('x');
 
 		            // create slide object
-		            item = {
-		                src: linkEl.getAttribute('href'),
-		                w: parseInt(size[0], 10),
-		                h: parseInt(size[1], 10)
-		            };
-
+		            if( linkEl.getAttribute('data-type') == 'video') {
+		            	item = {
+		            		html: linkEl.getAttribute('data-video')
+		            	};
+		            } else {
+		            	item = {
+			                src: linkEl.getAttribute('href'),
+			                w: parseInt(size[0], 10),
+			                h: parseInt(size[1], 10)
+		            	};
+		            }
 
 
 		            if(figureEl.children.length > 1) {
@@ -1006,11 +1021,6 @@ $(document).ready(function() {
 
 });
 
-//window.onload = function() {
-	//add class to body element after page has loaded (including pictures)
-//	$("body").addClass('content-loaded');
-//}
-
 
 $(window).resize(function() {
 	// Responsive design widths
@@ -1039,7 +1049,7 @@ $(window).resize(function() {
 	}
 
 	// Reduce padding for .full-width-img-video-wrapper if text is not fitting in the div
-	/*var $fwivw = $(".full-width-img-video-wrapper");
+	var $fwivw = $(".full-width-img-video-wrapper");
 	var $fwivw_contents = $fwivw.find(".container");
 	$fwivw.css("padding-top", '');
 	var $fwivw_padding_top = $fwivw.css("padding-top");
@@ -1050,6 +1060,28 @@ $(window).resize(function() {
 		$fwivw.css("padding-top", $fwivw_padding_top_reduced);
 	} else {
 		$fwivw.css("padding-top", '');
+	}
+
+	// Pause Background Video on Tablet and Mobile Devices
+	$(".full-width-video").each(function() {
+		var $this = $(this);
+		var $this_video = $this.get(0);
+		if ( $window_width <= $tablet_width ) {
+			$this_video.pause();
+		} else {
+			$this_video.play();
+		}
+	});
+
+	// Disable Background Video Autoplat for Tablet and Mobile Devices
+	/*if ( $window_width <= $tablet_width ) {
+		$(".full-width-video").removeAttr('autoplay loop muted');
+	} else {
+		$(".full-width-video").attr({
+										autoplay: '',
+										loop: '',
+										muted: ''
+									});
 	}*/
 
 });

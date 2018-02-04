@@ -342,16 +342,6 @@ a:visited { @extend .additional-2; }
   background-size: cover!important; 
   background-position: center center;  
 }
-.icon-bg,
-.section-bg {
-  visibility: hidden;
-}
-.content-loaded {
-  .icon-bg,
-  .section-bg {
-    visibility: visible;
-  }  
-}
 
 // SIZES
 .h-100 {
@@ -527,6 +517,19 @@ a:visited { @extend .additional-2; }
 .inline { display: inline; }
 .fixed { position: fixed; }
 
+@media (min-width: 1200px) {
+  .desktop-hide { display: none; } // =tablet-mobile show
+}
+@media (max-width: 1199px) {
+  .tablet-hide { display: none; }  // =desktop show
+}
+@media (max-width: 767px) {
+  .mobile-hide { display: none; } // =tablet+desktop show
+}
+@media (min-width: 768px) {
+  .mobile-show { display: none; }
+}
+
 // IMAGES
 img,
 .img {
@@ -534,11 +537,6 @@ img,
   height: auto;
   max-width: 100%;
   max-height: 100%;
-  visibility: hidden;
-}
-.content-loaded {
-  img,
-  .img { visibility: visible; }
 }
 
 // SHAPES

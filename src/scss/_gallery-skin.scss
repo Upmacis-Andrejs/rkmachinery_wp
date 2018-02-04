@@ -107,32 +107,6 @@ $pswp__include-minimal-style: true !default;
 	background-position: -44px -44px;
 }*/
 
-.pswp__button--close {
-	width: calc(18px * 2 + 23px);
-	height: calc(18px * 2 + 23px);
-	&:before {
-		content: '';
-		@extend .block-c;
-		width: 23px;
-		height: 23px;
-		line-height: 23px;
-		font-size: 23px;
-		@extend .bg-default;
-	}
-}
-
-@media (max-width: 767px) {
-	.pswp__button--close {
-		width: calc(15px * 2 + 18px);
-		height: calc(15px * 2 + 18px);
-		&:before {
-			width: 18px;
-			height: 18px;
-			line-height: 18px;
-			font-size: 18px;
-		}
-	}
-}
 
 .pswp__button--fs {
 	display: none;
