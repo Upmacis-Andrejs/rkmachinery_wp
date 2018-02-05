@@ -40,7 +40,7 @@
 						if( $images ): ?>
 						    <ul class="lightslider">
 						        <?php foreach( $images as $image ): ?>
-						            <li class="lightslider-item section-bg" style="background-image: url(<?php echo $image['url']; ?>)";></li>
+						            <li class="lightslider-item section-bg" style="background-image: url(<?php echo $image['sizes']['gallery']; ?>)";></li>
 						        <?php endforeach; ?>
 						    </ul>
 						<?php endif; ?>

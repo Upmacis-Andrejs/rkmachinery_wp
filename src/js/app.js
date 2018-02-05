@@ -326,7 +326,7 @@ $(document).ready(function() {
 			mapTypeId	: google.maps.MapTypeId.ROADMAP,
 			disableDefaultUI: true,
 			// gestureHandling: 'greedy',
-			gestureHandling: 'none',
+			// gestureHandling: 'none',
 			styles		: [
 							{
 							    "featureType": "administrative",
@@ -545,8 +545,9 @@ $(document).ready(function() {
 				  google.maps.event.removeListener(listener); 
 				});
 
+			    var $pan_distance = - $(window).width() * 0.6;
 				// change the center of map
-				map.panBy(-800,0);
+				map.panBy($pan_distance,0);
 			}
 
 		} else if ( $(window).width() <= $tablet_width && $(window).width() > $mobile_width ) {
@@ -611,7 +612,7 @@ $(document).ready(function() {
 		var marker_img_base = $('#template-dir-uri-img').attr('href');
 		var marker_img = {
 			url			: marker_img_base + 'marker.png',
-			anchor		: new google.maps.Point(25, 48)
+			anchor		: new google.maps.Point(18, 48)
 		}
 
 		// create marker
@@ -619,8 +620,16 @@ $(document).ready(function() {
 			position	: latlng,
 			map			: map,
 			icon		: marker_img,
-			url			: marker_href
+			url			: marker_href,
+			optimized	: false
 		});
+
+		// create overlay
+		var myoverlay = new google.maps.OverlayView();
+		    myoverlay.draw = function () {
+		        this.getPanes().markerLayer.id='markerLayer';
+		    };
+		myoverlay.setMap(map);
 
 		// add to array
 		map.markers.push( marker );

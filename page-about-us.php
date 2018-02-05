@@ -4,7 +4,7 @@
 
 	<main id="site-content">
 		<section id="section-1">
-			<div class="full-width-img-video-wrapper mega-size shadow jquery-background-video-wrapper">
+			<div class="full-width-img-video-wrapper shadow jquery-background-video-wrapper">
 				<?php if( get_field('text-fwiv') ): ?>
 					<div class="z-6 container">
 						<div class="row text">

@@ -327,12 +327,12 @@
 				}
 			}
 			li.menu-item-has-children {
-				a:before { background-color: #fff; }
+				a:before { color: #fff; }
 				&:hover a:before,
 				&:active a:before, 
 				a:hover:before,
 				a:active:before {
-					background-color: #231f20;
+					color: #231f20;
 				}
 			}
 			// First and Second level sub-menu
@@ -348,6 +348,7 @@
 						width: 7.5px;
 						height: 4px;
 						font-size: 4px;
+						content: "\e900"; //arrow down
 					}
 				}
 			}

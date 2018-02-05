@@ -174,7 +174,7 @@
 .service-block-outer {
 	width: calc((100% / 4) - 15px * 2);
 	margin: 15px;
-	.service-block-inner { padding-top: 66%; }
+	.service-block-inner { padding-top: 66.5%; }
 	.service-block {
 		@extend .block-fit-parent;
 		position: absolute!important;
@@ -884,7 +884,7 @@ body .lightcase-icon-close {
 		}
 		.gallery-page-img-block-item {
 			width: 100%;
-			padding-top: 66%;
+			padding-top: 66.5%;
 			@extend .z-6;
 			&>img { @extend .z--1; }
 		}
@@ -1046,6 +1046,46 @@ body .lightcase-icon-close {
 		img, .img {
 			max-height: none!important;
 		}
+		#markerLayer > div {
+			overflow: visible!important;
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				display: block;
+				top: auto;
+				right: auto;
+				left: 5.65px;
+				bottom: 0;
+				width: 23.7px;
+				height: 23.7px;
+				background: rgba(white, 0.4);
+				border-radius: 50%;
+				opacity: 0;
+				z-index: -1;
+			}
+			&:before {
+				transform: scale(1);
+				animation: pulse 2s infinite linear;
+			}
+			&:after {
+				animation: pulse 2s 1s infinite linear;
+			}
+			@keyframes pulse {
+			  0% {
+			    transform: scale(1);
+			    opacity: 0;
+			  }
+			  33% {
+			    transform: scale(1.67);
+			    opacity: 1;
+			  }
+			  100% {
+			    transform: scale(2.3);
+			    opacity: 0;
+			  }
+			}
+		}
 	}
 }
 .who-we-are-map-section { min-height: 834px; }
@@ -1197,7 +1237,8 @@ body .lightcase-icon-close {
 					height: 64px;
 				}
 				&:after {
-					content: '';
+					//content: '';
+					top: calc(50% + 10px * 0.5);
 					left: 50%;
 					transform: translate(-50%,-50%);
 					right: auto;

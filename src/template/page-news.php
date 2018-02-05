@@ -43,7 +43,7 @@
 											<div class="shape-upper"></div>
 										</div>
 									</div>
-									<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('thumbnail_image'); ?>)"></div>
+									<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('thumbnail_image')['sizes']['gallery']; ?>)"></div>
 								</a>
 							</div>
 						</div>

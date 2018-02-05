@@ -87,13 +87,9 @@
 							<?php while ( have_rows('footer_company_list', 'option') ) : the_row(); ?>
 								<a class="footer-company-block text-decor-none" href="<?php the_sub_field('footer_company_link', 'option'); ?>" target="_blank" rel="nofollow">
 								<?php
-									if ( get_sub_field('footer_company_img', 'option') ):
-										$footer_company_logo_imageArray = get_sub_field('footer_company_img', 'option');
-									elseif ( get_sub_field('footer_company_img_backup', 'option') ):
-										$footer_company_logo_imageArray = get_sub_field('footer_company_img_backup', 'option');
-									endif;
-										$footer_company_logo_imageAlt = esc_attr($footer_company_logo_imageArray['alt']);
-										$footer_company_logo_imageURL = esc_url($footer_company_logo_imageArray['url']);
+									$footer_company_logo_imageArray = get_sub_field('footer_company_img', 'option');
+									$footer_company_logo_imageAlt = esc_attr($footer_company_logo_imageArray['alt']);
+									$footer_company_logo_imageURL = esc_url($footer_company_logo_imageArray['url']);
 								?>
 									<img src="<?php echo $footer_company_logo_imageURL; ?>" alt="<?php echo $footer_company_logo_imageAlt; ?>">
 								</a>
@@ -105,13 +101,9 @@
 							<ul class="footer-services-wrapper list-style-none flex-vert-c">
 							<?php while ( have_rows('footer_services_list', 'option') ) : the_row(); ?>
 								<?php
-									if ( get_sub_field('footer_service_img', 'option') ):
-										$footer_service_imageArray = get_sub_field('footer_service_img', 'option');
-									elseif ( get_sub_field('footer_service_img_backup', 'option') ):
-										$footer_service_imageArray = get_sub_field('footer_service_img_backup', 'option');
-									endif;
-										$footer_service_imageAlt = esc_attr($footer_service_imageArray['alt']);
-										$footer_service_imageURL = esc_url($footer_service_imageArray['url']);
+									$footer_service_imageArray = get_sub_field('footer_service_img', 'option');
+									$footer_service_imageAlt = esc_attr($footer_service_imageArray['alt']);
+									$footer_service_imageURL = esc_url($footer_service_imageArray['url']);
 								?>								
 								<li class="footer-service-block"><img src="<?php echo $footer_service_imageURL; ?>" alt="<?php echo $footer_service_imageAlt; ?>"></li>
 							<?php endwhile; ?>
