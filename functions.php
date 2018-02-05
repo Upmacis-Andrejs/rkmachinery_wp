@@ -31,7 +31,7 @@ if (function_exists('add_theme_support'))
     //add_image_size('medium', 250, '', true); // Medium Thumbnail
     //add_image_size('small', 120, '', true); // Small Thumbnail
     add_image_size('gallery', 696, 459.4, true); // Custom Thumbnail Size call using the_post_thumbnail('gallery');
-    add_image_size('quality', 345, 429.25, true); // Custom Thumbnail Size call using the_post_thumbnail('quality');
+    add_image_size('quality', 345, 434.7, true); // Custom Thumbnail Size call using the_post_thumbnail('quality');
 
 
     // Add Excerpts to Pages

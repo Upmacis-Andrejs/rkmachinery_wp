@@ -84,7 +84,7 @@
 									<?php foreach( $images as $image ): ?>
 									<figure class="gallery-page-img-block-item-outer post">
 									    <a class="gallery-page-img-block-item" href="<?php echo $image['url']; ?>" data-size="<?php echo $image['width']; ?>x<?php echo $image['height']; ?>">
-											<img class="block-c" src="<?php echo $image['sizes']['gallery']; ?>" alt="<?php echo $image['alt']; ?>" >
+											<div class="block-fit-parent section-bg" style="background-image: url(<?php echo $image['sizes']['gallery']; ?>);" data-src="<?php echo $image['sizes']['gallery']; ?>"></div>
 										</a>
 										<figcaption class="visuallyhidden"><?php echo $image['description']; ?></figcaption>	
 									</figure>

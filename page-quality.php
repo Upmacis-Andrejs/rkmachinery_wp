@@ -20,7 +20,7 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted>
+					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted preload="metadata">
 						<source src="<?php the_field('full_width_video'); ?>">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
@@ -62,7 +62,7 @@
 						        <?php foreach( $images_gallery as $gallery_image ): ?>
 						        	<figure class="gallery-img-block-item-wrapper">
 									    <a class="gallery-img-block-item" href="<?php echo $gallery_image['url']; ?>" data-size="<?php echo $gallery_image['width']; ?>x<?php echo $gallery_image['height']; ?>">
-											<img class="block-c" src="<?php echo $gallery_image['sizes']['quality']; ?>" alt="<?php echo $gallery_image['alt']; ?>" >
+											<div class="block-fit-parent icon-bg" style="background-image: url(<?php echo $gallery_image['sizes']['quality']; ?>);" data-src="<?php echo $gallery_image['sizes']['quality']; ?>" >
 									    </a>
 										<figcaption class="visuallyhidden"><?php echo $gallery_image['description']; ?></figcaption>	
 									 </figure>

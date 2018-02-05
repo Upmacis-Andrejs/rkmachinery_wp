@@ -18,7 +18,7 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted>
+					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted preload="metadata">
 						<source src="<?php the_field('full_width_video'); ?>">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
@@ -80,6 +80,12 @@
 						<!-- loop through page_id=26 data -->
 						<?php $the_query_26 = new WP_Query('page_id=26');
 							while ($the_query_26->have_posts()) : $the_query_26->the_post(); ?>
+							<!-- get first image from first gallery -->
+							<?php $rows = get_field('gallery_block_wrapper');
+									$first_row_gallery = $rows[0]['gallery_block'];
+									$first_item_in_gallery = $first_row_gallery[0]['url'];
+							?>
+							<!-- /get first image from first gallery -->
 						<a class="page-block shadow text-decor-none jquery-background-video-wrapper
 						<?php if( get_field('full_width_video') ): echo ' video';
 						elseif( get_field('full_width_image') ): echo ' image';
@@ -89,13 +95,10 @@
 						href="<?php the_permalink(); ?>">
 
 							<h4 class="title z-6"><?php the_title(); ?></h4>
-							<?php if( get_field('full_width_video') ): ?>
-								<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
-									<source src="<?php the_field('full_width_video'); ?>">
-								</video>
-							<?php elseif( get_field('full_width_image') ): ?>
-								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url'];  ?>)"></div>
-							<?php endif; ?>							
+							<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php
+							if ( get_field('thumbnail_image') ) {
+								echo get_field('thumbnail_image')['url'];
+							} else { echo $first_item_in_gallery;  } ?>)"></div>
 						
 						</a>
 						<?php endwhile; wp_reset_postdata(); ?>
@@ -124,7 +127,9 @@
 
 				<div class="gradient gradient-top"></div>
 				<div class="gradient gradient-bottom"></div>
-				<div class="gradient gradient-left"></div>
+				<div class="gradient-left-wrapper block-hor-c">
+					<div class="gradient gradient-left"></div>
+				</div>
 				<div class="acf-map">
 			    <?php while ( $the_query_locations->have_posts() ) : $the_query_locations->the_post();
 			    	$location = get_field('location_address');?>

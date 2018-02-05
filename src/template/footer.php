@@ -1,13 +1,13 @@
 			<!-- footer -->
 			<footer class="footer z-99" id="site-footer">
 				<?php if ( !is_404() ): ?>
-					<button class="btn contact-form-btn"></button>
 					<div class="contact-form-outer hidden">
 						<div class="contact-form-wrapper">
 							<button class="contact-form-close z-6"></button>
 							<?php dynamic_sidebar('contact-form-widget-area'); ?>
 						</div>
 					</div>
+					<button class="btn contact-form-btn"></button>
 				<?php endif; ?>
 				<div class="container">
 					<div class="row" id="footer-row-1">
@@ -29,6 +29,7 @@
 												$address_2_formatted = str_replace(' ', '+', $address_2);
 												$address_formatted = $address_1_formatted . '+' . $address_2_formatted;
 												echo $address_formatted ?>" target="_blank" rel="nofollow">
+												<span class="before"></span>
 												<?php _e('Get directions', 'rkmachinery') ?>
 											</a>
 										</li>
@@ -115,10 +116,10 @@
 						<h5 class="copyright">
 							<?php _e('Copyright&nbsp;&copy; 2018 RK Metāls group. All rights reserved.', 'rkmachinery'); ?>
 						</h5>
-						<a class="h5 developer flex-vert-c text-decor-none" href="https://sem.lv/" target="_blank">
+						<h5 class="developer flex-vert-c text-decor-none">
 							<span class="developer-text nbsp-after"><?php _e('Developed by:', 'rkmachinery'); ?></span>
-							<img class="developer-logo" src="<?php echo get_template_directory_uri(); ?>/img/sem-logo.svg" style="width: 61px; height: 24px;"></img>
-						</a>
+							<a href="https://sem.lv/" target="_blank" class="developer-link"><img class="developer-logo" src="<?php echo get_template_directory_uri(); ?>/img/sem-logo.svg" style="width: 61px; height: 24px;"></img></a>
+						</h5>
 					</div>
 				</div>
 			</footer>

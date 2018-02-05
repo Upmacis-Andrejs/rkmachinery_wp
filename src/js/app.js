@@ -254,10 +254,10 @@ $(document).ready(function() {
 	var $document = $(document);
 	var $body = $("body");
 	function add_not_top() {
-		$body.addClass("not--top");
+		//$body.addClass("not--top");
 	}
 	function remove_not_top() {
-		$body.removeClass("not--top");
+		//$body.removeClass("not--top");
 	}
 	var $timeout_add_not_top
 	var $timeout_remove_not_top
@@ -540,12 +540,12 @@ $(document).ready(function() {
 
 			    var listener = google.maps.event.addListener(map, "idle", function() { 
 				  var current_zoom = map.getZoom();			
-				  var zoom_out = current_zoom - 2;
+				  var zoom_out = current_zoom - 3;
 				  map.setZoom( zoom_out );
 				  google.maps.event.removeListener(listener); 
 				});
 
-			    var $pan_distance = - $(window).width() * 0.6;
+			    var $pan_distance = - $(window).width() * 2;
 				// change the center of map
 				map.panBy($pan_distance,0);
 			}
@@ -769,7 +769,9 @@ $(document).ready(function() {
 				item			: 1,
 				auto			: true,
 				loop			: true,
-				pauseOnHover	: true
+				pauseOnHover	: true,
+				speed: 600,
+				pause: 3000
 			});
 		} else {
 			$this.lightSlider({
@@ -835,7 +837,7 @@ $(document).ready(function() {
 
 		            if(linkEl.children.length > 0) {
 		                // <img> thumbnail element, retrieving thumbnail url
-		                item.msrc = linkEl.children[0].getAttribute('src');
+		                item.msrc = linkEl.children[0].getAttribute('data-src');
 		            } 
 
 		            item.el = figureEl; // save link to element for getThumbBoundsFn
@@ -939,7 +941,7 @@ $(document).ready(function() {
 
 		            getThumbBoundsFn: function(index) {
 		                // See Options -> getThumbBoundsFn section of documentation for more info
-		                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+		                var thumbnail = items[index].el.getElementsByTagName('div')[0], // find thumbnail
 		                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
 		                    rect = thumbnail.getBoundingClientRect(); 
 
@@ -953,7 +955,7 @@ $(document).ready(function() {
 					hideAnimationDuration:0,
 					showAnimationDuration:0,
 					barsSize: {top:60, bottom:'auto'},
-
+					closeOnScroll: false,
 		        };
 
 		        // PhotoSwipe opened from URL
@@ -1011,6 +1013,7 @@ $(document).ready(function() {
 
 
 $(window).resize(function() {
+
 	// Responsive design widths
 	var $tablet_width = 1199;
 	var $mobile_width = 767;
@@ -1053,17 +1056,17 @@ $(window).resize(function() {
 		var $fwivw_contents = $fwivw.find(".container");
 		$fwivw.css("padding-top", '');
 		var $fwivw_padding_top = $fwivw.css("padding-top");
-		var $fwivw_padding_top = $fwivw_padding_top.replace("px", '');
+		var $fwivw_padding_top = $fwivw_padding_top.replace("px", "");
 
 		if ( $fwivw.height() < $fwivw_contents.outerHeight() ) {
 			$fwivw.css("padding-top", $fwivw_padding_top / 2);
 		} else {
-			$fwivw.css("padding-top", '');
+			$fwivw.css("padding-top", "");
 		}
 	}
 
 	if( $(".full-width-img-video-wrapper").length ) {
-		return reduce_padding();
+		reduce_padding();
 	}
 
 });

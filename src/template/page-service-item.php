@@ -20,7 +20,7 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted>
+					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted preload="metadata">
 						<source src="<?php the_field('full_width_video'); ?>">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>

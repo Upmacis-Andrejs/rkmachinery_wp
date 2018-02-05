@@ -20,11 +20,11 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted>
+					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted preload="metadata">
 						<source src="<?php the_field('full_width_video'); ?>">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
-					<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php the_field('full_width_image'); ?>)"></div>
+					<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
 				<?php endif; ?>
 			</div>
 		</section>
@@ -64,6 +64,7 @@
 									<li class="company-address-2"><?php echo $address_2; ?></li>
 									<li class="get-directions-wrapper">
 										<a class="get-directions" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $address_formatted ?>" target="_blank" rel="nofollow">
+											<span class="before"></span>
 											<?php _e('Get directions', 'rkmachinery') ?>
 										</a>
 									</li>

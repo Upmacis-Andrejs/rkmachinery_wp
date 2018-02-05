@@ -105,8 +105,8 @@
 			margin-right: 28px;
 			line-height: 1;
 			img {
-				//max-width: none;
-				//max-height: none;
+				max-width: none;
+				max-height: none;
 			}
 		}
 	}
@@ -145,23 +145,36 @@
 .get-directions {
 	padding-left: 15px;
 	text-decoration: none;
-	@extend .accent-2;
+	color: #E2231A!important;
 }
-.get-directions:before {
-	//content: '';
-	@extend .icon:before;
-	@extend .icon-directions:before;
+.get-directions .before {
 	@extend .block-vert-c;
+	&:before {
+		@extend .icon:before;
+		@extend .icon-directions:before;
+		@extend .block-vert-c;
+		font-size: 14px;
+		line-height: 1;
+		@extend .accent-2;
+	}
 	left: 0;
 	width: 10px;
 	height: 14px;
-	font-size: 14px;
-	line-height: 1;
-	@extend .accent-2;
+	text-decoration:none!important;
+	&:hover,
+	&:active,
+	&:focus,
+	&:visited {
+		text-decoration: none!important;
+	}
 }
 .get-directions:hover,
 .get-directions:active {
 	text-decoration: underline;
+	.get-directions {
+		text-decoration: none!important;
+		&:before { text-decoration: none!important; }
+	}
 }
 
 @media (max-width: 1199px) {
@@ -231,7 +244,7 @@
 			h3.title { margin-bottom: 5px; }
 		}
 		.footer-site-logo { margin-bottom: 20px; }
-		.footer-company-list-wrapper {
+		.footer-list-wrapper {
 			.footer-company-address { order: 1; }
 			.footer-contacts { order: 2; }
 			.footer-follow-us { order: 3; }
@@ -263,7 +276,7 @@
 		line-height: 17px;
 	}
 	.required-fields {
-		margin-top: -10px;
+		margin-top: -15px;
 		font-size: 12px;
 	}
 	.wpcf7-recaptcha {
@@ -272,7 +285,7 @@
 		transform-origin: 0 0;
 	}
 	input[type="submit"].btn {
-		margin-top: -8px;
+		margin-top: -18px;
 		height: 35px;
 		line-height: 35px;
 		font-size: 14px;
@@ -284,7 +297,7 @@
 	right: 20px;
 	transform: translateY(-100%);
 	width: 40px;
-	height: 40px;	
+	height: 40px;
 	@extend .bg-default;
 	&:before {
 		@extend .icon:before;
@@ -296,10 +309,12 @@
 		line-height: 1;
 		color: #fff;
 	}
+	&:hover,
+	&:active {
+		opacity: 1!important;
+	}
 }
-.page-template-page-about-us {
-	.contact-form-btn { opacity: 0.7; }
-}
+.contact-form-outer.hidden+.contact-form-btn { opacity: 0.3; }
 .contact-form-close {
 	position: absolute;
 	top: 5px;
@@ -331,7 +346,7 @@
 }
 
 @media (max-width: 1199px) {
-	.contact-form-btn { opacity: 0.7; }
+	.contact-form-btn { opacity: 0.3; }
 }
 
 @media (max-width: 767px) {

@@ -81,7 +81,7 @@
 }
 .btn:focus, .btn.focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+ // box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 .btn.disabled, .btn:disabled {
   opacity: 0.65;
@@ -239,11 +239,13 @@ body {
 // WORDPRESS EDITOR
 .editor-wrapper {
   p, .p,
-  h1, .h1 {
+  h1, .h1,
+  ul, .ul {
     margin-bottom: 15px;
   }
   p:last-child, .p:last-child,
-  h1:last-child, .h1:last-child {
+  h1:last-child, .h1:last-child,
+  ul:last-child, .ul:last-child {
     margin-bottom: 0;
   }
 }
@@ -256,7 +258,8 @@ body {
 @media (max-width: 1199px) {
   .editor-wrapper {
     p, .p,
-    h1, .h1 {
+    h1, .h1,
+    ul, .ul {
       margin-bottom: 10px;
     }
   }
@@ -591,7 +594,7 @@ td {
 // INPUTS
 .wpcf7-form-control-wrap {
   max-width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 .wpcf7-form-control-wrap .wpcf7-recaptcha { margin-bottom: -10px; }
 input, .input,

@@ -12,7 +12,7 @@
 		<section id="section-2" class="news-section full-section">
 			<div class="container">
 				<div class="row">
-					<h1 class="title"><?php the_title(); ?></h1>
+					<h1 class="title margin-big"><?php the_title(); ?></h1>
 					<?php if( get_field('page_content') ): ?>
 						<div class="page-content editor-wrapper">
 							<?php the_field('page_content'); ?>
