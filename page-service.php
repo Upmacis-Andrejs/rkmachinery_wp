@@ -20,8 +20,8 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted preload="metadata">
-						<source src="<?php the_field('full_width_video'); ?>">
+					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop" preload="metadata">
+						<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
 					<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
@@ -72,7 +72,7 @@
 										<h2 class="title z-6"><?php the_title(); ?></h2>
 										<?php if( get_field('full_width_video') ): ?>
 											<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
-												<source src="<?php the_field('full_width_video'); ?>">
+												<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 											</video>
 										<?php elseif( get_field('full_width_image') ): ?>
 											<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['sizes']['gallery']; ?>)"></div>

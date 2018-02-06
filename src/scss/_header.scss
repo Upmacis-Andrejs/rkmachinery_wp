@@ -82,11 +82,12 @@
 				position: absolute;
 				display: block;
 				top: 0;
-				left: 0;
+				right: 9px;
+				left: 9px;
 				height: 6px;
-				width: 0;
+				max-width: 0;
 				@extend .bg-default;
-				transition: width 0.4s ease-in-out;	
+				transition: max-width 0.4s ease-in-out;	
 			}
 			.menu-item-has-children-ghost {
 				@extend .visuallyhidden;
@@ -97,7 +98,7 @@
 		li > a:active:after,
 		li.current-menu-item > a:after,
 		li.current-menu-ancestor > a:after {
-			width: 100%;
+			max-width: 100%;
 		}
 		li:first-of-type a { padding-left: 18px; }
 		li.menu-item-has-children.current-menu-item > a:after,
@@ -303,6 +304,10 @@
 			li .menu-item-has-children > a:hover + .sub-menu,
 			li li .sub-menu:hover {
 				display: none;
+			}
+			li.menu-item-has-children.current-menu-item > a:after,
+			li.menu-item-has-children.current-menu-ancestor > a:after {
+				content: none!important;
 			}
 			li:nth-of-type(n) {
 				width: 100%;

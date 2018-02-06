@@ -20,8 +20,8 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted preload="metadata">
-						<source src="<?php the_field('full_width_video'); ?>">
+					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop" preload="metadata">
+						<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
 					<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
@@ -70,7 +70,7 @@
 				<div class="row">
 					<div class="cw-video-wrapper jquery-background-video-wrapper">
 						<video class="content-width-video video-play jquery-background-video no-autoplay w-100 z-9" preload="metadata">
-							<source src="<?php the_field('content_width_video'); ?>">
+							<source src="<?php the_field('content_width_video'); ?>#t=0.5">
 						</video>
 						<button class="btn-play z-66"></button>
 					</div>

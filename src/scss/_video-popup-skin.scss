@@ -363,6 +363,12 @@ $lightcase-settings: map-merge($lightcase-default, $lightcase-custom);
   }
 
   .lightcase-contentInner {
+    @extend .flex-c-column;
+    height: 70vh!important;
+    video {
+      max-width: 100vw!important;
+      max-height: 70vh!important;
+    }
     @media screen and (max-width: #{map-get($lightcase-settings, 'breakpoint')-1}) {
       // For mobile (touch) devices
       html.lightcase-isMobileDevice[data-lc-type=iframe] & iframe {

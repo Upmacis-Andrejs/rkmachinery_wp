@@ -1,6 +1,9 @@
 $(document).ready(function() {
 	'use strict';
 
+	// Show content
+	$("body").removeClass("opacity-0").css("opacity", 1);
+
 	// Trigger window resize when DOM has been loaded
 	$(window).trigger('resize');
 	
@@ -32,7 +35,7 @@ $(document).ready(function() {
 				$('.header-menu .menu-item-has-children > a > .menu-item-has-children-ghost').removeClass('hidden');
 				$('.header-menu .menu-item-has-children > a').css({'color' : '', 'background-color' : ''});
 				$("#mobile-menu-icon").removeClass("open");
-				$("#site-header .wrapper-for-mobile-menu").stop(true, true).slideUp();			
+				$("#site-header .wrapper-for-mobile-menu").stop(true, true).slideUp();
 				return false;			        
 		    }
 		}
@@ -173,6 +176,11 @@ $(document).ready(function() {
           $this_load_more.load($link+' .load-more-link');
       });
 
+	// Display also last news item, when load button is clicked
+	$(".news-section .load-more-link").click( function() {
+		$("body").addClass("show-all-news");
+	});
+
 	/*	$(document).on('click', '.load-more a', function(e) {
       e.preventDefault();
       var $link = $(this).attr('href');
@@ -221,6 +229,17 @@ $(document).ready(function() {
 		}
 	});
 
+	// Play Background Video on Desktop Devices
+	$(".video-play-only-on-desktop").each(function() {
+		var $this = $(this);
+		var $this_video = $this.get(0);
+		if ( $(window).width() > $tablet_width ) {
+			$this_video.setAttribute("muted", "");
+			$this_video.setAttribute("loop", "");
+			$this_video.play();
+		}
+	});
+
 	// Script for Facebook Share button
 	$(document).on('click', '.fb-share-btn', function() {
 		var $btn = $(this);
@@ -254,10 +273,10 @@ $(document).ready(function() {
 	var $document = $(document);
 	var $body = $("body");
 	function add_not_top() {
-		//$body.addClass("not--top");
+		$body.addClass("not--top");
 	}
 	function remove_not_top() {
-		//$body.removeClass("not--top");
+		$body.removeClass("not--top");
 	}
 	var $timeout_add_not_top
 	var $timeout_remove_not_top
@@ -325,6 +344,7 @@ $(document).ready(function() {
 			center		: new google.maps.LatLng(0, 0),
 			mapTypeId	: google.maps.MapTypeId.ROADMAP,
 			disableDefaultUI: true,
+			zoomControl: true,
 			// gestureHandling: 'greedy',
 			// gestureHandling: 'none',
 			styles		: [
@@ -782,16 +802,29 @@ $(document).ready(function() {
 	});
 
 	// Initialize Lightcase Lightbox
-	$('a[data-rel^=lightcase]').lightcase({
-		overlayOpacity: 1,
-		video: {
-			'width': '100vw',
-			'height': '70vh',
-			'controls': false,
-			'loop': true
-		},
-		disableShrink: true
-	});
+	if ( $(window).width() >= $mobile_width ) {
+		$('a[data-rel^=lightcase]').lightcase({
+			overlayOpacity: 1,
+			video: {
+				'width': 'auto',
+				'height': 'auto',
+				'controls': false,
+				'loop': true
+			},
+			disableShrink: true
+		});
+	} else {
+		$('a[data-rel^=lightcase]').lightcase({
+			overlayOpacity: 1,
+			video: {
+				'width': 'auto',
+				'height': 'auto',
+				'controls': true,
+				'loop': true
+			},
+			disableShrink: true
+		});
+	}
 
 	// PhotoSwipe JavaScript Gallery
 
@@ -1018,17 +1051,6 @@ $(window).resize(function() {
 	var $tablet_width = 1199;
 	var $mobile_width = 767;
 	var $window_width = $(window).width();
-
-	// Pause Background Video on Tablet and Mobile Devices
-	$(".video-play-only-on-desktop").each(function() {
-		var $this = $(this);
-		var $this_video = $this.get(0);
-		if ( $window_width <= $tablet_width ) {
-			$this_video.pause();
-		} else {
-			$this_video.play();
-		}
-	});
 
 	// Mobile Menu For Tablet and Mobile Script
 	var	$wrapper_for_mobile_menu = $("#site-header .wrapper-for-mobile-menu");

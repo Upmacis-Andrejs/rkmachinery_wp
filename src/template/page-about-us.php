@@ -20,8 +20,8 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video video-play-only-on-desktop" autoplay loop muted preload="metadata">
-						<source src="<?php the_field('full_width_video'); ?>">
+					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop" preload="metadata">
+						<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
 					<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
@@ -49,16 +49,16 @@
 			if ( $the_query_locations->have_posts() ) : ?>
 				<!-- loop through custom post type 'locations' -->
 
+				<div class="acf-map" id="acf-advanced-map">
+			    <?php while ( $the_query_locations->have_posts() ) : $the_query_locations->the_post();
+			    	$location = get_field('location_address');?>
+			    	<div class="marker" href="<?php echo esc_url( add_query_arg( 'from', 'about-us', get_the_permalink() ) ); ?>" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"><div class="hidden"></div></div>
+			    <?php endwhile; wp_reset_postdata(); ?>
+				</div>
 				<div class="gradient gradient-top"></div>
 				<div class="gradient gradient-bottom"></div>
 				<div class="container gradient-left-wrapper block-hor-c">
 					<div class="gradient gradient-left"></div>
-				</div>
-				<div class="acf-map">
-			    <?php while ( $the_query_locations->have_posts() ) : $the_query_locations->the_post();
-			    	$location = get_field('location_address');?>
-			    	<div class="marker" href="<?php the_permalink(); ?>" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"><div class="hidden"></div></div>
-			    <?php endwhile; wp_reset_postdata(); ?>
 				</div>
 
 				<!-- /loop through custom post type 'locations' -->

@@ -24,7 +24,7 @@
         </script>
 
 	</head>
-	<body <?php body_class(); ?>>
+	<body <?php body_class('opacity-0'); ?>>
 
     <!--[if lte IE 9]>
     <div id="update_browser_fake_body">

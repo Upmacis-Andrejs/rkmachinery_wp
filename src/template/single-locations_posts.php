@@ -5,11 +5,22 @@
 	<main id="site-content" class="flex-grow flex-vert-c">
 		
 		<!-- link to home page / back -->
-		<a href="<?php echo home_url(); ?>" id="close-location" class="z-99"></a>
+		<?php if ( $_GET['from'] == 'about-us' ) {
+				$from = 'about-us';
+				$link = get_permalink('31');
+			} else {
+				$from = 'home';
+				$link = home_url();
+			} ?>
+		<a href="<?php echo $link; ?>#acf-advanced-map" id="close-location" class="z-99"></a>
 		<!-- link to next post -->
 		<div id="next-post" class="z-99">
 			<?php if( get_adjacent_post(false, "", false) ) : ?>
-				<?php next_post_link('%link',''); ?>
+				<?php if ( $from == 'about-us' ): ?>
+					<a href="<?php echo esc_url( add_query_arg( 'from', 'about-us', get_permalink(get_adjacent_post(false,'',false)) ) ); ?>"></a>
+				<?php else : ?>
+					<a href="<?php echo esc_url( add_query_arg( 'from', 'home', get_permalink(get_adjacent_post(false,'',false)) ) ); ?>"></a>
+				<?php endif; ?>
 			<?php else : ?>
 				<?php
 					$last_query = new WP_Query( array(
@@ -20,9 +31,11 @@
 					));
 				?>
 				<?php while ( $last_query->have_posts() ) : $last_query->the_post(); ?>
-
-					<a href="<?php the_permalink(); ?>"></a>
-
+					<?php if ( $from == 'about-us' ): ?>
+						<a href="<?php echo esc_url( add_query_arg( 'from', 'about-us', get_the_permalink() ) ); ?>"></a>
+					<?php else : ?>
+						<a href="<?php echo esc_url( add_query_arg( 'from', 'home', get_the_permalink() ) ); ?>"></a>
+					<?php endif; ?>
 				<?php endwhile; wp_reset_postdata(); ?>
 			<?php endif; ?>
 		</div>

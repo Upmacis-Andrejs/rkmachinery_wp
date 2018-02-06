@@ -24,7 +24,7 @@
 						$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 						$the_query_news = new WP_Query( array(
 							'post_type'			=> 'news_posts',
-							'posts_per_page'	=> '9',
+							'posts_per_page'	=> 10,
 							'paged'				=> $paged,
 						) );
 					if ( $the_query_news->have_posts() ) : ?>
