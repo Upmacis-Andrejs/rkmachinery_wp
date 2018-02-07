@@ -9,7 +9,7 @@
 			</div>
 		</section>
 
-		<section id="section-2" class="news-section full-section">
+		<section id="section-2" class="news-section posts-parent full-section">
 			<div class="container">
 				<div class="row">
 					<h1 class="title margin-big"><?php the_title(); ?></h1>
@@ -21,15 +21,20 @@
 				</div>
 				<div class="row">	
 					<?php
-						$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-						$the_query_news = new WP_Query( array(
+						if ( get_query_var( 'paged' ) ) { $paged = get_query_var( 'paged' ); }
+						elseif ( get_query_var( 'page' ) ) { $paged = get_query_var( 'page' ); }
+						else { $paged = 1; }
+						
+						$news_args = array(
 							'post_type'			=> 'news_posts',
 							'posts_per_page'	=> 10,
 							'paged'				=> $paged,
-						) );
+							'page'				=> $paged
+						);
+
+						$the_query_news = new WP_Query( $news_args );
 					if ( $the_query_news->have_posts() ) : ?>
 					<!-- loop through custom post type 'news' -->
-
 					<div class="news-block-wrapper posts flex-hor-c">
 				    <?php while ( $the_query_news->have_posts() ) : $the_query_news->the_post(); ?> 
 				    	<div class="news-block-outer post"> 
@@ -47,14 +52,14 @@
 								</a>
 							</div>
 						</div>
-				    <?php endwhile; ?>
+				    <?php endwhile; wp_reset_postdata(); ?>
 					</div>
 				    <?php if ( $the_query_news->max_num_pages > 1 ) : ?>
 				    	<div class="load-more flex-hor-c"><?php next_posts_link( __('Load More', 'rkmachinery'), $the_query_news->max_num_pages); ?></div>
 					<?php endif ?>
 
 				<!-- /loop through custom post type 'news' -->
-				<?php wp_reset_postdata(); endif; ?>
+				<?php endif; ?>
 				</div>					
 			</div>
 		</section>

@@ -162,24 +162,27 @@ $(document).ready(function() {
 	});
 
 	// Script for "load more" button
-	$(".load-more-link").click(function(e) {
+	$(document).on('click', '.load-more > a', function(e) {
+//	$(".load-more > a").click(function(e) {
           e.preventDefault();
           var $this = $(this);
           var $this_load_more = $this.parent();
-          var $this_posts = $this.parents('.gallery-page-img-block-wrapper').find('.posts');
+          var $this_posts = $this.parents('.posts-parent').find('.posts');
           var $link = $this.attr('href');
           $this_load_more.html('<button class="btn btn-1 loader">Loading...</span>');
           jQuery.get($link, function(data) {
               var $post = $(".posts .post ", data);
               $this_posts.append($post);
+              $("body").addClass("show-all-news");
           });
           $this_load_more.load($link+' .load-more-link');
+          return false;
       });
 
 	// Display also last news item, when load button is clicked
-	$(".news-section .load-more-link").click( function() {
-		$("body").addClass("show-all-news");
-	});
+	//$(".news-section .load-more-link").click( function() {
+	//	$("body").addClass("show-all-news");
+	//});
 
 	/*	$(document).on('click', '.load-more a', function(e) {
       e.preventDefault();
