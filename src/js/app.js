@@ -118,6 +118,7 @@ $(document).ready(function() {
 	});
 
 	// Switch .active class in Gallery Page
+
 	$(".gallery-title-block").click(function(e) {
 		$(this).siblings().removeClass("was-active");
 		$(this).addClass("was-active");
@@ -163,13 +164,12 @@ $(document).ready(function() {
 
 	// Script for "load more" button
 	$(document).on('click', '.load-more > a', function(e) {
-//	$(".load-more > a").click(function(e) {
           e.preventDefault();
           var $this = $(this);
           var $this_load_more = $this.parent();
           var $this_posts = $this.parents('.posts-parent').find('.posts');
           var $link = $this.attr('href');
-          $this_load_more.html('<button class="btn btn-1 loader">Loading...</span>');
+          $this_load_more.html('<button class="btn btn-1 loader">Loading...</button>');
           jQuery.get($link, function(data) {
               var $post = $(".posts .post ", data);
               $this_posts.append($post);
@@ -178,6 +178,45 @@ $(document).ready(function() {
           $this_load_more.load($link+' .load-more-link');
           return false;
       });
+
+	// Script for "load more" button for multiple pagination pages
+	$(document).on('click', '.load-more-multiple > a', function(e) {
+          e.preventDefault();
+          var $this = $(this);
+          var $this_load_more = $this.parent();
+          var $this_id_no = $this[0].getAttribute("id");
+          var $posts = '#posts-';
+          var $load_more = ' #load-more-multiple-';
+         
+          var $this_posts_id = $posts.concat($this_id_no);
+          var $this_post_items = $this_posts_id.concat(" .post");
+          var $this_load_more_id = $load_more.concat($this_id_no);
+         
+          alert($this_posts_id);
+          alert($this_post_items);
+          alert($this_load_more_id);
+         
+          var $link = $this[0].getAttribute("href");
+          $this.html('<button class="btn btn-1 loader">Loading...</button>');
+          jQuery.get($link, function(data) {
+          	  var $post = $($this_post_items, data);
+              $($this_posts_id).append($post);
+          });
+          $this_load_more.load($link+$this_load_more_id);
+          return false;
+      });
+
+	$(".gallery-title-block").click(function(e) {
+		$(this).siblings().removeClass("was-active");
+		$(this).addClass("was-active");
+		$(".gallery-page-img-block-wrapper").removeClass("active");
+		var $this_id = $(this).attr('id');
+		var $this_id = $this_id.replace("gallery-title-block-", "");
+		var $this_gallery_class_pre = ".gallery-page-img-block-wrapper-";
+		var $this_gallery_class = $this_gallery_class_pre.concat($this_id);
+		$($this_gallery_class).addClass('active');
+		return false;
+	});
 
 	// Display also last news item, when load button is clicked
 	//$(".news-section .load-more-link").click( function() {

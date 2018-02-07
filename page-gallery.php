@@ -48,12 +48,13 @@
 					<?php if ( have_rows('gallery_block_wrapper') ) : $count_2 = 0; ?>
 					<?php while ( have_rows('gallery_block_wrapper') ) : the_row(); $count_2++; ?>
 					
-					<div class="gallery-page-img-block-wrapper
+					<div class="gallery-page-img-block-wrapper posts-parent
 						<?php
 							if ( $count_2 == 1 ) : echo ' active';
 							endif;
 							echo ' gallery-page-img-block-wrapper-' . $count_2;
-						?>">
+						?>"
+						id="<?php echo 'posts-parent-' . $count_2; ?>">
 						<h3 class="gallery-title-mobile"><?php the_sub_field('gallery_title'); ?></h3>
 
 							<?php 
@@ -64,13 +65,8 @@
 							$total_items = count($gallery);
 							$total_pages = ceil($total_items / $items_per_page);
 
-							if( get_query_var('paged') ) {
-								$current_page = get_query_var('paged');
-							} elseif ( get_query_var('page') ) {
-								$current_page = get_query_var('page');
-							} else {
-								$current_page = 1;
-							}
+							$current_page = isset( $_GET['paged' . $count_2] ) ? (int) $_GET['paged' . $count_2] : 1;
+
 
 							$starting_point = ( ($current_page - 1) * $items_per_page );
 
@@ -79,7 +75,8 @@
 							}
 
 							if( !empty($images) ): ?>
-					        	<div class="gallery-page-img-block photoswipe-wrapper posts flex-hor-c">
+					        	<div class="gallery-page-img-block photoswipe-wrapper posts flex-hor-c"
+					        		id="<?php echo 'posts-' . $count_2; ?>">
 
 									<?php foreach( $images as $image ): ?>
 									<figure class="gallery-page-img-block-item-outer post">
@@ -96,8 +93,8 @@
 						// load more button
 						if( $total_pages > 1 && $current_page < $total_pages ) :
 						?>
-						<div class="load-more flex-hor-c">
-							<a class="btn btn-1 load-more-link" href="<?php the_permalink(); echo $count_2; ?>/<?php echo $current_page+1 ?>/"><?php _e('Load More', 'rkmachinery'); ?></a>
+						<div class="load-more-multiple flex-hor-c" id="<?php echo 'load-more-multiple-' . $count_2; ?>">
+							<a class="btn btn-1 load-more-link" id="<?php echo $count_2; ?>" href="<?php the_permalink(); echo '?paged' . $count_2; ?>=<?php echo $current_page+1 ?>/"><?php _e('Load More', 'rkmachinery'); ?></a>
 						</div>
 						<?php endif; ?>
 					</div>
