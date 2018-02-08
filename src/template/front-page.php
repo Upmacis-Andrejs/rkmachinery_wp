@@ -18,9 +18,12 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop" preload="metadata">
+					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop video-with-poster" preload="metadata">
 						<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 					</video>
+					<?php if( get_field('full_width_image') ): ?>
+						<span class="poster-picture-for-video" id="<?php echo get_field('full_width_image')['url']; ?>"></span>
+					<?php endif; ?>
 				<?php elseif( get_field('full_width_image') ): ?>
 					<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
 				<?php endif; ?>
@@ -44,12 +47,15 @@
 
 							<h4 class="title z-6"><?php the_title(); ?></h4>
 							<?php if( get_field('full_width_video') ): ?>
-								<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
+								<video class="full-width-video jquery-background-video no-autoplay video-with-poster" preload="metadata">
 									<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 								</video>
+								<?php if( get_field('full_width_image') ): ?>
+									<span class="poster-picture-for-video" id="<?php echo get_field('full_width_image')['url']; ?>"></span>
+								<?php endif; ?>
 							<?php elseif( get_field('full_width_image') ): ?>
 								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
-							<?php endif; ?>							
+							<?php endif; ?>
 						
 						</a>
 						<?php endwhile; wp_reset_postdata(); ?>
@@ -67,12 +73,15 @@
 
 							<h4 class="title z-6"><?php the_title(); ?></h4>
 							<?php if( get_field('full_width_video') ): ?>
-								<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
+								<video class="full-width-video jquery-background-video no-autoplay video-with-poster" preload="metadata">
 									<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 								</video>
+								<?php if( get_field('full_width_image') ): ?>
+									<span class="poster-picture-for-video" id="<?php echo get_field('full_width_image')['url']; ?>"></span>
+								<?php endif; ?>
 							<?php elseif( get_field('full_width_image') ): ?>
-								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url'];  ?>)"></div>
-							<?php endif; ?>							
+								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
+							<?php endif; ?>
 						
 						</a>
 						<?php endwhile; wp_reset_postdata(); ?>
@@ -86,11 +95,7 @@
 									$first_item_in_gallery = $first_row_gallery[0]['url'];
 							?>
 							<!-- /get first image from first gallery -->
-						<a class="page-block shadow text-decor-none jquery-background-video-wrapper
-						<?php if( get_field('full_width_video') ): echo ' video';
-						elseif( get_field('full_width_image') ): echo ' image';
-						endif;
-						?>"
+						<a class="page-block shadow text-decor-none jquery-background-video-wrapper image"
 						id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
 						href="<?php the_permalink(); ?>">
 
@@ -162,10 +167,7 @@
 					    <?php while ( $the_query_news->have_posts() ) : $the_query_news->the_post(); ?>
 					    	<div class="news-block-outer">
 					    		<div class="news-block-inner">
-							        <a class="news-block shadow text-decor-none jquery-background-video-wrapper
-							        <?php if( get_field('thumbnail_video') ): echo ' video';
-									elseif( get_field('thumbnail_image') ): echo ' image';
-									endif; ?>"
+							        <a class="news-block shadow text-decor-none jquery-background-video-wrapper image"
 									href="<?php the_permalink(); ?>">
 										
 										<div class="title-and-date z-6">
@@ -176,11 +178,7 @@
 												<div class="shape-upper"></div>
 											</div>
 										</div>
-										<?php if( get_field('thumbnail_video') ): ?>
-											<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
-												<source src="<?php the_field('thumbnail_video'); ?>#t=0.5">
-											</video>
-										<?php elseif( get_field('thumbnail_image') ): ?>
+										<?php if( get_field('thumbnail_image') ): ?>
 											<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('thumbnail_image')['sizes']['gallery']; ?>)"></div>
 										<?php endif; ?>
 									</a>

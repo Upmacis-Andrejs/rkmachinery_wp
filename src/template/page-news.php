@@ -52,11 +52,11 @@
 								</a>
 							</div>
 						</div>
-				    <?php endwhile; wp_reset_postdata(); ?>
+				    <?php endwhile; ?>
 					</div>
 				    <?php if ( $the_query_news->max_num_pages > 1 ) : ?>
 				    	<div class="load-more flex-hor-c"><?php next_posts_link( __('Load More', 'rkmachinery'), $the_query_news->max_num_pages); ?></div>
-					<?php endif ?>
+					<?php wp_reset_postdata();  endif ?>
 
 				<!-- /loop through custom post type 'news' -->
 				<?php endif; ?>

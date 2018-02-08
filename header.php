@@ -24,7 +24,7 @@
         </script>
 
 	</head>
-	<body <?php body_class('opacity-0'); ?>>
+	<body <?php body_class(''); ?>>
 
     <!--[if lte IE 9]>
     <div id="update_browser_fake_body">
@@ -96,7 +96,7 @@
                 						<?php rkmachinery_nav(); ?>
                 					</nav>
                                     <div class="lang-switcher-wrapper">
-                                        <?php echo apply_filters('rkmachinery_lang_switcher', ''); ?>
+                                       <?php echo apply_filters('rkmachinery_lang_switcher', ''); ?>
                                     </div>
                                 </div>
                             </div>

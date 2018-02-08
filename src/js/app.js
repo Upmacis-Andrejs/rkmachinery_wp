@@ -282,6 +282,15 @@ $(document).ready(function() {
 		}
 	});
 
+	/*$(".video-with-poster").each(function() {
+		var $this = $(this);
+		var $this_video = $this.get(0);
+		if ( $(window).width() <= $tablet_width ) {
+			var $this_poster_img = $this.siblings(".poster-picture-for-video").attr('id');
+			$this_video.setAttribute("poster", $this_poster_img);			
+		}
+	});*/
+
 	// Script for Facebook Share button
 	$(document).on('click', '.fb-share-btn', function() {
 		var $btn = $(this);
