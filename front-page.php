@@ -2,7 +2,11 @@
 
 	<main id="site-content">
 		<section id="section-1">
-			<div class="full-width-img-video-wrapper mega-size shadow jquery-background-video-wrapper">
+			<div class="full-width-img-video-wrapper mega-size shadow jquery-background-video-wrapper
+			<?php if( get_field('full_width_video') ): echo ' video';
+			elseif( get_field('full_width_image') ): echo ' image';
+			endif;
+			?>">
 				<?php if( get_field('text-fwiv') ): ?>
 					<div class="z-6 container">
 						<div class="row text">
@@ -18,12 +22,9 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop video-with-poster" preload="metadata">
+					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop" preload="metadata">
 						<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 					</video>
-					<?php if( get_field('full_width_image') ): ?>
-						<span class="poster-picture-for-video" id="<?php echo get_field('full_width_image')['url']; ?>"></span>
-					<?php endif; ?>
 				<?php elseif( get_field('full_width_image') ): ?>
 					<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
 				<?php endif; ?>
@@ -47,12 +48,9 @@
 
 							<h4 class="title z-6"><?php the_title(); ?></h4>
 							<?php if( get_field('full_width_video') ): ?>
-								<video class="full-width-video jquery-background-video no-autoplay video-with-poster" preload="metadata">
+								<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
 									<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 								</video>
-								<?php if( get_field('full_width_image') ): ?>
-									<span class="poster-picture-for-video" id="<?php echo get_field('full_width_image')['url']; ?>"></span>
-								<?php endif; ?>
 							<?php elseif( get_field('full_width_image') ): ?>
 								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
 							<?php endif; ?>
@@ -73,12 +71,9 @@
 
 							<h4 class="title z-6"><?php the_title(); ?></h4>
 							<?php if( get_field('full_width_video') ): ?>
-								<video class="full-width-video jquery-background-video no-autoplay video-with-poster" preload="metadata">
+								<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
 									<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 								</video>
-								<?php if( get_field('full_width_image') ): ?>
-									<span class="poster-picture-for-video" id="<?php echo get_field('full_width_image')['url']; ?>"></span>
-								<?php endif; ?>
 							<?php elseif( get_field('full_width_image') ): ?>
 								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
 							<?php endif; ?>

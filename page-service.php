@@ -101,7 +101,7 @@
 										<!-- /loop through children of child page of this post -->									
 										<?php else: ?>
 											<!-- if page child does not have children and template file is page-service-item.php, display excerpt -->
-											<?php if( get_page_template_slug($post_id) == 'page-service-item.php' ): ?>
+											<?php if( get_page_template_slug($post->ID) == 'page-service-item.php' ): ?>
 											<ul class="page-excerpt-wrapper list-style-none z-6">
 												<li class="excerpt">
 													<?php

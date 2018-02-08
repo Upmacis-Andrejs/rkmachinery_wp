@@ -13,7 +13,7 @@
 					<div class="row" id="footer-row-1">
 						<div class="flex upper-footer-block-wrapper">
 							<a class="upper-footer-block footer-site-logo" href="<?php echo home_url(); ?>">
-								<img src="<?php the_field('site_logo_footer', 'option'); ?>" alt="Footer Site Logo">
+								<img src="<?php echo get_template_directory_uri(); ?>/img/site-logo-white.svg" style="width: 89px; height: 59.27px;" alt="Footer Site Logo">
 							</a>
 							<div class="footer-list-wrapper flex">
 								<div class="upper-footer-block footer-company-address">

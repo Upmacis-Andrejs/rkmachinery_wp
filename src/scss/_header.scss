@@ -305,6 +305,10 @@
 			li li .sub-menu:hover {
 				display: none;
 			}
+			li li .sub-menu {
+				width: 100%;
+				li { width: 100%; }
+			}
 			li.menu-item-has-children.current-menu-item > a:after,
 			li.menu-item-has-children.current-menu-ancestor > a:after {
 				content: none!important;

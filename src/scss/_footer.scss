@@ -262,12 +262,12 @@
 .contact-form-outer {
 	@extend .flex-hor-c;
 	@extend .z-1000;
-	position: absolute;
-	top: -60px;
+	position: fixed;
+	bottom: 60px;
 	right: 22px;
-	transform: translateY(-100%);
 	box-shadow: 2px 2px 6px 0 rgba(35,31,32,0.4);
 }
+
 .contact-form-wrapper {
 	width: 300px;
 	padding: 12px 30px 0 30px;
@@ -301,9 +301,9 @@
 	position: fixed;
 	bottom: 14px;		
 	right: 20px;
-	// transform: translateY(-100%);
 	width: 40px;
 	height: 40px;
+	@extend .z-9;
 	&:before {
 		@extend .icon:before;
 		@extend .icon-cf-open:before;
@@ -363,6 +363,12 @@
 }
 
 @media (max-width: 767px) {
+	.contact-form-outer {
+		position: absolute;
+		top: -60px;
+		right: 22px;
+		transform: translateY(-100%);
+	}
 	.contact-form-btn {
 		position: absolute;
 		top: -14px;

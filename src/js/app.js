@@ -291,6 +291,15 @@ $(document).ready(function() {
 		}
 	});*/
 
+	/*if( $(window).width() <= $tablet_width ) {
+		$(".video-with-poster").each(function() {
+			alert('video');
+			var $this = $(this);
+			$this.addClass("hidden");
+			$this.siblings(".poster-for-video").removeClass("hidden");
+		});
+	}*/
+
 	// Script for Facebook Share button
 	$(document).on('click', '.fb-share-btn', function() {
 		var $btn = $(this);
@@ -305,18 +314,20 @@ $(document).ready(function() {
 	});
 
 	// Fit Video To Parent Div
-	$('.jquery-background-video').bgVideo({
-		//fullScreen: false, // Sets the video to be fixed to the full window - your <video> and it's container should be direct descendents of the <body> tag
-		//fadeIn: 500, // Milliseconds to fade video in/out (0 for no fade)
-		pauseAfter: 0, // Seconds to play before pausing (0 for forever)
-		//fadeOnPause: false, // For all (including manual) pauses
-		fadeOnEnd: false, // When we've reached the pauseAfter time
-		showPausePlay: false, // Show pause/play button
-		//pausePlayXPos: 'right', // left|right|center
-		//pausePlayYPos: 'top', // top|bottom|center
-		//pausePlayXOffset: '15px', // pixels or percent from side - ignored if positioned center
-		//pausePlayYOffset: '15px' // pixels or percent from top/bottom - ignored if positioned center		
-	});
+	if( $(window).width() > $tablet_width ) {
+		$('.jquery-background-video').bgVideo({
+			//fullScreen: false, // Sets the video to be fixed to the full window - your <video> and it's container should be direct descendents of the <body> tag
+			//fadeIn: 500, // Milliseconds to fade video in/out (0 for no fade)
+			pauseAfter: 0, // Seconds to play before pausing (0 for forever)
+			//fadeOnPause: false, // For all (including manual) pauses
+			fadeOnEnd: false, // When we've reached the pauseAfter time
+			showPausePlay: false, // Show pause/play button
+			//pausePlayXPos: 'right', // left|right|center
+			//pausePlayYPos: 'top', // top|bottom|center
+			//pausePlayXOffset: '15px', // pixels or percent from side - ignored if positioned center
+			//pausePlayYOffset: '15px' // pixels or percent from top/bottom - ignored if positioned center		
+		});
+	}
 
 	// Add CSS class to Site Header when scrollTop position of the document is not 0
 	var $window = $(window);

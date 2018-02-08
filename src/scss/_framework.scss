@@ -638,6 +638,16 @@ textarea::placeholder,
   @extend .additional;
 }
 
+// REMOVE VIDEO PLAY BUTTON ON IPHONE
+*::-webkit-media-controls {
+    display:none !important;
+}
+
+*::-webkit-media-controls-start-playback-button {
+    display: none!important;
+    -webkit-appearance: none;
+}
+
 // ERROR STYLES WITHOUT jQUERY VALIDATION
 .wpcf7-not-valid { border: 1px solid #E2231A; }
 .wpcf7-not-valid:after {
@@ -650,7 +660,10 @@ textarea::placeholder,
   line-height: 1;
   @extend .bg-accent-2;
 }
-.wpcf7-response-output { display: none!important; }
+.wpcf7-response-output {
+  margin: -23px 0 12px 0!important;
+  font-size: 12px;
+}
 span[role="alert"] {
   /*position: absolute;
   display: block;
@@ -727,22 +740,24 @@ label.error,
 }
 
 // DEPRECATED BROWSER NOTIFICATION
+// DEPRECATED BROWSER NOTIFICATION
 #update_browser_fake_body {
     position: fixed;
+    display: table;
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
-    z-index: 9999999;                               
+    z-index: 9999999;                            
 }
 #update_browser_container {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+    display: table-cell;
+    vertical-align: middle;
     width: 100vw;
     min-height: 100vh;
-    background-color: rgba(0,0,0,0.5);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #A9A9A9;
     color: #808080;
     font-size: 16px;
 }
@@ -750,8 +765,8 @@ label.error,
     width: 1063px;
     max-width: 90%;
     padding: 38px 30px 47px 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-right: auto;
+    margin-left: auto;
     background-color: #fff;
 }
 #update_browser_inner {
@@ -824,6 +839,13 @@ label.error,
     color: #fff;
     background-color: #333;
 }
+#close_announcement,
+#close_announcement:hover,
+#close_announcement:active,
+#close_announcement:focus {
+  text-decoration: none;
+  color: #fff!important;
+}
 @media (max-width: 767px) {
     #browser-icon-wrap {
         margin-right: -15px;
@@ -838,6 +860,7 @@ label.error,
 @media (max-width: 480px) {
     #update_browser { max-width: 100%; }                
 }
+
 
 // 404 ERROR PAGE STYLE
 .error404 #site-content {
