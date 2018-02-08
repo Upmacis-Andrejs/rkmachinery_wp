@@ -10,7 +10,8 @@
 	#main-site-logo,
 	#main-site-logo img {
 		max-height: 80px;
-		transition: 0.1s ease-in-out, max-height 0.25s ease-in-out;		
+		transition: 0.1s ease-in-out, max-height 0.25s ease-in-out;
+		transition-delay: 0s!important;	
 	}
 	#main-site-logo { margin-right: 45px; }
 	.wrapper-for-mobile-menu { flex-grow: 1; }
@@ -73,6 +74,7 @@
 				height: 136px;
 				padding: 0 29px;
 				transition: 0.1s ease-in-out, height 0.25s ease-in-out;
+				transition-delay: 0s!important;
 				@extend .h3;
 				@extend .default;
 				@extend .text-decor-none;
@@ -87,7 +89,7 @@
 				height: 6px;
 				max-width: 0;
 				@extend .bg-default;
-				transition: max-width 0.4s ease-in-out;	
+				transition: max-width 0.4s ease-in-out;
 			}
 			.menu-item-has-children-ghost {
 				@extend .visuallyhidden;

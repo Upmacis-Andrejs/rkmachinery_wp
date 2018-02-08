@@ -343,7 +343,7 @@ $(document).ready(function() {
 	var $timeout_add_not_top
 	var $timeout_remove_not_top
 
-	if( $lastY > 10 ) {
+	if( $lastY > 50 ) {
 		add_not_top();
 	}
 
@@ -358,10 +358,10 @@ $(document).ready(function() {
 			var y = 'up';
 		}
 		$lastY = $currentY;
-		if ( $document.scrollTop() > 10 && y == 'down' ) {
-			$timeout_add_not_top = setTimeout(add_not_top, 250);
-		} else if ( $document.scrollTop() <= 10 && y == 'up' ) {
-			$timeout_remove_not_top = setTimeout(remove_not_top, 250);
+		if ( $document.scrollTop() > 50 && y == 'down' ) {
+			$timeout_add_not_top = setTimeout(add_not_top, 150);
+		} else if ( $document.scrollTop() <= 100 && y == 'up' ) {
+			$timeout_remove_not_top = setTimeout(remove_not_top, 150);
 		}
 
 	});
