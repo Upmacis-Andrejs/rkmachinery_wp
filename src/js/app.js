@@ -864,29 +864,16 @@ $(document).ready(function() {
 	});
 
 	// Initialize Lightcase Lightbox
-	if ( $(window).width() >= $mobile_width ) {
-		$('a[data-rel^=lightcase]').lightcase({
-			overlayOpacity: 1,
-			video: {
-				'width': 'auto',
-				'height': 'auto',
-				'controls': false,
-				'loop': true
-			},
-			disableShrink: true
-		});
-	} else {
-		$('a[data-rel^=lightcase]').lightcase({
-			overlayOpacity: 1,
-			video: {
-				'width': 'auto',
-				'height': 'auto',
-				'controls': true,
-				'loop': true
-			},
-			disableShrink: true
-		});
-	}
+	$('a[data-rel^=lightcase]').lightcase({
+		overlayOpacity: 1,
+		video: {
+			'width': 'auto',
+			'height': 'auto',
+			'controls': true,
+			'loop': true
+		},
+		disableShrink: true
+	});
 
 	// PhotoSwipe JavaScript Gallery
 
@@ -1051,6 +1038,7 @@ $(document).ready(function() {
 					showAnimationDuration:0,
 					barsSize: {top:60, bottom:'auto'},
 					closeOnScroll: false,
+					//modal: false
 		        };
 
 		        // PhotoSwipe opened from URL
@@ -1143,10 +1131,11 @@ $(window).resize(function() {
 		var $fwivw_padding_top = $fwivw_padding_top.replace("px", "");
 
 		if ( $fwivw.height() < $fwivw_contents.outerHeight() ) {
-			$fwivw.css("padding-top", $fwivw_padding_top / 2);
+			$fwivw.css("padding-top", $fwivw_padding_top * 0.65);
 		} else {
 			$fwivw.css("padding-top", "");
 		}
+		$fwivw.css("opacity", '1');
 	}
 
 	if( $(".full-width-img-video-wrapper").length ) {

@@ -100,9 +100,14 @@
 			left: 0;
 			border-left: 1px solid #fff;
 		}
-		.footer-company-list { margin-right: -28px; }
+		.footer-company-list {
+			flex-wrap: wrap;
+			margin-bottom: -10px;
+			margin-right: -28px;
+		}
 		.footer-company-block {
 			margin-right: 28px;
+			margin-bottom: 10px;
 			line-height: 1;
 			img {
 				max-width: none;
@@ -263,7 +268,7 @@
 	@extend .flex-hor-c;
 	@extend .z-1000;
 	position: fixed;
-	bottom: 60px;
+	bottom: 75px;
 	right: 22px;
 	box-shadow: 2px 2px 6px 0 rgba(35,31,32,0.4);
 }
@@ -291,15 +296,24 @@
 		transform-origin: 0 0;
 	}
 	input[type="submit"].btn {
-		margin-top: -18px;
-		height: 35px;
-		line-height: 35px;
+		padding: 10.5px 10px!important;
+		margin-top: 10px;
+		height: 35px!important;
+		line-height: 14px!important;
 		font-size: 14px;
+		border: 0 solid transparent!important;
 	}
+	@media(max-width: 1199px) {
+		input[type="submit"].btn {
+			padding: 12px 10px 9px!important
+		}
+	}
+
+	.company-fax-wrap + br { display: none; } // Honeypot anti-spam
 }
 .contact-form-btn {
 	position: fixed;
-	bottom: 14px;		
+	bottom: 20px;		
 	right: 20px;
 	width: 40px;
 	height: 40px;
@@ -318,16 +332,17 @@
 	&:after {
 		content: '';
 		@extend .block-fit-parent;
-		@extend .bg-default;
-		&:hover,
-		&:active {
-			opacity: 1!important;
-		}		
+		background-color: #B6B4B5;
 	}
 }
 .contact-form-outer.hidden+.contact-form-btn {
-	&:after { opacity: 0.3; }
+	&:after { opacity: 0.7; }
 }
+.contact-form-outer+.contact-form-btn:hover,
+.contact-form-outer+.contact-form-btn:active {
+	&:after { opacity: 1!important; }
+}
+
 .contact-form-close {
 	position: absolute;
 	top: 5px;
@@ -359,22 +374,22 @@
 }
 
 @media (max-width: 1199px) {
-	.contact-form-btn:after { opacity: 0.3; }
+	.contact-form-btn:after { opacity: 0.7; }
 }
 
 @media (max-width: 767px) {
-	.contact-form-outer {
+	/*.contact-form-outer {
 		position: absolute;
-		top: -60px;
+		top: -75px;
 		right: 22px;
 		transform: translateY(-100%);
 	}
 	.contact-form-btn {
 		position: absolute;
-		top: -14px;
+		top: -20px;
 		bottom: auto;
 		transform: translateY(-100%);
-	}
+	}*/
 	.contact-form-open {
 		.contact-form-outer {
 			position: fixed;

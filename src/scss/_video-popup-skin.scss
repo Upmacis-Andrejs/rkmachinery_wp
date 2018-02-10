@@ -19,7 +19,7 @@ $lightcase-default: (
   'overlay-color': #231f20,
 
   'case-background': #fff,
-  'case-background-media': #333,
+  'case-background-media': #231f20,
 
   'icon-font-size': 38px,
   'icon-color': rgba(255, 255, 255, 0.6),
@@ -297,6 +297,8 @@ $lightcase-settings: map-merge($lightcase-default, $lightcase-custom);
 }
 
 #lightcase-content {
+  background-color: #231f20!important;
+  box-shadow: none!important;
 
   // Not type: error
   html:not([data-lc-type=error]) & {
@@ -308,10 +310,10 @@ $lightcase-settings: map-merge($lightcase-default, $lightcase-custom);
 
       background-color: #{map-get($lightcase-settings, 'case-background')};
 
-      -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-      -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-      -o-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+     // -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+     // -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+     // -o-box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+     // box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 
       -webkit-backface-visibility: hidden;
     }

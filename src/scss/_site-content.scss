@@ -1,11 +1,10 @@
 #site-content,
 .error404.not--top #site-content {
-	padding-top: 90px;
+	padding-top: 136px;
 	padding-bottom: 36px;
 	transition: padding-top 0.25s ease-in-out;
 }
-//.not--top #site-content { padding-top: 90px; }
-
+// .not--top #site-content { padding-top: 90px; }
 
 @media (max-width: 1199px) {
 	#site-content { padding-top: 90px; }
@@ -17,8 +16,11 @@
 	height: calc(780px + 46px);
 	padding-top: calc(230px + 46px);
 	padding-bottom: 230px;
+	margin-top: -46px;
 	color: #fff;
 	overflow: hidden;
+	opacity: 0;
+	transition: opacity 0.1s ease-in-out;
 	.full-width-img {
 		position: absolute;
 		top: 0;
@@ -300,6 +302,7 @@
 		margin-left: auto;
 	}
 }
+.single-news_posts .go-back { margin-top: 36px; }
 .news-section > .container > .row.flex { flex-wrap: wrap; }
 .news-block-wrapper {
 	width: calc(100% + 15px * 2);
@@ -668,6 +671,41 @@
 		transform: translateY(-50%);
 	}
 }
+
+@media ( max-width: 1199px ) {
+	.slider-wrapper.with-pager {
+		.lSSlideOuter {
+			bottom: -23px!important;
+			.lSSlideWrapper { height: calc(100% - 23px)!important; }
+		}
+		.lSPager.lSpg {
+			padding-top: 15px!important;
+			margin-right: -2.7px;
+			margin-left: -2.7px;
+			li {
+				padding-right: 2.7px;
+				padding-left: 2.7px;
+				a {
+					width: 8px;
+					height: 8px;
+				}
+			}
+		}
+	}
+}
+
+@media ( max-width: 767px ) {
+	.slider-wrapper.with-pager {
+		.lSSlideOuter {
+			bottom: -18px!important;
+			.lSSlideWrapper { height: calc(100% - 18px)!important; }
+		}
+		.lSPager.lSpg {
+			padding-top: 10px!important;
+		}
+	}
+}
+
 
 // Control Arrows For Slider and Gallery
 .lSAction > .lSPrev,
@@ -1266,6 +1304,7 @@ body .lightcase-icon-close {
 			padding-bottom: 100px;
 		}
 		#next-post {
+			position: fixed;
 			top: auto;
 			right: 0;
 			bottom: 0;
@@ -1311,7 +1350,7 @@ body .lightcase-icon-close {
 		}
 		.slider-outer {
 			padding-right: 0;
-			padding-bottom: 33px;
+			padding-bottom: 23px;
 			.slider-wrapper.big { margin-top: 0; }
 		}
 		.location-text-wrapper {
@@ -1356,6 +1395,7 @@ body .lightcase-icon-close {
 		}
 	}
 	.location-info-wrapper{
+		.slider-outer { padding-bottom: 18px; }
 		.location-text-wrapper {
 			margin-top: 20px;
 			.location-text-inner {

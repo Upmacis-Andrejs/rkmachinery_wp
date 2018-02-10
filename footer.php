@@ -129,6 +129,6 @@
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXtzsptnsBUt60yjh3NTikCbVnPIiL2ws"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvcwb3lssTCFLWgwTGq4wJq-CjHnylt6c"></script>
 	</body>
 </html>

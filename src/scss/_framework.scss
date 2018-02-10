@@ -143,7 +143,8 @@ a,
 a * {
   transition: 0.1s ease-in-out;
   transition-delay: 0s!important;
-  text-decoration-skip: objects!important;
+  text-decoration-skip: none!important;
+  text-decoration-skip-ink: none!important;
 }
 a:hover,
 a:active,
@@ -154,7 +155,8 @@ a *:active,
 a *:focus,
 a *:visited {
   cursor: pointer!important;
-  text-decoration-skip: objects!important;
+  text-decoration-skip: none!important;
+  text-decoration-skip-ink: none!important;
 }
 a { @extend .default; }
 a:visited,
@@ -286,11 +288,11 @@ input[type="submit"]:hover {
 
 // BUTTONS
 .btn-1 {
-  height: 52px;
-  line-height: 52px;
+  height: 52px!important;
+  line-height: 18px!important;
   min-width: 223px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding: 17px 10px!important;
+  vertical-align: middle;
   @extend .margin-top-big;
   @extend .h3;
   color: #fff;
@@ -306,6 +308,12 @@ input[type="submit"]:hover {
   @extend .bg-accent-2;
 }
 
+.btn-1:visited { color: #fff; }
+
+@media (max-width: 1199px) {
+  .btn-1 { padding: 19px 10px 15px 10px!important; }
+}
+
 // LINKS
 a:hover,
 a:active,
@@ -313,20 +321,6 @@ a:focus {
   @extend .accent-2;
 }
 a:visited { @extend .additional-2; }
-
-@media (max-width: 767px) {
-  .btn-1,
-  .btn-1:focus,
-  .btn-1:hover,
-  .btn-1:active {
-      height: calc(62px * 0.8);
-      line-height: calc(62px * 0.8);
-      min-width: calc(292px * 0.7);
-      padding-right: 8px;
-      padding-left: 8px;
-      font-size: calc(27px * 0.8);
-  }
-}
 
 // COLORS
 .default { color: #231f20; }
@@ -718,13 +712,15 @@ input.error,
 textarea.error,
 .textarea.error {
   border: 1px solid #E2231A!important;
-  background: url("img/error.png") no-repeat right 10px top 10px;
+  background: url("img/error.svg") no-repeat right 10px top 10px;
+  background-size: 14px 14px!important;
 }
 input.valid,
 .input.valid,
 textarea.valid,
 .textarea.valid {
-  background: url("img/valid.png") no-repeat right 10px top 11px;
+  background: url("img/valid.svg") no-repeat right 10px top 11px;
+  background-size: 15px 12px!important;
 }
 .wpcf7-form label.error,
 .wpcf7-form .label.error,
