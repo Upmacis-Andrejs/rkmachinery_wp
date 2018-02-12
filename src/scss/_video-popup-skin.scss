@@ -53,6 +53,16 @@ $lightcase-settings: map-merge($lightcase-default, $lightcase-custom);
   font-style: normal;
 }
 
+a[class*=lightcase-icon-] {
+    text-shadow: none!important;
+  &:hover,
+  &:active,
+  &:focus,
+  &:visited {
+    text-shadow: none!important;
+  }
+}
+
 [class*='lightcase-icon-']:before {
   font-family: 'lightcase', sans-serif;
   font-style: normal;

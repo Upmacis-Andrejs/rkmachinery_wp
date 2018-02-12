@@ -80,7 +80,7 @@
 
                             <a class="visuallyhidden" id="template-dir-uri-img" href="<?php echo get_template_directory_uri(); ?>/img/"></a>
     						<a id="main-site-logo" href="<?php echo home_url(); ?>">
-    							<img src="<?php echo get_template_directory_uri(); ?>/img/site-logo-black.svg" style="width: 111px; height: 80px;" alt="Site Logo">
+    							<img src="<?php echo get_template_directory_uri(); ?>/img/site-logo-black.svg" alt="Site Logo">
     						</a>
                             <a id="mobile-menu-icon" href="#">
                                 <div class="inner">

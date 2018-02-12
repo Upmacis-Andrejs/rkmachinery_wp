@@ -9,8 +9,9 @@
 	background-color: #fff;
 	#main-site-logo,
 	#main-site-logo img {
-		max-height: 80px;
-		transition: 0.1s ease-in-out, max-height 0.25s ease-in-out;
+		width: 111px;
+		height: 80px;
+		transition: 0.1s ease-in-out, max-height 0.25s ease-in-out, height 0.25s ease-in-out, width 0.25s ease-in-out;
 		transition-delay: 0s!important;	
 	}
 	#main-site-logo { margin-right: 45px; }
@@ -220,10 +221,11 @@
 
 // Site Header style when scrollTop position of the document is not 0
 .not--top #site-header {
-	box-shadow: 0 8px 6px -6px rgba(35,31,32,0.4);
+	box-shadow: 0 2px 6px 0px rgba(35,31,32,0.4);
 	#main-site-logo,
 	#main-site-logo img {
-		max-height: 53px;
+		width: 74px;
+		height: 53px;
 	}
 	.header-menu li a { height: 90px; }
 }
@@ -386,7 +388,8 @@
 		#mobile-menu-icon { display: block; }
 		#main-site-logo,
 		#main-site-logo img {
-			max-height: 53px;
+			width: 74px;
+			height: 53px;
 		}
 	}
 	.breadcrumbs-wrapper { display: none; }

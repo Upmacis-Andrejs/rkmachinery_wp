@@ -36,7 +36,7 @@ $(document).ready(function() {
 				$('.header-menu .menu-item-has-children > a').css({'color' : '', 'background-color' : ''});
 				$("#mobile-menu-icon").removeClass("open");
 				$("#site-header .wrapper-for-mobile-menu").stop(true, true).slideUp();
-				return false;			        
+				return false;
 		    }
 		}
 	});

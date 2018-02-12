@@ -786,9 +786,10 @@
 	opacity: 1;
 }
 
-// Close Button For Gallery and Video Popup
+// Close Button For Gallery, Video Popup and Locations Posts
 .pswp__button--close,
-body .lightcase-icon-close {
+body .lightcase-icon-close,
+#close-location {
 	width: calc(18px * 2 + 23px);
 	height: calc(18px * 2 + 23px);
 	&:before {
@@ -803,17 +804,23 @@ body .lightcase-icon-close {
 	}
 }
 
-.pswp__button--close:before { @extend .default; }
+.pswp__button--close:before,
+#close-location:before {
+	@extend .default;
+}
 body .lightcase-icon-close:before { @extend .accent; }
 
 .pswp__button--close:hover:before,
 .pswp__button--close:active:before,
 body .lightcase-icon-close:hover:before,
-body .lightcase-icon-close:active:before {
+body .lightcase-icon-close:active:before,
+#close-location:hover:before,
+#close-location:active:before {
 	@extend .accent-2;
 }
 
-body .lightcase-icon-close {
+body .lightcase-icon-close,
+#close-location {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -822,9 +829,12 @@ body .lightcase-icon-close {
 	margin: 0;
 }
 
+#close-location { position: absolute!important; }
+
 @media (max-width: 767px) {
 	.pswp__button--close,
-	body .lightcase-icon-close {
+	body .lightcase-icon-close,
+	#close-location {
 		width: calc(15px * 2 + 18px);
 		height: calc(15px * 2 + 18px);
 		&:before {
@@ -1213,26 +1223,6 @@ body .lightcase-icon-close {
 		height: 100%;
 		padding-top: 36px;
 	}
-	#close-location {
-		position: absolute;
-		top: 18px;
-		right: 18px;
-		bottom: auto;
-		left: auto;
-		width: 23px;
-		height: 23px;
-		&:before {
-			@extend .block-c;
-			@extend .icon:before;
-			@extend .icon-close:before;
-			@extend .default;
-			font-size: 23px;
-		}
-	}
-	#close-location:hover,
-	#close-location:active {
-		&:before { @extend .accent-2; }
-	}
 	#next-post {
 		@extend .block-vert-c;
 		right: 0;
@@ -1371,13 +1361,6 @@ body .lightcase-icon-close {
 		#site-content {
 			padding-top: 58px;
 			padding-bottom: 65px;
-		}
-		#close-location {
-			position: absolute;
-			top: 15px;
-			right: 15px;
-			width: 18px;
-			height: 18px;
 		}
 		#next-post {
 			height: 58px;
