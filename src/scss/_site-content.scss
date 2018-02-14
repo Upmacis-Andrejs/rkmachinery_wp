@@ -1,6 +1,7 @@
 #site-content,
 .error404.not--top #site-content {
-	padding-top: 136px;
+	//old padding-top: 136px;
+	padding-top: 90px;
 	padding-bottom: 36px;
 	transition: padding-top 0.25s ease-in-out;
 }
@@ -13,10 +14,14 @@
 // Full Width Image/Video Block
 .full-width-img-video-wrapper {
 	width: 100%;
-	height: calc(780px + 46px);
-	padding-top: calc(230px + 46px);
-	padding-bottom: 230px;
-	margin-top: -46px;
+	// old height: calc(780px + 46px);
+	// old padding-top: calc(230px + 46px);
+	// old padding-bottom: 230px;
+	// old margin-top: -46px;
+	height: calc(600px + 34px);
+	padding-top: calc(174px + 34px);
+	padding-bottom: 174px;
+	margin-top: -34px;
 	color: #fff;
 	overflow: hidden;
 	opacity: 0;
@@ -53,7 +58,7 @@
 	height: calc(955px + 46px);
 	max-height: calc(100vh - 90px);
 	//padding-top: 295px;
-	//padding-bottom: 295px;
+	//padding-bottom: 295px;	
 }
 .full-width-img-video-wrapper:after {
 	content: '';

@@ -634,7 +634,7 @@ textarea::placeholder,
 
 // REMOVE VIDEO PLAY BUTTON ON IPHONE
 *::-webkit-media-controls {
-    display:none !important;
+    //display:none !important;
 }
 
 *::-webkit-media-controls-start-playback-button {
