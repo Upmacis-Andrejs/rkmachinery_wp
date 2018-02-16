@@ -7,6 +7,7 @@
 	left: 0;
 	width: 100%;
 	background-color: #fff;
+	transition: opacity 0.25s ease-in-out;
 	& > .container > .row { transition: height 0.25s ease-in-out; }
 	#main-site-logo,
 	#main-site-logo img {

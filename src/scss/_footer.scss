@@ -32,7 +32,8 @@
 		    right: -999999px;
 		    opacity: 0!important;
 		}
-		.social {
+		.social,
+		.social:focus {
 			padding-left: 28px;
 			opacity: 0.7;
 		}
@@ -86,9 +87,13 @@
 	}
 	.footer-logo-2nd,
 	.footer-logo-2nd img {
-		max-width: 135px;
+	//	max-width: 135px;
 	}
 	.footer-logo-2nd { margin-right: 21px; }
+	#upb-logo-link > img {
+		width: 136px;
+		height: 46px;
+	}
 	.footer-company-list-wrapper {
 		max-width: calc(100% - 155px);
 		padding-left: 20px;
@@ -104,6 +109,27 @@
 			flex-wrap: wrap;
 			margin-bottom: -10px;
 			margin-right: -28px;
+			#aile-group {
+				width: 117px;
+				height: 36px;
+			}
+			#rk-metals-group {
+				width: 110px;
+				height: 38px;
+				margin-top: -2px;
+			}
+			#mb-betons-group {
+				width: 118px;
+				height: 36px;
+			}
+			#upb-energy-group {
+				width: 119px;
+				height: 36px;
+			}
+			#upb-nams-group {
+				width: 105px;
+				height: 36px;
+			}
 		}
 		.footer-company-block {
 			margin-right: 28px;
@@ -119,6 +145,26 @@
 		margin-top: 10px;
 		margin-right: -18px;
 		margin-left: -19px;
+		#engineering > img {
+			width: 134px;
+			height: 8px;
+		}
+		#production > img {
+			width: 124px;
+			height: 8px;
+		}
+		#delivery > img {
+			width: 95px;
+			height: 8px;
+		}
+		#assembly > img {
+			width: 100px;
+			height: 8px;
+		}
+		#service > img {
+			width: 82px;
+			height: 8px;
+		}
 		.footer-service-block {
 			padding-right: 18px;
 			padding-left: 18px;
@@ -126,6 +172,7 @@
 			font-size: 0;
 			line-height: 1;
 			&:last-of-type { border-right: 0 solid transparent; }
+
 		}
 	}
 	#footer-row-3 {

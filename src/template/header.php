@@ -11,6 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 
+        <meta name="google-site-verification" content="5GV3htbGte-ZaZ8Mp5ubMy2wfShvNOdhl1yn9VQ2cmo" />
+
 		<!-- add link to fonts CDN -->		
 
 		<?php wp_head(); ?>
@@ -24,7 +26,7 @@
         </script>
 
 	</head>
-	<body <?php body_class(''); ?>>
+	<body <?php body_class('opacity-0'); ?>>
 
     <!--[if lte IE 9]>
     <div id="update_browser_fake_body">
@@ -74,7 +76,7 @@
             id="body-wrapper">
 
 			<!-- header -->
-			<header class="z-666 clear flex-vert-c" id="site-header">
+			<header class="z-666 clear flex-vert-c opacity-0" id="site-header">
                 <div class="container">
                     <div class="row flex-vert-c">
 

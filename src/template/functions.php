@@ -248,10 +248,16 @@ function rkmachinery_scripts()
         wp_enqueue_script('photoswipe'); // Enqueue it!                
 
         wp_register_script('photoswipe-ui', get_template_directory_uri() . '/bower_components/photoswipe/photoswipe-ui-default.min.js', array(), '4.0.6', true); // Photoswipe JS Gallery Plugin default UI JavaScript
-        wp_enqueue_script('photoswipe-ui'); // Enqueue it!                
+        wp_enqueue_script('photoswipe-ui'); // Enqueue it!
 
         wp_register_script('jquery-bg-video', get_template_directory_uri() . '/bower_components/jquery-background-video/jquery.background-video.js', array('jquery'), '2.1.4', true); // jQuery Background Video
         wp_enqueue_script('jquery-bg-video'); // Enqueue it!
+        
+        wp_register_script('jquery-validate', get_template_directory_uri() . '/bower_components/jquery-validation/jquery-validate.js', array('jquery'), '1.17.0', true); // jQuery validation plugin
+        wp_enqueue_script('jquery-validate'); // Enqueue it!
+
+        wp_register_script('jquery-validate-methods', get_template_directory_uri() . '/bower_components/jquery-validation/additional-methods.js', array('jquery'), '1.17.0', true); // jQuery validation plugin - additional methods
+        wp_enqueue_script('jquery-validate-methods'); // Enqueue it!
 
         wp_register_script('rkmachinery_scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.4', true); // Custom scripts
         wp_enqueue_script('rkmachinery_scripts'); // Enqueue it!

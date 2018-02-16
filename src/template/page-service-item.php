@@ -4,7 +4,11 @@
 
 	<main id="site-content">
 		<section id="section-1">
-			<div class="full-width-img-video-wrapper shadow jquery-background-video-wrapper">
+			<div class="full-width-img-video-wrapper shadow jquery-background-video-wrapper
+			<?php if( get_field('full_width_video') ): echo ' video loading';
+			elseif( get_field('full_width_image') ): echo ' image';
+			endif;
+			?>" id="video-loader-animation-wrapper">
 				<?php if( get_field('text-fwiv') ): ?>
 					<div class="z-6 container">
 						<div class="row text">
@@ -20,7 +24,7 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop" preload="metadata">
+					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop" id="video-loader-animation" preload="metadata">
 						<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
@@ -44,7 +48,7 @@
 							$images = get_field('image_gallery');
 
 							if( $images ): ?>
-							    <ul class="lightslider">
+							    <ul class="lightslider cS-hidden" id="lightSlider">
 							        <?php foreach( $images as $image ): ?>
 							            <li class="lightslider-item section-bg" style="background-image: url(<?php echo $image['sizes']['gallery']; ?>)";></li>
 							        <?php endforeach; ?>

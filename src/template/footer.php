@@ -55,61 +55,60 @@
 								<div class="upper-footer-block footer-follow-us">
 									<h3 class="title"><?php _e('Follow Us', 'rkmachinery') ?></h3>
 									<ul class="list-style-none">
+										<?php if( get_field('facebook_follow_link', 'option') ): ?>
 										<li>
-											<a class="social follow-btn-styled facebook text-decor-none h5" href="#" target="_blank"><?php _e('Facebook', 'rkmachinery'); ?></a>
+											<a class="social follow-btn-styled facebook text-decor-none h5" href="<?php the_field('facebook_follow_link', 'option'); ?>" target="_blank"><?php _e('Facebook', 'rkmachinery'); ?></a>
 										</li>
+										<?php endif; ?>
+										<?php if( get_field('youtube_follow_link', 'option') ): ?>
 										<li>
-											<a class="social follow-btn-styled youtube text-decor-none h5" href="#" target="_blank"><?php _e('Youtube', 'rkmachinery'); ?></a>
+											<a class="social follow-btn-styled youtube text-decor-none h5" href="<?php the_field('youtube_follow_link', 'option'); ?>" target="_blank"><?php _e('Youtube', 'rkmachinery'); ?></a>
 										</li>
+										<?php endif; ?>
+										<?php if( get_field('linkedin_follow_link', 'option') ): ?>
 										<li>
-											<a class="social follow-btn-styled linkedin text-decor-none h5" href="#" target="_blank"><?php _e('Linkedin', 'rkmachinery'); ?></a>
+											<a class="social follow-btn-styled linkedin text-decor-none h5" href="<?php the_field('linkedin_follow_link', 'option'); ?>" target="_blank"><?php _e('Linkedin', 'rkmachinery'); ?></a>
 										</li>
+										<?php endif; ?>
+										<?php if( get_field('instagram_follow_link', 'option') ): ?>
 										<li>
-											<a class="social follow-btn-styled instagram text-decor-none h5" href="#" target="_blank"><?php _e('Instagram', 'rkmachinery'); ?></a>
+											<a class="social follow-btn-styled instagram text-decor-none h5" href="<?php the_field('instagram_follow_link', 'option'); ?>" target="_blank"><?php _e('Instagram', 'rkmachinery'); ?></a>
 										</li>
+										<?php endif; ?>
 									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="row flex-vert-c" id="footer-row-2">
-					    <a class="footer-logo-2nd text-decor-none flex-vert-c" href="<?php the_field('footer_logo_2nd_link', 'option'); ?>" target="_blank" rel="nofollow">
-							<?php
-								$footer_logo_2nd_imageArray = get_field('footer_logo_2nd', 'option');
-								$footer_logo_2nd_imageAlt = esc_attr($footer_logo_2nd_imageArray['alt']);
-								$footer_logo_2nd_imageURL = esc_url($footer_logo_2nd_imageArray['url']);
-							?>
-							<img src="<?php echo $footer_logo_2nd_imageURL; ?>" alt="<?php echo $footer_logo_2nd_imageAlt; ?>">
+					    <a class="footer-logo-2nd text-decor-none flex-vert-c" id="upb-logo-link" href="<?php the_field('upb_logo_link', 'option'); ?>" target="_blank" rel="nofollow">
+							<img src="<?php echo get_template_directory_uri(); ?>/img/upb-logo.svg" alt="UPB Logo">
 						</a>
 						<div class="footer-company-list-wrapper">
-						<?php if( have_rows('footer_company_list', 'option') ): ?>
-
 							<div class="footer-company-list flex">
-							<?php while ( have_rows('footer_company_list', 'option') ) : the_row(); ?>
-								<a class="footer-company-block text-decor-none" href="<?php the_sub_field('footer_company_link', 'option'); ?>" target="_blank" rel="nofollow">
-								<?php
-									$footer_company_logo_imageArray = get_sub_field('footer_company_img', 'option');
-									$footer_company_logo_imageAlt = esc_attr($footer_company_logo_imageArray['alt']);
-									$footer_company_logo_imageURL = esc_url($footer_company_logo_imageArray['url']);
-								?>
-									<img src="<?php echo $footer_company_logo_imageURL; ?>" alt="<?php echo $footer_company_logo_imageAlt; ?>">
+								<a class="footer-company-block text-decor-none" id="aile-group" href="<?php the_sub_field('aile_group_link', 'option'); ?>" target="_blank" rel="nofollow">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/Aile group.svg" alt="AILE group">
 								</a>
-							<?php endwhile; ?>
+								<a class="footer-company-block text-decor-none" id="rk-metals-group" href="<?php the_sub_field('rk_metals_group_link', 'option'); ?>" target="_blank" rel="nofollow">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/RK Metals.svg" alt="RK METĀLS group">
+								</a>
+								<a class="footer-company-block text-decor-none" id="mb-betons-group" href="<?php the_sub_field('mb_betons_group_link', 'option'); ?>" target="_blank" rel="nofollow">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/MB Betons Group.svg" alt="MB BETONS group">
+								</a>
+								<a class="footer-company-block text-decor-none" id="upb-energy-group" href="<?php the_sub_field('upb_energy_group_link', 'option'); ?>" target="_blank" rel="nofollow">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/UPB Energy group.svg" alt="UPB ENERGY group">
+								</a>
+								<a class="footer-company-block text-decor-none" id="upb-nams-group" href="<?php the_sub_field('upb_nams_group_link', 'option'); ?>" target="_blank" rel="nofollow">
+									<img src="<?php echo get_template_directory_uri(); ?>/img/UPB Nams group.svg" alt="UPB NAMS group">
+								</a>
 							</div>
-
-						<?php endif; ?>
-						<?php if ( have_rows('footer_services_list', 'option') ): ?>
 							<ul class="footer-services-wrapper list-style-none flex-vert-c">
-							<?php while ( have_rows('footer_services_list', 'option') ) : the_row(); ?>
-								<?php
-									$footer_service_imageArray = get_sub_field('footer_service_img', 'option');
-									$footer_service_imageAlt = esc_attr($footer_service_imageArray['alt']);
-									$footer_service_imageURL = esc_url($footer_service_imageArray['url']);
-								?>								
-								<li class="footer-service-block"><img src="<?php echo $footer_service_imageURL; ?>" alt="<?php echo $footer_service_imageAlt; ?>"></li>
-							<?php endwhile; ?>
+								<li class="footer-service-block" id="engineering"><img src="<?php echo get_template_directory_uri(); ?>/img/engineering.svg" alt="Engineering"></li>
+								<li class="footer-service-block" id="production"><img src="<?php echo get_template_directory_uri(); ?>/img/production.svg" alt="Production"></li>
+								<li class="footer-service-block" id="delivery"><img src="<?php echo get_template_directory_uri(); ?>/img/delivery.svg" alt="Delivery"></li>
+								<li class="footer-service-block" id="assembly"><img src="<?php echo get_template_directory_uri(); ?>/img/assembly.svg" alt="Assembly"></li>
+								<li class="footer-service-block" id="service"><img src="<?php echo get_template_directory_uri(); ?>/img/service.svg" alt="Service"></li>
 							</ul>
-						<?php endif; ?>
 						</div>
 					</div>
 					<div class="row flex-vert-c" id="footer-row-3">
@@ -129,6 +128,6 @@
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXtzsptnsBUt60yjh3NTikCbVnPIiL2ws"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXtzsptnsBUt60yjh3NTikCbVnPIiL2ws" async=""></script>
 	</body>
 </html>

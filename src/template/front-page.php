@@ -3,10 +3,10 @@
 	<main id="site-content">
 		<section id="section-1">
 			<div class="full-width-img-video-wrapper mega-size shadow jquery-background-video-wrapper
-			<?php if( get_field('full_width_video') ): echo ' video';
+			<?php if( get_field('full_width_video') ): echo ' video loading';
 			elseif( get_field('full_width_image') ): echo ' image';
 			endif;
-			?>">
+			?>" id="video-loader-animation-wrapper">
 				<?php if( get_field('text-fwiv') ): ?>
 					<div class="z-6 container">
 						<div class="row text">
@@ -22,7 +22,7 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop" preload="metadata">
+					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop" id="video-loader-animation" preload="metadata">
 						<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
@@ -90,7 +90,7 @@
 									$first_item_in_gallery = $first_row_gallery[0]['url'];
 							?>
 							<!-- /get first image from first gallery -->
-						<a class="page-block shadow text-decor-none jquery-background-video-wrapper image"
+						<a class="page-block shadow text-decor-none image"
 						id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
 						href="<?php the_permalink(); ?>">
 
@@ -162,7 +162,7 @@
 					    <?php while ( $the_query_news->have_posts() ) : $the_query_news->the_post(); ?>
 					    	<div class="news-block-outer">
 					    		<div class="news-block-inner">
-							        <a class="news-block shadow text-decor-none jquery-background-video-wrapper image"
+							        <a class="news-block shadow text-decor-none image"
 									href="<?php the_permalink(); ?>">
 										
 										<div class="title-and-date z-6">

@@ -4,7 +4,11 @@
 
 	<main id="site-content">
 		<section id="section-1">
-			<div class="full-width-img-video-wrapper shadow jquery-background-video-wrapper">
+			<div class="full-width-img-video-wrapper shadow jquery-background-video-wrapper
+			<?php if( get_field('full_width_video') ): echo ' video loading';
+			elseif( get_field('full_width_image') ): echo ' image';
+			endif;
+			?>" id="video-loader-animation-wrapper">
 				<?php if( get_field('text-fwiv') ): ?>
 					<div class="z-6 container">
 						<div class="row text">
@@ -20,7 +24,7 @@
 					</div>
 				<?php endif; ?>
 				<?php if( get_field('full_width_video') ): ?>
-					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop" preload="metadata">
+					<video class="full-width-video jquery-background-video no-autoplay video-play-only-on-desktop" id="video-loader-animation" preload="metadata">
 						<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 					</video>
 				<?php elseif( get_field('full_width_image') ): ?>
@@ -43,7 +47,7 @@
 				    		<iframe
 				    		  class="block-fit-parent fit-parent"
 							  style="border:0"
-							  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBKIBB2g3oseIiRbpIYrOj2S58M2FYb-1c&q=
+							  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAvogWzTWNhsTkw3M0xOSmvgrK94wcgUFc&q=
 							  <?php $address_1 = get_field('company_address_1', 'option');
 									$address_1_formatted = str_replace(' ', '+', $address_1);
 									$address_2 = get_field('company_address_2', 'option');

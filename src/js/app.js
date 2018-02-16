@@ -3,6 +3,11 @@ $(document).ready(function() {
 
 	// Show content
 	$("body").removeClass("opacity-0").css("opacity", 1);
+	var $timeout_show_header;
+	function show_header() {
+		$("#site-header").removeClass("opacity-0").css("opacity", 1);
+	};
+	$timeout_show_header = setTimeout(show_header, 300);
 
 	// Trigger window resize when DOM has been loaded
 	$(window).trigger('resize');
@@ -10,6 +15,11 @@ $(document).ready(function() {
 	// Responsive design widths
 	var $tablet_width = 1199;
 	var $mobile_width = 767;
+
+	// Loading Animation for Video
+	$("#video-loader-animation").on('canplay', function (event) {
+	    $("#video-loader-animation-wrapper").removeClass('loading');
+	});
 
 	// Toggle mobile menu
 	$("#mobile-menu-icon").click(function(event) {
@@ -118,7 +128,6 @@ $(document).ready(function() {
 	});
 
 	// Switch .active class in Gallery Page
-
 	$(".gallery-title-block").click(function(e) {
 		$(this).siblings().removeClass("was-active");
 		$(this).addClass("was-active");
@@ -218,34 +227,6 @@ $(document).ready(function() {
 		return false;
 	});
 
-	// Display also last news item, when load button is clicked
-	//$(".news-section .load-more-link").click( function() {
-	//	$("body").addClass("show-all-news");
-	//});
-
-	/*	$(document).on('click', '.load-more a', function(e) {
-      e.preventDefault();
-      var $link = $(this).attr('href');
-      var $load_more = $(this).parents('.load-more');
-
-      $load_more.html('<span class="loader">Loading...</span>');
-
-      var $load_more_id = $load_more.attr('id');
-      var $this_id = $load_more_id.replace("load-more-", "");
-      var $this_posts_class_pre = ".posts-";
-      var $this_posts_class = $this_posts_class_pre.concat($this_id);
-      var $this_posts_post = $this_posts_class.concat(' .post ');
-      alert($this_posts_class);
-      alert($this_posts_post);
-      var $post = $($this_posts_post, data);
-
-      jQuery.get($link, function(data) {    
-          $($this_posts_class).append($post);
-      });
-      
-      $load_more.load($link+' .load-more a');
-  }); */
-
 	// Play Video by clicking button or on video
 	$(".video-play").click(function() {
 		var $this = $(this);
@@ -281,24 +262,6 @@ $(document).ready(function() {
 			$this_video.play();
 		}
 	});
-
-	/*$(".video-with-poster").each(function() {
-		var $this = $(this);
-		var $this_video = $this.get(0);
-		if ( $(window).width() <= $tablet_width ) {
-			var $this_poster_img = $this.siblings(".poster-picture-for-video").attr('id');
-			$this_video.setAttribute("poster", $this_poster_img);			
-		}
-	});*/
-
-	/*if( $(window).width() <= $tablet_width ) {
-		$(".video-with-poster").each(function() {
-			alert('video');
-			var $this = $(this);
-			$this.addClass("hidden");
-			$this.siblings(".poster-for-video").removeClass("hidden");
-		});
-	}*/
 
 	// Script for Facebook Share button
 	$(document).on('click', '.fb-share-btn', function() {
@@ -340,8 +303,8 @@ $(document).ready(function() {
 	function remove_not_top() {
 		$body.removeClass("not--top");
 	}
-	var $timeout_add_not_top
-	var $timeout_remove_not_top
+	var $timeout_add_not_top;
+	var $timeout_remove_not_top;
 
 	if( $lastY > 50 ) {
 		add_not_top();
@@ -352,9 +315,7 @@ $(document).ready(function() {
 		var $currentY = $window.scrollTop();
 		if ( $currentY > $lastY ) {
 			var y = 'down';
-		} else if ( $currentY == $lastY ) {
-			var y = 'none';
-		} else {
+		} else if ( $currentY < $lastY ) {
 			var y = 'up';
 		}
 		$lastY = $currentY;
@@ -853,12 +814,18 @@ $(document).ready(function() {
 				loop			: true,
 				pauseOnHover	: true,
 				speed: 600,
-				pause: 3000
+				pause: 3000,
+		        onSliderLoad: function() {
+					$('#lightSlider').removeClass('cS-hidden');
+		        },
 			});
 		} else {
 			$this.lightSlider({
 				item	: 1,
-				pager	: false
+				pager	: false,
+		        onSliderLoad: function() {
+					$('#lightSlider').removeClass('cS-hidden');
+		        },
 			});			
 		}
 	});
