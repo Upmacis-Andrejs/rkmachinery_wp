@@ -13,17 +13,7 @@
 
         <meta name="google-site-verification" content="5GV3htbGte-ZaZ8Mp5ubMy2wfShvNOdhl1yn9VQ2cmo" />
 
-		<!-- add link to fonts CDN -->		
-
-		<?php wp_head(); ?>
-		<script>
-        // conditionizr.com
-        // configure environment tests
-        conditionizr.config({
-            assets: '<?php echo get_template_directory_uri(); ?>',
-            tests: {}
-        });
-        </script>
+        <?php wp_head(); ?>
 
 	</head>
 	<body <?php body_class('opacity-0'); ?>>

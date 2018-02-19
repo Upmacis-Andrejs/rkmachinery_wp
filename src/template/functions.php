@@ -228,9 +228,6 @@ function rkmachinery_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
 
-        wp_register_script('conditionizr', get_template_directory_uri() . '/js/lib/conditionizr-4.3.0.min.js', array(), '4.3.0'); // Conditionizr
-        wp_enqueue_script('conditionizr'); // Enqueue it!
-
         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
         
@@ -238,11 +235,11 @@ function rkmachinery_scripts()
         wp_register_script('jquery', get_template_directory_uri() . '/bower_components/jquery/jquery.min.js', array(), '3.2.1', true); // jQuery
         wp_enqueue_script('jquery'); // Enqueue it!
 
-        wp_register_script('lightslider', get_template_directory_uri() . '/bower_components/lightslider/js/lightslider.js', array('jquery'), '1.1.6', true); // Lightslider Plugin
-        wp_enqueue_script('lightslider'); // Enqueue it!
-
         wp_register_script('lightcase', get_template_directory_uri() . '/bower_components/lightcase/lightcase.js', array('jquery'), '2.4.2', true); // Lightcase Lightbox Plugin
         wp_enqueue_script('lightcase'); // Enqueue it!
+
+        wp_register_script('lightslider', get_template_directory_uri() . '/bower_components/lightslider/js/lightslider.js', array('jquery'), '1.1.6', true); // Lightslider Plugin
+        wp_enqueue_script('lightslider'); // Enqueue it!
 
         wp_register_script('photoswipe', get_template_directory_uri() . '/bower_components/photoswipe/photoswipe.min.js', array(), '4.0.6', true); // Photoswipe JS Gallery Plugin
         wp_enqueue_script('photoswipe'); // Enqueue it!                
@@ -253,23 +250,8 @@ function rkmachinery_scripts()
         wp_register_script('jquery-bg-video', get_template_directory_uri() . '/bower_components/jquery-background-video/jquery.background-video.js', array('jquery'), '2.1.4', true); // jQuery Background Video
         wp_enqueue_script('jquery-bg-video'); // Enqueue it!
         
-        wp_register_script('jquery-validate', get_template_directory_uri() . '/bower_components/jquery-validation/jquery-validate.js', array('jquery'), '1.17.0', true); // jQuery validation plugin
-        wp_enqueue_script('jquery-validate'); // Enqueue it!
-
-        wp_register_script('jquery-validate-methods', get_template_directory_uri() . '/bower_components/jquery-validation/additional-methods.js', array('jquery'), '1.17.0', true); // jQuery validation plugin - additional methods
-        wp_enqueue_script('jquery-validate-methods'); // Enqueue it!
-
         wp_register_script('rkmachinery_scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.4', true); // Custom scripts
         wp_enqueue_script('rkmachinery_scripts'); // Enqueue it!
-    }
-}
-
-// Load RK Machinery conditional scripts
-function rkmachinery_conditional_scripts()
-{
-    if (is_singular('gallery_posts')) {
-       // wp_register_script('lightcase', get_template_directory_uri() . '/bower_components/lightcase/lightcase.js', array('jquery'), '2.4.2', true); // Lightcase Lightbox Plugin
-       // wp_enqueue_script('lightcase'); // Enqueue it!        
     }
 }
 
@@ -279,17 +261,33 @@ function rkmachinery_styles()
     wp_register_style('normalize', get_template_directory_uri() . '/normalize.min.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
+    wp_register_style('jquery-bg-video', get_template_directory_uri() . '/bower_components/jquery-background-video/jquery.background-video.css', array(), '2.1.4', 'all'); // jQuery Background Video Plugin
+    wp_enqueue_style('jquery-bg-video'); // Enqueue it!
+
     wp_register_style('lightslider', get_template_directory_uri() . '/bower_components/lightslider/css/lightslider.css', array(), '1.1.6', 'all'); // Lightslider Plugin
     wp_enqueue_style('lightslider'); // Enqueue it!
 
     wp_register_style('photoswipe', get_template_directory_uri() . '/bower_components/photoswipe/photoswipe.css', array(), '4.0.6', 'all'); // Photoswipe JS Gallery Plugin
-    wp_enqueue_style('photoswipe'); // Enqueue it!
-
-    wp_register_style('jquery-bg-video', get_template_directory_uri() . '/bower_components/jquery-background-video/jquery.background-video.css', array(), '2.1.4', 'all'); // jQuery Background Video Plugin
-    wp_enqueue_style('jquery-bg-video'); // Enqueue it!
+    wp_enqueue_style('photoswipe'); // Enqueue it!    
 
     wp_register_style('rkmachinery', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('rkmachinery'); // Enqueue it!
+}
+
+// Load RK Machinery conditional scripts
+function rkmachinery_conditional_scripts()
+{
+  /*  if (is_page_template(array('page-service-item.php', 'page-quality.php')) || is_singular('news_posts') || is_singular('locations_posts')) {
+        wp_register_script('lightslider', get_template_directory_uri() . '/bower_components/lightslider/js/lightslider.js', array('jquery'), '1.1.6', true); // Lightslider Plugin
+        wp_enqueue_script('lightslider'); // Enqueue it!
+    }
+    if (is_page_template(array('page-gallery.php', 'page-quality.php'))) {
+        wp_register_script('photoswipe', get_template_directory_uri() . '/bower_components/photoswipe/photoswipe.min.js', array(), '4.0.6', true); // Photoswipe JS Gallery Plugin
+        wp_enqueue_script('photoswipe'); // Enqueue it!                
+
+        wp_register_script('photoswipe-ui', get_template_directory_uri() . '/bower_components/photoswipe/photoswipe-ui-default.min.js', array(), '4.0.6', true); // Photoswipe JS Gallery Plugin default UI JavaScript
+        wp_enqueue_script('photoswipe-ui'); // Enqueue it!
+    } */
 }
 
 // Register RK Machinery Navigation

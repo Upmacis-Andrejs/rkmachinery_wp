@@ -6,7 +6,7 @@ $(document).ready(function() {
 	var $timeout_show_header;
 	function show_header() {
 		$("#site-header").removeClass("opacity-0").css("opacity", 1);
-	};
+	}
 	$timeout_show_header = setTimeout(show_header, 300);
 
 	// Trigger window resize when DOM has been loaded
@@ -15,11 +15,6 @@ $(document).ready(function() {
 	// Responsive design widths
 	var $tablet_width = 1199;
 	var $mobile_width = 767;
-
-	// Loading Animation for Video
-	$("#video-loader-animation").on('canplay', function (event) {
-	    $("#video-loader-animation-wrapper").removeClass('loading');
-	});
 
 	// Toggle mobile menu
 	$("#mobile-menu-icon").click(function(event) {
@@ -227,42 +222,6 @@ $(document).ready(function() {
 		return false;
 	});
 
-	// Play Video by clicking button or on video
-	$(".video-play").click(function() {
-		var $this = $(this);
-		var $this_video = $this.get(0);
-		var $this_button = $this.parent().find('.btn-play');
-		if ( !$this_video.paused ) {
-			$this_video.pause();
-			$this_button.removeClass('hidden');
-		} else {
-			$this_video.play();
-			$this_button.addClass('hidden');
-		}
-	});
-	$(".btn-play").click(function() {
-		var $this_button = $(this);
-		var $this_video = $this_button.siblings(".video-play").get(0);
-		if ( !$this_video.paused ) {
-			$this_video.pause();
-			$this_button.removeClass('hidden');
-		} else {
-			$this_video.play();
-			$this_button.addClass('hidden');
-		}
-	});
-
-	// Play Background Video on Desktop Devices
-	$(".video-play-only-on-desktop").each(function() {
-		var $this = $(this);
-		var $this_video = $this.get(0);
-		if ( $(window).width() > $tablet_width ) {
-			$this_video.setAttribute("muted", "");
-			$this_video.setAttribute("loop", "");
-			$this_video.play();
-		}
-	});
-
 	// Script for Facebook Share button
 	$(document).on('click', '.fb-share-btn', function() {
 		var $btn = $(this);
@@ -291,6 +250,47 @@ $(document).ready(function() {
 			//pausePlayYOffset: '15px' // pixels or percent from top/bottom - ignored if positioned center		
 		});
 	}
+
+	// Play Video by clicking button or on video
+	$(".video-play").click(function() {
+		var $this = $(this);
+		var $this_video = $this.get(0);
+		var $this_button = $this.parent().find('.btn-play');
+		if ( !$this_video.paused ) {
+			$this_video.pause();
+			$this_button.removeClass('hidden');
+		} else {
+			$this_video.play();
+			$this_button.addClass('hidden');
+		}
+	});
+	$(".btn-play").click(function() {
+		var $this_button = $(this);
+		var $this_video = $this_button.siblings(".video-play").get(0);
+		if ( !$this_video.paused ) {
+			$this_video.pause();
+			$this_button.removeClass('hidden');
+		} else {
+			$this_video.play();
+			$this_button.addClass('hidden');
+		}
+	});
+
+	// Play Background Video on Desktop Devices
+		// Loading Animation for Video
+		var $video_with_animation = $("#video-loader-animation");
+		
+		if ( $video_with_animation.length ) {		
+			$video_with_animation.on('loadedmetadata', function (e) {
+			    $("#video-loader-animation-wrapper").removeClass('loading');
+			});
+			var $this_video_wa = $video_with_animation.get(0);
+			if ( $(window).width() > $tablet_width ) {
+				$this_video_wa.setAttribute("muted", "");
+				$this_video_wa.setAttribute("loop", "");
+				$this_video_wa.play();
+			}
+		}
 
 	// Add CSS class to Site Header when scrollTop position of the document is not 0
 	var $window = $(window);

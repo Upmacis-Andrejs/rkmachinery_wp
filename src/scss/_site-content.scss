@@ -1150,6 +1150,10 @@ body .lightcase-icon-close,
 		}
 		#markerLayer > div {
 			overflow: visible!important;
+			&:first-child:before,
+			&:first-child:after {
+					content: none;
+			}
 			&:before,
 			&:after {
 				content: '';

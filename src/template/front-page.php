@@ -47,12 +47,12 @@
 						href="<?php the_permalink(); ?>">
 
 							<h4 class="title z-6"><?php the_title(); ?></h4>
-							<?php if( get_field('full_width_video') ): ?>
+							<?php if( get_field('full_width_image') ): ?>
+								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
+							<?php elseif( get_field('full_width_video') ): ?>
 								<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
 									<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 								</video>
-							<?php elseif( get_field('full_width_image') ): ?>
-								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
 							<?php endif; ?>
 						
 						</a>
@@ -70,12 +70,12 @@
 						href="<?php the_permalink(); ?>">
 
 							<h4 class="title z-6"><?php the_title(); ?></h4>
-							<?php if( get_field('full_width_video') ): ?>
+							<?php if( get_field('full_width_image') ): ?>
+								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
+							<?php elseif( get_field('full_width_video') ): ?>
 								<video class="full-width-video jquery-background-video no-autoplay" preload="metadata">
 									<source src="<?php the_field('full_width_video'); ?>#t=0.5">
 								</video>
-							<?php elseif( get_field('full_width_image') ): ?>
-								<div class="full-width-img fit-parent section-bg"  style="background-image: url(<?php echo get_field('full_width_image')['url']; ?>)"></div>
 							<?php endif; ?>
 						
 						</a>

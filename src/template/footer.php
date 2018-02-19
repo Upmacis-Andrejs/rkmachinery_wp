@@ -86,19 +86,19 @@
 						</a>
 						<div class="footer-company-list-wrapper">
 							<div class="footer-company-list flex">
-								<a class="footer-company-block text-decor-none" id="aile-group" href="<?php the_sub_field('aile_group_link', 'option'); ?>" target="_blank" rel="nofollow">
+								<a class="footer-company-block text-decor-none" id="aile-group" href="<?php the_field('aile_group_link', 'option'); ?>" target="_blank" rel="nofollow">
 									<img src="<?php echo get_template_directory_uri(); ?>/img/Aile group.svg" alt="AILE group">
 								</a>
-								<a class="footer-company-block text-decor-none" id="rk-metals-group" href="<?php the_sub_field('rk_metals_group_link', 'option'); ?>" target="_blank" rel="nofollow">
+								<a class="footer-company-block text-decor-none" id="rk-metals-group" href="<?php the_field('rk_metals_group_link', 'option'); ?>" target="_blank" rel="nofollow">
 									<img src="<?php echo get_template_directory_uri(); ?>/img/RK Metals.svg" alt="RK METĀLS group">
 								</a>
-								<a class="footer-company-block text-decor-none" id="mb-betons-group" href="<?php the_sub_field('mb_betons_group_link', 'option'); ?>" target="_blank" rel="nofollow">
+								<a class="footer-company-block text-decor-none" id="mb-betons-group" href="<?php the_field('mb_betons_group_link', 'option'); ?>" target="_blank" rel="nofollow">
 									<img src="<?php echo get_template_directory_uri(); ?>/img/MB Betons Group.svg" alt="MB BETONS group">
 								</a>
-								<a class="footer-company-block text-decor-none" id="upb-energy-group" href="<?php the_sub_field('upb_energy_group_link', 'option'); ?>" target="_blank" rel="nofollow">
+								<a class="footer-company-block text-decor-none" id="upb-energy-group" href="<?php the_field('upb_energy_group_link', 'option'); ?>" target="_blank" rel="nofollow">
 									<img src="<?php echo get_template_directory_uri(); ?>/img/UPB Energy group.svg" alt="UPB ENERGY group">
 								</a>
-								<a class="footer-company-block text-decor-none" id="upb-nams-group" href="<?php the_sub_field('upb_nams_group_link', 'option'); ?>" target="_blank" rel="nofollow">
+								<a class="footer-company-block text-decor-none" id="upb-nams-group" href="<?php the_field('upb_nams_group_link', 'option'); ?>" target="_blank" rel="nofollow">
 									<img src="<?php echo get_template_directory_uri(); ?>/img/UPB Nams group.svg" alt="UPB NAMS group">
 								</a>
 							</div>
