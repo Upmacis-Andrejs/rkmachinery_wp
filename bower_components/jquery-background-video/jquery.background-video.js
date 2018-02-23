@@ -51,7 +51,7 @@
 			var $video = $(this); // jQuery Object
 			var video = $video[0]; // DOM node
 			var $container = $video.parent();
-			var $pauseplay = $('<button class="jquery-background-video-pauseplay pause"><span>Pause</span></button>');
+			var $pauseplay = $('<button class="jquery-background-video-pauseplay play"><span>Pause</span></button>');
 			var start_time; // We'll set this when it starts playing
 
 
@@ -167,7 +167,7 @@
 				// Append pauseplay element created earlier
 				$container.append($pauseplay);
 				// Position element
-				$pauseplay.css({
+				/*$pauseplay.css({
 					'left':   'auto',
 					'right':  'auto',
 					'top':    'auto',
@@ -186,9 +186,16 @@
 						'top':        '50%',
 						'margin-top': '-10px'
 					});
-				}
+				}*/
 				// Add functionality
 				$pauseplay.on('click', function(){
+					if(video.paused) {
+						video.play();
+					} else {
+						video.pause();
+					}
+				});
+				$pauseplay.siblings(".jquery-background-video").on('click', function(){
 					if(video.paused) {
 						video.play();
 					} else {

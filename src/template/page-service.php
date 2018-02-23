@@ -17,7 +17,7 @@
 									<?php the_field('text-fwiv'); ?>
 								</div>
 								<?php if( get_field('full_width_video') ): ?>
-									<a href="<?php the_field('full_width_video'); ?>" class="h3 open-popup-video-btn desktop-hide all-caps text-decor-none" data-rel="lightcase">Play video</a>
+									<a href="<?php the_field('full_width_video'); ?>" class="h3 open-popup-video-btn desktop-hide all-caps text-decor-none" data-rel="lightcase"><?php _e('play video', 'rkmachinery'); ?></a>
 								<?php endif ?>
 							</div>
 						</div>
@@ -145,19 +145,31 @@
 
 								<div class="slider-and-content-wrapper margin flex-hor-c">
 									<!-- Image Slider -->
-									<?php if( get_sub_field('group_img_slider') ): ?>
+									<?php if( have_rows('group_img_and_video_slider') ): ?>
 									<div class="slider-wrapper">
-										<?php 
+									   <ul class="lightslider cS-hidden">
+										<?php while( have_rows('group_img_and_video_slider') ): the_row(); ?>
 
-										$images = get_sub_field('group_img_slider');
+									        <?php if( get_row_layout() == 'giavs_img_layout' ): ?>
+									            <li class="lightslider-item section-bg" style="background-image: url(<?php echo get_sub_field('giavs_image')['sizes']['gallery']; ?>)"></li>
+									        <?php endif; ?>
 
-										if( $images ): ?>
-										    <ul class="lightslider cS-hidden">
-										        <?php foreach( $images as $image ): ?>
-										            <li class="lightslider-item section-bg" style="background-image: url(<?php echo $image['sizes']['gallery']; ?>)";></li>
-										        <?php endforeach; ?>
-										    </ul>
-										<?php endif; ?>
+									        <?php if( get_row_layout() == 'giavs_video_layout' ): ?>
+									            <li class="lightslider-item section-bg video-slide">
+									              <div class="bg-img-for-mobile" style="background-image: url(<?php echo get_sub_field('giavs_poster_img')['sizes']['gallery']; ?>)"></div>
+										          <div class="jquery-bg-video-wrapper">
+										            <video class="jquery-background-video play-btn" preload="metadata" poster="<?php echo get_sub_field('giavs_poster_img')['sizes']['gallery']; ?>"
+										            	<?php if( !get_sub_field('giavs_poster_img')): ?> style="opacity: 1;" <?php endif; ?>
+										            >
+										              <source src="<?php the_sub_field('giavs_video_file'); ?>#t=0.5">
+										            </video>
+													<a href="<?php the_sub_field('giavs_video_file'); ?>" class="slider-open-video-popup desktop-hide" data-rel="lightcase"></a>
+										          </div>
+									            </li>
+									        <?php endif; ?>
+
+										<?php endwhile; ?>
+									  	</ul>
 									</div>
 									<?php endif; ?>
 									<!-- /Image Slider -->

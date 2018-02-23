@@ -249,6 +249,18 @@ $(document).ready(function() {
 			//pausePlayXOffset: '15px', // pixels or percent from side - ignored if positioned center
 			//pausePlayYOffset: '15px' // pixels or percent from top/bottom - ignored if positioned center		
 		});
+		$('.jquery-background-video.play-btn').bgVideo({
+			//fullScreen: false, // Sets the video to be fixed to the full window - your <video> and it's container should be direct descendents of the <body> tag
+			//fadeIn: 500, // Milliseconds to fade video in/out (0 for no fade)
+			pauseAfter: 0, // Seconds to play before pausing (0 for forever)
+			//fadeOnPause: false, // For all (including manual) pauses
+			fadeOnEnd: false, // When we've reached the pauseAfter time
+			showPausePlay: true, // Show pause/play button
+			//pausePlayXPos: 'right', // left|right|center
+			//pausePlayYPos: 'top', // top|bottom|center
+			//pausePlayXOffset: '15px', // pixels or percent from side - ignored if positioned center
+			//pausePlayYOffset: '15px' // pixels or percent from top/bottom - ignored if positioned center		
+		});
 	}
 
 	// Play Video by clicking button or on video
@@ -823,6 +835,8 @@ $(document).ready(function() {
 			$this.lightSlider({
 				item	: 1,
 				pager	: false,
+                enableTouch     : false,
+                enableDrag      : false,
 		        onSliderLoad: function() {
 					$('.lightslider').removeClass('cS-hidden');
 		        },
