@@ -527,13 +527,18 @@
 }
 
 // Image Slider and Page Content Wrapper
+.slider-and-content-wrapper {
+	.editor-wrapper { text-align: left; }
+	&.margin { margin-top: 36px; }
+}
 @media (max-width: 1199px) {
 	.slider-and-content-wrapper {
-		.slider-wrapper,
+		&.margin { margin-top: 0; }
+		//.slider-wrapper,
 		.slider-and-gallery-wrapper {
 			order: 2;
 		}
-		.title-and-content { order: 1; }
+		//.title-and-content { order: 1; }
 	}
 	.slider-and-content-wrapper.row {
 	  display: flex;

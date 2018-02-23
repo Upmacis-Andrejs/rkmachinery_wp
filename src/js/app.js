@@ -816,7 +816,7 @@ $(document).ready(function() {
 				speed: 600,
 				pause: 3000,
 		        onSliderLoad: function() {
-					$('#lightSlider').removeClass('cS-hidden');
+					$('.lightslider').removeClass('cS-hidden');
 		        },
 			});
 		} else {
@@ -824,7 +824,7 @@ $(document).ready(function() {
 				item	: 1,
 				pager	: false,
 		        onSliderLoad: function() {
-					$('#lightSlider').removeClass('cS-hidden');
+					$('.lightslider').removeClass('cS-hidden');
 		        },
 			});			
 		}
