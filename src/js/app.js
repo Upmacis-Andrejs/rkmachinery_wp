@@ -17,7 +17,7 @@ $(document).ready(function() {
 	var $mobile_width = 767;
 
 	// Toggle mobile menu
-	$("#mobile-menu-icon").click(function(event) {
+	$("#mobile-menu-icon").click(function(e) {
 		var $this = $(this);
 		if ( $this.hasClass("open") ) {
 			$(".header-menu .sub-menu").stop(true, true).slideUp().css("display", '');
@@ -30,7 +30,7 @@ $(document).ready(function() {
 	});
 
 	//hide mobile menu when clicked outside of it
-	$(document).mouseup(function (e){
+	$(document).mouseup(function (e) {
 		if ( $("#mobile-menu-icon").hasClass('open') ) {
 		    var container = $("#site-header");	
 		    if (!container.is(e.target) // if the target of the click isn't the container...
@@ -146,7 +146,7 @@ $(document).ready(function() {
 		$("body").toggleClass("contact-form-open");
 	});
 
-	$(document).mouseup(function (e){
+	$(document).mouseup(function(e) {
 	    var container_1 = $(".contact-form-wrapper");
 	    var container_2 = $(".contact-form-btn");
 
@@ -291,17 +291,24 @@ $(document).ready(function() {
 	// Play Background Video on Desktop Devices
 		// Loading Animation for Video
 		var $video_with_animation = $("#video-loader-animation");
-		
-		if ( $video_with_animation.length ) {		
+		function remove_loading() {
+		    $("#video-loader-animation-wrapper").removeClass('loading');
+		}
+
+		if ( $video_with_animation.length ) {	
+
 			$video_with_animation.on('loadedmetadata', function (e) {
 			    $("#video-loader-animation-wrapper").removeClass('loading');
 			});
+			var $timeout_remove_loading;
+			$timeout_remove_loading = setTimeout(remove_loading, 4000);
 			var $this_video_wa = $video_with_animation.get(0);
 			if ( $(window).width() > $tablet_width ) {
 				$this_video_wa.setAttribute("muted", "");
 				$this_video_wa.setAttribute("loop", "");
 				$this_video_wa.play();
 			}
+
 		}
 
 	// Add CSS class to Site Header when scrollTop position of the document is not 0

@@ -128,6 +128,6 @@
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXtzsptnsBUt60yjh3NTikCbVnPIiL2ws" async=""></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMXjNIVNx8XI5O6tzh9whXAxYEdatJQtQ" async=""></script>
 	</body>
 </html>
