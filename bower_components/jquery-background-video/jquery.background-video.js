@@ -75,12 +75,13 @@
 				$video.addClass('is-playing is-visible');
 				$pauseplay.removeClass('play').addClass('pause').find('span').text('Pause');
 				$.fn.bgVideo.fitVideo( $video );
+				$("#video-loader-animation-wrapper").removeClass('loading');
 			});
-
 
 			// If the video is already playing before js loads
 			if( video.currentTime > 0 ) {
 				$video.addClass('is-playing is-visible');
+				$("#video-loader-animation-wrapper").removeClass('loading');
 			}
 
 
