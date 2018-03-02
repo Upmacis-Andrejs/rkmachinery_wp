@@ -846,8 +846,9 @@ $(document).ready(function() {
       $this.lightSlider({
         item  : 1,
         pager : false,
-                enableTouch     : false,
-                enableDrag      : false,
+        enableTouch     : false,
+        enableDrag      : false,
+        loop:  true,
             onSliderLoad: function() {
           $('.lightslider').removeClass('cS-hidden');
             },
