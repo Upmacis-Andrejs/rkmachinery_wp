@@ -50,7 +50,7 @@
 								$images = get_field('image_gallery');
 
 								if( $images ): ?>
-								    <ul class="lightslider cS-hidden" id="lightSlider">
+								    <ul class="lightslider cS-hidden" id="lightslider-1">
 								        <?php foreach( $images as $image ): ?>
 								            <li class="lightslider-item section-bg" data-thumb="<?php echo $image['url']; ?>" style="background-image: url(<?php echo $image['sizes']['gallery']; ?>)";></li>
 								        <?php endforeach; ?>

@@ -8,6 +8,7 @@
 	width: 100%;
 	background-color: #fff;
 	transition: opacity 0.25s ease-in-out;
+	z-index: 667!important;
 	& > .container > .row { transition: height 0.25s ease-in-out; }
 	#main-site-logo,
 	#main-site-logo img {
@@ -264,19 +265,24 @@
 		margin-right: 14px;
 		padding-left: 18px;
 	}
-	h5:before,
-	.h5:before {
-		//content: '';
-		@extend .icon:before;
-		@extend .icon-bc-arrow:before;
-		@extend .block-vert-c;
-		left: 0;
-		right: auto;
-		width: 4px;
-		height: 6px;
-		font-size: 6px;
-		line-height: 1;
-		color: #787c82!important;
+	h5,
+	.h5 {
+		.decor {
+			&:before {
+				@extend .icon:before;
+				@extend .icon-bc-arrow:before;
+			}
+			@extend .block-vert-c;
+			left: 0;
+			right: auto;
+			width: 4px;
+			height: 6px;
+			font-size: 6px;
+			line-height: 1;
+			color: #787c82!important;
+			text-decoration: none!important;
+			display: inline-block!important;
+		}
 	}
 	a.h5 { text-decoration: underline; }
 	a.h5:first-of-type:before { content: none; }

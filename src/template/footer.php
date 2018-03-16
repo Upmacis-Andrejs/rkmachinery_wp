@@ -124,6 +124,17 @@
 			</footer>
 			<!-- /footer -->
 
+			<!-- cookies -->
+			<div class="js-cookie-consent cookie-consent z-999" id="cookies">
+				<div class="flex-hor-c" id="cookies-cont">
+					<div class="flex-vert-c">
+					  <p class="cookies-text inline-block"><?php _e('Šajā vietnē tiek izmantotas sīkdatnes. Turpinot izmantot šo vietni, Jūs piekrītat mūsu sīkdatņu politikai.', 'rkmachinery'); ?></p>
+					  <a class="` js-cookie-consent-agree cookie-consent__agree text-decor-none" id="cookies-close" href="#"></a>
+					</div>
+				</div>
+			</div>
+			<!-- end of cookies -->  
+
 		</div>
 		<!-- /wrapper -->
 

@@ -66,7 +66,7 @@
             id="body-wrapper">
 
 			<!-- header -->
-			<header class="z-666 clear flex-vert-c opacity-0" id="site-header">
+			<header class="clear flex-vert-c opacity-0" id="site-header">
                 <div class="container">
                     <div class="row flex-vert-c">
 

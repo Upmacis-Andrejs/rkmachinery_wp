@@ -95,6 +95,7 @@
 						?>
 						<div class="load-more-multiple flex-hor-c" id="<?php echo 'load-more-multiple-' . $count_2; ?>">
 							<a class="btn btn-1 load-more-link" id="<?php echo $count_2; ?>" href="<?php the_permalink(); echo '?paged' . $count_2; ?>=<?php echo $current_page+1 ?>/"><?php _e('Load More', 'rkmachinery'); ?></a>
+							<div class="loading-text visuallyhidden"><?php _e('Loading', 'rkmachinery'); ?></div>
 						</div>
 						<?php endif; ?>
 					</div>

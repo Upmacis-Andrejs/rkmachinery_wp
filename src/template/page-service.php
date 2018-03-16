@@ -72,15 +72,13 @@
 						<!-- loop through children pages of this post -->						
 						<div class="service-block-wrapper flex-hor-c">	 
 							<?php while( $the_query->have_posts() ) : $the_query->the_post(); ?>
-							<div class="service-block-outer">
-								<div class="service-block-inner">
-									<a class="service-block shadow text-decor-none jquery-background-video-wrapper
-									<?php if( get_field('full_width_video') ): echo ' video';
+							<a class="service-block-outer shadow text-decor-none <?php if( get_field('full_width_video') ): echo ' video';
 									elseif( get_field('full_width_image') ): echo ' image';
 									endif;
-									?>"
-									id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
+									?>" id="<?php $title = get_the_title(); echo strtolower(str_replace(' ', '-', $title)); ?>"
 									href="<?php the_permalink(); ?>">
+								<div class="service-block-inner">
+									<div class="service-block jquery-background-video-wrapper">
 
 											<h2 class="title z-6"><?php the_title(); ?></h2>
 											<?php if( get_field('full_width_image') ): ?>
@@ -129,9 +127,9 @@
 												<!-- /if page child does not have children, display excerpt -->									
 											<?php wp_reset_postdata(); endif; ?>
 											
-									</a>
+									</div>
 								</div>
-							</div>
+							</a>
 							<?php endwhile; wp_reset_postdata(); ?>
 						</div>
 						<!-- /loop through children pages of this post -->
@@ -140,14 +138,14 @@
 					<?php else: ?>
 					<!-- If this page does not has children, display repeater with content -->
 						<?php if( have_rows('slider_and_content_group') ):
-
-						    while ( have_rows('slider_and_content_group') ) : the_row(); ?>
+							$slider = 0;
+						    while ( have_rows('slider_and_content_group') ) : the_row(); $slider++; ?>
 
 								<div class="slider-and-content-wrapper margin flex-hor-c">
 									<!-- Image Slider -->
 									<?php if( have_rows('group_img_and_video_slider') ): ?>
 									<div class="slider-wrapper">
-									   <ul class="lightslider cS-hidden">
+									   <ul class="lightslider cS-hidden" id="lightslider-<?php echo $slider; ?>">
 										<?php while( have_rows('group_img_and_video_slider') ): the_row(); ?>
 
 									        <?php if( get_row_layout() == 'giavs_img_layout' ): ?>
