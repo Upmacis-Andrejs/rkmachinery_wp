@@ -484,11 +484,6 @@ var $mobile_width = 767;
 $(document).ready(function() {
   'use strict';
 
-  // Round the height of body-wrapper
-  var $body_wrapper = $('#body-wrapper');
-  var $body_wrapper_height = Math.round($body_wrapper.innerHeight());
-  $body_wrapper.css('height', $body_wrapper_height);
-
   // Show content
   $("body").removeClass("opacity-0").css("opacity", 1);
   var $timeout_show_header;
@@ -1195,6 +1190,13 @@ $(window).resize(function() {
   var $tablet_width = 1199;
   var $mobile_width = 767;
   var $window_width = $(window).width();
+
+  // Round the height of body-wrapper
+  $('html, #body-wrapper').css('height', '');
+  var $body_wrapper = $('#body-wrapper');
+  var $body_wrapper_height = Math.round($body_wrapper.innerHeight());
+  $body_wrapper.css('height', $body_wrapper_height);
+  $('html').css('height', $body_wrapper_height);
 
   // Mobile Menu For Tablet and Mobile Script
   var $wrapper_for_mobile_menu = $("#site-header .wrapper-for-mobile-menu");

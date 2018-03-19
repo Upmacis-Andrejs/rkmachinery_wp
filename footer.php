@@ -1,13 +1,3 @@
-			<?php if ( !is_404() ): ?>
-				<div class="contact-form-outer hidden">
-					<div class="contact-form-wrapper">
-						<button class="contact-form-close z-6"></button>
-						<?php dynamic_sidebar('contact-form-widget-area'); ?>
-					</div>
-				</div>
-				<button class="btn contact-form-btn"></button>
-			<?php endif; ?>
-
 			<!-- footer -->
 			<footer class="footer z-666" id="site-footer">
 				<div class="container">
@@ -131,11 +121,23 @@
 			<!-- /footer -->
 
 			<!-- cookies -->
-			<div class="js-cookie-consent cookie-consent z-999" id="cookies">
-				<div class="flex-hor-c" id="cookies-cont">
-					<div class="flex-vert-c">
-					  <p class="cookies-text inline-block"><?php _e('This website uses cookies to enhance user experience. By continuing using this site, you agree to cookie usage.', 'rkmachinery'); ?></p>
-					  <a class="` js-cookie-consent-agree cookie-consent__agree text-decor-none" id="cookies-close" href="#"></a>
+			<div class="cookies-wrapper">
+			<?php if ( !is_404() ): ?>
+				<div class="contact-form-outer hidden">
+					<div class="contact-form-wrapper">
+						<button class="contact-form-close z-6"></button>
+						<?php dynamic_sidebar('contact-form-widget-area'); ?>
+					</div>
+				</div>
+				<button class="btn contact-form-btn"></button>
+			<?php endif; ?>
+
+				<div class="js-cookie-consent cookie-consent z-999" id="cookies">
+					<div class="flex-hor-c" id="cookies-cont">
+						<div class="flex-vert-c">
+						  <p class="cookies-text inline-block"><?php _e('This website uses cookies to enhance user experience. By continuing using this site, you agree to cookie usage.', 'rkmachinery'); ?></p>
+						  <a class="` js-cookie-consent-agree cookie-consent__agree text-decor-none" id="cookies-close" href="#"></a>
+						</div>
 					</div>
 				</div>
 			</div>

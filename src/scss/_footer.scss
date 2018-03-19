@@ -313,10 +313,12 @@
 // Contact form
 .contact-form-outer {
 	@extend .flex-hor-c;
-	@extend .z-1000;
-	position: fixed;
-	bottom: 75px;
+	/*position: fixed;
+	bottom: 75px;*/
 	right: 22px;
+	position: absolute;
+	top: -75px;
+	transform: translateY(-100%);
 	box-shadow: 2px 2px 6px 0 rgba(35,31,32,0.4);
 	z-index: 1001;
 }
@@ -329,6 +331,7 @@
 	margin-bottom: auto;
 	border: 1px solid #787C82;
 	background-color: #fff;
+	z-index: 1001;
 	.title { margin-bottom: 2px; }
 	.notification-text {
 		margin-bottom: 10px;
@@ -360,8 +363,11 @@
 	.company-fax-wrap + br { display: none; } // Honeypot anti-spam
 }
 .contact-form-btn {
-	position: fixed;
-	bottom: 20px;		
+	/*position: fixed;
+	bottom: 20px;*/
+	position: absolute;
+	top: -20px;
+	transform: translateY(-100%);
 	right: 20px;
 	width: 40px;
 	height: 40px;
@@ -422,16 +428,19 @@
 }
 
 // COOKIES
-#cookies {
+.cookies-wrapper {
   position: fixed;
   top: auto;
   right: 0;
   bottom: -1px;
   left: 0;
   width: 100%;
-  padding: 10px 25px;
-  background-color: rgba(255,255,255,.95);
-  border-top: 1px solid #c4c6c8;
+	z-index: 1001;
+	#cookies {
+	  padding: 10px 25px;
+	  background-color: rgba(255,255,255,.95);
+	  border-top: 1px solid #c4c6c8;
+	}
   .cookies-text {
   	font-size: 17px;
   	letter-spacing: 0.025em;

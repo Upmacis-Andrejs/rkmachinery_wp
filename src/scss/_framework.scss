@@ -632,14 +632,17 @@ textarea, .textarea {
   padding-left: 10px;
   //background-color: #fff;
   border: 1px solid #787C82;
-  white-space: nowrap;
   @extend .h5;
 }
 input, .input {
   height: 36px;
+  white-space: nowrap;
 }
 textarea, .textarea {
   height: 106px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 20px!important;
 }
 input:active, .input:active,
 input:focus, .input:focus,
