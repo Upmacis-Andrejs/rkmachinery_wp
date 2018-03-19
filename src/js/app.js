@@ -484,6 +484,11 @@ var $mobile_width = 767;
 $(document).ready(function() {
   'use strict';
 
+  // Round the height of body-wrapper
+  var $body_wrapper = $('#body-wrapper');
+  var $body_wrapper_height = Math.round($body_wrapper.innerHeight());
+  $body_wrapper.css('height', $body_wrapper_height);
+
   // Show content
   $("body").removeClass("opacity-0").css("opacity", 1);
   var $timeout_show_header;
@@ -957,6 +962,7 @@ $(document).ready(function() {
 
   // PhotoSwipe JavaScript Gallery
 
+  if( $('.photoswipe-wrapper').length ) {
     var initPhotoSwipeFromDOM = function(gallerySelector) {
 
         // parse slide data (url, title, size ...) from DOM elements 
@@ -1171,13 +1177,14 @@ $(document).ready(function() {
 
     // execute above function
     initPhotoSwipeFromDOM('.photoswipe-wrapper');
+  }
 
     // listen
-    gallery.listen('afterChange', function() {
+   /* gallery.listen('afterChange', function() {
       var $current = gallery.getCurrentIndex();
-      alert($current);
-      alert('lalalala');
-    });
+     // alert($current);
+     // alert('lalalala');
+    });*/
 
 });
 

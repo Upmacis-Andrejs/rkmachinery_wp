@@ -318,6 +318,7 @@
 	bottom: 75px;
 	right: 22px;
 	box-shadow: 2px 2px 6px 0 rgba(35,31,32,0.4);
+	z-index: 1001;
 }
 
 .contact-form-wrapper {
@@ -364,7 +365,7 @@
 	right: 20px;
 	width: 40px;
 	height: 40px;
-	@extend .z-9;
+	z-index: 1001;
 	&:before {
 		@extend .icon:before;
 		@extend .icon-cf-open:before;

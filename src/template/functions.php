@@ -187,7 +187,7 @@ add_action( 'add_attachment', 'set_img_meta_upon_upload' );
 
 // Register Google Maps API
 function my_acf_init() {   
-    acf_update_setting('google_api_key', 'AIzaSyDMXjNIVNx8XI5O6tzh9whXAxYEdatJQtQ');
+    acf_update_setting('google_api_key', 'AIzaSyBQun48c3nJHsJizC-M6L7_NImA6MfyzfU');
 }
 add_action('acf/init', 'my_acf_init');
 
