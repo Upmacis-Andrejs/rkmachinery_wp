@@ -723,7 +723,14 @@ $(document).ready(function() {
               $this_posts.append($post);
               $("body").addClass("show-all-news");
           });
-          $this_load_more.load($link+' .load-more-link');
+          $this_load_more.load($link+' .load-more-link', function() {
+              // Round the height of body-wrapper
+              $('html, #body-wrapper').css('height', '');
+              var $body_wrapper = $('#body-wrapper');
+              var $body_wrapper_height = Math.round($body_wrapper.innerHeight());
+              $body_wrapper.css('height', $body_wrapper_height);
+              $('html').css('height', $body_wrapper_height);
+          });
           return false;
       });
 
@@ -732,6 +739,7 @@ $(document).ready(function() {
           e.preventDefault();
           var $this = $(this);
           var $this_load_more = $this.parent();
+          var $loading_text = $this_load_more.find('.loading-text').html();
           var $this_id_no = $this[0].getAttribute("id");
           var $posts = '#posts-';
           var $load_more = ' #load-more-multiple-';
@@ -741,12 +749,19 @@ $(document).ready(function() {
           var $this_load_more_id = $load_more.concat($this_id_no);
          
           var $link = $this[0].getAttribute("href");
-          $this_load_more.html('<button class="btn btn-1 loader">Loading...</button>');
+          $this_load_more.html('<button class="btn btn-1 loader">'+$loading_text+'...</button>');
           jQuery.get($link, function(data) {
               var $post = $($this_post_items, data);
               $($this_posts_id).append($post);
           });
-          $this_load_more.load($link+$this_load_more_id);
+          $this_load_more.load($link+$this_load_more_id, function() {
+              // Round the height of body-wrapper
+              $('html, #body-wrapper').css('height', '');
+              var $body_wrapper = $('#body-wrapper');
+              var $body_wrapper_height = Math.round($body_wrapper.innerHeight());
+              $body_wrapper.css('height', $body_wrapper_height);
+              $('html').css('height', $body_wrapper_height);
+          });
           return false;
       });
 
@@ -1173,13 +1188,6 @@ $(document).ready(function() {
     // execute above function
     initPhotoSwipeFromDOM('.photoswipe-wrapper');
   }
-
-    // listen
-   /* gallery.listen('afterChange', function() {
-      var $current = gallery.getCurrentIndex();
-     // alert($current);
-     // alert('lalalala');
-    });*/
 
 });
 

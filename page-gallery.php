@@ -89,6 +89,18 @@
 
 				        		</div>
 							<?php endif; ?>
+							<div class="visuallyhidden" style="position: absolute;"><?php
+								$big = 999999999999;
+								$remove = array($big, "page/");
+								$add = array("%_%", "");
+								echo paginate_links(array(
+									'base' => str_replace( $remove, $add, esc_url( get_pagenum_link( $big ) ) ),
+									'format' => '?paged' . $count_2 . '=%#%',
+									'current' => $current_page,
+									'total' => $total_pages,
+									'before_page_number' => '<span class="screen-reader-text">' . __('Page ', 'rkmachinery') . ' </span>'
+								));
+							?></div>
 						<?php
 						// load more button
 						if( $total_pages > 1 && $current_page < $total_pages ) :

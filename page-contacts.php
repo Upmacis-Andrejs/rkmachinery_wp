@@ -72,7 +72,7 @@
 									<li class="company-address-1"><?php echo $address_1; ?></li>
 									<li class="company-address-2"><?php echo $address_2; ?></li>
 									<li class="get-directions-wrapper">
-										<a class="get-directions" href="https://www.google.com/maps/dir/?api=1&destination=<?php echo $address_formatted_more ?>" target="_blank" rel="nofollow">
+										<a class="get-directions" href="<?php the_field('get_directions_link', 'options'); ?>" target="_blank" rel="nofollow">
 											<span class="before"></span>
 											<?php _e('Get directions', 'rkmachinery') ?>
 										</a>
