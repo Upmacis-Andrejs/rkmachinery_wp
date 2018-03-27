@@ -625,7 +625,13 @@
 				/* -------------------------------------------------------------------------------------- */
 				  // /Google Maps API script
 			</script>
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQun48c3nJHsJizC-M6L7_NImA6MfyzfU&callback=initMap" async=""></script>
+			<?php /* Show map according to site's lang code */
+				if( defined( 'ICL_LANGUAGE_CODE' ) ):
+			?>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQun48c3nJHsJizC-M6L7_NImA6MfyzfU&language=<?php echo ICL_LANGUAGE_CODE; ?>&callback=initMap" async=""></script>
+			<?php else: ?>
+				<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQun48c3nJHsJizC-M6L7_NImA6MfyzfU&language=en&callback=initMap" async=""></script>
+			<?php endif; ?>
 		<?php endif; ?>
 	</body>
 </html>
