@@ -230,62 +230,117 @@ $(document).ready(function() {
       window.history.back();
   });
 
-  // Script for "load more" button
-  $(document).on('click', '.load-more > a', function(e) {
-          e.preventDefault();
-          var $this = $(this);
-          var $this_load_more = $this.parent();
-          var $loading_text = $this_load_more.find('.loading-text').html();
-          var $this_posts = $this.parents('.posts-parent').find('.posts');
-          var $link = $this.attr('href');
-          $this_load_more.html('<button class="btn btn-1 loader">'+$loading_text+'...</button>');
-          jQuery.get($link, function(data) {
-              var $post = $(".posts .post ", data);
-              $this_posts.append($post);
-              $("body").addClass("show-all-news");
-          });
-          $this_load_more.load($link+' .load-more-link', function() {
-              // Round the height of body-wrapper
-              $('html, #body-wrapper').css('height', '');
-              var $body_wrapper = $('#body-wrapper');
-              var $body_wrapper_height = Math.round($body_wrapper.innerHeight());
-              $body_wrapper.css('height', $body_wrapper_height);
-              $('html').css('height', $body_wrapper_height);
-          });
-          return false;
-      });
-
   // Script for "load more" button for multiple pagination pages
-  $(document).on('click', '.load-more-multiple > a', function(e) {
-          e.preventDefault();
-          var $this = $(this);
-          var $this_load_more = $this.parent();
-          var $loading_text = $this_load_more.find('.loading-text').html();
-          var $this_id_no = $this[0].getAttribute("id");
-          var $posts = '#posts-';
-          var $load_more = ' #load-more-multiple-';
-         
-          var $this_posts_id = $posts.concat($this_id_no);
-          var $this_post_items = $this_posts_id.concat(" .post");
-          var $this_load_more_id = $load_more.concat($this_id_no);
-         
-          var $link = $this[0].getAttribute("href");
-          $this_load_more.html('<button class="btn btn-1 loader">'+$loading_text+'...</button>');
-          jQuery.get($link, function(data) {
-              var $post = $($this_post_items, data);
-              $($this_posts_id).append($post);
-          });
-          $this_load_more.load($link+$this_load_more_id, function() {
-              // Round the height of body-wrapper
-              $('html, #body-wrapper').css('height', '');
-              var $body_wrapper = $('#body-wrapper');
-              var $body_wrapper_height = Math.round($body_wrapper.innerHeight());
-              $body_wrapper.css('height', $body_wrapper_height);
-              $('html').css('height', $body_wrapper_height);
-          });
-          return false;
-      });
+    // Set Prev and Next Pages
+    var $prev_page_$ = $(".load-more-link.prev");
+    var $next_page_$ = $(".load-more-link.next");
+    var $prev_page_el = $(".load-more-link.prev")[0];
+    var $next_page_el = $(".load-more-link.next")[0];
 
+    var $page_data_href = $prev_page_el.getAttribute("data-href");
+    var $total_pages = $prev_page_el.getAttribute("data-total-pages");
+
+    var $current_page = $(".load-more-link.current-page")[0].getAttribute("data-page");
+    var $prev_page = parseInt($current_page - 1);
+    var $next_page = parseInt($current_page - 1 + 2);
+
+    var $prev_page_link = $page_data_href.concat($prev_page);
+    var $next_page_link = $page_data_href.concat($next_page);
+
+    $prev_page_el.setAttribute("href", $prev_page_link);
+    $next_page_el.setAttribute("href", $next_page_link);
+
+    if( $current_page == 1 ) {
+      $prev_page_$.addClass('not-active');
+      $next_page_$.removeClass('not-active');
+    } else if( $current_page == $total_pages ) {
+      $prev_page_$.removeClass('not-active');
+      $next_page_$.addClass('not-active');
+    } else {
+      $prev_page_$.removeClass('not-active');
+      $next_page_$.removeClass('not-active');
+    }
+
+  $(document).on('click', '.load-more-multiple > a', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $this_id_no = $this[0].getAttribute("data-id");
+    var $posts = '#posts-';
+    var $load_more_multiple = '#load-more-multiple-';
+    var $this_posts_id = $posts.concat($this_id_no);
+    var $this_load_more_multiple = $load_more_multiple.concat($this_id_no);
+    var $this_post_items = $this_posts_id.concat(" .post");
+
+    var $link = $this[0].getAttribute("href");
+    jQuery.get($link, function(data) {
+        var $post = $($this_post_items, data);
+        $($this_posts_id).html($post);
+        // Round the height of body-wrapper
+        $('html, #body-wrapper').css('height', '');
+        var $body_wrapper = $('#body-wrapper');
+        var $body_wrapper_height = Math.round($body_wrapper.innerHeight());
+        $body_wrapper.css('height', $body_wrapper_height);
+        $('html').css('height', $body_wrapper_height);
+    });
+
+    // scroll the beginning of gallery
+    var $site_header_height = $('#site-header').innerHeight();
+    var $top_of_gallery = $('#gallery-title-block-wrapper');
+      $("html, body").animate({
+          scrollTop: $($top_of_gallery).offset().top - $site_header_height + 1
+    }, 300);
+
+    // Switch between pages
+      // Add CSS class 'current-page' to correct page number
+    var $current_page_$ = $($this_load_more_multiple).find('.current-page');
+    if( $this.hasClass('prev') &&  $current_page_$.first() ) {
+      $current_page_$.removeClass('current-page').prev().addClass('current-page');
+    } else if ( $this.hasClass('next') ) {
+      $current_page_$.removeClass('current-page').next().addClass('current-page');
+    } else {
+      $current_page_$.removeClass('current-page');
+      $this.addClass('current-page');
+    }
+
+      // Get prev and next link elements
+    var $prev_page_$ = $($this_load_more_multiple).find(".load-more-link.prev");
+    var $next_page_$ = $($this_load_more_multiple).find(".load-more-link.next");
+    var $prev_page_el = $($this_load_more_multiple).find(".load-more-link.prev")[0];
+    var $next_page_el = $($this_load_more_multiple).find(".load-more-link.next")[0];
+
+      // Get base of the link and total pages number
+    var $page_data_href = $prev_page_el.getAttribute("data-href");
+    var $total_pages = $prev_page_el.getAttribute("data-total-pages");
+
+      // Get current, prev and next page numbers
+    var $current_page = $($this_load_more_multiple).find(".load-more-link.current-page")[0].getAttribute("data-page");
+    var $prev_page = parseInt($current_page - 1);
+    var $next_page = parseInt($current_page - 1 + 2);
+
+      // Form prev and next links
+    var $prev_page_link = $page_data_href.concat($prev_page);
+    var $next_page_link = $page_data_href.concat($next_page);
+
+      // Set prev and next links
+    $prev_page_el.setAttribute("href", $prev_page_link);
+    $next_page_el.setAttribute("href", $next_page_link);
+
+      // Disable prev or next or none according to current and total page numbers
+    if( $current_page == 1 ) {
+      $prev_page_$.addClass('not-active');
+      $next_page_$.removeClass('not-active');
+    } else if( $current_page == $total_pages ) {
+      $prev_page_$.removeClass('not-active');
+      $next_page_$.addClass('not-active');
+    } else {
+      $prev_page_$.removeClass('not-active');
+      $next_page_$.removeClass('not-active');
+    }
+
+    return false;
+  });
+
+  // Switch between gallery title blocks
   $(".gallery-title-block").click(function(e) {
     $(this).siblings().removeClass("was-active");
     $(this).addClass("was-active");
@@ -295,6 +350,12 @@ $(document).ready(function() {
     var $this_gallery_class_pre = ".gallery-page-img-block-wrapper-";
     var $this_gallery_class = $this_gallery_class_pre.concat($this_id);
     $($this_gallery_class).addClass('active');
+        // Round the height of body-wrapper
+        $('html, #body-wrapper').css('height', '');
+        var $body_wrapper = $('#body-wrapper');
+        var $body_wrapper_height = Math.round($body_wrapper.innerHeight());
+        $body_wrapper.css('height', $body_wrapper_height);
+        $('html').css('height', $body_wrapper_height);
     return false;
   });
 

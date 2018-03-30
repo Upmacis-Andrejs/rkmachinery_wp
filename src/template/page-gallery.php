@@ -26,7 +26,7 @@
 					<!-- Loop Through Gallery Titles -->
 					<?php if ( have_rows('gallery_block_wrapper') ) : $count_1 = 0; ?>
 
-						<div class="gallery-title-block-wrapper flex switch-active z-6 margin-bottom-small">
+						<div class="gallery-title-block-wrapper flex switch-active z-6 margin-bottom-small" id="gallery-title-block-wrapper">
 						    <?php while ( have_rows('gallery_block_wrapper') ) : the_row(); $count_1++; ?>
 						        <a class="gallery-title-block flex-c-column text-decor-none
 								<?php
@@ -61,7 +61,7 @@
 							$gallery = get_sub_field('gallery_block');
 							$images = array();
 
-							$items_per_page = 16;
+							$items_per_page = 2; /* 16 */
 							$total_items = count($gallery);
 							$total_pages = ceil($total_items / $items_per_page);
 
@@ -89,26 +89,17 @@
 
 				        		</div>
 							<?php endif; ?>
-							<div class="visuallyhidden" style="position: absolute;"><?php
-								$big = 999999999999;
-								$remove = array($big, "page/");
-								$add = array("%_%", "");
-								echo paginate_links(array(
-									'base' => str_replace( $remove, $add, esc_url( get_pagenum_link( $big ) ) ),
-									'format' => '?paged' . $count_2 . '=%#%',
-									'current' => $current_page,
-									'total' => $total_pages,
-									'before_page_number' => '<span class="screen-reader-text">' . __('Page ', 'rkmachinery') . ' </span>'
-								));
-							?></div>
 						<?php
 						// load more button
-						if( $total_pages > 1 && $current_page < $total_pages ) :
-						?>
-						<div class="load-more-multiple flex-hor-c" id="<?php echo 'load-more-multiple-' . $count_2; ?>">
-							<a class="btn btn-1 load-more-link" id="<?php echo $count_2; ?>" href="<?php the_permalink(); echo '?paged' . $count_2; ?>=<?php echo $current_page+1 ?>/"><?php _e('Load More', 'rkmachinery'); ?></a>
-							<div class="loading-text visuallyhidden"><?php _e('Loading', 'rkmachinery'); ?></div>
-						</div>
+						if( $total_pages > 1 ) :
+						$page = $current_page; ?>
+							<div class="load-more-multiple flex-hor-c" id="<?php echo 'load-more-multiple-' . $count_2; ?>">
+								<a class="load-more-link prev" data-id="<?php echo $count_2; ?>" data-href="<?php the_permalink(); echo '?paged' . $count_2; ?>=" data-total-pages="<?php echo $total_pages; ?>" href="#"><span class="icon icon-arrow-right"></span></a>
+							<?php while( $page <= $total_pages ): ?>
+								<a class="load-more-link <?php if( $page == $current_page ) { echo 'current-page'; } ?>" data-id="<?php echo $count_2; ?>" data-page="<?php echo $page; ?>" href="<?php the_permalink(); echo '?paged' . $count_2; ?>=<?php echo $page ?>/"><?php echo $page; ?></a>
+							<?php $page++; endwhile; ?>
+								<a class="load-more-link next" data-id="<?php echo $count_2; ?>" href="#"><span class="icon icon-arrow-right"></span></a>
+							</div>
 						<?php endif; ?>
 					</div>
 					

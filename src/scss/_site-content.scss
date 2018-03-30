@@ -11,6 +11,33 @@
 	#site-content { padding-top: 90px; }
 }
 
+// Gallery Page Pager
+.load-more-multiple {
+	.load-more-link {
+		padding: 8px;
+		@extend .text-decor-none;
+		.icon:before {
+			font-size: 15px;
+			color: #231f20;
+		}
+		&:active,
+		&:hover {
+			.icon:before {
+				color: #e2231a;
+			}
+		}
+		&.not-active {
+			pointer-events: none!important;
+			opacity: 0.5;
+		}
+		&.current-page { color: #e2231a; }
+		&.prev {
+			transform-origin: 50% 50%;
+			transform: rotate(180deg);
+		}
+	}
+}
+
 // Full Width Image/Video Block
 .full-width-img-video-wrapper {
 	width: 100%;
