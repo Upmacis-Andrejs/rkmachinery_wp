@@ -1150,9 +1150,10 @@ body .lightcase-icon-close,
 		left: 0;
 		width: 100%;
 		height: 76px;
-		background: scrim-gradient(
+		background: linear-gradient(
 		    to bottom,
 		    #fff,
+		    ease-in-out,
 		    transparent
 	  	);
 	}
@@ -1162,9 +1163,10 @@ body .lightcase-icon-close,
 		left: 0;			
 		width: 100%;
 		height: 76px;
-		background: scrim-gradient(
+		background: linear-gradient(
 		    to top,
 		    #fff,
+		    ease-in-out,
 		    transparent
 	  	);			
 	}
@@ -1197,9 +1199,10 @@ body .lightcase-icon-close,
 		right: 1px;
 		transform: translateX(100%);
 		width: 180px;
-		background: scrim-gradient(
+		background: linear-gradient(
 		    to right,
 		    #fff,
+		    ease-in-out,
 		    transparent
 	  	);
 	  	z-index: 9;			

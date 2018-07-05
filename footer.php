@@ -120,7 +120,7 @@
 			<!-- /footer -->
 
 			<!-- cookies -->
-			<div class="cookies-wrapper">
+			<div class="cf-super-wrapper">
 			<?php if ( !is_404() ): ?>
 				<div class="contact-form-outer hidden">
 					<div class="contact-form-wrapper">
@@ -130,17 +130,100 @@
 				</div>
 				<button class="btn contact-form-btn"></button>
 			<?php endif; ?>
-
-				<div class="js-cookie-consent cookie-consent z-999" id="cookies">
-					<div class="flex-hor-c" id="cookies-cont">
-						<div class="flex-vert-c">
-						  <p class="cookies-text inline-block"><?php _e('This website uses cookies to enhance user experience. By continuing using this site, you agree to cookie usage.', 'rkmachinery'); ?></p>
-						  <a class="` js-cookie-consent-agree cookie-consent__agree text-decor-none" id="cookies-close" href="#"></a>
-						</div>
-					</div>
-				</div>
 			</div>
-			<!-- end of cookies -->  
+			<!-- end of cookies -->
+			<style>
+
+.default {
+  color: #231f20;
+}
+
+.additional {
+  color: #787c82;
+}
+
+.additional-2 {
+  color: #c2c0c2;
+}
+
+.accent, body #klaro .klaro .cookie-modal a,
+body #klaro .klaro .cookie-notice a {
+  color: #f6c55b;
+}
+
+.accent-2 {
+  color: #e2231a;
+}
+
+.bg-default, body #klaro .klaro .cookie-notice,
+body #klaro .klaro .cookie-modal .cm-modal {
+  background-color: #231f20;
+}
+
+.bg-additional, body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-danger,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-danger {
+  background-color: #787c82;
+}
+
+.bg-additional-2, body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-danger:hover, body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-danger:active, body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-danger:focus,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-danger:hover,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-danger:active,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-danger:focus, body #klaro .klaro .cookie-modal .switch .slider,
+body #klaro .klaro .cookie-notice .switch .slider {
+  background-color: #c2c0c2;
+}
+
+.bg-accent, body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-success,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-success,
+body #klaro .klaro .cookie-modal .switch input:checked + .slider,
+body #klaro .klaro .cookie-notice .switch input:checked + .slider {
+  background-color: #f6c55b;
+}
+
+.bg-accent-2, body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-success:hover, body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-success:active, body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-success:focus,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-success:hover,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-success:active,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-success:focus {
+  background-color: #e2231a;
+}
+
+body #klaro {
+  z-index: 2000;
+}
+body #klaro .klaro b {
+  font-weight: 400 !important;
+}
+body #klaro .klaro .hide {
+  z-index: 9;
+}
+body #klaro .klaro .cookie-modal a:hover, body #klaro .klaro .cookie-modal a:active, body #klaro .klaro .cookie-modal a:focus,
+body #klaro .klaro .cookie-notice a:hover,
+body #klaro .klaro .cookie-notice a:active,
+body #klaro .klaro .cookie-notice a:focus {
+  text-decoration: underline;
+}
+body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-success,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-success,
+body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-danger,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-danger {
+  color: #fff !important;
+  font-size: 18px !important;
+  text-transform: uppercase;
+  border-radius: 0;
+}
+body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-success:hover, body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-success:active, body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-success:focus,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-success:hover,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-success:active,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-success:focus,
+body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-danger:hover,
+body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-danger:active,
+body #klaro .klaro .cookie-modal a.cm-btn.cm-btn-danger:focus,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-danger:hover,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-danger:active,
+body #klaro .klaro .cookie-notice a.cm-btn.cm-btn-danger:focus {
+  text-decoration: none;
+}			</style>
+			<div id="klaro"><div class="klaro"><div></div></div></div>
 
 		</div>
 		<!-- /wrapper -->

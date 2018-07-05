@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
         <!-- Google Analytics -->
-        <script>
+        <script  type="opt-in" data-type="application/javascript" data-name="analytics">
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -21,6 +21,17 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
+
+        <script type="text/javascript">
+            // Privacy policy page link for cookies plugin
+            window.privacy_policy_page = "<?php echo get_the_permalink('1082'); ?>";
+            // Transform lang attribute value for cookies plugin
+            window.lang_attr = document.documentElement.lang.replace('-', '_');
+        </script>
+
+        <script defer type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/lib/klaro/config.js"></script>
+        <script defer type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/lib/klaro/klaro.js"></script>
+
 
         <!--<meta name="google-site-verification" content="5GV3htbGte-ZaZ8Mp5ubMy2wfShvNOdhl1yn9VQ2cmo" />-->
 
