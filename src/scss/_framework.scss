@@ -922,6 +922,13 @@ body #klaro {
   .klaro {
     b { font-weight: 400 !important; }
     .hide { z-index: 9; }
+    .cookie-notice {
+    	p,
+    	a {
+	    	font-size: 16px;
+	    	line-height: 1.2;
+	    }
+    }
     .cookie-notice,
     .cookie-modal .cm-modal {
       @extend .bg-default;
@@ -950,7 +957,6 @@ body #klaro {
     .cookie-modal a.cm-btn.cm-btn-danger,
     .cookie-notice a.cm-btn.cm-btn-danger {
       color: #fff !important;
-      font-size: 18px !important;
       text-transform: uppercase;
       border-radius: 0;
       &:hover,
@@ -958,6 +964,14 @@ body #klaro {
       &:focus {
         text-decoration: none;
       }
+    }
+    .cookie-modal a.cm-btn.cm-btn-success,
+    .cookie-modal a.cm-btn.cm-btn-danger {
+      font-size: 18px !important;
+    }
+    .cookie-notice a.cm-btn.cm-btn-success,
+    .cookie-notice a.cm-btn.cm-btn-danger {
+      font-size: 16px !important;
     }
     .cookie-modal a.cm-btn.cm-btn-success,
     .cookie-notice a.cm-btn.cm-btn-success {
