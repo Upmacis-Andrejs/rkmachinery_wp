@@ -20,7 +20,6 @@
 						<?php the_field('page_content'); ?>
 					</div>
 					<?php endif; ?>
-					<a class="open-cookies-manager js-open-cookies" href="javascript:void(0)" onClick="return klaro.show()"><?php _e('Lai piekristu vai nepiekristu sīkdatņu izmantošanai, lūdzam spiest šeit', 'rkmachinery'); ?>.</a>
 
 				</div>
 			</div>

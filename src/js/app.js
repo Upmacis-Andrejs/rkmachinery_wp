@@ -5,6 +5,11 @@ var $mobile_width = 767;
 $(document).ready(function() {
   'use strict';
 
+  // Open cookies manager by clicking on link
+  $('a[href="#open-cookies"]').click(function() {
+    return klaro.show();
+  });
+
   // Show content
   $("body").removeClass("opacity-0").css("opacity", 1);
   var $timeout_show_header;
