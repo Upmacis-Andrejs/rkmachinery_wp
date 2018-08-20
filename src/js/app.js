@@ -5,9 +5,10 @@ var $mobile_width = 767;
 $(document).ready(function() {
   'use strict';
 
-  // Open cookies manager by clicking on link
-  $('a[href="#open-cookies"]').click(function() {
-    return klaro.show();
+  // Trigger revoke cookies functionality
+  $('body').on('mouseup', 'a[href="#revoke-cookies"]', function() {
+    $('.cc-revoke').trigger('click');
+    return false;
   });
 
   // Show content
@@ -172,35 +173,35 @@ $(document).ready(function() {
   // Script for "load more" button for multiple pagination pages
     // Set Prev and Next Pages
     if( $('.load-more-link').length > 0 ) {
-	    var $prev_page_$ = $(".load-more-link.prev");
-	    var $next_page_$ = $(".load-more-link.next");
-	    var $prev_page_el = $(".load-more-link.prev")[0];
-	    var $next_page_el = $(".load-more-link.next")[0];
+        var $prev_page_$ = $(".load-more-link.prev");
+        var $next_page_$ = $(".load-more-link.next");
+        var $prev_page_el = $(".load-more-link.prev")[0];
+        var $next_page_el = $(".load-more-link.next")[0];
 
-	    var $page_data_href = $prev_page_el.getAttribute("data-href");
-	    var $total_pages = $prev_page_el.getAttribute("data-total-pages");
+        var $page_data_href = $prev_page_el.getAttribute("data-href");
+        var $total_pages = $prev_page_el.getAttribute("data-total-pages");
 
-	    var $current_page = $(".load-more-link.current-page")[0].getAttribute("data-page");
-	    var $prev_page = parseInt($current_page - 1);
-	    var $next_page = parseInt($current_page - 1 + 2);
+        var $current_page = $(".load-more-link.current-page")[0].getAttribute("data-page");
+        var $prev_page = parseInt($current_page - 1);
+        var $next_page = parseInt($current_page - 1 + 2);
 
-	    var $prev_page_link = $page_data_href.concat($prev_page);
-	    var $next_page_link = $page_data_href.concat($next_page);
+        var $prev_page_link = $page_data_href.concat($prev_page);
+        var $next_page_link = $page_data_href.concat($next_page);
 
-	    $prev_page_el.setAttribute("href", $prev_page_link);
-	    $next_page_el.setAttribute("href", $next_page_link);
+        $prev_page_el.setAttribute("href", $prev_page_link);
+        $next_page_el.setAttribute("href", $next_page_link);
 
-	    if( $current_page == 1 ) {
-	      $prev_page_$.addClass('not-active');
-	      $next_page_$.removeClass('not-active');
-	    } else if( $current_page == $total_pages ) {
-	      $prev_page_$.removeClass('not-active');
-	      $next_page_$.addClass('not-active');
-	    } else {
-	      $prev_page_$.removeClass('not-active');
-	      $next_page_$.removeClass('not-active');
-	    }
-	}
+        if( $current_page == 1 ) {
+          $prev_page_$.addClass('not-active');
+          $next_page_$.removeClass('not-active');
+        } else if( $current_page == $total_pages ) {
+          $prev_page_$.removeClass('not-active');
+          $next_page_$.addClass('not-active');
+        } else {
+          $prev_page_$.removeClass('not-active');
+          $next_page_$.removeClass('not-active');
+        }
+    }
 
   $(document).on('click', '.load-more-multiple > a', function(e) {
     e.preventDefault();
